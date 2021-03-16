@@ -75,8 +75,9 @@ from pyrevit import script
 
 output = script.get_output()
 
-output.print_md(	'{} --- Project Parameters Info --- Number of Parameters = {}'.format(doc.Title,len(names)))
+output.print_md(	'# **FILE NAME: {}**\n\tNumber of Parameters = {}'.format(doc.Title,len(names)))
 
 for n,pn,ii,gr,ty,un,gu,vr,iv,cat in zip(numbers,names,isinst,pgroup,ptype,units,guids,groups,isvis,categories):
-	output.print_md(	'[{}] PARAMETER NAME: {}'.format(n,pn))
+	output.print_md(	'## **[{}] PARAMETER NAME: {}**'.format(n,pn))
 	print('\tIS INSTANCE: {}\n\tGROUP: {}\n\tTYPE: {}\n\tUNITS: {}\n\tGUID CODE: {}\n\tVARY BY MODEL GROUP: {}\n\tIS VISIBLE: {}\n\tAPPLIED TO: {}\n'.format(ii,gr,ty,un,gu,vr,iv,[x for x in cat]))
+
