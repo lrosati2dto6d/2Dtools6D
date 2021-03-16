@@ -1,11 +1,11 @@
 """Get Info about Project Parameters and Category assigned"""
 
-__title__= 'Get ProjectParameters\nInfo'
-__author__= 'Luca Rosati'
+__title__= "Get ProjectParameters\nInfo"
+__author__= "Luca Rosati"
 
 import System
 import clr
-clr.AddReference('RevitAPI')
+clr.AddReference("RevitAPI")
 from Autodesk.Revit.DB import *
 import Autodesk
 
@@ -17,11 +17,16 @@ clr.AddReference("RevitServices")
 import RevitServices
 from RevitServices.Persistence import DocumentManager
 
-from pyrevit import forms
 
+from collections import defaultdict
+from pyrevit import HOST_APP
+from pyrevit.framework import List
+from pyrevit import coreutils
+from pyrevit import forms
+from pyrevit import script
 
 doc = __revit__.ActiveUIDocument.Document
-uidoc =  __revit__.ActiveUIDocument
+uidoc = __revit__.ActiveUIDocument
 
 names = []
 groups = []
@@ -33,38 +38,45 @@ elements = []
 guids = []
 isinst = []
 bics = []
-
+categories = []
 iterator = doc.ParameterBindings.ForwardIterator()
 
 while iterator.MoveNext():
-	
-	
 	groups.append(iterator.Key.VariesAcrossGroups)
 	names.append(iterator.Key.Name)
 	pgroup.append(iterator.Key.ParameterGroup)
 	ptype.append(iterator.Key.ParameterType)
 	units.append(iterator.Key.UnitType)
 	isvis.append(iterator.Key.Visible)
-	
 	elem = doc.GetElement(iterator.Key.Id)
 	elements.append(elem)
-
-
-
 	if elem.GetType().ToString() == 'Autodesk.Revit.DB.SharedParameterElement':
 		guids.append(elem.GuidValue)
-	else: guids.append(None)
-	
-
-
+	else:
+		guids.append(None)
 	if iterator.Current.GetType().ToString() == 'Autodesk.Revit.DB.InstanceBinding':
 		isinst.append("Instance")
 	else:
 		isinst.append("Type")
+		
+	thesecats = []
+	builtincats = []
+	for cat in iterator.Current.Categories:
+		try:
+			thesecats.append(cat.Name)
+		except:
+			thesecats.append(None)
+		builtincats.append(System.Enum.ToObject(BuiltInCategory, cat.Id.IntegerValue))
+	categories.append(thesecats)
 
-titoli = ["Parameter Name","IsInstance?","ParameterGroup","ParameterType","Units","GUID","Vary by ModelGroup?","IsVisible?"]
+numbers = range(0,len(names),1)
 
-print(titoli,names,isinst,pgroup,ptype,units,guids,groups,isvis)
+from pyrevit import script
 
+output = script.get_output()
 
+output.print_md(	'{} --- Project Parameters Info --- Number of Parameters = {}'.format(doc.Title,len(names)))
 
+for n,pn,ii,gr,ty,un,gu,vr,iv,cat in zip(numbers,names,isinst,pgroup,ptype,units,guids,groups,isvis,categories):
+	output.print_md(	'[{}] PARAMETER NAME: {}'.format(n,pn))
+	print('\tIS INSTANCE: {}\n\tGROUP: {}\n\tTYPE: {}\n\tUNITS: {}\n\tGUID CODE: {}\n\tVARY BY MODEL GROUP: {}\n\tIS VISIBLE: {}\n\tAPPLIED TO: {}\n'.format(ii,gr,ty,un,gu,vr,iv,[x for x in cat]))
