@@ -102,7 +102,7 @@ press_5 = deqn(b,h4)
 sez_e = "{}x{}".format(str(b)[0:len(str(b))-2:1],str(b)[0:len(str(b))-2:1])
 sez_1 = "{}x{}".format(str(b)[0:len(str(b))-2:1],str(h1)[0:len(str(h1))-2:1])
 sez_2 = "{}x{}".format(str(b)[0:len(str(b))-2:1],str(h2)[0:len(str(h2))-2:1])
-sez_3 = "{}x{}".format(str(b)[0:len(str(h1))-2:1],str(h2)[0:len(str(h2))-2:1])
+sez_3 = "{}x{}".format(str(h1)[0:len(str(h1))-2:1],str(h2)[0:len(str(h2))-2:1])
 sez_4 = "{}x{}".format(str(b)[0:len(str(b))-2:1],str(h3)[0:len(str(h3))-2:1])
 sez_5 = "{}x{}".format(str(b)[0:len(str(b))-2:1],str(h4)[0:len(str(h4))-2:1])
 
@@ -143,10 +143,7 @@ for p,s,v,pp,vo in zip(lista,sez_l,vel_l,pres_l,vel_lout):
 		Vel_s.append(v)
 		Pres_s.append(pp)
 		Vel_out.append(vo)
-		
-def remostr(lista):
-	outputs = str(lista[2:len(str(lista))-2:1])
-	return outputs
+
 
 if len(Sez_g) == 0:
 	Sez_g.append("Non Calcolabile")
