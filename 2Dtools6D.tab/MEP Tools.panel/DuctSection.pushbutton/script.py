@@ -19,8 +19,8 @@ val_min =(0.0320,0.0340,0.0370,0.0380,0.0380,0.0390,0.0390,0.0390,0.0390,0.0400,
 
 val_max = (0.0500,0.0500,0.0500,0.0510,0.0520,0.0540,0.0550,0.0560,0.0570,0.0570,0.0575,0.0580,0.0585,0.0590,0.0595,0.0600,0.0605,0.0610,0.0615,0.0620,0.0623,0.0626,0.0629,0.0632,0.0635,0.0638,0.0641,0.0644,0.0647,0.0650,0.0653,0.0656,0.0659,0.0662,0.0665,0.0668,0.0671,0.0674,0.0677,0.0680,0.0682,0.0684,0.0686,0.0688,0.0690,0.0692,0.0694,0.0696,0.0698,0.0700,0.0700,0.0700,0.0700,0.0700,0.0706,0.0706,0.0706,0.0706,0.0706,0.0712,0.0712,0.0712,0.0712,0.0712,0.0718,0.0718,0.0718,0.0718,0.0718,0.0724,0.0724,0.0724,0.0724,0.0724,0.0730,0.0730,0.0730,0.0730,0.0730,0.0736,0.0736,0.0736,0.0736,0.0736,0.0742,0.0742,0.0742,0.0742,0.0742,0.0748,0.0748,0.0748,0.0748,0.0748,0.0754,0.0754,0.0754,0.0754,0.0754,0.0760,0.0760,0.0760,0.0760,0.0760,0.0764,0.0764,0.0764,0.0764,0.0764,0.0768,0.0768,0.0768,0.0768,0.0768,0.0772,0.0772,0.0772,0.0772,0.0772,0.0776,0.0776,0.0776,0.0776,0.0776,0.0780,0.0780,0.0780,0.0780,0.0780,0.0784,0.0784,0.0784,0.0784,0.0784,0.0788,0.0788,0.0788,0.0788,0.0788,0.0792,0.0792,0.0792,0.0792,0.0792,0.0796,0.0796,0.0796,0.0796,0.0796,0.0800,0.0800,0.0800,0.0800,0.0800,0.0802,0.0802,0.0802,0.0802,0.0802,0.0804,0.0804,0.0804,0.0804,0.0804,0.0806,0.0806,0.0806,0.0806,0.0806,0.0808,0.0808,0.0808,0.0808,0.0808,0.0810,0.0810,0.0810,0.0810,0.0810,0.0812,0.0812,0.0812,0.0812,0.0812,0.0814,0.0814,0.0814,0.0814,0.0814,0.0816,0.0816,0.0816,0.0816,0.0816,0.0818,0.0818,0.0818,0.0818,0.0818,0.0820)
 
-for min,max in zip(val_min,val_max):
-	dptt.append(min+max/2)
+for min_v,max_v in zip(val_min,val_max):
+	dptt.append(min_v+max_v/2)
 
 press = range(100,20100,100)
 
@@ -29,13 +29,11 @@ from pyrevit import forms
 port = forms.ask_for_one_item(
     press,
     default=press[19],
-    prompt='Select Flow (m3/h)',
+    prompt='Select Required Flow Rate (m3/h)',
     title='Duct Sizing'
 )
 
-
 ppmin = []
-
 
 for p,d,vmi,vma in zip(press,dptt,val_min,val_max):
 	if port == p:
@@ -44,8 +42,9 @@ for p,d,vmi,vma in zip(press,dptt,val_min,val_max):
 		val_ma = vma		
 		
 
-
+duct_m = "Galvanised Sheet Metal"
 rug = 0.09
+gas_t = "Air 20 gr C"
 visc = 1.5*10**-5
 dens = 1.2
 
@@ -125,7 +124,7 @@ lista = [press_e,press_1,press_2,press_3,press_4,press_5,press_6]
 sez_l = [sez_e,sez_1,sez_2,sez_3,sez_4,sez_5,sez_6]
 vel_l = ["%.2f" % vel_e,"%.2f" % vel_1,"%.2f" % vel_2,"%.2f" % vel_3,"%.2f" % vel_4,"%.2f" % vel_5,"%.2f" % vel_6]
 pres_l = ["%.4f" % press_e,"%.4f" % press_1,"%.4f" % press_2,"%.4f" % press_3,"%.4f" % press_4,"%.4f" % press_5,"%.4f" % press_6]
-vel_lout=[vel_e,vel_1,vel_2,vel_3,vel_4,vel_5,vel_6]
+vel_lout =[vel_e,vel_1,vel_2,vel_3,vel_4,vel_5,vel_6]
 
 Sez_g = []
 Sez_s = []
@@ -134,6 +133,11 @@ Vel_s = []
 Pres_g = []
 Pres_s = []
 Vel_out =[]
+
+Sez_gi = None
+Vel_gi = None
+Pres_gi = None
+Vel_outi =[]
 
 for p,s,v,pp,vo in zip(lista,sez_l,vel_l,pres_l,vel_lout):
 	if p > val_mi and p < val_ma:
@@ -145,45 +149,59 @@ for p,s,v,pp,vo in zip(lista,sez_l,vel_l,pres_l,vel_lout):
 		Sez_s.append(s)
 		Vel_s.append(v)
 		Pres_s.append(pp)
-		Vel_out.append(vo)
+		Vel_outi.append(vo)
 
 
 if len(Sez_g) == 0:
 	Sez_g.append("Not Computed")
 	Vel_out.append("n")
+
+if Vel_out!= "n":
+	for si,vi,pi,voi in zip(Sez_g,Vel_g,Pres_g,Vel_out):
+		if voi == min(Vel_out):
+			Sez_gi= si
+			Vel_gi= vi
+			Pres_gi= pi
+
 from pyrevit import script
 
 output = script.get_output()
 
 if Vel_out!= "n":
 	try:
-		if Vel_out[0] <6:
-			output.log_success('{} m/s NORMAL VALUE FOR CIVIL AND SILENT APPLICATION'.format(Vel_g[0]))
-		elif Vel_out[0] >= 6  and Vel_out[0] < 14:
-			output.log_info('{} m/s NORMAL VALUE FOR INDUSTRIAL APPLICATION'.format(Vel_g[0]))
-		elif Vel_out[0]>=14 and Vel_out[0]<25:
-			output.log_info('{} m/s NORMAL VALUE FOR SPECIAL APPLICATION'.format(Vel_g[0]))
+		if min(Vel_out) <6:
+			output.log_success('{} m/s NORMAL VALUE FOR CIVIL AND SILENT APPLICATIONS'.format(Vel_gi))
+		elif min(Vel_out) >= 6  and min(Vel_out) < 14:
+			output.log_info('{} m/s NORMAL VALUE FOR INDUSTRIAL APPLICATIONS'.format(Vel_gi))
+		elif min(Vel_out)>=14 and min(Vel_out)<25:
+			output.log_info('{} m/s NORMAL VALUE FOR SPECIAL APPLICATIONS'.format(Vel_gi))
 		else:
-			output.log_warning('{} m/s WARNING HIGH NOISE'.format(Vel_g[0]))
+			output.log_warning('{} m/s WARNING HIGH NOISE'.format(Vel_gi))
 	except:
 		pass
 
 output.print_md(	'# **INPUT DATA:**')
 
-print('\tFlow: {} m3/h\n\tPressure Drop Min: {} mmH2O/m\n\tPressure Drop Max: {} mmH2O/m'.format(port,val_mi,val_ma))
+print('\tRequired Flow Rate: {} m3/h\n\tDuct Material: {}\n\tAbsolute Roughness: {} mm\n\tGas Type: {} \n\tGas Density: {} kg/m3\n\tPressure Drop Min: {} mmH2O/m\n\tPressure Drop Max: {} mmH2O/m'.format(port,duct_m,rug,gas_t,dens,val_mi,val_ma))
 
 output.print_md(	'# **CALCULATION RESULTS:**')
 
-output.print_md(	'## **- OPTIMAL SIZES (PRESSURE DROP VALUE IN RANGE):**')
+output.print_md(	'## **- EXACT VALUE (PRESSURE DROP VALUE IN RANGE AND MINIMUM SPEED):**')
+
+print('---------------------------------------------------------------------------------\n\n\n')
+
+print('\tExact Size:  {} mm\n\tPressure Drop:  {} mmH2O/m\n\tVelocity:  {} m/s\n\n\n'.format(Sez_gi,Pres_gi,Vel_gi))
+
+output.print_md(	'## **- ALL OPTIMAL SIZES (PRESSURE DROP VALUE IN RANGE):**')
 
 print('---------------------------------------------------------------------------------\n\n\n')
 
 for i,p,v in zip (Sez_g,Pres_g,Vel_g):
-	print('\tOptimal Sizes: {} mm\n\tPressure Drop O.S: {} mmH2O/m\n\tVelocity O.S: {}m/s\n\n\n'.format(i,p,v))
+	print('\tOptimal Sizes:  {} mm\n\tPressure Drop O.S:  {} mmH2O/m\n\tVelocity O.S:  {} m/s\n\n\n'.format(i,p,v))
 
 output.print_md(	'## - ALTERNATIVE SIZES (PRESSURE DROP VALUE NEAR OF RANGE):')
 
 print('---------------------------------------------------------------------------------\n\n\n')
 
 for i,p,v in zip (Sez_s,Pres_s,Vel_s):
-	print('\tAlternative Sizes: {} mm\n\tPressure Drop A.S: {} mmH2O/m\n\tVelocity A.S: {} m/s\n\n\n'.format(i,p,v))
+	print('\tAlternative Sizes:  {} mm\n\tPressure Drop A.S:  {} mmH2O/m\n\tVelocity A.S:  {} m/s\n\n\n'.format(i,p,v))
