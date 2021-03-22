@@ -102,16 +102,22 @@ def Flattentot(list):
 flat_host_par= Flatten(host_par)
 flat_values=Flattentot(par_values)
 
+tg= TransactionGroup(doc, "Update multiple")
 t = Transaction(doc, "Update Parameters")
 t.Start()
-
 para_set = []
+
 for i,j in zip(flat_host_par,flat_values):
+
 	[para_set.append(y.Set(j)) for y in i]
 
 t.Commit()
 
+tg.Assimilate()
+
 output = script.get_output()
-output.center()
 output.set_width(200)
-print('Success Elements Trasfer for {} pipes'.format(len(flat_values)))
+
+print('Success Elements Trasfer for {} elements'.format(len(flat_values)))
+
+
