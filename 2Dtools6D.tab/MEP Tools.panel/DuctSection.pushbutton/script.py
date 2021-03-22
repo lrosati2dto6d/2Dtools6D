@@ -98,6 +98,7 @@ press_2 = deqn(b,h2)
 press_3 = deqn(h1,h2)
 press_4 = deqn(b,h3)
 press_5 = deqn(b,h4)
+press_6 = deqn(h3,h4)
 
 sez_e = "{}x{}".format(str(b)[0:len(str(b))-2:1],str(b)[0:len(str(b))-2:1])
 sez_1 = "{}x{}".format(str(b)[0:len(str(b))-2:1],str(h1)[0:len(str(h1))-2:1])
@@ -105,6 +106,7 @@ sez_2 = "{}x{}".format(str(b)[0:len(str(b))-2:1],str(h2)[0:len(str(h2))-2:1])
 sez_3 = "{}x{}".format(str(h1)[0:len(str(h1))-2:1],str(h2)[0:len(str(h2))-2:1])
 sez_4 = "{}x{}".format(str(b)[0:len(str(b))-2:1],str(h3)[0:len(str(h3))-2:1])
 sez_5 = "{}x{}".format(str(b)[0:len(str(b))-2:1],str(h4)[0:len(str(h4))-2:1])
+sez_6 = "{}x{}".format(str(h3)[0:len(str(h3))-2:1],str(h4)[0:len(str(h4))-2:1])
 
 
 def vel(portata,base,altezza):
@@ -117,12 +119,13 @@ vel_2 = vel(port,b,h2)
 vel_3 = vel(port,h1,h2)
 vel_4 = vel(port,b,h3)
 vel_5 = vel(port,b,h4)
+vel_6 = vel (port,h3,h4)
 
-lista = [press_e,press_1,press_2,press_3,press_4,press_5]
-sez_l = [sez_e,sez_1,sez_2,sez_3,sez_4,sez_5]
-vel_l = ["%.2f" % vel_e,"%.2f" % vel_1,"%.2f" % vel_2,"%.2f" % vel_3,"%.2f" % vel_4,"%.2f" % vel_5]
-pres_l = ["%.4f" % press_e,"%.4f" % press_1,"%.4f" % press_2,"%.4f" % press_3,"%.4f" % press_4,"%.4f" % press_5]
-vel_lout=[vel_e,vel_1,vel_2,vel_3,vel_4,vel_5]
+lista = [press_e,press_1,press_2,press_3,press_4,press_5,press_6]
+sez_l = [sez_e,sez_1,sez_2,sez_3,sez_4,sez_5,sez_6]
+vel_l = ["%.2f" % vel_e,"%.2f" % vel_1,"%.2f" % vel_2,"%.2f" % vel_3,"%.2f" % vel_4,"%.2f" % vel_5,"%.2f" % vel_6]
+pres_l = ["%.4f" % press_e,"%.4f" % press_1,"%.4f" % press_2,"%.4f" % press_3,"%.4f" % press_4,"%.4f" % press_5,"%.4f" % press_6]
+vel_lout=[vel_e,vel_1,vel_2,vel_3,vel_4,vel_5,vel_6]
 
 Sez_g = []
 Sez_s = []
@@ -146,7 +149,7 @@ for p,s,v,pp,vo in zip(lista,sez_l,vel_l,pres_l,vel_lout):
 
 
 if len(Sez_g) == 0:
-	Sez_g.append("Non Calcolabile")
+	Sez_g.append("Not Computed")
 	Vel_out.append("n")
 from pyrevit import script
 
@@ -155,9 +158,11 @@ output = script.get_output()
 if Vel_out!= "n":
 	try:
 		if Vel_out[0] <6:
-			output.log_success('{} m/s LOW NOISE'.format(Vel_g[0]))
-		elif Vel_out[0] >= 6  and Vel_out[0] < 25:
-			output.log_info('{} m/s INDUSTRIAL/SPECIAL NOISE'.format(Vel_g[0]))
+			output.log_success('{} m/s NORMAL VALUE FOR CIVIL AND SILENT APPLICATION'.format(Vel_g[0]))
+		elif Vel_out[0] >= 6  and Vel_out[0] < 14:
+			output.log_info('{} m/s NORMAL VALUE FOR INDUSTRIAL APPLICATION'.format(Vel_g[0]))
+		elif Vel_out[0]>=14 and Vel_out[0]<25:
+			output.log_info('{} m/s NORMAL VALUE FOR SPECIAL APPLICATION'.format(Vel_g[0]))
 		else:
 			output.log_warning('{} m/s WARNING HIGH NOISE'.format(Vel_g[0]))
 	except:
