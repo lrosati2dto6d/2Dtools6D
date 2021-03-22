@@ -64,7 +64,6 @@ def uwlist(input):
     result = input if isinstance(input, list) else [input]
     return UnwrapElement(input)
 
-
 all_pipeinsulation = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_PipeInsulations).WhereElementIsNotElementType().ToElements() 
 
 faminsts = all_pipeinsulation
