@@ -52,7 +52,6 @@ listnum = range(25,4000,25)
 
 diaeq = [] 
 
-
 for n in listnum:
 	r = 0.6376*(10**7)*(0.11*((rug/n)+(192.3*n*visc/port))**0.25)*dens*(port**2)/(n**5) 
 	if r <= dpt:
@@ -106,7 +105,6 @@ sez_3 = "{}x{}".format(str(h1)[0:len(str(h1))-2:1],str(h2)[0:len(str(h2))-2:1])
 sez_4 = "{}x{}".format(str(b)[0:len(str(b))-2:1],str(h3)[0:len(str(h3))-2:1])
 sez_5 = "{}x{}".format(str(b)[0:len(str(b))-2:1],str(h4)[0:len(str(h4))-2:1])
 sez_6 = "{}x{}".format(str(h3)[0:len(str(h3))-2:1],str(h4)[0:len(str(h4))-2:1])
-
 
 def vel(portata,base,altezza):
 	outputv = (portata/3600.0)/((base/1000)*(altezza/1000))
