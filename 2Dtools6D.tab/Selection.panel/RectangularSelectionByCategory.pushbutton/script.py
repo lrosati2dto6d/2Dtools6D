@@ -12,21 +12,43 @@ from Autodesk.Revit.DB import *
 clr.AddReference('RevitAPIUI')
 from Autodesk.Revit.UI.Selection import *
 
+clr.AddReference('RevitNodes')
+import Revit
+clr.ImportExtensions(Revit.GeometryConversion)
+clr.ImportExtensions(Revit.Elements)
+
 clr.AddReference('RevitServices')
 import RevitServices
 from RevitServices.Persistence import DocumentManager
 from RevitServices.Transactions import TransactionManager
 from System.Collections.Generic import *
 
-from rpw.ui.forms import TextInput
-value = TextInput('Category', default="Walls")
-
+from collections import defaultdict
+from pyrevit import HOST_APP
+from pyrevit.framework import List
+from pyrevit import coreutils
 from pyrevit import forms
-
+from pyrevit import script
 
 doc = __revit__.ActiveUIDocument.Document
 uidoc =  __revit__.ActiveUIDocument
 
+categories = doc.Settings.Categories
+
+model_cat = []
+
+for c in categories:
+	if c.CategoryType == CategoryType.Model:
+		if c.SubCategories.Size > 0 or c.CanAddSubcategory:
+			model_cat.append(Revit.Elements.Category.ById(c.Id.IntegerValue).Name)
+
+sortlist = sorted(model_cat)
+
+value = forms.ask_for_one_item(
+    sortlist,
+    default= sortlist[29],
+    prompt='Select Category',
+    title='Rectangular Selection')
 
 class MySelectionFilter(ISelectionFilter):
 	def __init__(self):
@@ -51,5 +73,3 @@ for i in output:
 collection = List[ElementId](outputID)
 
 select = uidoc.Selection.SetElementIds(collection)
-
-
