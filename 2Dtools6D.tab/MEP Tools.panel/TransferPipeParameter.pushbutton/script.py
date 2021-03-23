@@ -104,10 +104,16 @@ flat_values=Flattentot(par_values)
 
 para_set = []
 
-TransactionManager.Instance.EnsureInTransaction(doc)
-for i,j in zip(flat_host_par,flat_values):
-	[para_set.append(y.Set(j)) for y in i]
-TransactionManager.Instance.TransactionTaskDone()
+t= Transaction(doc,"Set Parameters")
+
+t.Start()
+try:
+	for i,j in zip(flat_host_par,flat_values):
+		[y.Set(j) for y in i]
+except:
+	t.RollBack()
+else:
+	t.Commit()
 
 
 output = script.get_output()
