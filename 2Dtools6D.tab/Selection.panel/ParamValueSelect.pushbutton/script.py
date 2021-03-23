@@ -18,11 +18,30 @@ from RevitServices.Persistence import DocumentManager
 from RevitServices.Transactions import TransactionManager
 from System.Collections.Generic import *
 
-from rpw.ui.forms import TextInput
-value = TextInput('Parameter Name', default="Comments")
-
-
 from pyrevit import forms
+
+doc = __revit__.ActiveUIDocument.Document
+uidoc =  __revit__.ActiveUIDocument
+
+
+with forms.WarningBar(title='Pick Element:'):
+	sel = uidoc.Selection
+	selected = sel.PickObject(ObjectType.Element)
+
+to_element = doc.GetElement(selected)
+
+p_par = to_element.GetOrderedParameters()
+p_par_n = []
+for p in p_par:
+	p_par_n.append(p.Definition.Name)
+
+sortlist = sorted(p_par_n)
+
+value = forms.ask_for_one_item(
+    sortlist,
+    default= sortlist[0],
+    prompt='Select Parameter',
+    title='Select By Paramater ')
 
 selected_option = forms.CommandSwitchWindow.show(
     ['Yes', 'No'],
@@ -32,14 +51,6 @@ selected_option1 = forms.CommandSwitchWindow.show(
     ['Yes', 'No'],
      message='Inverse Selection?',
 )
-
-doc = __revit__.ActiveUIDocument.Document
-uidoc =  __revit__.ActiveUIDocument
-
-sel = uidoc.Selection
-selected = sel.PickObject(ObjectType.Element)
-
-to_element = doc.GetElement(selected)
 
 el_cat = to_element.Category.Id
 
@@ -113,12 +124,10 @@ except:
 matched_fam_id = []
 matched_fam = []
 
-
 if selected_option1=='Yes':
 	inverse_toggle=False
 else:
 	inverse_toggle=True
-
 
 if inverse_toggle:
 	for i, j in zip(values_other, fam_insts):
@@ -138,11 +147,19 @@ from pyrevit import script
 
 output = script.get_output()
 
-# assuming element is an instance of DB.Element
+output.print_md(	'# CATEGORY: {}'.format(to_element.Category.Name))
+
+output.print_md(	'# PARAMETER MATCHED : {}'.format(value))
+
+output.print_md(	'# VALUE MATCHED : "{}"'.format(value_par))
+
+output.print_md(	'##\tELEMENTS SELECTED: n.{}'.format(len(matched_fam)))
+
+output.print_md(	'##\tSelected in Active View? {} - Inverse Selection? {}'.format(selected_option,selected_option1))
 
 if matched_fam== []:
 	print("The Parameter not Exists in Selected Element")
 else:
-	for element in matched_fam:
-		print(output.linkify(element.Id))
+	for idx, elid in enumerate(matched_fam):
+		print('{}: {} - {}'.format(idx+1,elid.Name,output.linkify(elid.Id)))
 

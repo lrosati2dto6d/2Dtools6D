@@ -102,18 +102,13 @@ def Flattentot(list):
 flat_host_par= Flatten(host_par)
 flat_values=Flattentot(par_values)
 
-tg= TransactionGroup(doc, "Update multiple")
-t = Transaction(doc, "Update Parameters")
-t.Start()
 para_set = []
 
+TransactionManager.Instance.EnsureInTransaction(doc)
 for i,j in zip(flat_host_par,flat_values):
-
 	[para_set.append(y.Set(j)) for y in i]
+TransactionManager.Instance.TransactionTaskDone()
 
-t.Commit()
-
-tg.Assimilate()
 
 output = script.get_output()
 output.set_width(200)

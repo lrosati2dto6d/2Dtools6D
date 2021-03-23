@@ -30,23 +30,23 @@ from pyrevit import coreutils
 from pyrevit import forms
 from pyrevit import script
 
-doc = __revit__.ActiveUIDocument.Document
-uidoc =  __revit__.ActiveUIDocument
+doc =__revit__.ActiveUIDocument.Document
+uidoc =__revit__.ActiveUIDocument
 
-categories = doc.Settings.Categories
+categories =doc.Settings.Categories
 
 model_cat = []
 
 for c in categories:
 	if c.CategoryType == CategoryType.Model:
 		if c.SubCategories.Size > 0 or c.CanAddSubcategory:
-			model_cat.append(Revit.Elements.Category.ById(c.Id.IntegerValue).Name)
+			model_cat.append(c.Name)
 
 sortlist = sorted(model_cat)
 
 value = forms.ask_for_one_item(
     sortlist,
-    default= sortlist[29],
+    default= sortlist[0],
     prompt='Select Category',
     title='Rectangular Selection')
 
