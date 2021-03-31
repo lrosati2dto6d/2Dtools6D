@@ -1,6 +1,6 @@
 """Select Elements based on the value of the indicated parameter and its Category"""
 
-__title__= 'Select By Paramater\nValue'
+__title__= 'Select By\nParamater Value'
 __author__= 'Luca Rosati'
 
 import clr

@@ -1,6 +1,6 @@
 """Get Info about Project Parameters and Category assigned"""
 
-__title__= "Get ProjectParameters\nInfo"
+__title__= "Get Project\nParameters Info"
 __author__= "Luca Rosati"
 
 import System

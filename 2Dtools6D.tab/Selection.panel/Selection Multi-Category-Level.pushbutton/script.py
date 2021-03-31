@@ -1,6 +1,6 @@
 """Select Elements based on Multi-Categories and Level"""
 
-__title__= 'Select Multi-Category\nOn Level'
+__title__= 'Multi-Category\nOn Level'
 __author__= 'Luca Rosati'
 
 import System

@@ -1,6 +1,6 @@
 """Select Elements based on Rectangular selection and Category """
 
-__title__= 'Rectangular Selection \nBy Category'
+__title__= 'Rectangular\nBy Category'
 __author__= 'Luca Rosati'
 
 import clr
