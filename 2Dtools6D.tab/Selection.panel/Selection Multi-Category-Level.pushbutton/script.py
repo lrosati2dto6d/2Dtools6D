@@ -68,13 +68,20 @@ for c in categories:
 			
 sortlist = sorted(model_cat)
 
+arc = ["Walls","Windows","Doors"]
+
 res = forms.SelectFromList.show(
-        {'All': sortlist},
+        {'All': sortlist,
+		'System':['Cable Trays','Ceilings','Ducts','Floors','Pipes','Railings','Roofs','Stairs','Walls'],
+		'Arc': ['Areas','Casework','Ceiling','Column','Curtain Panels','Curtain Wall Mullions','Doors','Floors','Furniture','Furniture System','Generic Models','Planting','Railings','Roofs','Rooms','Shaft Openings','Site','Specialty Equipment','Stairs','Topography','Walls','Windows'],
+		"Str": ['Structural Area Reinforcement', 'Structural Beam Systems', 'Structural Columns', 'Structural Connections', 'Structural Fabric Areas', 'Structural Fabric Reinforcement', 'Structural Foundations', 'Structural Framing', 'Structural Path Reinforcement', 'Structural Rebar', 'Structural Rebar Couplers', 'Structural Stiffeners', 'Structural Trusses'],
+		'Mec':['Air Terminals','Duct Accessories', 'Duct Fittings', 'Duct Insulations', 'Duct Linings', 'Duct Placeholders', 'Duct Systems', 'Ducts','Mechanical Equipment'],
+		'Plu': ['Flex Pipes','Mechanical Equipment','Pipe Accessories', 'Pipe Fittings', 'Pipe Insulations', 'Pipe Placeholders', 'Pipes', 'Piping Systems','Plumbing Fixtures','Sprinklers'],
+		'Ele': ['Cable Tray Fittings', 'Cable Trays','Communication Devices','Conduit Fittings', 'Conduits','Data Devices','Electrical Equipment', 'Electrical Fixtures','Fire Alarm Devices','Lighting Devices', 'Lighting Fixtures','Nurse Call Devices','Security Devices','Telephone Devices'],},
         title='Categories Selector',
-        group_selector_title='All:',
+        group_selector_title='Select Discipline',
         multiselect=True
     )
-
 
 category =[]
 namer = []
@@ -92,8 +99,6 @@ bic = []
 for c in category:
 	categoriesId.append(c.Id)
 	bic.append(System.Enum.ToObject(BuiltInCategory, c.Id.IntegerValue))
-
-
 
 def filcategorieslevinst(document,Category,Level): #Filtra tutti gli elementi in base a una lista di categorie e al loro livello
 	if isinstance(Category, list):
@@ -113,7 +118,3 @@ for o in output:
 collection = List[ElementId](outputID)
 
 select = uidoc.Selection.SetElementIds(collection)
-
-print(categoriesId,bic)
-
-#WherePasses(filterlevel)

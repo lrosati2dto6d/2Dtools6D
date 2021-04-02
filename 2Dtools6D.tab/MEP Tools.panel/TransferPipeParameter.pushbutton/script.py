@@ -1,6 +1,6 @@
 """Transfers any string parameter value from the pipe element to its corresponding insulator host element"""
 
-__title__= "Pipes Values Parameter\nto Host Insulation"
+__title__= "Transfer Parameter\nto Host Insulation"
 __author__= "Luca Rosati"
 
 from collections import defaultdict
