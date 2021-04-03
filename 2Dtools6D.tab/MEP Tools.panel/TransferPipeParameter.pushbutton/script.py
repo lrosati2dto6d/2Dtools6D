@@ -40,17 +40,29 @@ doc = __revit__.ActiveUIDocument.Document
 uidoc = __revit__.ActiveUIDocument
 
 elems_pipes = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_PipeCurves).WhereElementIsNotElementType().ToElements()
+elems_ducts = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_DuctCurves).WhereElementIsNotElementType().ToElements()
 
-param_pipes = elems_pipes[0].GetOrderedParameters()
-para_name_list = []
+if len(elems_pipes)!= 0:
+	param_pipes = elems_pipes[0].GetOrderedParameters()
+para_name_list_pipes = []
+
+if len(elems_ducts)!= 0:
+	param_ducts = elems_ducts[0].GetOrderedParameters()
+para_name_list_ducts = []
+
 type = []
 
 for p in param_pipes:
-	if p.StorageType == StorageType.String:
-		para_name_list.append(p.Definition.Name)
+	if p.StorageType == StorageType.String and p.IsReadOnly == False:
+		para_name_list_pipes.append(p.Definition.Name)
+
+for p in param_pipes:
+	if p.StorageType == StorageType.String and p.IsReadOnly == False:
+		para_name_list_ducts.append(p.Definition.Name)
+
 
 res= forms.SelectFromList.show(
-        {'All': para_name_list},
+        {'All': para_name_list_pipes},
         title='Parameters Selector',
         group_selector_title='All:',
         multiselect=True
@@ -65,8 +77,8 @@ def uwlist(input):
     return UnwrapElement(input)
 
 all_pipeinsulation = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_PipeInsulations).WhereElementIsNotElementType().ToElements() 
-
-faminsts = all_pipeinsulation
+all_ductinsulation = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_DuctInsulations).WhereElementIsNotElementType().ToElements()
+faminsts = all_pipeinsulation #+all_ductinsulation
 
 host_list = [] 
 
@@ -104,12 +116,13 @@ flat_values=Flattentot(par_values)
 
 para_set = []
 
-t= Transaction(doc,"Set Parameters")
+t = Transaction(doc,"Set Parameters")
 
 t.Start()
 try:
 	for i,j in zip(flat_host_par,flat_values):
-		[y.Set(j) for y in i]
+		if j != None:
+			[y.Set(j) for y in i]
 except:
 	t.RollBack()
 else:
@@ -119,6 +132,6 @@ else:
 output = script.get_output()
 output.set_width(200)
 
-print('Success Elements Trasfer for {} elements'.format(len(flat_values)))
+print('Success Elements Trasfer for {} elements'.format(len(faminsts)),flat_values)
 
 
