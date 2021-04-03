@@ -1,6 +1,6 @@
-"""Transfers any string parameter value from the pipe element to its corresponding insulator host element"""
+"""Transfers any string parameter value from the pipe element to its corresponding insulation host element - All Categories of Piping must have same Parameters"""
 
-__title__= "Transfer Parameter\nto Host Insulation"
+__title__= "Transfer Parameter\nto Pipe Insulation"
 __author__= "Luca Rosati"
 
 from collections import defaultdict
@@ -16,13 +16,6 @@ import System
 from System import Array
 from System.Collections.Generic import *
 
-clr.AddReference('ProtoGeometry')
-from Autodesk.DesignScript.Geometry import *
-
-clr.AddReference("RevitNodes")
-import Revit
-clr.ImportExtensions(Revit.Elements)
-clr.ImportExtensions(Revit.GeometryConversion)
 
 clr.AddReference("RevitServices")
 import RevitServices
@@ -40,26 +33,17 @@ doc = __revit__.ActiveUIDocument.Document
 uidoc = __revit__.ActiveUIDocument
 
 elems_pipes = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_PipeCurves).WhereElementIsNotElementType().ToElements()
-elems_ducts = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_DuctCurves).WhereElementIsNotElementType().ToElements()
 
 if len(elems_pipes)!= 0:
 	param_pipes = elems_pipes[0].GetOrderedParameters()
+else:
+	forms.alert('There must be at least one Pipe with insulation', exitscript=True)
+
 para_name_list_pipes = []
-
-if len(elems_ducts)!= 0:
-	param_ducts = elems_ducts[0].GetOrderedParameters()
-para_name_list_ducts = []
-
-type = []
 
 for p in param_pipes:
 	if p.StorageType == StorageType.String and p.IsReadOnly == False:
 		para_name_list_pipes.append(p.Definition.Name)
-
-for p in param_pipes:
-	if p.StorageType == StorageType.String and p.IsReadOnly == False:
-		para_name_list_ducts.append(p.Definition.Name)
-
 
 res= forms.SelectFromList.show(
         {'All': para_name_list_pipes},
@@ -77,8 +61,8 @@ def uwlist(input):
     return UnwrapElement(input)
 
 all_pipeinsulation = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_PipeInsulations).WhereElementIsNotElementType().ToElements() 
-all_ductinsulation = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_DuctInsulations).WhereElementIsNotElementType().ToElements()
-faminsts = all_pipeinsulation #+all_ductinsulation
+
+faminsts = all_pipeinsulation
 
 host_list = [] 
 
@@ -90,7 +74,10 @@ par_list = [tolist(res)]
 par_values=[]
 for host in host_list:
 	for i in par_list:
-		par_values.append([host.LookupParameter(z).AsString() for y in par_list for z in y])
+		try:
+			par_values.append([host.LookupParameter(z).AsString() for y in par_list for z in y])
+		except:
+			forms.alert('Check if the categories: Pipes, Pipes Accessories, Pipes Fittings, Pipes Insulation have the same Parameters', exitscript=True)
 
 host_par=[]
 for item in faminsts:
@@ -130,8 +117,11 @@ else:
 
 
 output = script.get_output()
-output.set_width(200)
+output.set_height(150)
 
-print('Success Elements Trasfer for {} elements'.format(len(faminsts)),flat_values)
+output.print_md('#\tSuccess Transfer for {} Insulation Pipe Elements'.format(len(faminsts)))
+output.print_md("##\tTransfer Completed for Parameters: {}" .format(res))
+
+
 
 
