@@ -1,6 +1,6 @@
-"""Create a Parallel Section View located near an Element Selected"""
+"""Create a Perpendicular Section View located near an Element Selected - Categories: Walls,Pipe,Duct,Cable Tray,Railing"""
 
-__title__= "Parallel Section\nBy Element"
+__title__= "Perpendicular \nBy Element"
 __author__= "Luca Rosati"
 
 import System
@@ -87,7 +87,7 @@ with forms.WarningBar(title='Pick source object:'):
 unwr = doc.GetElement(selected)
 
 if unwr.Category.Name not in ["Walls","Ducts","Pipes","Cable Trays","Railings"]:
-	forms.alert('The selected object must necessarily be a Wall, a Pipe or a Duct', exitscript=True)
+	forms.alert('The selected object must necessarily be a Wall, a Pipe or a Duct or a Railing', exitscript=True)
 
 bb = unwr.get_BoundingBox(None)
 
@@ -115,33 +115,32 @@ try:
 			line = path[valuep]
 	else:
 		line = unwr.Location.Curve
+	c_tra = line.ComputeDerivatives( 0.5, True )
+	origin = c_tra.Origin
+	viewdir = c_tra.BasisX.Normalize()
+	up = XYZ.BasisZ
+	right = up.CrossProduct( viewdir )
 
-	p = line.GetEndPoint(0);
-	q = line.GetEndPoint(1);
-	v = q - p
+	t = Transform.Identity
+	t.Origin = origin
+	t.BasisX = right
+	t.BasisY = up
+	t.BasisZ = viewdir
 
+	d = xs
 	minZ = bb.Min.Z
 	maxZ = bb.Max.Z
 
-	w = v.GetLength()
-	offset = w 
+	he = maxZ-minZ
 
-	min = XYZ( -w/2-xs, -xs, -xs )
+	min = XYZ(-xs , -xs,0)
 	if unwr.Category.Name in ["Walls","Railings"]:
-		max = XYZ( w/2+xs, h+xs, +xs )
+		max = XYZ(xs,xs+he,xs)
 	else:
-		max = XYZ( w/2+xs, +xs, +xs )
+		max = XYZ(xs,xs,xs)
 
-	midpoint = p + 0.5 * v
-	walldir = v.Normalize()
-	up = XYZ.BasisZ
-	viewdir = walldir.CrossProduct(up)
-
-	t = Transform.Identity
-	t.Origin = midpoint
-	t.BasisX = walldir
-	t.BasisY = up
-	t.BasisZ = viewdir
+	minZ = bb.Min.Z
+	maxZ = bb.Max.Z
 
 	sectionBox = BoundingBoxXYZ()
 	sectionBox.Transform = t
