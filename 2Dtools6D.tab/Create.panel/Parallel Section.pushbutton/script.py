@@ -23,11 +23,11 @@ from RevitServices.Persistence import DocumentManager
 
 from System.Collections.Generic import *
 
-def ConvUnitsFM(number): #Feet to mm
+def ConvUnitsFM(number): #Feet to m
 	output = number/0.3048
 	return output
 
-def ConvUnitsMMF(number): #Feet to mm
+def ConvUnitsFMM(number): #Feet to mm
 	output = number/304.8
 	return output
 
@@ -49,14 +49,14 @@ numbers = range(100,1000,100)
 
 value_n = forms.ask_for_one_item(
     numbers,
-    default= numbers[0],
-    prompt='Select Offset Length',
+    default= numbers[4],
+    prompt='Select Offset Length (mm)',
     title='Create Section View')
 
 if units == DisplayUnitType.DUT_MILLIMETERS:
-	xs = value_n
+	xs = ConvUnitsFMM(value_n)
 elif units == DisplayUnitType.DUT_METERS:
-	xs = value_n/1000
+	xs = ConvUnitsFM(value_n/1000.0)
 else:
 	forms.alert('Set Project Units to Millimeters or Meters ', exitscript=True)
 
@@ -65,7 +65,7 @@ sect_views = []
 
 for v in views:
 	if v.ViewFamily.ToString() =="Section":
-		v_names.append(v.ViewFamily)
+		v_names.append(v.LookupParameter("Type Name").AsString())
 		sect_views.append(v)
 
 value = forms.ask_for_one_item(
@@ -86,31 +86,48 @@ with forms.WarningBar(title='Pick source object:'):
 
 unwr = doc.GetElement(selected)
 
-if unwr.Category.Name not in ["Walls","Ducts","Pipes"]:
+if unwr.Category.Name not in ["Walls","Ducts","Pipes","Cable Trays","Railings"]:
 	forms.alert('The selected object must necessarily be a Wall, a Pipe or a Duct', exitscript=True)
 
 bb = unwr.get_BoundingBox(None)
 
 if unwr.Category.Name == "Walls": 
 	h = unwr.LookupParameter("Unconnected Height").AsDouble()
+elif unwr.Category.Name == "Railings":
+	t = doc.GetElement(unwr.LookupParameter("Type").AsElementId())
+	h = t.LookupParameter("Railing Height").AsDouble()
+
 
 try:
-	line = unwr.Location.Curve
+	if unwr.Category.Name == "Railings":
+		path = unwr.GetPath()
+		if len(path)== 1:
+			line = path[0]
+		else:
+			npaths = range(0,len(path))
+			
+			valuep = forms.ask_for_one_item(
+			npaths,
+			default= npaths[0],
+			prompt='Select Railing Segment Number',
+			title='Number of Path Segments {}'.format(len(path)))
+			
+			line = path[valuep]
+	else:
+		line = unwr.Location.Curve
 
 	p = line.GetEndPoint(0);
 	q = line.GetEndPoint(1);
-	v = q - p 
+	v = q - p
 
 	minZ = bb.Min.Z
 	maxZ = bb.Max.Z
-
-	prof = ConvUnitsMMF(100)
 
 	w = v.GetLength()
 	offset = w 
 
 	min = XYZ( -w/2-xs, -xs, -xs )
-	if unwr.Category.Name == "Walls":
+	if unwr.Category.Name in ["Walls","Railings"]:
 		max = XYZ( w/2+xs, h+xs, +xs )
 	else:
 		max = XYZ( w/2+xs, +xs, +xs )
@@ -131,8 +148,6 @@ try:
 	sectionBox.Min = min
 	sectionBox.Max = max
 
-	doc.Regenerate
-
 	t = Transaction(doc,"Create Section")
 
 	t.Start()
@@ -144,5 +159,3 @@ try:
 		t.Commit()
 except:
 	forms.alert('The selected object it must not have a slope', exitscript=True)
-
-
