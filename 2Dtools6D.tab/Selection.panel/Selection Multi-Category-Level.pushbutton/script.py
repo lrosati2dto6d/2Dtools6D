@@ -1,8 +1,7 @@
-"""Select Elements based on Multi-Categories and Level"""
+"""Select Elements based on Multi-Categories and Level, 1 - Select a Level. 2 - Select One or some Categories"""
 
 __title__= 'Multi-Category\nOn Level'
 __author__= 'Luca Rosati'
-
 
 import System
 import clr
@@ -56,6 +55,8 @@ for lev in levels:
 
 filterlevel = ElementLevelFilter(level.Id)
 
+leid = level.Id
+
 categories = doc.Settings.Categories
 
 model_cat = []
@@ -101,6 +102,39 @@ for c in category:
 	categoriesId.append(c.Id)
 	bic.append(System.Enum.ToObject(BuiltInCategory, c.Id.IntegerValue))
 
+mepduct = []
+mepcable = []
+meppipe = []
+mepconduit = []
+
+if "Ducts" in res:
+	elemsd = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_DuctCurves).WhereElementIsNotElementType().ToElements()
+	if len(elemsd) != 0:
+		for e in elemsd:
+			if e.get_Parameter(BuiltInParameter.RBS_START_LEVEL_PARAM).AsElementId() == leid:
+				mepduct.append(e)
+
+if "Pipes" in res:
+	elemsp = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_PipeCurves).WhereElementIsNotElementType().ToElements()
+	if len(elemsp) != 0:
+		for e in elemsp:
+			if e.get_Parameter(BuiltInParameter.RBS_START_LEVEL_PARAM).AsElementId() == leid:
+				meppipe.append(e)
+
+if "Cable Trays" in res:
+	elemsc = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_CableTray).WhereElementIsNotElementType().ToElements()
+	if len(elemsc) != 0:
+		for e in elemsc:
+			if e.get_Parameter(BuiltInParameter.RBS_START_LEVEL_PARAM).AsElementId() == leid:
+				mepcable.append(e)
+
+if "Conduits" in res:
+	elemsc = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Conduit).WhereElementIsNotElementType().ToElements()
+	if len(elemsco) != 0:
+		for e in elemsco:
+			if e.get_Parameter(BuiltInParameter.RBS_START_LEVEL_PARAM).AsElementId() == leid:
+				mepconduit.append(e)
+
 def filcategorieslevinst(document,Category,Level): #Filtra tutti gli elementi in base a una lista di categorie e al loro livello
 	if isinstance(Category, list):
 		categoriesInstancelevCollector = []
@@ -115,6 +149,27 @@ outputID = []
 for o in output:
 	for x in o:
 		outputID.append(x.Id)
+
+if len(mepduct) != 0:
+	if "Ducts" in res:
+		for d in mepduct:
+			outputID.append(d.Id)
+
+if len(meppipe) != 0:
+	if "Pipes" in res:
+		for p in meppipe:
+			outputID.append(p.Id)
+
+if len(mepcable) != 0:
+	if "Cable Trays" in res:
+		for c in mepcable:
+			outputID.append(c.Id)
+
+if len(mepconduit) != 0:
+	if "Conduits" in res:
+		for co in mepconduit:
+			outputID.append(co.Id)
+
 
 collection = List[ElementId](outputID)
 

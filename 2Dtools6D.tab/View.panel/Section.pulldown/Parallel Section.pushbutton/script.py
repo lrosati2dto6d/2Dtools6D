@@ -1,6 +1,6 @@
-"""Create a Perpendicular Section View located near an Element Selected - Categories: Walls,Pipe,Duct,Cable Tray,Railing"""
+"""Create a Parallel Section View located near an Element Selected"""
 
-__title__= "Perpendicular \nBy Element"
+__title__= "Parallel\nTo Element"
 __author__= "Luca Rosati"
 
 import System
@@ -45,12 +45,12 @@ views = FilteredElementCollector(doc).OfClass(ViewFamilyType).WhereElementIsElem
 
 units = doc.GetUnits().GetFormatOptions(UnitType.UT_Length).DisplayUnits
 
-numbers = range(100,1000,100)
+numbers = range(100,2100,100)
 
 value_n = forms.ask_for_one_item(
     numbers,
     default= numbers[4],
-    prompt='Select Offset Length (mm)',
+    prompt='OFFSET LENGTH (mm)',
     title='Create Section View')
 
 if units == DisplayUnitType.DUT_MILLIMETERS:
@@ -86,8 +86,8 @@ with forms.WarningBar(title='Pick source object:'):
 
 unwr = doc.GetElement(selected)
 
-if unwr.Category.Name not in ["Walls","Ducts","Pipes","Cable Trays","Railings"]:
-	forms.alert('The selected object must necessarily be a Wall, a Pipe or a Duct or a Railing', exitscript=True)
+if unwr.Location.GetType()!= LocationCurve and unwr.Location.GetType()!= LocationPoint and unwr.Category.Name != "Railings":
+	forms.alert('The selected object must necessarily be Line or Point Based', exitscript=True)
 
 bb = unwr.get_BoundingBox(None)
 
@@ -96,7 +96,6 @@ if unwr.Category.Name == "Walls":
 elif unwr.Category.Name == "Railings":
 	t = doc.GetElement(unwr.LookupParameter("Type").AsElementId())
 	h = t.LookupParameter("Railing Height").AsDouble()
-
 
 try:
 	if unwr.Category.Name == "Railings":
@@ -113,34 +112,64 @@ try:
 			title='Number of Path Segments {}'.format(len(path)))
 			
 			line = path[valuep]
+	elif unwr.Location.GetType()== LocationPoint:
+		point_l = unwr.Location.Point
+		dirh_el = unwr.HandOrientation
+		ndirh_el = dirh_el.Negate()
+		ro = point_l.Add(dirh_el)
+		so = point_l.Add(ndirh_el)
+
+		line = Line.CreateBound(ro, so)
 	else:
 		line = unwr.Location.Curve
-	c_tra = line.ComputeDerivatives( 0.5, True )
-	origin = c_tra.Origin
-	viewdir = c_tra.BasisX.Normalize()
+
+	p = line.GetEndPoint(0);
+	q = line.GetEndPoint(1);
+	v = q - p
+
+	minZ = bb.Min.Z
+	maxZ = bb.Max.Z
+
+	w = v.GetLength()
+
+	if unwr.Location.GetType()== LocationPoint:
+		minX = bb.Min.X
+		maxX = bb.Max.X
+
+		minY = bb.Min.Y
+		maxY = bb.Max.Y
+
+		lx = maxX-minX
+		ly = maxY-minY
+
+		leng = (lx,ly)
+
+		xs = max(leng)
+		
+		he = maxZ-minZ
+		
+		min = XYZ( -w/2-xs/2, -xs/4, -xs/2 )
+	else:
+		min = XYZ( -w/2-xs, -xs, -xs )
+
+	if unwr.Category.Name in ["Walls","Railings"]:
+		max = XYZ( w/2+xs, h+xs, +xs )
+	elif unwr.Location.GetType()== LocationPoint:
+		max = XYZ( w/2+xs/2, he+xs/4, +xs/2 )
+
+	else:
+		max = XYZ( w/2+xs, +xs, +xs )
+
+	midpoint = p + 0.5 * v
+	walldir = v.Normalize()
 	up = XYZ.BasisZ
-	right = up.CrossProduct( viewdir )
+	viewdir = walldir.CrossProduct(up)
 
 	t = Transform.Identity
-	t.Origin = origin
-	t.BasisX = right
+	t.Origin = midpoint
+	t.BasisX = walldir
 	t.BasisY = up
 	t.BasisZ = viewdir
-
-	d = xs
-	minZ = bb.Min.Z
-	maxZ = bb.Max.Z
-
-	he = maxZ-minZ
-
-	min = XYZ(-xs , -xs,0)
-	if unwr.Category.Name in ["Walls","Railings"]:
-		max = XYZ(xs,xs+he,xs)
-	else:
-		max = XYZ(xs,xs,xs)
-
-	minZ = bb.Min.Z
-	maxZ = bb.Max.Z
 
 	sectionBox = BoundingBoxXYZ()
 	sectionBox.Transform = t
@@ -157,4 +186,4 @@ try:
 	else:
 		t.Commit()
 except:
-	forms.alert('The selected object it must not have a slope', exitscript=True)
+	forms.alert('The selected object probably, it must not have a slope or is not Processable', exitscript=True)
