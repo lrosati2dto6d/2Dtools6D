@@ -74,12 +74,12 @@ arc = ["Walls","Windows","Doors"]
 
 res = forms.SelectFromList.show(
         {'All': sortlist,
-		'System':['Cable Trays','Ceilings','Ducts','Floors','Pipes','Railings','Roofs','Stairs','Walls'],
-		'Arc': ['Areas','Casework','Ceiling','Column','Curtain Panels','Curtain Wall Mullions','Doors','Floors','Furniture','Furniture System','Generic Models','Planting','Railings','Roofs','Rooms','Shaft Openings','Site','Specialty Equipment','Stairs','Topography','Walls','Windows'],
-		"Str": ['Structural Area Reinforcement', 'Structural Beam Systems', 'Structural Columns', 'Structural Connections', 'Structural Fabric Areas', 'Structural Fabric Reinforcement', 'Structural Foundations', 'Structural Framing', 'Structural Path Reinforcement', 'Structural Rebar', 'Structural Rebar Couplers', 'Structural Stiffeners', 'Structural Trusses'],
-		'Mec':['Air Terminals','Duct Accessories', 'Duct Fittings', 'Duct Insulations', 'Duct Linings', 'Duct Placeholders', 'Duct Systems', 'Ducts','Mechanical Equipment'],
-		'Plu': ['Flex Pipes','Mechanical Equipment','Pipe Accessories', 'Pipe Fittings', 'Pipe Insulations', 'Pipe Placeholders', 'Pipes', 'Piping Systems','Plumbing Fixtures','Sprinklers'],
-		'Ele': ['Cable Tray Fittings', 'Cable Trays','Communication Devices','Conduit Fittings', 'Conduits','Data Devices','Electrical Equipment', 'Electrical Fixtures','Fire Alarm Devices','Lighting Devices', 'Lighting Fixtures','Nurse Call Devices','Security Devices','Telephone Devices'],},
+		'System':['Cable Trays','Ceilings','Conduits','Ducts','Floors','Pipes','Railings','Roofs','Stairs','Walls'],
+		'Arch': ['Areas','Casework','Ceiling','Column','Curtain Panels','Curtain Wall Mullions','Doors','Floors','Furniture','Furniture System','Generic Models','Planting','Railings','Roofs','Rooms','Shaft Openings','Site','Specialty Equipment','Stairs','Topography','Walls','Windows'],
+		"Stru": ['Structural Area Reinforcement', 'Structural Beam Systems', 'Structural Columns', 'Structural Connections', 'Structural Fabric Areas', 'Structural Fabric Reinforcement', 'Structural Foundations', 'Structural Framing', 'Structural Path Reinforcement', 'Structural Rebar', 'Structural Rebar Couplers', 'Structural Stiffeners', 'Structural Trusses'],
+		'Hvac':['Air Terminals','Duct Accessories', 'Duct Fittings', 'Duct Insulations', 'Duct Linings', 'Duct Placeholders', 'Duct Systems', 'Ducts','Mechanical Equipment'],
+		'Plum': ['Flex Pipes','Mechanical Equipment','Pipe Accessories', 'Pipe Fittings', 'Pipe Insulations', 'Pipe Placeholders', 'Pipes', 'Piping Systems','Plumbing Fixtures','Sprinklers'],
+		'Elec': ['Cable Tray Fittings', 'Cable Trays','Communication Devices','Conduit Fittings', 'Conduits','Data Devices','Electrical Equipment', 'Electrical Fixtures','Fire Alarm Devices','Lighting Devices', 'Lighting Fixtures','Nurse Call Devices','Security Devices','Telephone Devices'],},
         title='Categories Selector',
         group_selector_title='Select Discipline',
         multiselect=True
