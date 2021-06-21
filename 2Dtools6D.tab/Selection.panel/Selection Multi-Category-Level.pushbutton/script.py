@@ -64,13 +64,12 @@ mod_c=[]
 
 for c in categories:
 	if c.CategoryType == CategoryType.Model:
-		if c.SubCategories.Size > 0 or c.CanAddSubcategory:
+		if "dwg"  not in c.Name and c.SubCategories.Size > 0 or c.CanAddSubcategory:
 			model_cat.append(c.Name)
 			mod_c.append(c)
 			
 sortlist = sorted(model_cat)
 
-arc = ["Walls","Windows","Doors"]
 
 res = forms.SelectFromList.show(
         {'All': sortlist,
@@ -106,6 +105,7 @@ mepduct = []
 mepcable = []
 meppipe = []
 mepconduit = []
+strframing = []
 
 if "Ducts" in res:
 	elemsd = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_DuctCurves).WhereElementIsNotElementType().ToElements()
@@ -129,11 +129,18 @@ if "Cable Trays" in res:
 				mepcable.append(e)
 
 if "Conduits" in res:
-	elemsc = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Conduit).WhereElementIsNotElementType().ToElements()
+	elemsco = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Conduit).WhereElementIsNotElementType().ToElements()
 	if len(elemsco) != 0:
 		for e in elemsco:
 			if e.get_Parameter(BuiltInParameter.RBS_START_LEVEL_PARAM).AsElementId() == leid:
 				mepconduit.append(e)
+
+if "Structural Framing" in res:
+	elemst = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_StructuralFraming).WhereElementIsNotElementType().ToElements()
+	if len(elemst) != 0:
+		for e in elemst:
+			if e.get_Parameter(BuiltInParameter.INSTANCE_REFERENCE_LEVEL_PARAM).AsElementId() == leid:
+				strframing.append(e)
 
 def filcategorieslevinst(document,Category,Level): #Filtra tutti gli elementi in base a una lista di categorie e al loro livello
 	if isinstance(Category, list):
@@ -169,6 +176,11 @@ if len(mepconduit) != 0:
 	if "Conduits" in res:
 		for co in mepconduit:
 			outputID.append(co.Id)
+
+if len(strframing) != 0:
+	if "Structural Framing" in res:
+		for st in strframing:
+			outputID.append(st.Id)
 
 
 collection = List[ElementId](outputID)
