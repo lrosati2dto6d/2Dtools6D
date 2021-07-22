@@ -37,9 +37,10 @@ categories =doc.Settings.Categories
 
 model_cat = []
 
+
 for c in categories:
 	if c.CategoryType == CategoryType.Model:
-		if c.SubCategories.Size > 0 or c.CanAddSubcategory:
+		if "dwg"  not in c.Name and c.SubCategories.Size > 0 or c.CanAddSubcategory:
 			model_cat.append(c.Name)
 
 sortlist = sorted(model_cat)
