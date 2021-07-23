@@ -41,28 +41,73 @@ from pyrevit import script
 doc =__revit__.ActiveUIDocument.Document
 uidoc =__revit__.ActiveUIDocument
 
-try:
-	sel1 = uidoc.Selection
-	ot = Selection.ObjectType.LinkedElement
-	el_ref = sel1.PickObject(ot, "Pick a linked element.")
-	linkInst = doc.GetElement(el_ref.ElementId)
-	linkDoc = linkInst.GetLinkDocument()
-	linkEl = linkDoc.GetElement(el_ref.LinkedElementId)
 
-	bb = linkEl.get_BoundingBox(None)
+doc_v = FilteredElementCollector(doc).OfClass(View)
+th3d = []
+th3dn = []
+view3 = None
 
-	t = Transaction(doc,"Create Section Box")
 
-	t.Start()
-	try:
-		if doc.ActiveView.ViewType.ToString() == "ThreeD":
-			doc.ActiveView.SetSectionBox(bb)
+for d in doc_v:
+	if d.IsTemplate == False and d.ViewType == ViewType.ThreeD:
+		th3d.append(d)
+		th3dn.append(d.Name)
+
+if len(th3dn) != 0:
+	value_n = forms.ask_for_one_item(
+		th3dn,
+		default= None,
+		prompt='If the field is left blank, then a new 3D view will be created\nselect a view from the list to use the section box in that',
+		title='Select One 3d View')
+
+	for v,n in zip (th3d,th3dn):
+		if value_n == n:
+			view3 = v
+
+if view3 == None:
+	doc_vtype = FilteredElementCollector(doc).OfClass(ViewFamilyType)
+	
+	nam = [vt.FamilyName for vt in doc_vtype]
+	
+	for n,vt in zip(nam,doc_vtype):
+		if n == "3D View":
+			vtid = vt.Id
+	
+	if doc.ActiveView.ViewType.ToString() != "ThreeD":
+		tv = Transaction(doc,"Create 3d View")
+		tv.Start()
+		
+		try:
+		
+			isoView = View3D.CreateIsometric(doc,vtid)
+		
+		except:
+			tv.RollBack()
 		else:
-			forms.alert("Select Element only from a 3D View", exitscript=True)
-
-	except:
-		t.RollBack()
+			tv.Commit()
 	else:
-		t.Commit()
+		isoView = doc.ActiveView
+else:
+	isoView = view3
+
+
+sel1 = uidoc.Selection
+ot = Selection.ObjectType.LinkedElement
+el_ref = sel1.PickObject(ot, "Pick a linked element.")
+linkInst = doc.GetElement(el_ref.ElementId)
+linkDoc = linkInst.GetLinkDocument()
+linkEl = linkDoc.GetElement(el_ref.LinkedElementId)
+
+bb = linkEl.get_BoundingBox(None)
+
+t = Transaction(doc,"Create Section Box")
+
+t.Start()
+try:
+	isoView.SetSectionBox(bb)
 except:
-	forms.alert("There aren't Revit Links Loaded", exitscript=True)
+	t.RollBack()
+else:
+	t.Commit()
+
+uidoc.ActiveView = isoView
