@@ -24,7 +24,6 @@ for min_v,max_v in zip(val_min,val_max):
 
 press = range(100,20100,100)
 
-from pyrevit import forms
 
 port = forms.ask_for_one_item(
     press,
