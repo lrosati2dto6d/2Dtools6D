@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Import View Templates.
+"""Import Selected View Templates from a Open Revit Project.
 
 NOTE: No schedule view template will be transferred. Same name view templates will be overriden and views will be updated.
 """
-__title__ = 'Import Selected\nViewTemplates'
+__title__ = 'Imp. View\nTemplates'
 __author__ = "Luca Rosati"
 
 # Import commom language runtime
@@ -39,7 +39,7 @@ def retrieveVT(docList, currentDoc):
 			viewsCollector = FilteredElementCollector(pro).WherePasses(viewsFilter)
 			for view in viewsCollector:
 				if view.IsTemplate == True:
-					storeDict[view.Name + " - " + pro.Title] = view
+					storeDict[view.Name + ' - ' + pro.Title] = view
 	elif currentDoc == True:
 		viewsCollector = FilteredElementCollector(docList).WherePasses(viewsFilter)
 		for view in viewsCollector:
@@ -49,14 +49,14 @@ def retrieveVT(docList, currentDoc):
 		viewsCollector = FilteredElementCollector(docList).WherePasses(viewsFilter)
 		for view in viewsCollector:
 			if view.IsTemplate == True:
-				storeDict[view.Name + " - " + docList.Title] = view
+				storeDict[view.Name+ ' - ' + pro.Title] = view
 	return storeDict
 
 # Retrieve all view templates from selected docs
 viewTemplates = retrieveVT(selProject, False)
 
 # Display select view templates form
-vTemplates = forms.SelectFromList.show(viewTemplates.keys(), "View Templates", 600, 300, multiselect=True)
+vTemplates = forms.SelectFromList.show(viewTemplates.keys(), "Select one or more Viewtemplates to transfer to the Current Project", 600, 300, multiselect=True)
 
 # Collect all View Templates in the current document
 docTemplates = retrieveVT(doc, True)
@@ -162,3 +162,15 @@ def printMessage(resultList, failedList, message, messageWarning):
 # Print message
 printMessage(viewsSuccess, viewsFail, "The following view's view template have been changed:",
 			"View templates failed to apply to views, make sure the proper view template type is named:")
+
+
+output.print_md('# Projects Used for Transfer:')
+for pro in selProject:
+	output.print_md('## - Project: {}'.format(pro.Title))
+
+output.print_md('-----------------------------')
+
+output.print_md('# ViewTemplates Transferred:')
+for vT in vTemplates:
+	for pro in selProject:
+		output.print_md('## - {0}'.format(vT.replace(" - " + pro.Title, "")))
