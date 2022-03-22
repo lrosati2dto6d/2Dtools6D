@@ -1,6 +1,6 @@
 """Center all Room Tags by Locations of the Rooms"""
 
-__title__= 'Center By\nRoom Tags'
+__title__= 'Center\nRoom Tags'
 __author__= 'Luca Rosati'
 
 from pyrevit import revit, DB
