@@ -32,7 +32,6 @@ names = []
 groups = []
 pgroup = []
 ptype = []
-units = []
 isvis = []
 elements = []
 guids = []
@@ -46,7 +45,6 @@ while iterator.MoveNext():
 	names.append(iterator.Key.Name)
 	pgroup.append(iterator.Key.ParameterGroup)
 	ptype.append(iterator.Key.ParameterType)
-	units.append(iterator.Key.UnitType)
 	isvis.append(iterator.Key.Visible)
 	elem = doc.GetElement(iterator.Key.Id)
 	elements.append(elem)
@@ -77,7 +75,7 @@ output = script.get_output()
 
 output.print_md(	'# **FILE NAME: {}**\n\tNumber of Parameters = {}'.format(doc.Title,len(names)))
 
-for n,pn,ii,gr,ty,un,gu,vr,iv,cat in zip(numbers,names,isinst,pgroup,ptype,units,guids,groups,isvis,categories):
+for n,pn,ii,gr,ty,gu,vr,iv,cat in zip(numbers,names,isinst,pgroup,ptype,guids,groups,isvis,categories):
 	output.print_md(	'## **[{}] PARAMETER NAME: {}**'.format(n,pn))
-	print('\tIS INSTANCE: {}\n\tGROUP: {}\n\tTYPE: {}\n\tUNITS: {}\n\tGUID CODE: {}\n\tVARY BY MODEL GROUP: {}\n\tIS VISIBLE: {}\n\tAPPLIED TO: {}\n'.format(ii,gr,ty,un,gu,vr,iv,[x for x in cat]))
+	print('\tIS INSTANCE: {}\n\tGROUP: {}\n\tTYPE: {}\n\tGUID CODE: {}\n\tVARY BY MODEL GROUP: {}\n\tIS VISIBLE: {}\n\tAPPLIED TO: {}\n'.format(ii,gr,ty,gu,vr,iv,[x for x in cat]))
 

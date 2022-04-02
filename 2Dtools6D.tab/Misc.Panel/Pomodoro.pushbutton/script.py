@@ -30,8 +30,6 @@ valueuniquitem = forms.ask_for_one_item(
     prompt='Select Pomodoro Time',
     title='POMODORO TECHNIQUE')
 
-
-
 output = script.get_output()
 
 if valueuniquitem == '5 Minutes':
