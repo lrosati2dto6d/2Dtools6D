@@ -42,7 +42,10 @@ uidoc = __revit__.ActiveUIDocument
 
 views = FilteredElementCollector(doc).OfClass(ViewFamilyType).WhereElementIsElementType().ToElements()
 
-units = doc.GetUnits().GetFormatOptions(UnitType.UT_Length).DisplayUnits
+try:
+	units = doc.GetUnits().GetFormatOptions(UnitType.UT_Length).DisplayUnits
+except:
+	units = doc.GetUnits().GetFormatOptions(SpecTypeId.Length).GetUnitTypeId()
 
 numbers = range(100,2100,100)
 
@@ -52,12 +55,21 @@ value_n = forms.ask_for_one_item(
     prompt='OFFSET LENGTH (mm)',
     title='Create Section View')
 
-if units == DisplayUnitType.DUT_MILLIMETERS:
-	xs = ConvUnitsFMM(value_n)
-elif units == DisplayUnitType.DUT_METERS:
-	xs = ConvUnitsFM(value_n/1000.0)
-else:
-	forms.alert('Set Project Units to Millimeters or Meters ', exitscript=True)
+try:
+	if units == DisplayUnitType.DUT_MILLIMETERS:
+		xs = ConvUnitsFMM(value_n)
+	elif units == DisplayUnitType.DUT_METERS:
+		xs = ConvUnitsFM(value_n/1000.0)
+	else:
+		forms.alert('Set Project Units to Millimeters or Meters ', exitscript=True)
+
+except:
+	if units == UnitTypeId.Millimeters:
+		xs = ConvUnitsFMM(value_n)
+	elif units == UnitTypeId.Meters:
+		xs = ConvUnitsFM(value_n/1000.0)
+	else:
+		forms.alert('Set Project Units to Millimeters or Meters ', exitscript=True)
 
 v_names=[]
 sect_views = []
