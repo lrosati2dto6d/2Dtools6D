@@ -77,7 +77,26 @@ def filcategories(document,Category): #Filtra tutti gli elementi in base a una l
 
 outputelem = filcategories(doc,category)
 
+def filcategoriestype(document,Category): #Filtra tutti gli elementi in base a una lista di categorie
+	if isinstance(Category, list):
+		categoriesCollectortype = []
+		for nId in categoriesId:
+			categoriesCollectortype.append(FilteredElementCollector(document).OfCategoryId(nId).WhereElementIsElementType().ToElements())
+		return categoriesCollectortype
+
+outputelemtype = filcategoriestype(doc,category)
+
+
+
+
 parametermark=[]
+parametertypemark = []
+
+
+for r in outputelemtype:
+	for u in r:
+		parametertypemark.append(u.get_Parameter(BuiltInParameter.WINDOW_TYPE_ID))
+
 
 for o in outputelem:
 	for x in o:
@@ -88,13 +107,14 @@ if not forms.alert('This operation involves changes to the parameters. Click "OK
                    'Hit OK to continue...', cancel=True):
     script.exit()
 
-
 t = Transaction(doc,"Set Parameters")
 
 t.Start()
 try:
 	for p in parametermark:
 		p.Set('')
+	for pt in parametertypemark:
+		pt.Set('')
 except:
 	t.RollBack()
 else:
