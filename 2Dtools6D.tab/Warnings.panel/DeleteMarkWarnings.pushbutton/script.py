@@ -44,7 +44,7 @@ sortlist = sorted(model_cat)
 
 
 res = forms.SelectFromList.show(
-        {'Mark Automatic Increment Categories': ['Doors','Mechanical Equipment','Plumbing Fixtures','Sprinklers','Windows','Electrical Equipment', 'Electrical Fixtures','Lighting Fixtures'],
+        {'Mark Automatic Increment Categories': ['Doors','Curtain Panels','Mechanical Equipment','Plumbing Fixtures','Sprinklers','Windows','Electrical Equipment', 'Electrical Fixtures','Lighting Fixtures'],
 		},
         title='Categories Selector',
         multiselect=True
