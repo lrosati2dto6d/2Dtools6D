@@ -248,23 +248,28 @@ else:
 
 if len(elem) != 0:
 	for e in elem:
-		try:
-			locations.append(e.Location)
-			refs.append(Reference(e))
-		except:
-			locations.append("No Location Found")
-			refs.append("No Reference")
+		if 'Open' not in e.Name:
+			try:
+				locations.append(e.Location)
+				refs.append(Reference(e))
+			except:
+				locations.append("No Location Found")
+				refs.append("No Reference")
 else:
 	forms.alert('No {} element is loaded in {}. Please load at least one and Run again the tool'.format(category.Name,str_linkname), exitscript=True)
 
 location_geo = []
 
-for l in locations:
-	if l.GetType()== LocationCurve:
-		curv = l.Curve
-		location_geo.append(curv.Evaluate(0.5,True))
-	elif l.GetType()== LocationPoint:
-		location_geo.append(l.Point)
+if len(locations) != 0:
+	try:
+		for l in locations:
+			if l.GetType()== LocationCurve:
+				curv = l.Curve
+				location_geo.append(curv.Evaluate(0.5,True))
+			elif l.GetType()== LocationPoint:
+				location_geo.append(l.Point)
+	except:
+		pass
 
 reflink = []
 
