@@ -248,10 +248,18 @@ else:
 
 if len(elem) != 0:
 	for e in elem:
-		if 'Open' not in e.Name:
+		try:
+			if 'Open' not in e.Name:
+				try:
+					locations.append(e.Location)
+					refs.append(Reference(e))
+				except:
+					locations.append("No Location Found")
+					refs.append("No Reference")
+		except:
 			try:
-				locations.append(e.Location)
-				refs.append(Reference(e))
+					locations.append(e.Location)
+					refs.append(Reference(e))
 			except:
 				locations.append("No Location Found")
 				refs.append("No Reference")
