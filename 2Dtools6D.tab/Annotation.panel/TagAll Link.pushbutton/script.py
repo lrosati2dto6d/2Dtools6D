@@ -246,6 +246,7 @@ else:
 				if e.LookupParameter('Level').AsElementId() == leid:
 					elem.append(e)
 
+"""
 if len(elem) != 0:
 	for e in elem:
 		try:
@@ -265,19 +266,36 @@ if len(elem) != 0:
 				refs.append("No Reference")
 else:
 	forms.alert('No {} element is loaded in {}. Please load at least one and Run again the tool'.format(category.Name,str_linkname), exitscript=True)
+"""
 
-location_geo = []
 
-if len(locations) != 0:
-	try:
-		for l in locations:
-			if l.GetType()== LocationCurve:
-				curv = l.Curve
-				location_geo.append(curv.Evaluate(0.5,True))
-			elif l.GetType()== LocationPoint:
-				location_geo.append(l.Point)
-	except:
-		pass
+if len(elem) != 0:
+	for e in elem:
+		if e.Category.Name == 'Rooms':
+			bb = e.get_BoundingBox(None)
+			bbmax = bb.Max
+			bbmin = bb.Min
+			bb_center = (bbmax + bbmin)/2
+			locations.append(bb_center)
+			refs.append(Reference(e))
+		elif e.Category.Name == 'Doors':
+			if 'Open' not in e.Name:
+				bb = e.get_BoundingBox(None)
+				bbmax = bb.Max
+				bbmin = bb.Min
+				bb_center = (bbmax + bbmin)/2
+				locations.append(bb_center)
+				refs.append(Reference(e))
+		else:
+			bb = e.get_BoundingBox(None)
+			bbmax = bb.Max
+			bbmin = bb.Min
+			bb_center = (bbmax + bbmin)/2
+			locations.append(bb_center)
+			refs.append(Reference(e))
+else:
+	forms.alert('No {} element is loaded in {}. Please load at least one and Run again the tool'.format(category.Name,str_linkname), exitscript=True)
+
 
 reflink = []
 
@@ -294,7 +312,7 @@ t = Transaction(doc,"Create Tags")
 t.Start()
 
 try:
-	for e,reference,location in zip(elem,reflink,location_geo):
+	for e,reference,location in zip(elem,reflink,locations):
 		tag.append(IndependentTag.Create(doc,symb_selec.Id,floorplan.Id,reference,False,0,location))
 except:
 	t.RollBack()
