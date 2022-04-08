@@ -280,12 +280,15 @@ if len(elem) != 0:
 			refs.append(Reference(e))
 		elif e.Category.Name == 'Doors':
 			if 'Open' not in e.Name:
-				bb = e.get_BoundingBox(None)
-				bbmax = bb.Max
-				bbmin = bb.Min
-				bb_center = (bbmax + bbmin)/2
-				locations.append(bb_center)
-				refs.append(Reference(e))
+				try:
+					bb = e.get_BoundingBox(None)
+					bbmax = bb.Max
+					bbmin = bb.Min
+					bb_center = (bbmax + bbmin)/2
+					locations.append(bb_center)
+					refs.append(Reference(e))
+				except:
+					pass
 		else:
 			bb = e.get_BoundingBox(None)
 			bbmax = bb.Max
