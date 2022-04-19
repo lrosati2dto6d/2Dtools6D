@@ -98,8 +98,10 @@ with forms.WarningBar(title='Pick source object:'):
 
 unwr = doc.GetElement(selected)
 
+"""
 if unwr.Location.GetType()!= LocationCurve and unwr.Location.GetType()!= LocationPoint and unwr.Category.Name != "Railings":
 	forms.alert('The selected object must necessarily be Line or Point Based', exitscript=True)
+"""
 
 bb = unwr.get_BoundingBox(None)
 
@@ -110,7 +112,16 @@ elif unwr.Category.Name == "Railings":
 	h = t.LookupParameter("Railing Height").AsDouble()
 
 try:
-	if unwr.Category.Name == "Railings":
+	if unwr.Location == None:
+		point_l = unwr.GetTransform().Origin
+		dirh_el = unwr.HandOrientation
+		ndirh_el = dirh_el.Negate()
+		ro = point_l.Add(dirh_el)
+		so = point_l.Add(ndirh_el)
+		
+		line = Line.CreateBound(ro, so)
+		
+	elif unwr.Category.Name == "Railings":
 		path = unwr.GetPath()
 		if len(path)== 1:
 			line = path[0]
@@ -144,7 +155,7 @@ try:
 
 	w = v.GetLength()
 
-	if unwr.Location.GetType()== LocationPoint:
+	if unwr.Location == None or unwr.Location.GetType()== LocationPoint:
 		minX = bb.Min.X
 		maxX = bb.Max.X
 
@@ -164,10 +175,10 @@ try:
 	else:
 		min = XYZ( -w/2-xs, -xs, -xs )
 
-	if unwr.Category.Name in ["Walls","Railings"]:
-		max = XYZ( w/2+xs, h+xs, +xs )
-	elif unwr.Location.GetType()== LocationPoint:
+	if unwr.Location == None or unwr.Location.GetType()== LocationPoint:
 		max = XYZ( w/2+xs/2, he+xs/4, +xs/2 )
+	elif unwr.Category.Name in ["Walls","Railings"]:
+		max = XYZ( w/2+xs, h+xs, +xs )
 
 	else:
 		max = XYZ( w/2+xs, +xs, +xs )
