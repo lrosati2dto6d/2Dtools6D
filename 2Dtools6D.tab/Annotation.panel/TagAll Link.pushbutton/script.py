@@ -203,6 +203,32 @@ refs = []
 
 elem=[]
 
+leader_option = forms.CommandSwitchWindow.show(
+    ['Yes', 'No'],
+     message='Do you want Add a Leader?',
+)
+
+orientation_option = forms.CommandSwitchWindow.show(
+    ['Horizontal', 'Vertical'],
+     message='Select an Orientation',
+)
+
+leader_bool = None
+
+if leader_option == 'Yes':
+	leader_bool = True
+else:
+	leader_bool = False
+
+
+orient_bool = None
+
+if orientation_option == 'Horizontal':
+	orient_bool = Autodesk.Revit.DB.TagOrientation.Horizontal
+else:
+	orient_bool = Autodesk.Revit.DB.TagOrientation.Vertical
+
+
 if bic == BuiltInCategory.OST_DuctCurves:
 	elemcoll = FilteredElementCollector(ldoc).OfCategory(bic).WhereElementIsNotElementType().ToElements()
 	if len(elemcoll) != 0:
@@ -316,7 +342,7 @@ t.Start()
 
 try:
 	for e,reference,location in zip(elem,reflink,locations):
-		tag.append(IndependentTag.Create(doc,symb_selec.Id,floorplan.Id,reference,False,0,location))
+		tag.append(IndependentTag.Create(doc,symb_selec.Id,floorplan.Id,reference,leader_bool,orient_bool,location))
 except:
 	t.RollBack()
 else:
