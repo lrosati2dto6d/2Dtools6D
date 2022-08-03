@@ -182,7 +182,7 @@ if len(symb) == 0:
 	forms.alert('No {} family is loaded in the project. Please load at least one and Run again the tool'.format(categoryann.Name), exitscript=True)
 else:
 	for s in symb:
-		symbname.append(s.FamilyName)
+		symbname.append(s.Name)
 
 tags_n = forms.ask_for_one_item(
     symbname,
@@ -271,28 +271,6 @@ else:
 			for e in elemcoll:
 				if e.LookupParameter('Level').AsElementId() == leid:
 					elem.append(e)
-
-"""
-if len(elem) != 0:
-	for e in elem:
-		try:
-			if 'Open' not in e.Name:
-				try:
-					locations.append(e.Location)
-					refs.append(Reference(e))
-				except:
-					locations.append("No Location Found")
-					refs.append("No Reference")
-		except:
-			try:
-					locations.append(e.Location)
-					refs.append(Reference(e))
-			except:
-				locations.append("No Location Found")
-				refs.append("No Reference")
-else:
-	forms.alert('No {} element is loaded in {}. Please load at least one and Run again the tool'.format(category.Name,str_linkname), exitscript=True)
-"""
 
 
 if len(elem) != 0:
