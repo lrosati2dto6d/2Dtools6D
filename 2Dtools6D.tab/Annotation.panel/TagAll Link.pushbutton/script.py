@@ -182,7 +182,7 @@ if len(symb) == 0:
 	forms.alert('No {} family is loaded in the project. Please load at least one and Run again the tool'.format(categoryann.Name), exitscript=True)
 else:
 	for s in symb:
-		symbname.append(s.Name)
+		symbname.append(s.LookupParameter("Type Name").AsString())
 
 tags_n = forms.ask_for_one_item(
     symbname,
