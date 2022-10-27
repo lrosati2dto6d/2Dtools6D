@@ -182,7 +182,6 @@ if len(strframing) != 0:
 		for st in strframing:
 			outputID.append(st.Id)
 
-
 collection = List[ElementId](outputID)
 
 select = uidoc.Selection.SetElementIds(collection)
