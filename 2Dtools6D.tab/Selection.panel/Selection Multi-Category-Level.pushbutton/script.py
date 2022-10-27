@@ -39,6 +39,7 @@ uidoc =__revit__.ActiveUIDocument
 
 levels = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Levels).WhereElementIsNotElementType().ToElements()
 
+
 level_ns =[]
 for l in levels:
 	level_ns.append(l.Name)
