@@ -121,3 +121,10 @@ for c in collection:
 
 
 revit.get_selection().set_to(selectedID)
+
+outputr = script.get_output()
+
+outputr.print_md(	'# Types Selected:'.format(value_ty))
+
+for n in (value_ty):
+	outputr.print_md(	'## **{}**'.format(n))

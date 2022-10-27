@@ -1,5 +1,8 @@
 title:
-  en_us: Smart Filter
+  en_us: >-
+    Smart Selection
+    
+    Filter
 tooltip:
-  en_us: Filter selected elements with categories and types
+  en_us: Filter selected elements with Categories and Types
 context: selection

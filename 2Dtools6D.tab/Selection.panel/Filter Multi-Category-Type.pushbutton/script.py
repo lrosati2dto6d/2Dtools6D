@@ -93,7 +93,7 @@ for o in output:
 
 
 value_ty = forms.SelectFromList.show(
-        {'All': set(fam_typ)},
+        {'All': sorted(set(fam_typ))},
         title='Select Type of Selected Elements and Categories',
         multiselect=True
     )
@@ -119,3 +119,12 @@ for c in select_elements:
 		selectedID.append(c.Id)
 
 revit.get_selection().set_to(selectedID)
+
+from pyrevit import script
+
+outputr = script.get_output()
+
+outputr.print_md(	'# Types Selected:'.format(value_ty))
+
+for n in (value_ty):
+	outputr.print_md(	'## **{}**'.format(n))
