@@ -3,5 +3,5 @@ layout:
   - ImportSelectedViewsTemplates
   - ImportSelectedMaterials
   - -----
-  - LinkSectionBox
+  - SectionBox
   - Section
