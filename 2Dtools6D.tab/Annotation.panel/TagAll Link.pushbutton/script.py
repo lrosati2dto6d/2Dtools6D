@@ -87,6 +87,7 @@ else:
 levels = FilteredElementCollector(ldoc).OfCategory(BuiltInCategory.OST_Levels).WhereElementIsNotElementType().ToElements()
 
 level_ns =[]
+
 for l in levels:
 	level_ns.append(l.Name)
 
@@ -161,7 +162,7 @@ for c in categories:
 		
 sortlistann = sorted(model_cat_ann)
 
-categoryann = []
+categoryann = None
 namerann = []
 
 for cin in mod_c_ann:
@@ -182,7 +183,7 @@ if len(symb) == 0:
 	forms.alert('No {} family is loaded in the project. Please load at least one and Run again the tool'.format(categoryann.Name), exitscript=True)
 else:
 	for s in symb:
-		symbname.append(s.FamilyName + " - " + s.Parameter(1002001).AsString())
+		symbname.append(s.FamilyName + " - " + s.LookupParameter('Type Name').AsString())
 
 tags_n = forms.ask_for_one_item(
     symbname,
