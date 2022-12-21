@@ -32,6 +32,13 @@ from pyrevit import revit, DB
 from pyrevit import forms
 from pyrevit import script
 
+from collections import defaultdict
+from pyrevit import HOST_APP
+from pyrevit.framework import List
+from pyrevit import coreutils
+from pyrevit import forms
+from pyrevit import script
+
 doc =__revit__.ActiveUIDocument.Document
 uidoc =__revit__.ActiveUIDocument
 
@@ -46,6 +53,7 @@ view_vie = []
 doc_view = FilteredElementCollector(doc).OfClass(View).ToElements()
 
 doc_fil = FilteredElementCollector(doc).OfClass(ParameterFilterElement).ToElements()
+
 
 for f in doc_fil:
 	fil_doc.add(f.Id)
@@ -97,7 +105,10 @@ hashset = []
 for fhs in fil_rules:
 	y = []
 	for h in fhs:
-		y.append(LabelUtils.GetLabelFor(System.Enum.ToObject(BuiltInParameter, h.IntegerValue)))
+		if h.IntegerValue < 0:
+			y.append(LabelUtils.GetLabelFor(System.Enum.ToObject(BuiltInParameter, h.IntegerValue)))
+		else:
+			y.append(doc.GetElement(h).Name)
 	hashset.append(y)
 
 
