@@ -1,4 +1,5 @@
 layout:
+  - FiltersOverrideTransfer
   - ImportSelectedFilters
   - ImportSelectedViewsTemplates
   - ImportSelectedMaterials
