@@ -31,6 +31,7 @@ selProject = forms.select_open_docs(title="Select project/s to transfer View Tem
 # Filter Views
 viewsFilter = ElementCategoryFilter(BuiltInCategory.OST_Views)
 
+
 # Function to retrieve View Templates
 def retrieveVT(docList, currentDoc):
 	storeDict = {}
