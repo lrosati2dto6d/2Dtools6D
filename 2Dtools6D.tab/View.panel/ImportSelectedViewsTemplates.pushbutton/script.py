@@ -102,8 +102,6 @@ transIdent = Transform.Identity
 copyPasteOpt = CopyPasteOptions()
 
 # Create single transaction and start it
-t = Transaction(doc, "Copy View Templates")
-t.Start()
 
 # Check for all views that has a view template
 vTIds = []
@@ -118,7 +116,14 @@ for vT in vTemplates:
 			# Check if view template is used in current doc
 			if vT.replace(" - " + pro.Title, "") not in docTemplates.keys():
 				# If not, copy the selected View Template to current project
-				ElementTransformUtils.CopyElements(pro, vTId, doc, transIdent, copyPasteOpt)
+				t2 = Transaction(doc,"Create Section perpendicular")
+				t2.Start()
+				try:
+					ElementTransformUtils.CopyElements(pro, vTId, doc, transIdent, copyPasteOpt)
+				except:
+					t2.RollBack()
+				else:
+					t2.Commit()
 			# View templates are already in use in the current project
 			else:
 				vToApplyVT = []
@@ -133,8 +138,11 @@ for vT in vTemplates:
 						if flag:
 							elName = doc.GetElement(v.ViewTemplateId).Name
 							if elName in vT:
+								t = Transaction(doc, "Copy View Templates")
+								t.Start()
 								doc.Delete(v.ViewTemplateId)
 								et = ElementTransformUtils.CopyElements(pro, vTId, doc, transIdent, copyPasteOpt)
+								t.Commit()
 							else:
 								break
 						# Assign view template
@@ -147,7 +155,6 @@ for vT in vTemplates:
 							flag = False
 
 # Commit transaction
-t.Commit()
 
 output = script.get_output()
 
