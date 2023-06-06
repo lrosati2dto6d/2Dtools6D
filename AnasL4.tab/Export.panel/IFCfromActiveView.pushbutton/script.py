@@ -1,6 +1,6 @@
 """Select The property set mapping file and the destination folder of the IFC File. The script will export a 2x3 IFC format file with the mapping selected in the destination folder"""
 
-__title__= 'Export IFC\n ActiveView'
+__title__= 'Export IFC\n Exported Views'
 __author__= 'Luca Rosati'
 
 import clr
