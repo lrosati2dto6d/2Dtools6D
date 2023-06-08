@@ -33,8 +33,17 @@ from pyrevit import script
 doc =__revit__.ActiveUIDocument.Document
 uidoc =__revit__.ActiveUIDocument
 
-filepathPset = forms.pick_file(file_ext='txt')
-folder=forms.pick_folder(title='Select Destination Folder', owner=None)
+def ExitScript(check):
+	if not check:
+		script.exit()
+
+with forms.WarningBar(title='Select PropertySet txt File'):
+	filepathPset = forms.pick_file(file_ext='txt',init_dir='C:\Users\2Dto6D\ACCDocs\2D to 6D di Neri Lorenzetto Bologna\Anas Lotto 4\00. 2Dto6D\00_Coordinamento BIM\02_IFC Documents')
+	ExitScript(filepathPset)
+
+with forms.WarningBar(title='Select Destination Folder'):
+	folder=forms.pick_folder(title='Select Shered Folder in BIM360', owner=None)
+	ExitScript(folder)
 
 '''
 fileversion = forms.ask_for_one_item(
@@ -47,13 +56,48 @@ fileversion = forms.ask_for_one_item(
 
 fileversion = 'IFC2x3'
 
-views_exp = forms.select_views()
+pvp = ParameterValueProvider(ElementId(634609))
+fng = FilterStringEquals()
+ruleValue = 'D_ESPORTAZIONI_IFC'
+fRule = FilterStringRule(pvp,fng,ruleValue,True)
+
+filter = ElementParameterFilter(fRule)
+
+
+exp_views_coll = FilteredElementCollector(doc).OfClass(View3D).WherePasses(filter).WhereElementIsNotElementType().ToElements()
+
+exp_views_ele = []
+
+for ev in exp_views_coll:
+	if ev.IsTemplate == False:
+		exp_views_ele.append(ev)
+
+exp_views = []
+
+for v in exp_views_ele:
+	exp_views.append(v.Name)
+
+views_exp = forms.SelectFromList.show(
+        {'Export Views': exp_views},
+        title='2Dto6D_Anas L-4 IFC Exporter',
+        button_name='Select Views',
+        multiselect=True
+    )
+ExitScript(views_exp)
+
+result_views = []
+
+for n,c in zip(exp_views,exp_views_ele):
+	for r in views_exp:
+		if n == r:
+			result_views.append(c)
+
 names=[]
 
-for v in views_exp:
+for v in result_views:
 	names.append(v.Name)
 
-for n,v in zip(names,views_exp):
+for n,v in zip(names,result_views):
 
 	t = Transaction(doc,'export'+n)
 	t.Start()
@@ -103,4 +147,6 @@ from pyrevit import script
 output = script.get_output()
 
 for n in names:
-	output.print_md(	'# **IFC NAME: {} Success'.format(n))
+	output.print_md(	'# IFC NAME: {} Success'.format(n))
+
+output.print_md(	'##IFC Destination Folder:--> {}'.format(folder))
