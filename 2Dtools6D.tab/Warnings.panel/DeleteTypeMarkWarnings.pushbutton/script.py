@@ -1,6 +1,6 @@
-"""Delete Mark Parameter Value to avoid Warnings of Duplicate Values"""
+"""Delete TypeMark Parameter Value to avoid Warnings of Duplicate Values"""
 
-__title__= 'Fix All\nMark Warnings'
+__title__= 'Fix All\nTypeMark Warnings'
 __author__= 'Luca Rosati'
 
 import clr
@@ -67,20 +67,21 @@ for c in category:
 	categoriesId.append(c.Id)
 	bic.append(System.Enum.ToObject(BuiltInCategory, c.Id.IntegerValue))
 
-def filcategories(document,Category): #Filtra tutti gli elementi in base a una lista di categorie
+
+def filcategoriestype(document,Category): #Filtra tutti gli elementi in base a una lista di categorie
 	if isinstance(Category, list):
-		categoriesCollector = []
+		categoriesCollectortype = []
 		for nId in categoriesId:
-			categoriesCollector.append(FilteredElementCollector(document).OfCategoryId(nId).WhereElementIsNotElementType().ToElements())
-		return categoriesCollector
+			categoriesCollectortype.append(FilteredElementCollector(document).OfCategoryId(nId).WhereElementIsElementType().ToElements())
+		return categoriesCollectortype
 
-outputelem = filcategories(doc,category)
+outputelemtype = filcategoriestype(doc,category)
 
-parametermark=[]
+parametertypemark = []
 
-for o in outputelem:
-	for x in o:
-		parametermark.append(x.get_Parameter(BuiltInParameter.DOOR_NUMBER))
+for r in outputelemtype:
+	for u in r:
+		parametertypemark.append(u.get_Parameter(BuiltInParameter.WINDOW_TYPE_ID))
 
 
 if not forms.alert('This operation involves changes to the parameters. Click "OK" Only if you are sure it is the right thing. In anycase, Make sure your models are saved and synced. '
@@ -90,10 +91,10 @@ if not forms.alert('This operation involves changes to the parameters. Click "OK
 t = Transaction(doc,"Set Parameters")
 
 t.Start()
-try:
-	for p in parametermark:
-		p.Set('')
 
+try:
+	for pt in parametertypemark:
+		pt.Set('')
 except:
 	t.RollBack()
 else:
