@@ -632,6 +632,8 @@ list_clusterANA = [progettista_errato]
 
 list_clusterTEC = [tposizione_errato]
 
+listone = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,id_elemento_errato,lor_errato,codiceassieme_errato,campatadiappartenenza_errato,impalcatodiappartenenza_errato,numstrutturacampata_errato,codicebms_errato,area_errato,volume_errato,qsensore_errato,progettista_errato,tposizione_errato]
+
 for el in clean_el:
 	type_el = doc.GetElement(el.GetTypeId())
 	category_el = el.Category.Name
@@ -787,6 +789,11 @@ for l in list_clusterTEC:
 	if len(l) != 0:
 		for i in l:
 			output.print_md(	'###{}'.format(i))
+
+
+for lista in listone:
+	if len(lista) != 0:
+		script.exit()
 
 
 #print(file_info,proj_info,site_info,codint_result,result_ph,result_ws,exp_view_check,exp_view_result,exp_viewed_result,n_el,cat_result,result_afase,result_class,result_nomen)
