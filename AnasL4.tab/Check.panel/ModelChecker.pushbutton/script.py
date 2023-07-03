@@ -1,6 +1,6 @@
 """Model Check Modelli ANAS L-4"""
 
-__title__= 'Model Checker\nANAS L-4'
+__title__= 'Model Checker\nAnas L-4'
 __author__= 'Luca Rosati'
 
 import clr
