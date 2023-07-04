@@ -419,7 +419,7 @@ level_ns =[]
 for l in levels:
 	level_ns.append(l.Name)
 
-level_true = ["LIV_RIL","LIV_TRA","LIV_STR"]
+level_true = ["LIV_RIL","LIV_TRA","LIV_STR","LIV_SLM"]
 
 level_check = []
 level_check_false = []
