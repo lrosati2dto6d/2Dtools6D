@@ -46,6 +46,10 @@ def ConvUnitsFM(number): #Feet to m
 	output = number/0.3048
 	return output
 
+def ParaBuilt (element,builtinparameter):
+	parameter = element.get_Parameter(BuiltInParameter.builtinparameter)
+	return parameter
+
 def Para(element,paraname):
 	parameter = element.LookupParameter(paraname)
 	return parameter
@@ -438,7 +442,7 @@ for l in level_ns:
 #VERIFICA_00-----------------NOME LIVELLI
 
 if len(level_check_false) == 0:
-	level_result = "VERIFICA 00_NOME LIVELLI --> :white_heavy_check_mark:"
+	result_level = "VERIFICA 00_NOME LIVELLI --> :white_heavy_check_mark:"
 else:
 	forms.alert('VERIFICA 00_NOME LIVELLI\n\nI seguenti livelli risultano non correttamente rinominati\n\n {}'.format(level_check_false), exitscript=True)
 
@@ -600,7 +604,9 @@ if len(class_errata) != 0:
 #-------------------------------------NOMENCLATURA
 
 num_n = 0
+num_h = 0
 nomen_errata = []
+host_errato = []
 
 for el in clean_el:
 	type_el = doc.GetElement(el.GetTypeId())
@@ -621,6 +627,16 @@ for el in clean_el:
 		num_n += 1
 		nomen_errata.append("{} - {} - {} - {} - {} - {} - {}".format(num_n,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
+#-------------------------------------HOST
+
+	try:
+		if el.get_Parameter(BuiltInParameter.INSTANCE_FREE_HOST_PARAM).AsValueString() != "<non associato>":
+			host_check = True
+		else:
+			num_h += 1
+			host_errato.append("{} - {} - {} - {} - {} - {} - {}".format(num_h,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
+	except:
+		pass
 
 #VERIFICA_04-----------------NOMENCLATURA
 
@@ -636,6 +652,19 @@ else:
 if len(nomen_errata) != 0:
 	script.exit()
 
+#VERIFICA_05-----------------ASSOCIAZIONE HOST
+
+if len(host_errato) != 0:
+	output.print_md(	'# :red_circle: VERIFICA 05_ASSOCIAZIONE HOST')
+	output.print_md(	'## I seguenti Elementi hanno il parametro Host non associato')
+	for h in host_errato:
+		output.print_md(	'###{}'.format(h))
+
+else:
+	result_host = "VERIFICA 05_ASSOCIAZIONE HOST --> :white_heavy_check_mark:"
+
+if len(host_errato) != 0:
+	script.exit()
 
 #-------------------------------------CLUSTER INFORMATIVI
 
@@ -835,7 +864,7 @@ output.resize(1200,1200)
 
 warn_result = [proj_info_result,codint_result,sitename_result,result_ph,result_ws,exp_view_result,exp_viewed_result,cat_result]
 
-veri_result = [level_result,result_afase,result_workset,result_class,result_nomen]
+veri_result = [result_level,result_afase,result_workset,result_class,result_nomen,result_host]
 
 check_result = ["CHECK 01_CLUSTER IDENTIFICATIVO OGGETTO --> :white_heavy_check_mark:","CHECK 02_CLUSTER INFORMAZIONI 6D --> :white_heavy_check_mark:","CHECK 03_CLUSTER ANAGRAFICA DI BASE --> :white_heavy_check_mark:","CHECK 04_CLUSTER GEOMETRICO --> :white_heavy_check_mark:","CHECK 05_CLUSTER TECNICO --> :white_heavy_check_mark:"]
 
