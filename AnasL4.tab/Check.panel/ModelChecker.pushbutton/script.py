@@ -409,6 +409,39 @@ chart.randomize_colors()
 chart.draw()
 """
 
+#-------------------------------------LIVELLI
+
+
+levels = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Levels).WhereElementIsNotElementType().ToElements()
+
+level_ns =[]
+
+for l in levels:
+	level_ns.append(l.Name)
+
+level_true = ["LIV_RIL","LIV_TRA","LIV_STR"]
+
+level_check = []
+level_check_false = []
+
+for l in level_ns:
+    presente = False
+    for i in level_true:
+        if i in l:
+            presente = True
+            break
+    if presente:
+        level_check.append("{} --> V".format(l))
+    else:
+        level_check_false.append(l)
+
+#VERIFICA_00-----------------NOME LIVELLI
+
+if len(level_check_false) == 0:
+	level_result = "VERIFICA 00_NOME LIVELLI --> :white_heavy_check_mark:"
+else:
+	forms.alert('VERIFICA 00_NOME LIVELLI\n\nI seguenti livelli risultano non correttamente rinominati\n\n {}'.format(level_check_false), exitscript=True)
+
 
 
 #-------------------------------------ASSOCIAZIONE FASE
@@ -802,7 +835,7 @@ output.resize(1200,1200)
 
 warn_result = [proj_info_result,codint_result,sitename_result,result_ph,result_ws,exp_view_result,exp_viewed_result,cat_result]
 
-veri_result = [result_afase,result_workset,result_class,result_nomen]
+veri_result = [level_result,result_afase,result_workset,result_class,result_nomen]
 
 check_result = ["CHECK 01_CLUSTER IDENTIFICATIVO OGGETTO --> :white_heavy_check_mark:","CHECK 02_CLUSTER INFORMAZIONI 6D --> :white_heavy_check_mark:","CHECK 03_CLUSTER ANAGRAFICA DI BASE --> :white_heavy_check_mark:","CHECK 04_CLUSTER GEOMETRICO --> :white_heavy_check_mark:","CHECK 05_CLUSTER TECNICO --> :white_heavy_check_mark:"]
 
