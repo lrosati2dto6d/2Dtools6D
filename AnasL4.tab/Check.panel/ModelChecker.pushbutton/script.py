@@ -507,23 +507,23 @@ for el in clean_el:
 
 	if opera_el in ['IM','MO'] and el.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() != "08_IMP":
 		numfe += 1
-		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(num,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
+		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
 	elif elemento_el in ['BAN','PAN'] and el.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() != "07_AMB":
 		numfe += 1
-		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(num,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
+		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
 	elif elemento_el in ['CEN','MON','MPL','PAL','PLI','POZ','PZF','RAN'] and el.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() != "06_GET":
 		numfe += 1
-		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(num,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
+		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
 	elif elemento_el in ['BIN','LMC','MUS','NJE','PPZ','TTA','UNI'] and el.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() != "05_TRA":
 		numfe += 1
-		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(num,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
+		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
 	elif elemento_el in ['AAP','AMS','BAG','BPT','CAP','CAS','CNT','COR','CUN','DIA','GIU','ISA','LOR','MAN','MDA','MFR','OPO','PAR','PEN','PUL','PUN','RIS','SAR','SBL','SEL','SGE','SOL','SSB','STL','TAN','TIM','TRA','TRV','VEL'] and el.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() != "04_STR":
 		numfe += 1
-		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(num,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
+		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
 
 
