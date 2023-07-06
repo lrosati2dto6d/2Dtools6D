@@ -239,7 +239,7 @@ def ParaType(element,paraname,document):
 
 output = script.get_output()
 
-output.resize(1200,600)
+output.resize(1200,800)
 
 #-------------------------------------EXP.VIEWS
 
@@ -358,6 +358,7 @@ for o,oc in zip(operas,opera_counts):
 	labels_opera.append('{} : {}'.format(o,percentage))
 
 
+
 # Crea una chart di tipo donut
 chart_opera = output.make_bar_chart()
 
@@ -375,7 +376,7 @@ conteggi_opera.backgroundColor = COLORSOPERA
 
 chart_opera.draw()
 
-
+output.print_md(	'-----------------------')
 
 #-------------------------------------ELEMENTI PER PARTE D'OPERA + Chart
 
@@ -411,7 +412,7 @@ conteggi_popera.backgroundColor = COLORS
 
 chart_popera.draw()
 
-
+output.print_md(	'-----------------------')
 
 #-------------------------------------ELEMENTI PER CODICE ELEMENTO + Chart
 

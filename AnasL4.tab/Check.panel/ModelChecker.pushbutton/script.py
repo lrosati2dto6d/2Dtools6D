@@ -860,7 +860,7 @@ for lista in listone:
 
 #print(file_info,proj_info,site_info,codint_result,result_ph,result_ws,exp_view_check,exp_view_result,exp_viewed_result,n_el,cat_result,result_afase,result_class,result_nomen)
 
-output.resize(1200,1200)
+output.resize(1200,800)
 
 warn_result = [proj_info_result,codint_result,sitename_result,result_ph,result_ws,exp_view_result,exp_viewed_result,cat_result]
 

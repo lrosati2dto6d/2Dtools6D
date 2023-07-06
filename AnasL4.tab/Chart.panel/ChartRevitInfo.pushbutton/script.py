@@ -241,6 +241,7 @@ conteggi_cat.backgroundColor = COLORS
 
 chart_cate.draw()
 
+output.print_md(	'-----------------------')
 
 #-------------------------------------ELEMENTI PER WORKSET + Chart
 
@@ -272,6 +273,7 @@ conteggi_work.backgroundColor = COLORSWORK
 
 chart_work.draw()
 
+output.print_md(	'-----------------------')
 
 #-------------------------------------ELEMENTI PER FASE + Chart
 
