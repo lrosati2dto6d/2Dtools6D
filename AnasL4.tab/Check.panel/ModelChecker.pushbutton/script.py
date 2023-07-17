@@ -332,6 +332,7 @@ else:
 
 doc_el = FilteredElementCollector(doc,ex_view_fg.Id).WhereElementIsNotElementType().ToElements()
 
+
 cat = []
 cnamelist = []
 catname = []
@@ -344,6 +345,9 @@ for el in doc_el:
 			clean_el.append(el)
 	except:
 		pass
+
+if len(clean_el) == 0:
+	forms.alert('WARNING 07_VISTA EXP FEDERATO\n\nLa vista di esportazione FED non contiene nessun elemento\n\n Correggere  le impostazioni della vista', exitscript=True)
 
 for el in clean_el:
 	catname.append(el.Category.Name)
@@ -755,18 +759,18 @@ for el in clean_el:
 
 #-------------------------------------ANAGRAFICA DI BASE
 
-	if opera_el in ['IM','MO']:
+	if elemento_el in ['ALI','AMS','AAP','BAG','BAN','BPT','BIN','BLI','CAB','CNP','CAP','CAS','CAE','CAV','CEN','COL','COM','CEE','CNT','COR','CUN','DIA','DIE','GIU','IMT','INS','INM','ISA','LMC','LOR','MUS','MPL','MON','MUL','MAN','MDA','MFR','NJE','OPO','PPZ','PAL','PAN','PAR','PEN','PZF','PLI','PZE','POZ','PUL','PUN','QEB','QEM','REL','REP','RAN','RIF','RIS','SBL','SCS','SDE','SGE','SOL','SSB','STL','SAR','SEL','TTA','TIM','TAN','TRS','TRV','TRA','UNI','VEL']:
 			if Para(el,"ANA_Progettista").HasValue == False or ParaInst(el,"ANA_Progettista") == "" or ParaInst(el,"ANA_Progettista")!= "RINA Consulting SpA":
 				progettista_errato.append("{} - {} - {} - {}_ ANA_Progettista --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
 
 #-------------------------------------GEOMETRICO
 
-	if category_el in ["Armatura strutturale", "Attrezzatura elettrica", "Fondazioni strutturali", "Modelli generici", "Pavimenti", "Piloni"]:
+	if elemento_el in ["CEN","CEE","PZF","PLI","POZ","QEB","QEM","RAN","SOL","SSB"]:
 		if Para(el,"GEO_Area").HasValue == False or ParaInst(el,"GEO_Area") == 0:
 			area_errato.append("{} - {} - {} - {}_ GEO_Area --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
-	if category_el in ["Attrezzatura elettrica", "Attrezzature speciali", "Cavi", "Collegamenti strutturali", "Fondazioni strutturali", "Modelli generici", "Muri", "Pavimenti", "Pilastri strutturali", "Piloni", "Telaio strutturale", "Tetti"]:
+	if elemento_el in ['ALI','BAG','BLI','CAB','CNP','CAS','CAE','CAV','COL','COM','COR','DIA','DIE','IMT','INS','INM','MPL','MAN','MDA','MFR','PPZ','PAL','PAR','PZF','PLI','POZ','PUL','REL','REP','RIF','SCS','SDE','SGE','SOL','SSB','SAR','SEL','TRS','TRV','TRA']:
 		if Para(el,"GEO_Volume").HasValue == False or ParaInst(el,"GEO_Volume") == 0:
 			volume_errato.append("{} - {} - {} - {}_ GEO_Volume --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
