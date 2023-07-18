@@ -759,7 +759,7 @@ for el in clean_el:
 
 #-------------------------------------ANAGRAFICA DI BASE
 
-	if elemento_el in ['ALI','AMS','AAP','BAG','BAN','BPT','BIN','BLI','CAB','CNP','CAP','CAS','CAE','CAV','CEN','COL','COM','CEE','CNT','COR','CUN','DIA','DIE','GIU','IMT','INS','INM','ISA','LMC','LOR','MUS','MPL','MON','MUL','MAN','MDA','MFR','NJE','OPO','PPZ','PAL','PAN','PAR','PEN','PZF','PLI','PZE','POZ','PUL','PUN','QEB','QEM','REL','REP','RAN','RIF','RIS','SBL','SCS','SDE','SGE','SOL','SSB','STL','SAR','SEL','TTA','TIM','TAN','TRS','TRV','TRA','UNI','VEL']:
+	if elemento_el in ['ALI','AMS','AAP','BAG','BAN','BPT','BIN','BLI','CAB','CNP','CAP','CAS','CAE','CAV','CEN','COL','COM','CEE','CNT','COR','CUN','DIA','DIE','GIU','IMT','INS','INM','ISA','LMC','LOR','MUS','MPL','MON','MUL','MAN','MDA','MFR','NJE','OPO','PPZ','PAL','PAN','PAR','PEN','PZF','PLI','PZE','POZ','PUL','PUN','QEB','QEM','REL','REP','RAN','RIF','RIS','SBL','SCS','SDE','SGE','SOL','SSB','STL','SAR','SEL','TTA','TIM','TAN','TRS','TRV','TRA','UNI','VEL'] and opera_el == "IM" and parteopera_el == "IE":
 			if Para(el,"ANA_Progettista").HasValue == False or ParaInst(el,"ANA_Progettista") == "" or ParaInst(el,"ANA_Progettista")!= "RINA Consulting SpA":
 				progettista_errato.append("{} - {} - {} - {}_ ANA_Progettista --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
