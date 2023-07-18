@@ -688,7 +688,7 @@ volume_errato = []
 qsensore_errato = []
 tposizione_errato = []
 
-list_clusterID_OG = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,id_elemento_errato,lor_errato,codiceassieme_errato]
+list_clusterID_OG = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato]
 
 list_clusterIN_D = [campatadiappartenenza_errato,impalcatodiappartenenza_errato,numstrutturacampata_errato,codicebms_errato]
 
@@ -698,7 +698,7 @@ list_clusterANA = [progettista_errato]
 
 list_clusterTEC = [tposizione_errato]
 
-listone = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,id_elemento_errato,lor_errato,codiceassieme_errato,campatadiappartenenza_errato,impalcatodiappartenenza_errato,numstrutturacampata_errato,codicebms_errato,area_errato,volume_errato,qsensore_errato,progettista_errato,tposizione_errato]
+listone = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,campatadiappartenenza_errato,impalcatodiappartenenza_errato,numstrutturacampata_errato,codicebms_errato,area_errato,volume_errato,qsensore_errato,progettista_errato,tposizione_errato]
 
 for el in clean_el:
 	type_el = doc.GetElement(el.GetTypeId())
@@ -759,7 +759,7 @@ for el in clean_el:
 
 #-------------------------------------ANAGRAFICA DI BASE
 
-	if elemento_el in ['ALI','AMS','AAP','BAG','BAN','BPT','BIN','BLI','CAB','CNP','CAP','CAS','CAE','CAV','CEN','COL','COM','CEE','CNT','COR','CUN','DIA','DIE','GIU','IMT','INS','INM','ISA','LMC','LOR','MUS','MPL','MON','MUL','MAN','MDA','MFR','NJE','OPO','PPZ','PAL','PAN','PAR','PEN','PZF','PLI','PZE','POZ','PUL','PUN','QEB','QEM','REL','REP','RAN','RIF','RIS','SBL','SCS','SDE','SGE','SOL','SSB','STL','SAR','SEL','TTA','TIM','TAN','TRS','TRV','TRA','UNI','VEL'] and opera_el == "IM" and parteopera_el == "IE":
+	if elemento_el in ['ACC','IFS','SCA','SEM','TEC','TCM','VCM'] and opera_el == "IM" and parteopera_el == "IE":
 			if Para(el,"ANA_Progettista").HasValue == False or ParaInst(el,"ANA_Progettista") == "" or ParaInst(el,"ANA_Progettista")!= "RINA Consulting SpA":
 				progettista_errato.append("{} - {} - {} - {}_ ANA_Progettista --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
@@ -861,6 +861,35 @@ for lista in listone:
 	if len(lista) != 0:
 		script.exit()
 
+#-------------------------------------ID ELEMENTO
+
+for el in clean_el:
+	type_el = doc.GetElement(el.GetTypeId())
+	category_el = el.Category.Name
+	opera_el = type_el.get_Parameter(BuiltInParameter.ALL_MODEL_MODEL).AsValueString()
+	parteopera_el = type_el.get_Parameter(BuiltInParameter.ALL_MODEL_TYPE_COMMENTS).AsValueString()
+	elemento_el = type_el.get_Parameter(BuiltInParameter.ALL_MODEL_DESCRIPTION).AsValueString()
+	el_id = el.Id
+	try:
+		symbol = el.Symbol
+		type_el_name = type_el.FamilyName
+	except:
+		type_el_name = el.Name
+
+	try:
+		if Para(el,"IfcGUID").HasValue == False or ParaInst(el,"IfcGUID") == "" or len(ParaInst(el,"IfcGUID"))!= 22:
+			id_elemento_errato.append("{} - {} - {} - {}_ IfcGUID --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
+	except:
+		forms.alert("Effettuare un'esportazione IFC in modo da creare per tutti gli elementi il parametro IfcGUID rieseguire poi il Check",exitscript=True)
+
+#CHECK_06-----------------ID Elemento
+
+if len(id_elemento_errato) != 0:
+	for i in id_elemento_errato:
+		output.print_md(	'###{}'.format(i))
+
+if len(id_elemento_errato) != 0:
+	script.exit()
 
 #print(file_info,proj_info,site_info,codint_result,result_ph,result_ws,exp_view_check,exp_view_result,exp_viewed_result,n_el,cat_result,result_afase,result_class,result_nomen)
 
@@ -870,7 +899,7 @@ warn_result = [proj_info_result,codint_result,sitename_result,result_ph,result_w
 
 veri_result = [result_level,result_afase,result_workset,result_class,result_nomen,result_host]
 
-check_result = ["CHECK 01_CLUSTER IDENTIFICATIVO OGGETTO --> :white_heavy_check_mark:","CHECK 02_CLUSTER INFORMAZIONI 6D --> :white_heavy_check_mark:","CHECK 03_CLUSTER ANAGRAFICA DI BASE --> :white_heavy_check_mark:","CHECK 04_CLUSTER GEOMETRICO --> :white_heavy_check_mark:","CHECK 05_CLUSTER TECNICO --> :white_heavy_check_mark:"]
+check_result = ["CHECK 01_CLUSTER IDENTIFICATIVO OGGETTO --> :white_heavy_check_mark:","CHECK 02_CLUSTER INFORMAZIONI 6D --> :white_heavy_check_mark:","CHECK 03_CLUSTER ANAGRAFICA DI BASE --> :white_heavy_check_mark:","CHECK 04_CLUSTER GEOMETRICO --> :white_heavy_check_mark:","CHECK 05_CLUSTER TECNICO --> :white_heavy_check_mark:","CHECK 06_ID ELEMENTO --> :white_heavy_check_mark:"]
 
 output.print_md(	'# - INFORMAZIONI MODELLO :black_square_button:')
 
