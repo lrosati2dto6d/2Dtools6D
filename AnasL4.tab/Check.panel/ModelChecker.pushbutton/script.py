@@ -724,11 +724,6 @@ for el in clean_el:
 	if Para(el,"IDE_Gruppo anagrafica").HasValue == False or ParaInst(el,"IDE_Gruppo anagrafica") == "" or len(ParaInst(el,"IDE_Gruppo anagrafica"))!= 20 or opera_el not in ParaInst(el,"IDE_Gruppo anagrafica") or parteopera_el not in ParaInst(el,"IDE_Gruppo anagrafica") or elemento_el not in ParaInst(el,"IDE_Gruppo anagrafica"):
 		gruppoanagrafica_errato.append("{} - {} - {} - {}_ IDE_Gruppo anagrafica --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
-	try:
-		if Para(el,"IfcGUID").HasValue == False or ParaInst(el,"IfcGUID") == "" or len(ParaInst(el,"IfcGUID"))!= 22:
-			id_elemento_errato.append("{} - {} - {} - {}_ IfcGUID --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
-	except:
-		forms.alert("Effettuare un'esportazione IFC in modo da creare per tutti gli elementi il parametro IfcGUID rieseguire poi il Check",exitscript=True)
 
 	if Para(el,"IDE_LOR").HasValue == False or ParaInst(el,"IDE_LOR") == "" or ParaInst(el,"IDE_LOR") not in ["MOLTO BASSO","BASSO","MEDIO","ALTO"]:
 		lor_errato.append("{} - {} - {} - {}_ IDE_LOR --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
