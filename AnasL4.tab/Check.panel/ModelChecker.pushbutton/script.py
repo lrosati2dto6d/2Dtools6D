@@ -113,7 +113,7 @@ if "Anas_Categorie-IFC Class.txt" in rapp.ExportIFCCategoryTable:
 else:
 	forms.alert('WARNING 00_INFORMAZIONI MODELLO\n\nIl file txt del mappaggio delle classi IFC non risulta inserito o non coincide con il percorso condiviso in BIM360', exitscript=True)
 
-if "00_Coordinamento BIM\00_Parametri condivisi\Anas_ParametriCondivisi_CLUSTER.txt" in rapp.SharedParametersFilename:
+if "Anas_ParametriCondivisi_CLUSTER.txt" in rapp.SharedParametersFilename and "ACCDocs" in rapp.SharedParametersFilename:
 	rapp_SharedParametersFilename = "File Parametri Condivisi = Anas_ParametriCondivisi_CLUSTER.txt"
 else:
 	forms.alert('WARNING 00_INFORMAZIONI MODELLO\n\nIl file txt dei parametri condivisi non risulta inserito o non coincide con il percorso condiviso in BIM360', exitscript=True)
