@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+__title__= 'Check\nCompilazione L-4'
+__author__= 'Roberto Dolfini'
+
 import sys
 import csv
 import clr
