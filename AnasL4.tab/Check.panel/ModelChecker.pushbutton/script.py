@@ -776,14 +776,14 @@ for el in clean_el:
 		if Para(el,"GEO_Volume").HasValue == False or ParaInst(el,"GEO_Volume") == 0:
 			volume_errato.append("{} - {} - {} - {}_ GEO_Volume --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
-	if elemento_el in ["ACC","IFS","SCA","SEM","TEC","TCM","VCM"]:
+	if elemento_el in ['ACC','IFS','SCA','SEM','TEC','TCM','VCM','TSS','TIG','SUM','CLI','BRE','IDO']:
 		if Para(el,"GEO_Quota sensore").HasValue == False or ParaInst(el,"GEO_Quota sensore") == 0:
 			qsensore_errato.append("{} - {} - {} - {}_ GEO_Quota sensore --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
 
 #-------------------------------------TECNICO
 
-	if elemento_el in ["ACC","IFS","SCA","SEM","TEC","TCM","VCM"]:
+	if elemento_el in ['ACC','IFS','SCA','SEM','TEC','TCM','VCM','TIG','SUM']:
 		if Para(el,"TEC_Posizione").HasValue == False or ParaInst(el,"TEC_Posizione") == "":
 			tposizione_errato.append("{} - {} - {} - {}_ TEC_Posizione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
