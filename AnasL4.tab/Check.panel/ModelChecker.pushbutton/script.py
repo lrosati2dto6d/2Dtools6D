@@ -687,6 +687,9 @@ area_errato = []
 volume_errato = []
 qsensore_errato = []
 tposizione_errato = []
+codicesensore_errato = []
+numeroseriale_errato = []
+
 
 list_clusterID_OG = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,codicesensore_errato]
 
