@@ -579,7 +579,7 @@ for el in clean_el:
 	elif opera_el == 'MA' and category_el in ['Fondazioni strutturali', 'Modelli generici', 'Ringhiere', 'Telaio strutturale'] and parteopera_el =='BA' and elemento_el in ['BAN', 'BPT', 'COR', 'MON']:
 		class_MA = True
 
-	elif opera_el == 'MO' and category_el in ['Apparecchi elettrici', 'Modelli generici'] and parteopera_el in ['ES', 'MN', 'TR'] and elemento_el in ['ACC', 'IFS', 'SCA', 'SEM', 'TCM', 'TEC', 'VCM']:
+	elif opera_el == 'MO' and category_el in ['Apparecchi elettrici', 'Modelli generici'] and parteopera_el in ['ES', 'MN', 'TR', 'BE', 'CP', 'EA'] and elemento_el in ['ACC', 'IFS', 'SCA', 'SEM', 'TCM', 'TEC', 'VCM','BRE', 'CLI', 'IDO', 'SUM', 'TIG', 'TSS']:
 		class_MO = True
 
 	elif opera_el == 'SI' and category_el in ['Ringhiere', 'Modelli generici', 'Collegamenti strutturali'] and parteopera_el in ['BC','BS'] and elemento_el in ['LMC', 'NJE', 'PAN', 'RAN', 'TTA', 'UNI']:
@@ -688,7 +688,7 @@ volume_errato = []
 qsensore_errato = []
 tposizione_errato = []
 
-list_clusterID_OG = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato]
+list_clusterID_OG = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,codicesensore_errato]
 
 list_clusterIN_D = [campatadiappartenenza_errato,impalcatodiappartenenza_errato,numstrutturacampata_errato,codicebms_errato]
 
@@ -696,9 +696,9 @@ list_clusterGEO = [area_errato,volume_errato,qsensore_errato]
 
 list_clusterANA = [progettista_errato]
 
-list_clusterTEC = [tposizione_errato]
+list_clusterTEC = [tposizione_errato,numeroseriale_errato]
 
-listone = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,campatadiappartenenza_errato,impalcatodiappartenenza_errato,numstrutturacampata_errato,codicebms_errato,area_errato,volume_errato,qsensore_errato,progettista_errato,tposizione_errato]
+listone = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,codicesensore_errato,campatadiappartenenza_errato,impalcatodiappartenenza_errato,numstrutturacampata_errato,codicebms_errato,area_errato,volume_errato,qsensore_errato,progettista_errato,tposizione_errato,numeroseriale_errato]
 
 for el in clean_el:
 	type_el = doc.GetElement(el.GetTypeId())
@@ -730,6 +730,10 @@ for el in clean_el:
 
 	if Para(type_el,"Codice assieme").HasValue == False or ParaType(el,"Codice assieme",doc) == "" or "Co" not in ParaType(el,"Codice assieme",doc) or "En" not in ParaType(el,"Codice assieme",doc) or "EF" not in ParaType(el,"Codice assieme",doc):
 		codiceassieme_errato.append("{} - {} - {} - {}_ Codice assieme --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
+
+	if elemento_el in ["IFS","TEC","TCM","ACC","SCA","VCM","TSS","SEM","TIG","SUM","CLI","BRE","IDO"]:
+		if Para(el,"IDE_Codice sensore").HasValue == False or ParaInst(el,"IDE_Codice sensore") == "":
+			codicesensore_errato.append("{} - {} - {} - {}_ IDE_Codice sensore --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
 
 #-------------------------------------INFORMAZIONI 6D
@@ -780,6 +784,9 @@ for el in clean_el:
 		if Para(el,"TEC_Posizione").HasValue == False or ParaInst(el,"TEC_Posizione") == "":
 			tposizione_errato.append("{} - {} - {} - {}_ TEC_Posizione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
+	if elemento_el in ["IFS","TEC","TCM","ACC","SCA","VCM","TSS","SEM","TIG","SUM","CLI","BRE","IDO"]:
+		if Para(el,"IDE_Numero seriale").HasValue == False or ParaInst(el,"IDE_Numero seriale") != "-":
+			numeroseriale_errato.append("{} - {} - {} - {}_ TEC_Numero seriale --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
 #CHECK_01-----------------IDENTIFICATIVO OGGETTO
 
