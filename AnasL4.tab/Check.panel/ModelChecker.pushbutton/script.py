@@ -788,7 +788,7 @@ for el in clean_el:
 			tposizione_errato.append("{} - {} - {} - {}_ TEC_Posizione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
 	if elemento_el in ["IFS","TEC","TCM","ACC","SCA","VCM","TSS","SEM","TIG","SUM","CLI","BRE","IDO"]:
-		if Para(el,"IDE_Numero seriale").HasValue == False or ParaInst(el,"IDE_Numero seriale") != "-":
+		if Para(el,"TEC_Numero seriale").HasValue == False or ParaInst(el,"TEC_Numero seriale") != "-":
 			numeroseriale_errato.append("{} - {} - {} - {}_ TEC_Numero seriale --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
 #CHECK_01-----------------IDENTIFICATIVO OGGETTO
