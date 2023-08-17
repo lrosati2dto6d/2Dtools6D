@@ -33,12 +33,12 @@ from rpw.ui.forms import (FlexForm, Label, Separator, Button, CheckBox)
 ## RAGGRUPPAMENTO DEFINIZIONI
 
 def find(name, path):
-    for root, dirs, files in os.walk(path):
-        if name in files:
-            return True
-        else:
-            return False
-	
+	for root, dirs, files in os.walk(path):
+		if name in files:
+			return True
+		else:
+			return False
+		
 def estraiCodiceElemento(stringa):
 	return stringa.split(".")[3][:3]
 
@@ -47,16 +47,16 @@ uidoc = __revit__.ActiveUIDocument
 t_Transazione = Transaction(doc,"Assegnazione Uniclass")
 
 if find("Uniclass.csv",current_dir):
-    Codici = []
-    Uniclass = []    
-    with open(os.path.dirname(__file__)+"\\Uniclass.csv") as csvfile:
-        reader = csv.reader(csvfile, delimiter=";")
-        for row in reader:
-            Uniclass.append(row[0])
-            Codici.append(row[1])
+	Codici = []
+	Uniclass = []	
+	with open(os.path.dirname(__file__)+"\\Uniclass.csv") as csvfile:
+		reader = csv.reader(csvfile, delimiter=";")
+		for row in reader:
+			Uniclass.append(row[0])
+			Codici.append(row[1])
 	activeView = doc.ActiveView
 	ElementiModello = FilteredElementCollector(doc,activeView.Id).WhereElementIsNotElementType().ToElements()
-	
+		
 	isLoadable = []
 	CodiceElemento = []
 	ElementoScelto = []
@@ -84,7 +84,7 @@ if find("Uniclass.csv",current_dir):
 				pass
 	t_Transazione.Start()
 
-	for elemento,codice in zip(ElementoScelto,CodiceElemento):
+	for elemento,codice in zip(ElementoScelto,CodiceElemento):	
 		for sigla,uni in zip(Codici,Uniclass):
 			if codice == sigla:
 				doc.GetElement(elemento.GetTypeId()).LookupParameter("Codice assieme").Set(uni)
@@ -95,10 +95,10 @@ if find("Uniclass.csv",current_dir):
 	t_Transazione.Commit()
 
 
-	
+		
 else:
 	#Alert('Generare CSV codici da Modello Dati', title="Database mancante", header="Uniclass.csv mancante")
-	avviso = pyrevit.forms.alert(msg = "Generare un nuovo database da Excel ?\n L'operazione può richiedere fino a 2 minuti.", title = "Database mancante", warn_icon = True, exitscript = True, ok=True, cancel = True)
+	avviso = pyrevit.forms.alert(msg = "Generare un nuovo database da Excel ?\n L'operazione potrebbe richiedere fino a 2 minuti.", title = "Database mancante", warn_icon = True, exitscript = True, ok=True, cancel = True)
 
 
 	if avviso:
