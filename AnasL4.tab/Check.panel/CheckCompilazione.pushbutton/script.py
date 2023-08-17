@@ -32,14 +32,14 @@ from rpw.ui.forms import (FlexForm, Label, Separator, Button, CheckBox)
 ## RAGGRUPPAMENTO DEFINIZIONI
 
 def remove_non_ascii(text):
-    return re.sub(r'[^\x00-\x7F]', ' ', text)
+	return re.sub(r'[^\x00-\x7F]', ' ', text)
 
 def find(name, path):
-    for root, dirs, files in os.walk(path):
-        if name in files:
-            return True
-        else:
-            return False
+	for root, dirs, files in os.walk(path):
+		if name in files:
+			return True
+		else:
+			return False
 
 def estraiParametri(elemento):
 
@@ -72,21 +72,21 @@ def uw(element):
 		
 
 def slice_parameters(counter, parameters):
-    # Initialize the result list to store the sliced sublists
-    result = []
+	# Initialize the result list to store the sliced sublists
+	result = []
 
-    zero_indices = [i for i, val in enumerate(counter) if val == 0]
+	zero_indices = [i for i, val in enumerate(counter) if val == 0]
 
 
-    for i in range(len(zero_indices)):
-        if i == len(zero_indices) - 1:
+	for i in range(len(zero_indices)):
+		if i == len(zero_indices) - 1:
 
-            result.append(parameters[zero_indices[i]:])
-        else:
+			result.append(parameters[zero_indices[i]:])
+		else:
 
-            result.append(parameters[zero_indices[i]:zero_indices[i + 1]])
+			result.append(parameters[zero_indices[i]:zero_indices[i + 1]])
 
-    return result
+	return result
 
 def GroupByKey(lista,key):
 
@@ -104,14 +104,14 @@ def GroupByKey(lista,key):
 			counter += 1
 			counterList.append(counter)
 	RegroupList = []
-	
+		
 	return savedKeys,slice_parameters(counterList, savedParams)
 
 def checkHasValue(listaParametri,listaElementi):
 	check = []
 	checkElements = []
 	failure = []
-	
+		
 	for elemento,sublistParametri in zip(listaElementi,listaParametri):
 		temp = []
 		for parametro in sublistParametri:
@@ -136,7 +136,7 @@ def checkCompilare(listaParametri,listaElementi):
 	check = []
 	checkElements = []
 	failure = []
-	
+		
 	for elemento,sublistParametri in zip(listaElementi,listaParametri):
 		temp = []
 		for parametro in sublistParametri:
@@ -156,24 +156,27 @@ def checkCompilare(listaParametri,listaElementi):
 	if len(failure) == 0:
 		failure = "NON CI SONO ERRORI"
 	return check, checkElements
-	
+		
 def checkZero(listaParametri,listaElementi):
 	check = []
 	checkElements = []
 	failure = []
-	
+		
 	for elemento,sublistParametri in zip(listaElementi,listaParametri):
 		temp = []
 		for parametro in sublistParametri:
-		
 			try:
-				if elemento.LookupParameter(parametro).HasValue:
-					if elemento.LookupParameter(parametro).AsValueString() == "0.00 m³" or elemento.LookupParameter(parametro).AsValueString() == "0.00 m²" or elemento.LookupParameter(parametro).AsValueString() == "0.00 m":
-						temp.append(parametro)
+				if elemento.LookupParameter(parametro).HasValue and elemento.LookupParameter(parametro).StorageType != StorageType.String:
+					#if elemento.LookupParameter(parametro).AsValueString() == "0.00 m³" or elemento.LookupParameter(parametro).AsValueString() == "0.00 m²" or elemento.LookupParameter(parametro).AsValueString() == "0.00 m":
+					if elemento.LookupParameter(parametro) != None:
+						if str(elemento.LookupParameter(parametro).AsDouble()) == "0.0":
+							temp.append(parametro)
 			except:
-				if doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).HasValue:
-					if doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).AsValueString() == "0.00 m³"or doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).AsValueString() == "0.00 m²" or doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).AsValueString() == "0.00 m" :
-						temp.append(parametro)
+				if doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).HasValue and doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).StorageType != StorageType.String:
+					if doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro) != None:
+						if str(doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).AsDouble()) == "0.0":
+					#if doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).AsValueString() == "0.00 m³"or doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).AsValueString() == "0.00 m²" or doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).AsValueString() == "0.00 m" :
+							temp.append(parametro)
 				else:
 					failure.append("ERRORE")
 					
@@ -195,14 +198,18 @@ style = """
 }
 """
 if find("Database.csv",current_dir):
-    Codici = []
-    Parametri = []    
-    with open(os.path.dirname(__file__)+"\\Database.csv") as csvfile:
-        reader = csv.reader(csvfile, delimiter=";")
-        for row in reader:
-            Codici.append(row[0])
-            Parametri.append(row[1])
-	components = [Label('Predisposizione alla compilazione parametri:'),CheckBox('compilareCheck', 'Inserimento stringa COMPILARE'),Separator(),Label('Opzioni riconoscimento parametri in eccesso:'),CheckBox('eccessoCheck', 'Verifica parametri in eccesso'),CheckBox('rimuoviEccesso', 'Rimozione stringhe in eccesso'),Button('Conferma')]
+	Codici = []
+	Parametri = []	
+	with open(os.path.dirname(__file__)+"\\Database.csv") as csvfile:
+			reader = csv.reader(csvfile, delimiter=";")
+			righe =[]
+			for row in reader:
+				righe.append(row)
+			righe.sort(key=lambda riga: riga[0])
+			for r in righe:
+				Codici.append(r[0])
+				Parametri.append(r[1])
+	components = [Label('Predisposizione alla compilazione parametri:'),CheckBox('compilareCheck', 'Compilazione di default'),Separator(),Label('Opzioni riconoscimento parametri in eccesso:'),CheckBox('eccessoCheck', 'Verifica parametri in eccesso'),CheckBox('rimuoviEccesso', 'Rimozione stringhe in eccesso'),Button('Conferma')]
 	form = FlexForm("Seleziona un'opzione",components)
 	form.show()
 
@@ -226,16 +233,19 @@ if find("Database.csv",current_dir):
 	############## PULIZIA ELEMENTI ######################################
 
 	PickElements = []
+	PickNames = []
 	for elemento in ElementiModello:
 		
 		try:
 			elemento.Symbol
 			if "." in elemento.LookupParameter("Famiglia").AsValueString():
 				PickElements.append(elemento)
+				PickNames.append(elemento.LookupParameter("Famiglia").AsValueString())
 		except:
 			try:
 				if "." in elemento.LookupParameter("Tipo").AsValueString():
 					PickElements.append(elemento)
+					PickNames.append(elemento.LookupParameter("Tipo").AsValueString())
 			except:
 				pass
 	############## ESTRAZIONE SIGLE #####################################
@@ -268,6 +278,7 @@ if find("Database.csv",current_dir):
 
 
 #→	→	→	→	→	→	→	→	→	→	ASSEGNARE "COMPILARE" 
+
 	failureCheck = []
 	if form.values["compilareCheck"]: 
 		t_Compilare = Transaction(doc,"Inserimento •••COMPILARE•••")
@@ -277,19 +288,21 @@ if find("Database.csv",current_dir):
 		for elemento,codice in zip(PickElements,Codice):
 			for parametro in dizionarioCodici[codice]:
 				if elemento.LookupParameter(parametro):
-					if elemento.LookupParameter(parametro).AsValueString() == None or elemento.LookupParameter(parametro).AsValueString() == " " or elemento.LookupParameter(parametro).AsValueString() == "":
+					if elemento.LookupParameter(parametro).Definition.Name == "TEC_Numero seriale":
+						elemento.LookupParameter(parametro).Set("-")
+					elif elemento.LookupParameter(parametro).AsValueString() == None or elemento.LookupParameter(parametro).AsValueString() == " " or elemento.LookupParameter(parametro).AsValueString() == "":
 						elemento.LookupParameter(parametro).Set("•••COMPILARE•••")
+
 				else:
 					try:
-						if doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).StorageType == StorageType.String and doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).AsValueString() == None or doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).AsValueString() == " ":
+						if doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).StorageType == StorageType.String and doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).AsValueString() == None or doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).AsValueString() == " " or doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).AsValueString() == "":
 							doc.GetElement(elemento.GetTypeId()).LookupParameter(parametro).Set("•••COMPILARE•••")
 					except:
 						failureCheck.append(elemento)
 						failureCheck.append(parametro)
 		
 		#TransactionManager.Instance.TransactionTaskDone()
-		t_Compilare.Commit()
-		pyrevit.forms.toaster.send_toast("Compilazione Effettuata", title = "Check Compilazione", icon = sys.path[0] + "/iconanera.png")
+
 		
 		NAMEParameterMap = (estraiParametri(elemento)[0] for elemento in PickElements)
 		GUIDParameterMap = (estraiParametri(elemento)[1] for elemento in PickElements)
@@ -319,7 +332,37 @@ if find("Database.csv",current_dir):
 			if len(temp) > 0:
 				elementiDiTroppo.append(elemento)
 				valorizzatiDiTroppo.append(temp)
-#→	→	→	→	→	→	→	→	→	→	CHECK DEI PARAMETRI IN ECCESSO
+
+		# ASSEGNARE VALORI DI TIPO
+
+		Opera = []
+		Parteopera = []
+		Elemento = []
+		Struttura = []
+		Result = []
+
+		for name in PickNames:
+			Opera.append(name.split(".")[0])
+			Parteopera.append(name.split(".")[2])
+			Elemento.append(name.split(".")[3][:3])
+			Struttura.append(name.split(".")[1])
+
+		try:
+			for elemento,o,po,e,s in zip(PickElements,Opera,Parteopera,Elemento,Struttura):
+				doc.GetElement(elemento.GetTypeId()).LookupParameter("Modello").Set(o)
+				doc.GetElement(elemento.GetTypeId()).LookupParameter("Commenti sul tipo").Set(po)
+				doc.GetElement(elemento.GetTypeId()).LookupParameter("Descrizione").Set(e)
+				if s != "XXX":
+					doc.GetElement(elemento.GetTypeId()).LookupParameter("Contrassegno tipo").Set(s)
+				else:
+					doc.GetElement(elemento.GetTypeId()).LookupParameter("Contrassegno tipo").Set("")
+			Result.append("Success")
+		except:
+			Result.append("Failure")
+
+		t_Compilare.Commit()
+		pyrevit.forms.toaster.send_toast("Compilazione Effettuata", title = "Check Compilazione", icon = sys.path[0] + "/iconanera.png")
+############################################################# CHECK DEI PARAMETRI IN ECCESSO
 
 	if form.values["eccessoCheck"]:
 		
@@ -500,7 +543,7 @@ else:
 			Parametri = []
 
 			with forms.ProgressBar(indeterminate = True, title = "Salvataggio CSV") as pb:
-				for row in range(3,4253): # AGGIUNGERE QUI LE RIGHE DELL'EXCEL
+				for row in range(3,4348): # AGGIUNGERE QUI LE RIGHE DELL'EXCEL
 					tempCode = []
 					tempCode.append(WorkSheet.Rows[row].Value2[0,1])
 					tempCode.append(WorkSheet.Rows[row].Value2[0,3])
