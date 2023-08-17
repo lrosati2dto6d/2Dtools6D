@@ -765,7 +765,6 @@ for el in clean_el:
 			if Para(el,"ANA_Progettista").HasValue == False or ParaInst(el,"ANA_Progettista") == "" or ParaInst(el,"ANA_Progettista")!= "RINA Consulting SpA":
 				progettista_errato.append("{} - {} - {} - {}_ ANA_Progettista --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
-
 #-------------------------------------GEOMETRICO
 
 	if elemento_el in ["CEN","CEE","PZF","PLI","POZ","QEB","QEM","RAN","SOL","SSB"]:
