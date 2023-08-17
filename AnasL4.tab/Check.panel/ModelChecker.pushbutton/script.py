@@ -779,7 +779,6 @@ for el in clean_el:
 		if Para(el,"GEO_Quota sensore").HasValue == False or ParaInst(el,"GEO_Quota sensore") == 0:
 			qsensore_errato.append("{} - {} - {} - {}_ GEO_Quota sensore --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
-
 #-------------------------------------TECNICO
 
 	if elemento_el in ['ACC','IFS','SCA','SEM','TEC','TCM','VCM','TIG','SUM']:
