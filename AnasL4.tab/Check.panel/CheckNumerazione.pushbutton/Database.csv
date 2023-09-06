@@ -1,0 +1,4345 @@
+CV.PD.AMS;ANA_Esecutore
+CV.PD.AMS;ANA_Progettista
+CV.PD.AMS;GEO_Altezza
+CV.PD.AMS;GEO_Diametro
+CV.PD.AMS;GEO_Larghezza
+CV.PD.AMS;GEO_Lunghezza
+CV.PD.AMS;GEO_Peso
+CV.PD.AMS;GEO_Quota altimetrica inferiore
+CV.PD.AMS;GEO_Quota altimetrica superiore
+CV.PD.AMS;IDE_Codice opera
+CV.PD.AMS;IDE_Codice WBS
+CV.PD.AMS;IDE_Gruppo anagrafica
+CV.PD.AMS;IDE_ID Elemento
+CV.PD.AMS;IDE_LOR
+CV.PD.AMS;IDE_Uniclass
+CV.PD.AMS;INF_Campata di appartenenza
+CV.PD.AMS;INF_Numerazione struttura campata
+CV.PD.AMS;INF_Impalcato di appartenenza
+CV.PD.AMS;INF_Codice BMS
+CV.PD.AMS;LOC_Carreggiata
+CV.PD.AMS;LOC_Direzione
+CV.PD.AMS;LOC_Progressiva finale
+CV.PD.AMS;LOC_Progressiva iniziale
+CV.PD.AMS;TEC_Documentazione tecnica
+CV.PI.AMS;ANA_Esecutore
+CV.PI.AMS;ANA_Progettista
+CV.PI.AMS;GEO_Altezza
+CV.PI.AMS;GEO_Diametro
+CV.PI.AMS;GEO_Larghezza
+CV.PI.AMS;GEO_Lunghezza
+CV.PI.AMS;GEO_Peso
+CV.PI.AMS;GEO_Quota altimetrica inferiore
+CV.PI.AMS;GEO_Quota altimetrica superiore
+CV.PI.AMS;IDE_Codice opera
+CV.PI.AMS;IDE_Codice WBS
+CV.PI.AMS;IDE_Gruppo anagrafica
+CV.PI.AMS;IDE_ID Elemento
+CV.PI.AMS;IDE_LOR
+CV.PI.AMS;IDE_Uniclass
+CV.PI.AMS;LOC_Carreggiata
+CV.PI.AMS;LOC_Direzione
+CV.PI.AMS;LOC_Progressiva finale
+CV.PI.AMS;LOC_Progressiva iniziale
+CV.PI.AMS;TEC_Documentazione tecnica
+CV.SP.AMS;ANA_Esecutore
+CV.SP.AMS;ANA_Progettista
+CV.SP.AMS;GEO_Altezza
+CV.SP.AMS;GEO_Diametro
+CV.SP.AMS;GEO_Larghezza
+CV.SP.AMS;GEO_Lunghezza
+CV.SP.AMS;GEO_Peso
+CV.SP.AMS;GEO_Quota altimetrica inferiore
+CV.SP.AMS;GEO_Quota altimetrica superiore
+CV.SP.AMS;IDE_Codice opera
+CV.SP.AMS;IDE_Codice WBS
+CV.SP.AMS;IDE_Gruppo anagrafica
+CV.SP.AMS;IDE_ID Elemento
+CV.SP.AMS;IDE_LOR
+CV.SP.AMS;IDE_Uniclass
+CV.SP.AMS;LOC_Carreggiata
+CV.SP.AMS;LOC_Direzione
+CV.SP.AMS;LOC_Progressiva finale
+CV.SP.AMS;LOC_Progressiva iniziale
+CV.SP.AMS;TEC_Documentazione tecnica
+CV.IC.AAP;ANA_Esecutore
+CV.IC.AAP;ANA_Progettista
+CV.IC.AAP;GEO_Diametro
+CV.IC.AAP;GEO_Larghezza
+CV.IC.AAP;GEO_Lunghezza
+CV.IC.AAP;GEO_Peso
+CV.IC.AAP;GEO_Quota altimetrica inferiore
+CV.IC.AAP;GEO_Quota altimetrica superiore
+CV.IC.AAP;GEO_Altezza
+CV.IC.AAP;IDE_Codice opera
+CV.IC.AAP;IDE_Codice WBS
+CV.IC.AAP;IDE_Gruppo anagrafica
+CV.IC.AAP;IDE_ID Elemento
+CV.IC.AAP;IDE_LOR
+CV.IC.AAP;IDE_Uniclass
+CV.IC.AAP;INF_Campata di appartenenza
+CV.IC.AAP;INF_Numerazione struttura campata
+CV.IC.AAP;INF_Impalcato di appartenenza
+CV.IC.AAP;INF_Codice BMS
+CV.IC.AAP;LOC_Carreggiata
+CV.IC.AAP;LOC_Direzione
+CV.IC.AAP;LOC_Progressiva finale
+CV.IC.AAP;LOC_Progressiva iniziale
+CV.IC.AAP;TEC_Documentazione tecnica
+CV.PD.BAG;ANA_Esecutore
+CV.PD.BAG;ANA_Progettista
+CV.PD.BAG;GEO_Altezza
+CV.PD.BAG;GEO_Larghezza
+CV.PD.BAG;GEO_Lunghezza
+CV.PD.BAG;GEO_Peso
+CV.PD.BAG;GEO_Quota altimetrica inferiore
+CV.PD.BAG;GEO_Quota altimetrica superiore
+CV.PD.BAG;GEO_Volume
+CV.PD.BAG;IDE_Codice opera
+CV.PD.BAG;IDE_Codice WBS
+CV.PD.BAG;IDE_Gruppo anagrafica
+CV.PD.BAG;IDE_ID Elemento
+CV.PD.BAG;IDE_LOR
+CV.PD.BAG;IDE_Uniclass
+CV.PD.BAG;INF_Campata di appartenenza
+CV.PD.BAG;INF_Numerazione struttura campata
+CV.PD.BAG;INF_Impalcato di appartenenza
+CV.PD.BAG;INF_Codice BMS
+CV.PD.BAG;LOC_Carreggiata
+CV.PD.BAG;LOC_Direzione
+CV.PD.BAG;TEC_Documentazione tecnica
+CV.PD.BAG;TEC_Incidenza armatura
+CV.PD.BAG;TEC_Materiale
+CV.PD.BAG;TEC_Tipologia acciaio
+CV.PI.BAG;ANA_Esecutore
+CV.PI.BAG;ANA_Progettista
+CV.PI.BAG;GEO_Altezza
+CV.PI.BAG;GEO_Larghezza
+CV.PI.BAG;GEO_Lunghezza
+CV.PI.BAG;GEO_Peso
+CV.PI.BAG;GEO_Quota altimetrica inferiore
+CV.PI.BAG;GEO_Quota altimetrica superiore
+CV.PI.BAG;GEO_Volume
+CV.PI.BAG;IDE_Codice WBS
+CV.PI.BAG;IDE_ID Elemento
+CV.PI.BAG;IDE_Uniclass
+CV.PI.BAG;IDE_Gruppo anagrafica
+CV.PI.BAG;IDE_Codice opera
+CV.PI.BAG;IDE_LOR
+CV.PI.BAG;LOC_Carreggiata
+CV.PI.BAG;LOC_Direzione
+CV.PI.BAG;TEC_Documentazione tecnica
+CV.PI.BAG;TEC_Incidenza armatura
+CV.PI.BAG;TEC_Materiale
+CV.PI.BAG;TEC_Tipologia acciaio
+CV.SP.BAG;ANA_Esecutore
+CV.SP.BAG;ANA_Progettista
+CV.SP.BAG;GEO_Altezza
+CV.SP.BAG;GEO_Larghezza
+CV.SP.BAG;GEO_Lunghezza
+CV.SP.BAG;GEO_Peso
+CV.SP.BAG;GEO_Quota altimetrica inferiore
+CV.SP.BAG;GEO_Quota altimetrica superiore
+CV.SP.BAG;GEO_Volume
+CV.SP.BAG;IDE_Codice WBS
+CV.SP.BAG;IDE_ID Elemento
+CV.SP.BAG;IDE_Uniclass
+CV.SP.BAG;IDE_Gruppo anagrafica
+CV.SP.BAG;IDE_Codice opera
+CV.SP.BAG;IDE_LOR
+CV.SP.BAG;LOC_Carreggiata
+CV.SP.BAG;LOC_Direzione
+CV.SP.BAG;TEC_Documentazione tecnica
+CV.SP.BAG;TEC_Incidenza armatura
+CV.SP.BAG;TEC_Materiale
+CV.SP.BAG;TEC_Tipologia acciaio
+CV.IC.BIN;ANA_Esecutore
+CV.IC.BIN;ANA_Progettista
+CV.IC.BIN;GEO_Spessore strato pavimentazione
+CV.IC.BIN;IDE_Codice opera
+CV.IC.BIN;IDE_Codice WBS
+CV.IC.BIN;IDE_Gruppo anagrafica
+CV.IC.BIN;IDE_ID Elemento
+CV.IC.BIN;IDE_LOR
+CV.IC.BIN;IDE_Uniclass
+CV.IC.BIN;INF_Campata di appartenenza
+CV.IC.BIN;INF_Numerazione struttura campata
+CV.IC.BIN;INF_Impalcato di appartenenza
+CV.IC.BIN;INF_Codice BMS
+CV.IC.BIN;LOC_Carreggiata
+CV.IC.BIN;LOC_Direzione
+CV.IC.BIN;TEC_Documentazione tecnica
+CV.IC.BIN;TEC_Materiale
+CV.IC.BIN;TEC_Classificazione d uso stradale
+CV.IA.BIN;ANA_Esecutore
+CV.IA.BIN;ANA_Progettista
+CV.IA.BIN;GEO_Spessore strato pavimentazione
+CV.IA.BIN;IDE_Codice opera
+CV.IA.BIN;IDE_Codice WBS
+CV.IA.BIN;IDE_Gruppo anagrafica
+CV.IA.BIN;IDE_ID Elemento
+CV.IA.BIN;IDE_LOR
+CV.IA.BIN;IDE_Uniclass
+CV.IA.BIN;INF_Campata di appartenenza
+CV.IA.BIN;INF_Numerazione struttura campata
+CV.IA.BIN;INF_Impalcato di appartenenza
+CV.IA.BIN;INF_Codice BMS
+CV.IA.BIN;LOC_Carreggiata
+CV.IA.BIN;LOC_Direzione
+CV.IA.BIN;TEC_Documentazione tecnica
+CV.IA.BIN;TEC_Materiale
+CV.IA.BIN;TEC_Classificazione d uso stradale
+CV.AC.CAP;ANA_Esecutore
+CV.AC.CAP;ANA_Progettista
+CV.AC.CAP;GEO_Spessore
+CV.AC.CAP;GEO_Lunghezza
+CV.AC.CAP;GEO_Larghezza
+CV.AC.CAP;GEO_Altezza
+CV.AC.CAP;IDE_Codice opera
+CV.AC.CAP;IDE_Codice WBS
+CV.AC.CAP;IDE_Gruppo anagrafica
+CV.AC.CAP;IDE_ID Elemento
+CV.AC.CAP;IDE_LOR
+CV.AC.CAP;IDE_Uniclass
+CV.AC.CAP;LOC_Carreggiata
+CV.AC.CAP;LOC_Direzione
+CV.AC.CAP;LOC_Progressiva finale
+CV.AC.CAP;LOC_Progressiva iniziale
+CV.AC.CAP;TEC_Materiale
+CV.AC.CAP;TEC_Documentazione tecnica
+CV.IC.CAS;ANA_Esecutore
+CV.IC.CAS;ANA_Progettista
+CV.IC.CAS;GEO_Altezza
+CV.IC.CAS;GEO_Altezza interna
+CV.IC.CAS;GEO_Larghezza
+CV.IC.CAS;GEO_Larghezza interna
+CV.IC.CAS;GEO_Lunghezza
+CV.IC.CAS;GEO_Peso
+CV.IC.CAS;GEO_Volume
+CV.IC.CAS;IDE_Codice opera
+CV.IC.CAS;IDE_Codice WBS
+CV.IC.CAS;IDE_Gruppo anagrafica
+CV.IC.CAS;IDE_ID Elemento
+CV.IC.CAS;IDE_LOR
+CV.IC.CAS;IDE_Uniclass
+CV.IC.CAS;INF_Campata di appartenenza
+CV.IC.CAS;INF_Numerazione struttura campata
+CV.IC.CAS;INF_Impalcato di appartenenza
+CV.IC.CAS;INF_Codice BMS
+CV.IC.CAS;LOC_Carreggiata
+CV.IC.CAS;LOC_Direzione
+CV.IC.CAS;TEC_Chiave di taglio
+CV.IC.CAS;TEC_Documentazione tecnica
+CV.IC.CAS;TEC_Incidenza armatura
+CV.IC.CAS;TEC_Materiale
+CV.IC.CAS;TEC_Sella Gerber
+CV.IC.CAS;TEC_Tipologia C.A./C.A.P.
+CV.IC.CAS;TEC_Tipologia acciaio
+CV.IA.CAS;ANA_Esecutore
+CV.IA.CAS;ANA_Progettista
+CV.IA.CAS;GEO_Altezza interna
+CV.IA.CAS;GEO_Larghezza
+CV.IA.CAS;GEO_Larghezza interna
+CV.IA.CAS;GEO_Lunghezza
+CV.IA.CAS;GEO_Peso
+CV.IA.CAS;GEO_Volume
+CV.IA.CAS;GEO_Altezza
+CV.IA.CAS;IDE_Codice opera
+CV.IA.CAS;IDE_Codice WBS
+CV.IA.CAS;IDE_Gruppo anagrafica
+CV.IA.CAS;IDE_ID Elemento
+CV.IA.CAS;IDE_LOR
+CV.IA.CAS;IDE_Uniclass
+CV.IA.CAS;INF_Campata di appartenenza
+CV.IA.CAS;INF_Numerazione struttura campata
+CV.IA.CAS;INF_Impalcato di appartenenza
+CV.IA.CAS;INF_Codice BMS
+CV.IA.CAS;LOC_Carreggiata
+CV.IA.CAS;LOC_Direzione
+CV.IA.CAS;TEC_Chiave di taglio
+CV.IA.CAS;TEC_Documentazione tecnica
+CV.IA.CAS;TEC_Incidenza armatura
+CV.IA.CAS;TEC_Materiale
+CV.IA.CAS;TEC_Sella Gerber
+CV.IA.CAS;TEC_Tipologia C.A./C.A.P.
+CV.IA.CAS;TEC_Tipologia acciaio
+CV.FO.CEN;ANA_Esecutore
+CV.FO.CEN;ANA_Progettista
+CV.FO.CEN;GEO_Altezza profilo
+CV.FO.CEN;GEO_Diametro
+CV.FO.CEN;GEO_Larghezza profilo
+CV.FO.CEN;GEO_Lunghezza
+CV.FO.CEN;GEO_Peso
+CV.FO.CEN;GEO_Luce
+CV.FO.CEN;GEO_Area
+CV.FO.CEN;GEO_Identificativo concio
+CV.FO.CEN;IDE_Codice opera
+CV.FO.CEN;IDE_Codice WBS
+CV.FO.CEN;IDE_Gruppo anagrafica
+CV.FO.CEN;IDE_ID Elemento
+CV.FO.CEN;IDE_LOR
+CV.FO.CEN;IDE_Uniclass
+CV.FO.CEN;LOC_Carreggiata
+CV.FO.CEN;LOC_Direzione
+CV.FO.CEN;TEC_Documentazione tecnica
+CV.FO.CEN;TEC_Materiale
+CV.IA.CNT;ANA_Esecutore
+CV.IA.CNT;ANA_Progettista
+CV.IA.CNT;GEO_Altezza profilo
+CV.IA.CNT;GEO_Larghezza profilo
+CV.IA.CNT;GEO_Lunghezza profilo
+CV.IA.CNT;GEO_Peso
+CV.IA.CNT;IDE_Codice opera
+CV.IA.CNT;IDE_Codice WBS
+CV.IA.CNT;IDE_Gruppo anagrafica
+CV.IA.CNT;IDE_ID Elemento
+CV.IA.CNT;IDE_LOR
+CV.IA.CNT;IDE_Uniclass
+CV.IA.CNT;INF_Campata di appartenenza
+CV.IA.CNT;INF_Codice BMS
+CV.IA.CNT;INF_Impalcato di appartenenza
+CV.IA.CNT;INF_Numerazione struttura campata
+CV.IA.CNT;LOC_Carreggiata
+CV.IA.CNT;LOC_Direzione
+CV.IA.CNT;TEC_Documentazione tecnica
+CV.IA.CNT;TEC_Materiale
+CV.IA.CNT;TEC_Tipologia acciaio
+CV.IA.CNT;TEC_Tipologia profilo
+CV.IC.COR;ANA_Esecutore
+CV.IC.COR;ANA_Progettista
+CV.IC.COR;GEO_Altezza
+CV.IC.COR;GEO_Larghezza
+CV.IC.COR;GEO_Lunghezza
+CV.IC.COR;GEO_Pendenza
+CV.IC.COR;GEO_Pendenza sponde
+CV.IC.COR;GEO_Peso
+CV.IC.COR;GEO_Quota fine tratto
+CV.IC.COR;GEO_Quota inizio tratto
+CV.IC.COR;GEO_Raggio
+CV.IC.COR;GEO_Quota altimetrica inferiore
+CV.IC.COR;GEO_Volume
+CV.IC.COR;GEO_Identificativo concio
+CV.IC.COR;IDE_Codice opera
+CV.IC.COR;IDE_Codice WBS
+CV.IC.COR;IDE_Gruppo anagrafica
+CV.IC.COR;IDE_ID Elemento
+CV.IC.COR;IDE_LOR
+CV.IC.COR;IDE_Uniclass
+CV.IC.COR;INF_Campata di appartenenza
+CV.IC.COR;INF_Numerazione struttura campata
+CV.IC.COR;INF_Impalcato di appartenenza
+CV.IC.COR;INF_Codice BMS
+CV.IC.COR;LOC_Carreggiata
+CV.IC.COR;LOC_Direzione
+CV.IC.COR;TEC_Documentazione tecnica
+CV.IC.COR;TEC_Materiale
+CV.IC.COR;TEC_Incidenza armatura
+CV.IC.COR;TEC_Tipologia acciaio
+CV.IC.COR;TEC_Classificazione d uso stradale
+CV.IA.COR;ANA_Esecutore
+CV.IA.COR;ANA_Progettista
+CV.IA.COR;GEO_Altezza
+CV.IA.COR;GEO_Larghezza
+CV.IA.COR;GEO_Lunghezza
+CV.IA.COR;GEO_Pendenza
+CV.IA.COR;GEO_Pendenza sponde
+CV.IA.COR;GEO_Peso
+CV.IA.COR;GEO_Quota fine tratto
+CV.IA.COR;GEO_Quota inizio tratto
+CV.IA.COR;GEO_Raggio
+CV.IA.COR;GEO_Quota altimetrica inferiore
+CV.IA.COR;GEO_Volume
+CV.IA.COR;GEO_Identificativo concio
+CV.IA.COR;IDE_Codice opera
+CV.IA.COR;IDE_Codice WBS
+CV.IA.COR;IDE_Gruppo anagrafica
+CV.IA.COR;IDE_ID Elemento
+CV.IA.COR;IDE_LOR
+CV.IA.COR;IDE_Uniclass
+CV.IA.COR;INF_Campata di appartenenza
+CV.IA.COR;INF_Numerazione struttura campata
+CV.IA.COR;INF_Impalcato di appartenenza
+CV.IA.COR;INF_Codice BMS
+CV.IA.COR;LOC_Carreggiata
+CV.IA.COR;LOC_Direzione
+CV.IA.COR;TEC_Documentazione tecnica
+CV.IA.COR;TEC_Materiale
+CV.IA.COR;TEC_Incidenza armatura
+CV.IA.COR;TEC_Tipologia acciaio
+CV.IA.COR;TEC_Classificazione d uso stradale
+CV.IC.CUN;ANA_Esecutore
+CV.IC.CUN;ANA_Progettista
+CV.IC.CUN;GEO_Altezza
+CV.IC.CUN;GEO_Larghezza
+CV.IC.CUN;GEO_Lunghezza
+CV.IC.CUN;GEO_Pendenza
+CV.IC.CUN;GEO_Pendenza sponde
+CV.IC.CUN;GEO_Peso
+CV.IC.CUN;GEO_Quota fine tratto
+CV.IC.CUN;GEO_Quota inizio tratto
+CV.IC.CUN;GEO_Raggio
+CV.IC.CUN;IDE_Codice opera
+CV.IC.CUN;IDE_Codice WBS
+CV.IC.CUN;IDE_Gruppo anagrafica
+CV.IC.CUN;IDE_ID Elemento
+CV.IC.CUN;IDE_LOR
+CV.IC.CUN;IDE_Uniclass
+CV.IC.CUN;INF_Campata di appartenenza
+CV.IC.CUN;INF_Numerazione struttura campata
+CV.IC.CUN;INF_Impalcato di appartenenza
+CV.IC.CUN;INF_Codice BMS
+CV.IC.CUN;LOC_Carreggiata
+CV.IC.CUN;LOC_Direzione
+CV.IC.CUN;TEC_Documentazione tecnica
+CV.IC.CUN;TEC_Materiale
+CV.IC.CUN;TEC_Classificazione d uso stradale
+CV.IA.CUN;ANA_Esecutore
+CV.IA.CUN;ANA_Progettista
+CV.IA.CUN;GEO_Altezza
+CV.IA.CUN;GEO_Larghezza
+CV.IA.CUN;GEO_Lunghezza
+CV.IA.CUN;GEO_Pendenza
+CV.IA.CUN;GEO_Pendenza sponde
+CV.IA.CUN;GEO_Peso
+CV.IA.CUN;GEO_Quota fine tratto
+CV.IA.CUN;GEO_Quota inizio tratto
+CV.IA.CUN;GEO_Raggio
+CV.IA.CUN;IDE_Codice opera
+CV.IA.CUN;IDE_Codice WBS
+CV.IA.CUN;IDE_Gruppo anagrafica
+CV.IA.CUN;IDE_ID Elemento
+CV.IA.CUN;IDE_LOR
+CV.IA.CUN;IDE_Uniclass
+CV.IA.CUN;INF_Campata di appartenenza
+CV.IA.CUN;INF_Numerazione struttura campata
+CV.IA.CUN;INF_Impalcato di appartenenza
+CV.IA.CUN;INF_Codice BMS
+CV.IA.CUN;LOC_Carreggiata
+CV.IA.CUN;LOC_Direzione
+CV.IA.CUN;TEC_Documentazione tecnica
+CV.IA.CUN;TEC_Materiale
+CV.IA.CUN;TEC_Classificazione d uso stradale
+CV.FP.DIA;ANA_Esecutore
+CV.FP.DIA;ANA_Progettista
+CV.FP.DIA;GEO_Diametro
+CV.FP.DIA;GEO_Larghezza
+CV.FP.DIA;GEO_Lunghezza
+CV.FP.DIA;GEO_Quota altimetrica inferiore
+CV.FP.DIA;GEO_Quota altimetrica superiore
+CV.FP.DIA;GEO_Volume
+CV.FP.DIA;GEO_Spessore parete
+CV.FP.DIA;IDE_Codice opera
+CV.FP.DIA;IDE_Codice WBS
+CV.FP.DIA;IDE_Gruppo anagrafica
+CV.FP.DIA;IDE_ID Elemento
+CV.FP.DIA;IDE_LOR
+CV.FP.DIA;IDE_Uniclass
+CV.FP.DIA;LOC_Carreggiata
+CV.FP.DIA;LOC_Direzione
+CV.FP.DIA;TEC_Documentazione tecnica
+CV.FP.DIA;TEC_Incidenza armatura
+CV.FP.DIA;TEC_Materiale
+CV.FP.DIA;TEC_Tipologia acciaio
+CV.FO.DIA;ANA_Esecutore
+CV.FO.DIA;ANA_Progettista
+CV.FO.DIA;GEO_Diametro
+CV.FO.DIA;GEO_Larghezza
+CV.FO.DIA;GEO_Lunghezza
+CV.FO.DIA;GEO_Quota altimetrica inferiore
+CV.FO.DIA;GEO_Quota altimetrica superiore
+CV.FO.DIA;GEO_Volume
+CV.FO.DIA;GEO_Spessore parete
+CV.FO.DIA;IDE_Codice opera
+CV.FO.DIA;IDE_Codice WBS
+CV.FO.DIA;IDE_Gruppo anagrafica
+CV.FO.DIA;IDE_ID Elemento
+CV.FO.DIA;IDE_LOR
+CV.FO.DIA;IDE_Uniclass
+CV.FO.DIA;LOC_Carreggiata
+CV.FO.DIA;LOC_Direzione
+CV.FO.DIA;TEC_Documentazione tecnica
+CV.FO.DIA;TEC_Incidenza armatura
+CV.FO.DIA;TEC_Materiale
+CV.FO.DIA;TEC_Tipologia acciaio
+CV.GI.GIU;ANA_Esecutore
+CV.GI.GIU;ANA_Progettista
+CV.GI.GIU;GEO_Altezza
+CV.GI.GIU;GEO_Larghezza
+CV.GI.GIU;GEO_Lunghezza
+CV.GI.GIU;GEO_Peso
+CV.GI.GIU;IDE_Codice opera
+CV.GI.GIU;IDE_Codice WBS
+CV.GI.GIU;IDE_Gruppo anagrafica
+CV.GI.GIU;IDE_ID Elemento
+CV.GI.GIU;IDE_LOR
+CV.GI.GIU;IDE_Uniclass
+CV.GI.GIU;LOC_Carreggiata
+CV.GI.GIU;LOC_Direzione
+CV.GI.GIU;TEC_Documentazione tecnica
+CV.GI.GIU;TEC_Tipologia
+CV.GI.GIU;TEC_Tipologia giunti di superficie
+CV.PD.ISA;ANA_Esecutore
+CV.PD.ISA;ANA_Progettista
+CV.PD.ISA;GEO_Diametro
+CV.PD.ISA;GEO_Larghezza
+CV.PD.ISA;GEO_Lunghezza
+CV.PD.ISA;GEO_Peso
+CV.PD.ISA;GEO_Quota altimetrica inferiore
+CV.PD.ISA;GEO_Quota altimetrica superiore
+CV.PD.ISA;GEO_Altezza
+CV.PD.ISA;IDE_Codice opera
+CV.PD.ISA;IDE_Codice WBS
+CV.PD.ISA;IDE_Gruppo anagrafica
+CV.PD.ISA;IDE_ID Elemento
+CV.PD.ISA;IDE_LOR
+CV.PD.ISA;IDE_Uniclass
+CV.PD.ISA;INF_Campata di appartenenza
+CV.PD.ISA;INF_Numerazione struttura campata
+CV.PD.ISA;INF_Impalcato di appartenenza
+CV.PD.ISA;INF_Codice BMS
+CV.PD.ISA;LOC_Carreggiata
+CV.PD.ISA;LOC_Direzione
+CV.PD.ISA;LOC_Progressiva finale
+CV.PD.ISA;LOC_Progressiva iniziale
+CV.PD.ISA;TEC_Documentazione tecnica
+CV.PD.ISA;TEC_Tipologia apparecchi di appoggio
+CV.PD.ISA;TEC_Tipologia dispositivo antisismico
+CV.PI.ISA;ANA_Esecutore
+CV.PI.ISA;ANA_Progettista
+CV.PI.ISA;GEO_Altezza
+CV.PI.ISA;GEO_Diametro
+CV.PI.ISA;GEO_Larghezza
+CV.PI.ISA;GEO_Lunghezza
+CV.PI.ISA;GEO_Peso
+CV.PI.ISA;GEO_Quota altimetrica inferiore
+CV.PI.ISA;GEO_Quota altimetrica superiore
+CV.PI.ISA;IDE_Codice opera
+CV.PI.ISA;IDE_Codice WBS
+CV.PI.ISA;IDE_Gruppo anagrafica
+CV.PI.ISA;IDE_ID Elemento
+CV.PI.ISA;IDE_LOR
+CV.PI.ISA;IDE_Uniclass
+CV.PI.ISA;LOC_Carreggiata
+CV.PI.ISA;LOC_Direzione
+CV.PI.ISA;LOC_Progressiva finale
+CV.PI.ISA;LOC_Progressiva iniziale
+CV.PI.ISA;TEC_Documentazione tecnica
+CV.PI.ISA;TEC_Tipologia apparecchi di appoggio
+CV.PI.ISA;TEC_Tipologia dispositivo antisismico
+CV.SP.ISA;ANA_Esecutore
+CV.SP.ISA;ANA_Progettista
+CV.SP.ISA;GEO_Altezza
+CV.SP.ISA;GEO_Diametro
+CV.SP.ISA;GEO_Larghezza
+CV.SP.ISA;GEO_Lunghezza
+CV.SP.ISA;GEO_Peso
+CV.SP.ISA;GEO_Quota altimetrica inferiore
+CV.SP.ISA;GEO_Quota altimetrica superiore
+CV.SP.ISA;IDE_Codice opera
+CV.SP.ISA;IDE_Codice WBS
+CV.SP.ISA;IDE_Gruppo anagrafica
+CV.SP.ISA;IDE_ID Elemento
+CV.SP.ISA;IDE_LOR
+CV.SP.ISA;IDE_Uniclass
+CV.SP.ISA;LOC_Carreggiata
+CV.SP.ISA;LOC_Direzione
+CV.SP.ISA;LOC_Progressiva finale
+CV.SP.ISA;LOC_Progressiva iniziale
+CV.SP.ISA;TEC_Documentazione tecnica
+CV.SP.ISA;TEC_Tipologia apparecchi di appoggio
+CV.SP.ISA;TEC_Tipologia dispositivo antisismico
+CV.IA.LOR;ANA_Esecutore
+CV.IA.LOR;ANA_Progettista
+CV.IA.LOR;GEO_Altezza profilo
+CV.IA.LOR;GEO_Larghezza profilo
+CV.IA.LOR;GEO_Lunghezza profilo
+CV.IA.LOR;GEO_Peso
+CV.IA.LOR;IDE_Codice opera
+CV.IA.LOR;IDE_Codice WBS
+CV.IA.LOR;IDE_Gruppo anagrafica
+CV.IA.LOR;IDE_ID Elemento
+CV.IA.LOR;IDE_LOR
+CV.IA.LOR;IDE_Uniclass
+CV.IA.LOR;INF_Campata di appartenenza
+CV.IA.LOR;INF_Numerazione struttura campata
+CV.IA.LOR;INF_Impalcato di appartenenza
+CV.IA.LOR;INF_Codice BMS
+CV.IA.LOR;LOC_Carreggiata
+CV.IA.LOR;LOC_Direzione
+CV.IA.LOR;TEC_Documentazione tecnica
+CV.IA.LOR;TEC_Materiale
+CV.IA.LOR;TEC_Tipologia acciaio
+CV.IA.LOR;TEC_Tipologia profilo
+CV.IC.MUS;ANA_Esecutore
+CV.IC.MUS;ANA_Progettista
+CV.IC.MUS;GEO_Spessore strato pavimentazione
+CV.IC.MUS;IDE_Codice opera
+CV.IC.MUS;IDE_Codice WBS
+CV.IC.MUS;IDE_Gruppo anagrafica
+CV.IC.MUS;IDE_ID Elemento
+CV.IC.MUS;IDE_LOR
+CV.IC.MUS;IDE_Uniclass
+CV.IC.MUS;INF_Campata di appartenenza
+CV.IC.MUS;INF_Numerazione struttura campata
+CV.IC.MUS;INF_Impalcato di appartenenza
+CV.IC.MUS;INF_Codice BMS
+CV.IC.MUS;LOC_Carreggiata
+CV.IC.MUS;LOC_Direzione
+CV.IC.MUS;LOC_Progressiva finale
+CV.IC.MUS;LOC_Progressiva iniziale
+CV.IC.MUS;TEC_Documentazione tecnica
+CV.IC.MUS;TEC_Materiale
+CV.IC.MUS;TEC_Classificazione d uso stradale
+CV.IA.MUS;ANA_Esecutore
+CV.IA.MUS;ANA_Progettista
+CV.IA.MUS;GEO_Spessore strato pavimentazione
+CV.IA.MUS;IDE_Codice opera
+CV.IA.MUS;IDE_Codice WBS
+CV.IA.MUS;IDE_Gruppo anagrafica
+CV.IA.MUS;IDE_ID Elemento
+CV.IA.MUS;IDE_LOR
+CV.IA.MUS;IDE_Uniclass
+CV.IA.MUS;INF_Campata di appartenenza
+CV.IA.MUS;INF_Numerazione struttura campata
+CV.IA.MUS;INF_Impalcato di appartenenza
+CV.IA.MUS;INF_Codice BMS
+CV.IA.MUS;LOC_Carreggiata
+CV.IA.MUS;LOC_Direzione
+CV.IA.MUS;LOC_Progressiva finale
+CV.IA.MUS;LOC_Progressiva iniziale
+CV.IA.MUS;TEC_Documentazione tecnica
+CV.IA.MUS;TEC_Materiale
+CV.IA.MUS;TEC_Classificazione d uso stradale
+CV.FP.MPL;ANA_Esecutore
+CV.FP.MPL;ANA_Progettista
+CV.FP.MPL;GEO_Diametro
+CV.FP.MPL;GEO_Larghezza
+CV.FP.MPL;GEO_Lunghezza
+CV.FP.MPL;GEO_Quota altimetrica inferiore
+CV.FP.MPL;GEO_Quota altimetrica superiore
+CV.FP.MPL;GEO_Volume
+CV.FP.MPL;GEO_Spessore parete
+CV.FP.MPL;GEO_Identificativo concio
+CV.FP.MPL;IDE_Codice opera
+CV.FP.MPL;IDE_Codice WBS
+CV.FP.MPL;IDE_Gruppo anagrafica
+CV.FP.MPL;IDE_ID Elemento
+CV.FP.MPL;IDE_LOR
+CV.FP.MPL;IDE_Uniclass
+CV.FP.MPL;LOC_Carreggiata
+CV.FP.MPL;LOC_Direzione
+CV.FP.MPL;TEC_Documentazione tecnica
+CV.FP.MPL;TEC_Incidenza armatura
+CV.FP.MPL;TEC_Materiale
+CV.FP.MPL;TEC_Tipologia acciaio
+CV.FO.MPL;ANA_Esecutore
+CV.FO.MPL;ANA_Progettista
+CV.FO.MPL;GEO_Diametro
+CV.FO.MPL;GEO_Larghezza
+CV.FO.MPL;GEO_Lunghezza
+CV.FO.MPL;GEO_Quota altimetrica inferiore
+CV.FO.MPL;GEO_Quota altimetrica superiore
+CV.FO.MPL;GEO_Volume
+CV.FO.MPL;GEO_Spessore parete
+CV.FO.MPL;GEO_Identificativo concio
+CV.FO.MPL;IDE_Codice opera
+CV.FO.MPL;IDE_Codice WBS
+CV.FO.MPL;IDE_Gruppo anagrafica
+CV.FO.MPL;IDE_ID Elemento
+CV.FO.MPL;IDE_LOR
+CV.FO.MPL;IDE_Uniclass
+CV.FO.MPL;LOC_Carreggiata
+CV.FO.MPL;LOC_Direzione
+CV.FO.MPL;TEC_Documentazione tecnica
+CV.FO.MPL;TEC_Incidenza armatura
+CV.FO.MPL;TEC_Materiale
+CV.FO.MPL;TEC_Tipologia acciaio
+CV.SP.MAN;ANA_Esecutore
+CV.SP.MAN;ANA_Progettista
+CV.SP.MAN;GEO_Altezza
+CV.SP.MAN;GEO_Lunghezza
+CV.SP.MAN;GEO_Peso
+CV.SP.MAN;GEO_Quota altimetrica inferiore
+CV.SP.MAN;GEO_Quota altimetrica superiore
+CV.SP.MAN;GEO_Spessore
+CV.SP.MAN;GEO_Volume
+CV.SP.MAN;IDE_Codice opera
+CV.SP.MAN;IDE_Codice WBS
+CV.SP.MAN;IDE_Gruppo anagrafica
+CV.SP.MAN;IDE_ID Elemento
+CV.SP.MAN;IDE_LOR
+CV.SP.MAN;IDE_Uniclass
+CV.SP.MAN;LOC_Carreggiata
+CV.SP.MAN;LOC_Direzione
+CV.SP.MAN;TEC_Documentazione tecnica
+CV.SP.MAN;TEC_Incidenza armatura
+CV.SP.MAN;TEC_Materiale
+CV.SP.MAN;TEC_Tipologia acciaio
+CV.SP.MDA;ANA_Esecutore
+CV.SP.MDA;ANA_Progettista
+CV.SP.MDA;GEO_Lunghezza
+CV.SP.MDA;GEO_Peso
+CV.SP.MDA;GEO_Quota altimetrica inferiore
+CV.SP.MDA;GEO_Quota altimetrica superiore
+CV.SP.MDA;GEO_Spessore
+CV.SP.MDA;GEO_Volume
+CV.SP.MDA;GEO_Altezza
+CV.SP.MDA;IDE_Codice opera
+CV.SP.MDA;IDE_Codice WBS
+CV.SP.MDA;IDE_Gruppo anagrafica
+CV.SP.MDA;IDE_ID Elemento
+CV.SP.MDA;IDE_LOR
+CV.SP.MDA;IDE_Uniclass
+CV.SP.MDA;LOC_Carreggiata
+CV.SP.MDA;LOC_Direzione
+CV.SP.MDA;TEC_Documentazione tecnica
+CV.SP.MDA;TEC_Incidenza armatura
+CV.SP.MDA;TEC_Materiale
+CV.SP.MDA;TEC_Tipologia acciaio
+CV.SP.MFR;ANA_Esecutore
+CV.SP.MFR;ANA_Progettista
+CV.SP.MFR;GEO_Altezza
+CV.SP.MFR;GEO_Lunghezza
+CV.SP.MFR;GEO_Peso
+CV.SP.MFR;GEO_Quota altimetrica inferiore
+CV.SP.MFR;GEO_Quota altimetrica superiore
+CV.SP.MFR;GEO_Spessore
+CV.SP.MFR;GEO_Volume
+CV.SP.MFR;IDE_Codice opera
+CV.SP.MFR;IDE_Codice WBS
+CV.SP.MFR;IDE_Gruppo anagrafica
+CV.SP.MFR;IDE_ID Elemento
+CV.SP.MFR;IDE_LOR
+CV.SP.MFR;IDE_Uniclass
+CV.SP.MFR;LOC_Carreggiata
+CV.SP.MFR;LOC_Direzione
+CV.SP.MFR;TEC_Documentazione tecnica
+CV.SP.MFR;TEC_Incidenza armatura
+CV.SP.MFR;TEC_Materiale
+CV.SP.MFR;TEC_Tipologia acciaio
+CV.SP.MFR;TEC_Livello idrico
+CV.AC.OPO;ANA_Esecutore
+CV.AC.OPO;ANA_Progettista
+CV.AC.OPO;GEO_Altezza
+CV.AC.OPO;GEO_Spessore
+CV.AC.OPO;GEO_Lunghezza
+CV.AC.OPO;GEO_Larghezza
+CV.AC.OPO;IDE_Codice opera
+CV.AC.OPO;IDE_Codice WBS
+CV.AC.OPO;IDE_Gruppo anagrafica
+CV.AC.OPO;IDE_ID Elemento
+CV.AC.OPO;IDE_LOR
+CV.AC.OPO;IDE_Uniclass
+CV.AC.OPO;LOC_Carreggiata
+CV.AC.OPO;LOC_Direzione
+CV.AC.OPO;LOC_Progressiva finale
+CV.AC.OPO;LOC_Progressiva iniziale
+CV.AC.OPO;TEC_Materiale
+CV.AC.OPO;TEC_Documentazione tecnica
+CV.IC.PPZ;ANA_Esecutore
+CV.IC.PPZ;ANA_Progettista
+CV.IC.PPZ;GEO_Spessore strati bituminosi
+CV.IC.PPZ;GEO_Spessore
+CV.IC.PPZ;GEO_Volume
+CV.IC.PPZ;IDE_Codice opera
+CV.IC.PPZ;IDE_Codice WBS
+CV.IC.PPZ;IDE_Gruppo anagrafica
+CV.IC.PPZ;IDE_ID Elemento
+CV.IC.PPZ;IDE_LOR
+CV.IC.PPZ;IDE_Uniclass
+CV.IC.PPZ;INF_Campata di appartenenza
+CV.IC.PPZ;INF_Numerazione struttura campata
+CV.IC.PPZ;INF_Impalcato di appartenenza
+CV.IC.PPZ;INF_Codice BMS
+CV.IC.PPZ;LOC_Carreggiata
+CV.IC.PPZ;LOC_Direzione
+CV.IC.PPZ;TEC_Documentazione tecnica
+CV.IC.PPZ;TEC_Classificazione d uso stradale
+CV.IA.PPZ;ANA_Esecutore
+CV.IA.PPZ;ANA_Progettista
+CV.IA.PPZ;GEO_Spessore strati bituminosi
+CV.IA.PPZ;GEO_Spessore
+CV.IA.PPZ;GEO_Volume
+CV.IA.PPZ;IDE_Codice opera
+CV.IA.PPZ;IDE_Codice WBS
+CV.IA.PPZ;IDE_Gruppo anagrafica
+CV.IA.PPZ;IDE_ID Elemento
+CV.IA.PPZ;IDE_LOR
+CV.IA.PPZ;IDE_Uniclass
+CV.IA.PPZ;INF_Campata di appartenenza
+CV.IA.PPZ;INF_Numerazione struttura campata
+CV.IA.PPZ;INF_Impalcato di appartenenza
+CV.IA.PPZ;INF_Codice BMS
+CV.IA.PPZ;LOC_Carreggiata
+CV.IA.PPZ;LOC_Direzione
+CV.IA.PPZ;TEC_Documentazione tecnica
+CV.IA.PPZ;TEC_Classificazione d uso stradale
+CV.FP.PAL;ANA_Esecutore
+CV.FP.PAL;ANA_Progettista
+CV.FP.PAL;GEO_Diametro
+CV.FP.PAL;GEO_Larghezza
+CV.FP.PAL;GEO_Lunghezza
+CV.FP.PAL;GEO_Quota altimetrica inferiore
+CV.FP.PAL;GEO_Quota altimetrica superiore
+CV.FP.PAL;GEO_Volume
+CV.FP.PAL;GEO_Spessore parete
+CV.FP.PAL;GEO_Identificativo concio
+CV.FP.PAL;IDE_Codice opera
+CV.FP.PAL;IDE_Codice WBS
+CV.FP.PAL;IDE_Gruppo anagrafica
+CV.FP.PAL;IDE_ID Elemento
+CV.FP.PAL;IDE_LOR
+CV.FP.PAL;IDE_Uniclass
+CV.FP.PAL;LOC_Carreggiata
+CV.FP.PAL;LOC_Direzione
+CV.FP.PAL;TEC_Documentazione tecnica
+CV.FP.PAL;TEC_Incidenza armatura
+CV.FP.PAL;TEC_Materiale
+CV.FP.PAL;TEC_Tipologia acciaio
+CV.FO.PAL;ANA_Esecutore
+CV.FO.PAL;ANA_Progettista
+CV.FO.PAL;GEO_Diametro
+CV.FO.PAL;GEO_Larghezza
+CV.FO.PAL;GEO_Lunghezza
+CV.FO.PAL;GEO_Quota altimetrica inferiore
+CV.FO.PAL;GEO_Quota altimetrica superiore
+CV.FO.PAL;GEO_Volume
+CV.FO.PAL;GEO_Spessore parete
+CV.FO.PAL;GEO_Identificativo concio
+CV.FO.PAL;IDE_Codice opera
+CV.FO.PAL;IDE_Codice WBS
+CV.FO.PAL;IDE_Gruppo anagrafica
+CV.FO.PAL;IDE_ID Elemento
+CV.FO.PAL;IDE_LOR
+CV.FO.PAL;IDE_Uniclass
+CV.FO.PAL;LOC_Carreggiata
+CV.FO.PAL;LOC_Direzione
+CV.FO.PAL;TEC_Documentazione tecnica
+CV.FO.PAL;TEC_Incidenza armatura
+CV.FO.PAL;TEC_Materiale
+CV.FO.PAL;TEC_Tipologia acciaio
+CV.SP.PAR;ANA_Esecutore
+CV.SP.PAR;ANA_Progettista
+CV.SP.PAR;GEO_Altezza
+CV.SP.PAR;GEO_Lunghezza
+CV.SP.PAR;GEO_Peso
+CV.SP.PAR;GEO_Quota altimetrica inferiore
+CV.SP.PAR;GEO_Quota altimetrica superiore
+CV.SP.PAR;GEO_Spessore
+CV.SP.PAR;GEO_Volume
+CV.SP.PAR;IDE_Codice opera
+CV.SP.PAR;IDE_Codice WBS
+CV.SP.PAR;IDE_Gruppo anagrafica
+CV.SP.PAR;IDE_ID Elemento
+CV.SP.PAR;IDE_LOR
+CV.SP.PAR;IDE_Uniclass
+CV.SP.PAR;LOC_Carreggiata
+CV.SP.PAR;LOC_Direzione
+CV.SP.PAR;TEC_Documentazione tecnica
+CV.SP.PAR;TEC_Incidenza armatura
+CV.SP.PAR;TEC_Materiale
+CV.SP.PAR;TEC_Tipologia acciaio
+CV.SP.PAR;TEC_Livello idrico
+CV.AC.PEN;ANA_Esecutore
+CV.AC.PEN;ANA_Progettista
+CV.AC.PEN;GEO_Diametro
+CV.AC.PEN;GEO_Larghezza
+CV.AC.PEN;GEO_Lunghezza
+CV.AC.PEN;GEO_Peso
+CV.AC.PEN;GEO_Altezza
+CV.AC.PEN;IDE_Codice opera
+CV.AC.PEN;IDE_Codice WBS
+CV.AC.PEN;IDE_Gruppo anagrafica
+CV.AC.PEN;IDE_ID Elemento
+CV.AC.PEN;IDE_LOR
+CV.AC.PEN;IDE_Uniclass
+CV.AC.PEN;INF_Campata di appartenenza
+CV.AC.PEN;INF_Codice BMS
+CV.AC.PEN;INF_Impalcato di appartenenza
+CV.AC.PEN;INF_Numerazione struttura campata
+CV.AC.PEN;LOC_Carreggiata
+CV.AC.PEN;LOC_Direzione
+CV.AC.PEN;TEC_Documentazione tecnica
+CV.AC.PEN;TEC_Materiale
+CV.AC.PEN;TEC_Tipologia installazione
+CV.AC.PEN;TEC_Tipologia pendini
+CV.IC.PEN;ANA_Esecutore
+CV.IC.PEN;ANA_Progettista
+CV.IC.PEN;GEO_Diametro
+CV.IC.PEN;GEO_Larghezza
+CV.IC.PEN;GEO_Lunghezza
+CV.IC.PEN;GEO_Peso
+CV.IC.PEN;GEO_Altezza
+CV.IC.PEN;IDE_Codice opera
+CV.IC.PEN;IDE_Codice WBS
+CV.IC.PEN;IDE_Gruppo anagrafica
+CV.IC.PEN;IDE_ID Elemento
+CV.IC.PEN;IDE_LOR
+CV.IC.PEN;IDE_Uniclass
+CV.IC.PEN;INF_Campata di appartenenza
+CV.IC.PEN;INF_Codice BMS
+CV.IC.PEN;INF_Impalcato di appartenenza
+CV.IC.PEN;INF_Numerazione struttura campata
+CV.IC.PEN;LOC_Carreggiata
+CV.IC.PEN;LOC_Direzione
+CV.IC.PEN;TEC_Documentazione tecnica
+CV.IC.PEN;TEC_Materiale
+CV.IC.PEN;TEC_Tipologia installazione
+CV.IC.PEN;TEC_Tipologia pendini
+CV.IA.PEN;ANA_Esecutore
+CV.IA.PEN;ANA_Progettista
+CV.IA.PEN;GEO_Diametro
+CV.IA.PEN;GEO_Larghezza
+CV.IA.PEN;GEO_Lunghezza
+CV.IA.PEN;GEO_Altezza
+CV.IA.PEN;GEO_Peso
+CV.IA.PEN;IDE_Codice opera
+CV.IA.PEN;IDE_Codice WBS
+CV.IA.PEN;IDE_Gruppo anagrafica
+CV.IA.PEN;IDE_ID Elemento
+CV.IA.PEN;IDE_LOR
+CV.IA.PEN;IDE_Uniclass
+CV.IA.PEN;INF_Campata di appartenenza
+CV.IA.PEN;INF_Codice BMS
+CV.IA.PEN;INF_Impalcato di appartenenza
+CV.IA.PEN;INF_Numerazione struttura campata
+CV.IA.PEN;LOC_Carreggiata
+CV.IA.PEN;LOC_Direzione
+CV.IA.PEN;TEC_Documentazione tecnica
+CV.IA.PEN;TEC_Materiale
+CV.IA.PEN;TEC_Tipologia installazione
+CV.IA.PEN;TEC_Tipologia pendini
+CV.FP.PZF;ANA_Esecutore
+CV.FP.PZF;ANA_Progettista
+CV.FP.PZF;GEO_Area
+CV.FP.PZF;GEO_Larghezza
+CV.FP.PZF;GEO_Lunghezza
+CV.FP.PZF;GEO_Peso
+CV.FP.PZF;GEO_Quota altimetrica inferiore
+CV.FP.PZF;GEO_Volume
+CV.FP.PZF;GEO_Altezza
+CV.FP.PZF;GEO_Altezza sezione
+CV.FP.PZF;GEO_Larghezza sezione
+CV.FP.PZF;GEO_Identificativo concio
+CV.FP.PZF;IDE_Codice opera
+CV.FP.PZF;IDE_Codice WBS
+CV.FP.PZF;IDE_Gruppo anagrafica
+CV.FP.PZF;IDE_ID Elemento
+CV.FP.PZF;IDE_LOR
+CV.FP.PZF;IDE_Uniclass
+CV.FP.PZF;LOC_Carreggiata
+CV.FP.PZF;LOC_Direzione
+CV.FP.PZF;TEC_Documentazione tecnica
+CV.FP.PZF;TEC_Incidenza armatura
+CV.FP.PZF;TEC_Materiale
+CV.FP.PZF;TEC_Tipologia acciaio
+CV.FO.PZF;ANA_Esecutore
+CV.FO.PZF;ANA_Progettista
+CV.FO.PZF;GEO_Area
+CV.FO.PZF;GEO_Larghezza
+CV.FO.PZF;GEO_Lunghezza
+CV.FO.PZF;GEO_Peso
+CV.FO.PZF;GEO_Quota altimetrica inferiore
+CV.FO.PZF;GEO_Volume
+CV.FO.PZF;GEO_Altezza
+CV.FO.PZF;GEO_Altezza sezione
+CV.FO.PZF;GEO_Larghezza sezione
+CV.FO.PZF;GEO_Identificativo concio
+CV.FO.PZF;IDE_Codice opera
+CV.FO.PZF;IDE_Codice WBS
+CV.FO.PZF;IDE_Gruppo anagrafica
+CV.FO.PZF;IDE_ID Elemento
+CV.FO.PZF;IDE_LOR
+CV.FO.PZF;IDE_Uniclass
+CV.FO.PZF;LOC_Carreggiata
+CV.FO.PZF;LOC_Direzione
+CV.FO.PZF;TEC_Documentazione tecnica
+CV.FO.PZF;TEC_Incidenza armatura
+CV.FO.PZF;TEC_Materiale
+CV.FO.PZF;TEC_Tipologia acciaio
+CV.FS.PZF;ANA_Esecutore
+CV.FS.PZF;ANA_Progettista
+CV.FS.PZF;GEO_Area
+CV.FS.PZF;GEO_Larghezza
+CV.FS.PZF;GEO_Lunghezza
+CV.FS.PZF;GEO_Peso
+CV.FS.PZF;GEO_Quota altimetrica inferiore
+CV.FS.PZF;GEO_Volume
+CV.FS.PZF;GEO_Altezza
+CV.FS.PZF;GEO_Altezza sezione
+CV.FS.PZF;GEO_Larghezza sezione
+CV.FS.PZF;GEO_Identificativo concio
+CV.FS.PZF;IDE_Codice opera
+CV.FS.PZF;IDE_Codice WBS
+CV.FS.PZF;IDE_Gruppo anagrafica
+CV.FS.PZF;IDE_ID Elemento
+CV.FS.PZF;IDE_LOR
+CV.FS.PZF;IDE_Uniclass
+CV.FS.PZF;LOC_Carreggiata
+CV.FS.PZF;LOC_Direzione
+CV.FS.PZF;TEC_Documentazione tecnica
+CV.FS.PZF;TEC_Incidenza armatura
+CV.FS.PZF;TEC_Materiale
+CV.FS.PZF;TEC_Tipologia acciaio
+CV.FO.POZ;ANA_Esecutore
+CV.FO.POZ;ANA_Progettista
+CV.FO.POZ;GEO_Area
+CV.FO.POZ;GEO_Diametro
+CV.FO.POZ;GEO_Lunghezza
+CV.FO.POZ;GEO_Peso
+CV.FO.POZ;GEO_Quota altimetrica inferiore
+CV.FO.POZ;GEO_Quota altimetrica superiore
+CV.FO.POZ;GEO_Volume
+CV.FO.POZ;GEO_Spessore parete
+CV.FO.POZ;IDE_Codice opera
+CV.FO.POZ;IDE_Codice WBS
+CV.FO.POZ;IDE_Gruppo anagrafica
+CV.FO.POZ;IDE_ID Elemento
+CV.FO.POZ;IDE_LOR
+CV.FO.POZ;IDE_Uniclass
+CV.FO.POZ;LOC_Carreggiata
+CV.FO.POZ;LOC_Direzione
+CV.FO.POZ;TEC_Documentazione tecnica
+CV.FO.POZ;TEC_Materiale
+CV.FO.POZ;TEC_Tipologia acciaio
+CV.PD.PUL;ANA_Esecutore
+CV.PD.PUL;ANA_Progettista
+CV.PD.PUL;GEO_Larghezza
+CV.PD.PUL;GEO_Lunghezza
+CV.PD.PUL;GEO_Peso
+CV.PD.PUL;GEO_Quota altimetrica inferiore
+CV.PD.PUL;GEO_Quota altimetrica superiore
+CV.PD.PUL;GEO_Volume
+CV.PD.PUL;GEO_Altezza
+CV.PD.PUL;IDE_Codice opera
+CV.PD.PUL;IDE_Codice WBS
+CV.PD.PUL;IDE_Gruppo anagrafica
+CV.PD.PUL;IDE_ID Elemento
+CV.PD.PUL;IDE_LOR
+CV.PD.PUL;IDE_Uniclass
+CV.PD.PUL;INF_Campata di appartenenza
+CV.PD.PUL;INF_Numerazione struttura campata
+CV.PD.PUL;INF_Impalcato di appartenenza
+CV.PD.PUL;INF_Codice BMS
+CV.PD.PUL;LOC_Carreggiata
+CV.PD.PUL;LOC_Direzione
+CV.PD.PUL;TEC_Documentazione tecnica
+CV.PD.PUL;TEC_Incidenza armatura
+CV.PD.PUL;TEC_Materiale
+CV.PD.PUL;TEC_Tipologia acciaio
+CV.PI.PUL;ANA_Esecutore
+CV.PI.PUL;ANA_Progettista
+CV.PI.PUL;GEO_Altezza
+CV.PI.PUL;GEO_Larghezza
+CV.PI.PUL;GEO_Lunghezza
+CV.PI.PUL;GEO_Peso
+CV.PI.PUL;GEO_Quota altimetrica inferiore
+CV.PI.PUL;GEO_Quota altimetrica superiore
+CV.PI.PUL;GEO_Volume
+CV.PI.PUL;IDE_Codice opera
+CV.PI.PUL;IDE_Codice WBS
+CV.PI.PUL;IDE_Gruppo anagrafica
+CV.PI.PUL;IDE_ID Elemento
+CV.PI.PUL;IDE_LOR
+CV.PI.PUL;IDE_Uniclass
+CV.PI.PUL;LOC_Carreggiata
+CV.PI.PUL;LOC_Direzione
+CV.PI.PUL;TEC_Documentazione tecnica
+CV.PI.PUL;TEC_Incidenza armatura
+CV.PI.PUL;TEC_Materiale
+CV.PI.PUL;TEC_Sella Gerber
+CV.PI.PUL;TEC_Tipologia acciaio
+CV.IA.PUN;ANA_Esecutore
+CV.IA.PUN;ANA_Progettista
+CV.IA.PUN;GEO_Altezza profilo
+CV.IA.PUN;GEO_Larghezza profilo
+CV.IA.PUN;GEO_Lunghezza profilo
+CV.IA.PUN;GEO_Peso
+CV.IA.PUN;IDE_Codice opera
+CV.IA.PUN;IDE_Codice WBS
+CV.IA.PUN;IDE_Gruppo anagrafica
+CV.IA.PUN;IDE_ID Elemento
+CV.IA.PUN;IDE_LOR
+CV.IA.PUN;IDE_Uniclass
+CV.IA.PUN;INF_Campata di appartenenza
+CV.IA.PUN;INF_Numerazione struttura campata
+CV.IA.PUN;INF_Impalcato di appartenenza
+CV.IA.PUN;INF_Codice BMS
+CV.IA.PUN;LOC_Carreggiata
+CV.IA.PUN;LOC_Direzione
+CV.IA.PUN;TEC_Documentazione tecnica
+CV.IA.PUN;TEC_Materiale
+CV.IA.PUN;TEC_Tipologia acciaio
+CV.IA.PUN;TEC_Tipologia profilo
+CV.PD.RIS;ANA_Esecutore
+CV.PD.RIS;ANA_Progettista
+CV.PD.RIS;GEO_Altezza profilo
+CV.PD.RIS;GEO_Larghezza profilo
+CV.PD.RIS;GEO_Lunghezza profilo
+CV.PD.RIS;GEO_Peso
+CV.PD.RIS;IDE_Codice opera
+CV.PD.RIS;IDE_Codice WBS
+CV.PD.RIS;IDE_Gruppo anagrafica
+CV.PD.RIS;IDE_ID Elemento
+CV.PD.RIS;IDE_LOR
+CV.PD.RIS;IDE_Uniclass
+CV.PD.RIS;INF_Campata di appartenenza
+CV.PD.RIS;INF_Codice BMS
+CV.PD.RIS;INF_Impalcato di appartenenza
+CV.PD.RIS;INF_Numerazione struttura campata
+CV.PD.RIS;LOC_Carreggiata
+CV.PD.RIS;LOC_Direzione
+CV.PD.RIS;TEC_Documentazione tecnica
+CV.PD.RIS;TEC_Materiale
+CV.PD.RIS;TEC_Tipologia acciaio
+CV.PD.RIS;TEC_Tipologia profilo
+CV.PI.RIS;ANA_Esecutore
+CV.PI.RIS;ANA_Progettista
+CV.PI.RIS;GEO_Altezza profilo
+CV.PI.RIS;GEO_Larghezza profilo
+CV.PI.RIS;GEO_Lunghezza profilo
+CV.PI.RIS;GEO_Peso
+CV.PI.RIS;IDE_Codice opera
+CV.PI.RIS;IDE_Codice WBS
+CV.PI.RIS;IDE_Gruppo anagrafica
+CV.PI.RIS;IDE_ID Elemento
+CV.PI.RIS;IDE_LOR
+CV.PI.RIS;IDE_Uniclass
+CV.PI.RIS;LOC_Carreggiata
+CV.PI.RIS;LOC_Direzione
+CV.PI.RIS;TEC_Documentazione tecnica
+CV.PI.RIS;TEC_Materiale
+CV.PI.RIS;TEC_Tipologia acciaio
+CV.PI.RIS;TEC_Tipologia profilo
+CV.SP.RIS;ANA_Esecutore
+CV.SP.RIS;ANA_Progettista
+CV.SP.RIS;GEO_Altezza profilo
+CV.SP.RIS;GEO_Larghezza profilo
+CV.SP.RIS;GEO_Lunghezza profilo
+CV.SP.RIS;GEO_Peso
+CV.SP.RIS;IDE_Codice opera
+CV.SP.RIS;IDE_Codice WBS
+CV.SP.RIS;IDE_Gruppo anagrafica
+CV.SP.RIS;IDE_ID Elemento
+CV.SP.RIS;IDE_LOR
+CV.SP.RIS;IDE_Uniclass
+CV.SP.RIS;LOC_Carreggiata
+CV.SP.RIS;LOC_Direzione
+CV.SP.RIS;TEC_Documentazione tecnica
+CV.SP.RIS;TEC_Materiale
+CV.SP.RIS;TEC_Tipologia acciaio
+CV.SP.RIS;TEC_Tipologia profilo
+CV.IA.SBL;ANA_Esecutore
+CV.IA.SBL;ANA_Progettista
+CV.IA.SBL;GEO_Altezza profilo
+CV.IA.SBL;GEO_Larghezza profilo
+CV.IA.SBL;GEO_Lunghezza profilo
+CV.IA.SBL;GEO_Peso
+CV.IA.SBL;IDE_Codice opera
+CV.IA.SBL;IDE_Codice WBS
+CV.IA.SBL;IDE_Gruppo anagrafica
+CV.IA.SBL;IDE_ID Elemento
+CV.IA.SBL;IDE_LOR
+CV.IA.SBL;IDE_Uniclass
+CV.IA.SBL;INF_Campata di appartenenza
+CV.IA.SBL;INF_Numerazione struttura campata
+CV.IA.SBL;INF_Impalcato di appartenenza
+CV.IA.SBL;INF_Codice BMS
+CV.IA.SBL;LOC_Carreggiata
+CV.IA.SBL;LOC_Direzione
+CV.IA.SBL;TEC_Documentazione tecnica
+CV.IA.SBL;TEC_Materiale
+CV.IA.SBL;TEC_Tipologia acciaio
+CV.IA.SBL;TEC_Tipologia profilo
+CV.IC.SGE;ANA_Esecutore
+CV.IC.SGE;ANA_Progettista
+CV.IC.SGE;GEO_Altezza interna
+CV.IC.SGE;GEO_Larghezza
+CV.IC.SGE;GEO_Larghezza interna
+CV.IC.SGE;GEO_Lunghezza
+CV.IC.SGE;GEO_Peso
+CV.IC.SGE;GEO_Volume
+CV.IC.SGE;GEO_Altezza
+CV.IC.SGE;IDE_Codice opera
+CV.IC.SGE;IDE_Codice WBS
+CV.IC.SGE;IDE_Gruppo anagrafica
+CV.IC.SGE;IDE_ID Elemento
+CV.IC.SGE;IDE_LOR
+CV.IC.SGE;IDE_Uniclass
+CV.IC.SGE;INF_Campata di appartenenza
+CV.IC.SGE;INF_Numerazione struttura campata
+CV.IC.SGE;INF_Impalcato di appartenenza
+CV.IC.SGE;INF_Codice BMS
+CV.IC.SGE;LOC_Carreggiata
+CV.IC.SGE;LOC_Direzione
+CV.IC.SGE;TEC_Chiave di taglio
+CV.IC.SGE;TEC_Documentazione tecnica
+CV.IC.SGE;TEC_Incidenza armatura
+CV.IC.SGE;TEC_Materiale
+CV.IC.SGE;IDE_Elemento di appartenenza
+CV.IC.SGE;TEC_Tipologia C.A./C.A.P.
+CV.IC.SGE;TEC_Tipologia acciaio
+CV.IA.SGE;ANA_Esecutore
+CV.IA.SGE;ANA_Progettista
+CV.IA.SGE;GEO_Altezza interna
+CV.IA.SGE;GEO_Larghezza
+CV.IA.SGE;GEO_Larghezza interna
+CV.IA.SGE;GEO_Lunghezza
+CV.IA.SGE;GEO_Peso
+CV.IA.SGE;GEO_Volume
+CV.IA.SGE;GEO_Altezza
+CV.IA.SGE;IDE_Codice opera
+CV.IA.SGE;IDE_Codice WBS
+CV.IA.SGE;IDE_Gruppo anagrafica
+CV.IA.SGE;IDE_ID Elemento
+CV.IA.SGE;IDE_LOR
+CV.IA.SGE;IDE_Uniclass
+CV.IA.SGE;INF_Campata di appartenenza
+CV.IA.SGE;INF_Numerazione struttura campata
+CV.IA.SGE;INF_Impalcato di appartenenza
+CV.IA.SGE;INF_Codice BMS
+CV.IA.SGE;LOC_Carreggiata
+CV.IA.SGE;LOC_Direzione
+CV.IA.SGE;TEC_Chiave di taglio
+CV.IA.SGE;TEC_Documentazione tecnica
+CV.IA.SGE;TEC_Incidenza armatura
+CV.IA.SGE;TEC_Materiale
+CV.IA.SGE;IDE_Elemento di appartenenza
+CV.IA.SGE;TEC_Tipologia C.A./C.A.P.
+CV.IA.SGE;TEC_Tipologia acciaio
+CV.IC.SOL;ANA_Esecutore
+CV.IC.SOL;ANA_Progettista
+CV.IC.SOL;GEO_Area
+CV.IC.SOL;GEO_Larghezza
+CV.IC.SOL;GEO_Lunghezza
+CV.IC.SOL;GEO_Pendenza
+CV.IC.SOL;GEO_Spessore
+CV.IC.SOL;GEO_Volume
+CV.IC.SOL;GEO_Peso
+CV.IC.SOL;GEO_Quota altimetrica superiore
+CV.IC.SOL;GEO_Quota altimetrica inferiore
+CV.IC.SOL;GEO_Identificativo concio
+CV.IC.SOL;IDE_Codice opera
+CV.IC.SOL;IDE_Codice WBS
+CV.IC.SOL;IDE_Gruppo anagrafica
+CV.IC.SOL;IDE_ID Elemento
+CV.IC.SOL;IDE_LOR
+CV.IC.SOL;IDE_Uniclass
+CV.IC.SOL;INF_Campata di appartenenza
+CV.IC.SOL;INF_Numerazione struttura campata
+CV.IC.SOL;INF_Impalcato di appartenenza
+CV.IC.SOL;INF_Codice BMS
+CV.IC.SOL;LOC_Carreggiata
+CV.IC.SOL;LOC_Direzione
+CV.IC.SOL;TEC_Documentazione tecnica
+CV.IC.SOL;TEC_Incidenza armatura
+CV.IC.SOL;TEC_Materiale
+CV.IC.SOL;TEC_Tipologia acciaio
+CV.IC.SOL;TEC_Tipologia
+CV.IA.SOL;ANA_Esecutore
+CV.IA.SOL;ANA_Progettista
+CV.IA.SOL;GEO_Area
+CV.IA.SOL;GEO_Larghezza
+CV.IA.SOL;GEO_Lunghezza
+CV.IA.SOL;GEO_Pendenza
+CV.IA.SOL;GEO_Spessore
+CV.IA.SOL;GEO_Volume
+CV.IA.SOL;GEO_Peso
+CV.IA.SOL;GEO_Quota altimetrica superiore
+CV.IA.SOL;GEO_Quota altimetrica inferiore
+CV.IA.SOL;GEO_Identificativo concio
+CV.IA.SOL;IDE_Codice opera
+CV.IA.SOL;IDE_Codice WBS
+CV.IA.SOL;IDE_Gruppo anagrafica
+CV.IA.SOL;IDE_ID Elemento
+CV.IA.SOL;IDE_LOR
+CV.IA.SOL;IDE_Uniclass
+CV.IA.SOL;INF_Campata di appartenenza
+CV.IA.SOL;INF_Numerazione struttura campata
+CV.IA.SOL;INF_Impalcato di appartenenza
+CV.IA.SOL;INF_Codice BMS
+CV.IA.SOL;LOC_Carreggiata
+CV.IA.SOL;LOC_Direzione
+CV.IA.SOL;TEC_Documentazione tecnica
+CV.IA.SOL;TEC_Incidenza armatura
+CV.IA.SOL;TEC_Materiale
+CV.IA.SOL;TEC_Tipologia acciaio
+CV.IA.SOL;TEC_Tipologia
+CV.SP.SOL;ANA_Esecutore
+CV.SP.SOL;ANA_Progettista
+CV.SP.SOL;GEO_Larghezza
+CV.SP.SOL;GEO_Lunghezza
+CV.SP.SOL;GEO_Peso
+CV.SP.SOL;GEO_Quota altimetrica inferiore
+CV.SP.SOL;GEO_Quota altimetrica superiore
+CV.SP.SOL;GEO_Spessore
+CV.SP.SOL;GEO_Volume
+CV.SP.SOL;GEO_Pendenza
+CV.SP.SOL;GEO_Area
+CV.SP.SOL;GEO_Identificativo concio
+CV.SP.SOL;IDE_Codice opera
+CV.SP.SOL;IDE_Codice WBS
+CV.SP.SOL;IDE_Gruppo anagrafica
+CV.SP.SOL;IDE_ID Elemento
+CV.SP.SOL;IDE_LOR
+CV.SP.SOL;IDE_Uniclass
+CV.SP.SOL;LOC_Carreggiata
+CV.SP.SOL;LOC_Direzione
+CV.SP.SOL;TEC_Documentazione tecnica
+CV.SP.SOL;TEC_Incidenza armatura
+CV.SP.SOL;TEC_Materiale
+CV.SP.SOL;TEC_Tipologia acciaio
+CV.SP.SOL;TEC_Tipologia
+CV.IC.SSB;ANA_Esecutore
+CV.IC.SSB;ANA_Progettista
+CV.IC.SSB;GEO_Area
+CV.IC.SSB;GEO_Larghezza
+CV.IC.SSB;GEO_Lunghezza
+CV.IC.SSB;GEO_Pendenza
+CV.IC.SSB;GEO_Spessore
+CV.IC.SSB;GEO_Volume
+CV.IC.SSB;IDE_Codice opera
+CV.IC.SSB;IDE_Codice WBS
+CV.IC.SSB;IDE_Gruppo anagrafica
+CV.IC.SSB;IDE_ID Elemento
+CV.IC.SSB;IDE_LOR
+CV.IC.SSB;IDE_Uniclass
+CV.IC.SSB;INF_Campata di appartenenza
+CV.IC.SSB;INF_Numerazione struttura campata
+CV.IC.SSB;INF_Impalcato di appartenenza
+CV.IC.SSB;INF_Codice BMS
+CV.IC.SSB;LOC_Carreggiata
+CV.IC.SSB;LOC_Direzione
+CV.IC.SSB;TEC_Documentazione tecnica
+CV.IC.SSB;TEC_Incidenza armatura
+CV.IC.SSB;TEC_Materiale
+CV.IC.SSB;TEC_Tipologia acciaio
+CV.AN.STL;ANA_Esecutore
+CV.AN.STL;ANA_Progettista
+CV.AN.STL;GEO_Diametro
+CV.AN.STL;GEO_Lunghezza
+CV.AN.STL;GEO_Peso
+CV.AN.STL;IDE_Codice opera
+CV.AN.STL;IDE_Codice WBS
+CV.AN.STL;IDE_Gruppo anagrafica
+CV.AN.STL;IDE_ID Elemento
+CV.AN.STL;IDE_LOR
+CV.AN.STL;IDE_Uniclass
+CV.AN.STL;LOC_Carreggiata
+CV.AN.STL;LOC_Direzione
+CV.AN.STL;TEC_Documentazione tecnica
+CV.AN.STL;TEC_Materiale
+CV.AN.STL;TEC_Tipologia installazione
+CV.AN.STL;TEC_Tipologia
+CV.AC.SAR;ANA_Esecutore
+CV.AC.SAR;ANA_Progettista
+CV.AC.SAR;GEO_Altezza sezione
+CV.AC.SAR;GEO_Larghezza sezione
+CV.AC.SAR;GEO_Lunghezza
+CV.AC.SAR;GEO_Peso
+CV.AC.SAR;GEO_Quota altimetrica inferiore
+CV.AC.SAR;GEO_Quota altimetrica superiore
+CV.AC.SAR;GEO_Raggio
+CV.AC.SAR;GEO_Volume
+CV.AC.SAR;IDE_Codice opera
+CV.AC.SAR;IDE_Codice WBS
+CV.AC.SAR;IDE_Gruppo anagrafica
+CV.AC.SAR;IDE_ID Elemento
+CV.AC.SAR;IDE_LOR
+CV.AC.SAR;IDE_Uniclass
+CV.AC.SAR;INF_Campata di appartenenza
+CV.AC.SAR;INF_Numerazione struttura campata
+CV.AC.SAR;INF_Impalcato di appartenenza
+CV.AC.SAR;INF_Codice BMS
+CV.AC.SAR;LOC_Carreggiata
+CV.AC.SAR;LOC_Direzione
+CV.AC.SAR;TEC_Documentazione tecnica
+CV.AC.SAR;TEC_Incidenza armatura
+CV.AC.SAR;TEC_Materiale
+CV.AC.SAR;TEC_Tipologia acciaio
+CV.AN.SEL;ANA_Esecutore
+CV.AN.SEL;ANA_Progettista
+CV.AN.SEL;GEO_Diametro esterno
+CV.AN.SEL;GEO_Diametro interno
+CV.AN.SEL;GEO_Larghezza
+CV.AN.SEL;GEO_Lunghezza
+CV.AN.SEL;GEO_Peso
+CV.AN.SEL;GEO_Quota altimetrica inferiore
+CV.AN.SEL;GEO_Quota altimetrica superiore
+CV.AN.SEL;GEO_Volume
+CV.AN.SEL;GEO_Altezza
+CV.AN.SEL;IDE_Codice opera
+CV.AN.SEL;IDE_Codice WBS
+CV.AN.SEL;IDE_Gruppo anagrafica
+CV.AN.SEL;IDE_ID Elemento
+CV.AN.SEL;IDE_LOR
+CV.AN.SEL;IDE_Uniclass
+CV.AN.SEL;LOC_Carreggiata
+CV.AN.SEL;LOC_Direzione
+CV.AN.SEL;LOC_Progressiva finale
+CV.AN.SEL;LOC_Progressiva iniziale
+CV.AN.SEL;TEC_Documentazione tecnica
+CV.AN.SEL;TEC_Incidenza armatura
+CV.AN.SEL;TEC_Materiale
+CV.AN.SEL;TEC_Tipologia acciaio
+CV.PD.SEL;ANA_Esecutore
+CV.PD.SEL;ANA_Progettista
+CV.PD.SEL;GEO_Larghezza
+CV.PD.SEL;GEO_Lunghezza
+CV.PD.SEL;GEO_Peso
+CV.PD.SEL;GEO_Quota altimetrica inferiore
+CV.PD.SEL;GEO_Quota altimetrica superiore
+CV.PD.SEL;GEO_Volume
+CV.PD.SEL;GEO_Altezza
+CV.PD.SEL;GEO_Diametro esterno
+CV.PD.SEL;GEO_Diametro interno
+CV.PD.SEL;IDE_Codice opera
+CV.PD.SEL;IDE_Codice WBS
+CV.PD.SEL;IDE_Gruppo anagrafica
+CV.PD.SEL;IDE_ID Elemento
+CV.PD.SEL;IDE_LOR
+CV.PD.SEL;IDE_Uniclass
+CV.PD.SEL;INF_Campata di appartenenza
+CV.PD.SEL;INF_Numerazione struttura campata
+CV.PD.SEL;INF_Impalcato di appartenenza
+CV.PD.SEL;INF_Codice BMS
+CV.PD.SEL;LOC_Carreggiata
+CV.PD.SEL;LOC_Direzione
+CV.PD.SEL;LOC_Progressiva finale
+CV.PD.SEL;LOC_Progressiva iniziale
+CV.PD.SEL;TEC_Documentazione tecnica
+CV.PD.SEL;TEC_Incidenza armatura
+CV.PD.SEL;TEC_Materiale
+CV.PD.SEL;TEC_Tipologia acciaio
+CV.PI.SEL;ANA_Esecutore
+CV.PI.SEL;ANA_Progettista
+CV.PI.SEL;GEO_Diametro esterno
+CV.PI.SEL;GEO_Larghezza
+CV.PI.SEL;GEO_Lunghezza
+CV.PI.SEL;GEO_Peso
+CV.PI.SEL;GEO_Quota altimetrica inferiore
+CV.PI.SEL;GEO_Quota altimetrica superiore
+CV.PI.SEL;GEO_Volume
+CV.PI.SEL;GEO_Altezza
+CV.PI.SEL;GEO_Diametro interno
+CV.PI.SEL;IDE_Codice opera
+CV.PI.SEL;IDE_Codice WBS
+CV.PI.SEL;IDE_Gruppo anagrafica
+CV.PI.SEL;IDE_ID Elemento
+CV.PI.SEL;IDE_LOR
+CV.PI.SEL;IDE_Uniclass
+CV.PI.SEL;LOC_Carreggiata
+CV.PI.SEL;LOC_Direzione
+CV.PI.SEL;LOC_Progressiva finale
+CV.PI.SEL;LOC_Progressiva iniziale
+CV.PI.SEL;TEC_Documentazione tecnica
+CV.PI.SEL;TEC_Incidenza armatura
+CV.PI.SEL;TEC_Materiale
+CV.PI.SEL;TEC_Tipologia acciaio
+CV.AC.TIM;ANA_Esecutore
+CV.AC.TIM;ANA_Progettista
+CV.AC.TIM;GEO_Altezza
+CV.AC.TIM;GEO_Spessore
+CV.AC.TIM;GEO_Lunghezza
+CV.AC.TIM;GEO_Larghezza
+CV.AC.TIM;IDE_Codice opera
+CV.AC.TIM;IDE_Codice WBS
+CV.AC.TIM;IDE_Gruppo anagrafica
+CV.AC.TIM;IDE_ID Elemento
+CV.AC.TIM;IDE_LOR
+CV.AC.TIM;IDE_Uniclass
+CV.AC.TIM;LOC_Carreggiata
+CV.AC.TIM;LOC_Direzione
+CV.AC.TIM;LOC_Progressiva finale
+CV.AC.TIM;LOC_Progressiva iniziale
+CV.AC.TIM;TEC_Materiale
+CV.AC.TIM;TEC_Documentazione tecnica
+CV.IA.TAN;ANA_Esecutore
+CV.IA.TAN;ANA_Progettista
+CV.IA.TAN;GEO_Altezza profilo
+CV.IA.TAN;GEO_Larghezza profilo
+CV.IA.TAN;GEO_Lunghezza profilo
+CV.IA.TAN;GEO_Peso
+CV.IA.TAN;IDE_Codice opera
+CV.IA.TAN;IDE_Codice WBS
+CV.IA.TAN;IDE_Gruppo anagrafica
+CV.IA.TAN;IDE_ID Elemento
+CV.IA.TAN;IDE_LOR
+CV.IA.TAN;IDE_Uniclass
+CV.IA.TAN;INF_Campata di appartenenza
+CV.IA.TAN;INF_Numerazione struttura campata
+CV.IA.TAN;INF_Impalcato di appartenenza
+CV.IA.TAN;INF_Codice BMS
+CV.IA.TAN;LOC_Carreggiata
+CV.IA.TAN;LOC_Direzione
+CV.IA.TAN;TEC_Documentazione tecnica
+CV.IA.TAN;TEC_Materiale
+CV.IA.TAN;TEC_Tipologia acciaio
+CV.IA.TAN;TEC_Tipologia profilo
+CV.AN.TRV;ANA_Esecutore
+CV.AN.TRV;ANA_Progettista
+CV.AN.TRV;GEO_Larghezza profilo
+CV.AN.TRV;GEO_Lunghezza profilo
+CV.AN.TRV;GEO_Peso
+CV.AN.TRV;GEO_Volume
+CV.AN.TRV;GEO_Altezza profilo
+CV.AN.TRV;GEO_Identificativo concio
+CV.AN.TRV;IDE_Codice opera
+CV.AN.TRV;IDE_Codice WBS
+CV.AN.TRV;IDE_Gruppo anagrafica
+CV.AN.TRV;IDE_ID Elemento
+CV.AN.TRV;IDE_LOR
+CV.AN.TRV;IDE_Uniclass
+CV.AN.TRV;LOC_Carreggiata
+CV.AN.TRV;LOC_Direzione
+CV.AN.TRV;TEC_Documentazione tecnica
+CV.AN.TRV;TEC_Incidenza armatura
+CV.AN.TRV;TEC_Materiale
+CV.AN.TRV;TEC_Tipologia C.A./C.A.P.
+CV.AN.TRV;TEC_Tipologia acciaio
+CV.AN.TRV;TEC_Tipologia profilo
+CV.AC.TRV;ANA_Esecutore
+CV.AC.TRV;ANA_Progettista
+CV.AC.TRV;GEO_Larghezza profilo
+CV.AC.TRV;GEO_Lunghezza profilo
+CV.AC.TRV;GEO_Peso
+CV.AC.TRV;GEO_Volume
+CV.AC.TRV;GEO_Altezza profilo
+CV.AC.TRV;GEO_Identificativo concio
+CV.AC.TRV;IDE_Codice opera
+CV.AC.TRV;IDE_Codice WBS
+CV.AC.TRV;IDE_Gruppo anagrafica
+CV.AC.TRV;IDE_ID Elemento
+CV.AC.TRV;IDE_LOR
+CV.AC.TRV;IDE_Uniclass
+CV.AC.TRV;INF_Campata di appartenenza
+CV.AC.TRV;INF_Numerazione struttura campata
+CV.AC.TRV;INF_Impalcato di appartenenza
+CV.AC.TRV;INF_Codice BMS
+CV.AC.TRV;LOC_Carreggiata
+CV.AC.TRV;LOC_Direzione
+CV.AC.TRV;TEC_Documentazione tecnica
+CV.AC.TRV;TEC_Incidenza armatura
+CV.AC.TRV;TEC_Materiale
+CV.AC.TRV;TEC_Tipologia C.A./C.A.P.
+CV.AC.TRV;TEC_Tipologia acciaio
+CV.AC.TRV;TEC_Tipologia profilo
+CV.IC.TRV;ANA_Esecutore
+CV.IC.TRV;ANA_Progettista
+CV.IC.TRV;GEO_Larghezza profilo
+CV.IC.TRV;GEO_Lunghezza profilo
+CV.IC.TRV;GEO_Peso
+CV.IC.TRV;GEO_Volume
+CV.IC.TRV;GEO_Altezza profilo
+CV.IC.TRV;GEO_Identificativo concio
+CV.IC.TRV;IDE_Codice opera
+CV.IC.TRV;IDE_Codice WBS
+CV.IC.TRV;IDE_Gruppo anagrafica
+CV.IC.TRV;IDE_ID Elemento
+CV.IC.TRV;IDE_LOR
+CV.IC.TRV;IDE_Uniclass
+CV.IC.TRV;INF_Campata di appartenenza
+CV.IC.TRV;INF_Numerazione struttura campata
+CV.IC.TRV;INF_Impalcato di appartenenza
+CV.IC.TRV;INF_Codice BMS
+CV.IC.TRV;LOC_Carreggiata
+CV.IC.TRV;LOC_Direzione
+CV.IC.TRV;TEC_Documentazione tecnica
+CV.IC.TRV;TEC_Incidenza armatura
+CV.IC.TRV;TEC_Materiale
+CV.IC.TRV;TEC_Tipologia C.A./C.A.P.
+CV.IC.TRV;TEC_Tipologia acciaio
+CV.IC.TRV;TEC_Tipologia profilo
+CV.IA.TRV;ANA_Esecutore
+CV.IA.TRV;ANA_Progettista
+CV.IA.TRV;GEO_Larghezza profilo
+CV.IA.TRV;GEO_Lunghezza profilo
+CV.IA.TRV;GEO_Peso
+CV.IA.TRV;GEO_Volume
+CV.IA.TRV;GEO_Altezza profilo
+CV.IA.TRV;GEO_Identificativo concio
+CV.IA.TRV;IDE_Codice opera
+CV.IA.TRV;IDE_Codice WBS
+CV.IA.TRV;IDE_Gruppo anagrafica
+CV.IA.TRV;IDE_ID Elemento
+CV.IA.TRV;IDE_LOR
+CV.IA.TRV;IDE_Uniclass
+CV.IA.TRV;INF_Campata di appartenenza
+CV.IA.TRV;INF_Numerazione struttura campata
+CV.IA.TRV;INF_Impalcato di appartenenza
+CV.IA.TRV;INF_Codice BMS
+CV.IA.TRV;LOC_Carreggiata
+CV.IA.TRV;LOC_Direzione
+CV.IA.TRV;TEC_Documentazione tecnica
+CV.IA.TRV;TEC_Incidenza armatura
+CV.IA.TRV;TEC_Materiale
+CV.IA.TRV;TEC_Tipologia C.A./C.A.P.
+CV.IA.TRV;TEC_Tipologia acciaio
+CV.IA.TRV;TEC_Tipologia profilo
+CV.PD.TRV;ANA_Esecutore
+CV.PD.TRV;ANA_Progettista
+CV.PD.TRV;GEO_Larghezza profilo
+CV.PD.TRV;GEO_Lunghezza profilo
+CV.PD.TRV;GEO_Peso
+CV.PD.TRV;GEO_Volume
+CV.PD.TRV;GEO_Altezza profilo
+CV.PD.TRV;GEO_Identificativo concio
+CV.PD.TRV;IDE_Codice opera
+CV.PD.TRV;IDE_Codice WBS
+CV.PD.TRV;IDE_Gruppo anagrafica
+CV.PD.TRV;IDE_ID Elemento
+CV.PD.TRV;IDE_LOR
+CV.PD.TRV;IDE_Uniclass
+CV.PD.TRV;INF_Campata di appartenenza
+CV.PD.TRV;INF_Numerazione struttura campata
+CV.PD.TRV;INF_Impalcato di appartenenza
+CV.PD.TRV;INF_Codice BMS
+CV.PD.TRV;LOC_Carreggiata
+CV.PD.TRV;LOC_Direzione
+CV.PD.TRV;TEC_Documentazione tecnica
+CV.PD.TRV;TEC_Incidenza armatura
+CV.PD.TRV;TEC_Materiale
+CV.PD.TRV;TEC_Tipologia C.A./C.A.P.
+CV.PD.TRV;TEC_Tipologia acciaio
+CV.PD.TRV;TEC_Tipologia profilo
+CV.PI.TRV;ANA_Esecutore
+CV.PI.TRV;ANA_Progettista
+CV.PI.TRV;GEO_Larghezza profilo
+CV.PI.TRV;GEO_Lunghezza profilo
+CV.PI.TRV;GEO_Peso
+CV.PI.TRV;GEO_Volume
+CV.PI.TRV;GEO_Altezza profilo
+CV.PI.TRV;GEO_Identificativo concio
+CV.PI.TRV;IDE_Codice opera
+CV.PI.TRV;IDE_Codice WBS
+CV.PI.TRV;IDE_Gruppo anagrafica
+CV.PI.TRV;IDE_ID Elemento
+CV.PI.TRV;IDE_LOR
+CV.PI.TRV;IDE_Uniclass
+CV.PI.TRV;LOC_Carreggiata
+CV.PI.TRV;LOC_Direzione
+CV.PI.TRV;TEC_Documentazione tecnica
+CV.PI.TRV;TEC_Incidenza armatura
+CV.PI.TRV;TEC_Materiale
+CV.PI.TRV;TEC_Tipologia C.A./C.A.P.
+CV.PI.TRV;TEC_Tipologia acciaio
+CV.PI.TRV;TEC_Tipologia profilo
+CV.IC.TRA;ANA_Esecutore
+CV.IC.TRA;ANA_Progettista
+CV.IC.TRA;GEO_Altezza interna
+CV.IC.TRA;GEO_Larghezza
+CV.IC.TRA;GEO_Larghezza interna
+CV.IC.TRA;GEO_Lunghezza
+CV.IC.TRA;GEO_Peso
+CV.IC.TRA;GEO_Volume
+CV.IC.TRA;GEO_Altezza
+CV.IC.TRA;GEO_Identificativo concio
+CV.IC.TRA;IDE_Codice opera
+CV.IC.TRA;IDE_Codice WBS
+CV.IC.TRA;IDE_Gruppo anagrafica
+CV.IC.TRA;IDE_ID Elemento
+CV.IC.TRA;IDE_LOR
+CV.IC.TRA;IDE_Uniclass
+CV.IC.TRA;INF_Campata di appartenenza
+CV.IC.TRA;INF_Numerazione struttura campata
+CV.IC.TRA;INF_Impalcato di appartenenza
+CV.IC.TRA;INF_Codice BMS
+CV.IC.TRA;LOC_Carreggiata
+CV.IC.TRA;LOC_Direzione
+CV.IC.TRA;TEC_Chiave di taglio
+CV.IC.TRA;TEC_Documentazione tecnica
+CV.IC.TRA;TEC_Incidenza armatura
+CV.IC.TRA;TEC_Materiale
+CV.IC.TRA;TEC_Sella Gerber
+CV.IC.TRA;TEC_Tipologia C.A./C.A.P.
+CV.IC.TRA;TEC_Tipologia acciaio
+CV.IA.TRA;ANA_Esecutore
+CV.IA.TRA;ANA_Progettista
+CV.IA.TRA;GEO_Altezza interna
+CV.IA.TRA;GEO_Larghezza
+CV.IA.TRA;GEO_Larghezza interna
+CV.IA.TRA;GEO_Lunghezza
+CV.IA.TRA;GEO_Peso
+CV.IA.TRA;GEO_Volume
+CV.IA.TRA;GEO_Altezza
+CV.IA.TRA;GEO_Identificativo concio
+CV.IA.TRA;IDE_Codice opera
+CV.IA.TRA;IDE_Codice WBS
+CV.IA.TRA;IDE_Gruppo anagrafica
+CV.IA.TRA;IDE_ID Elemento
+CV.IA.TRA;IDE_LOR
+CV.IA.TRA;IDE_Uniclass
+CV.IA.TRA;INF_Campata di appartenenza
+CV.IA.TRA;INF_Numerazione struttura campata
+CV.IA.TRA;INF_Impalcato di appartenenza
+CV.IA.TRA;INF_Codice BMS
+CV.IA.TRA;LOC_Carreggiata
+CV.IA.TRA;LOC_Direzione
+CV.IA.TRA;TEC_Chiave di taglio
+CV.IA.TRA;TEC_Documentazione tecnica
+CV.IA.TRA;TEC_Incidenza armatura
+CV.IA.TRA;TEC_Materiale
+CV.IA.TRA;TEC_Sella Gerber
+CV.IA.TRA;TEC_Tipologia C.A./C.A.P.
+CV.IA.TRA;TEC_Tipologia acciaio
+CV.IC.VEL;ANA_Esecutore
+CV.IC.VEL;ANA_Progettista
+CV.IC.VEL;GEO_Larghezza
+CV.IC.VEL;GEO_Lunghezza
+CV.IC.VEL;GEO_Pendenza
+CV.IC.VEL;GEO_Pendenza sponde
+CV.IC.VEL;GEO_Peso
+CV.IC.VEL;GEO_Quota fine tratto
+CV.IC.VEL;GEO_Quota inizio tratto
+CV.IC.VEL;GEO_Raggio
+CV.IC.VEL;GEO_Altezza
+CV.IC.VEL;IDE_Codice opera
+CV.IC.VEL;IDE_Codice WBS
+CV.IC.VEL;IDE_Gruppo anagrafica
+CV.IC.VEL;IDE_ID Elemento
+CV.IC.VEL;IDE_LOR
+CV.IC.VEL;IDE_Uniclass
+CV.IC.VEL;INF_Campata di appartenenza
+CV.IC.VEL;INF_Numerazione struttura campata
+CV.IC.VEL;INF_Impalcato di appartenenza
+CV.IC.VEL;INF_Codice BMS
+CV.IC.VEL;LOC_Carreggiata
+CV.IC.VEL;LOC_Direzione
+CV.IC.VEL;TEC_Documentazione tecnica
+CV.IC.VEL;TEC_Materiale
+CV.IA.VEL;ANA_Esecutore
+CV.IA.VEL;ANA_Progettista
+CV.IA.VEL;GEO_Larghezza
+CV.IA.VEL;GEO_Lunghezza
+CV.IA.VEL;GEO_Pendenza
+CV.IA.VEL;GEO_Pendenza sponde
+CV.IA.VEL;GEO_Peso
+CV.IA.VEL;GEO_Quota fine tratto
+CV.IA.VEL;GEO_Quota inizio tratto
+CV.IA.VEL;GEO_Raggio
+CV.IA.VEL;GEO_Altezza
+CV.IA.VEL;IDE_Codice opera
+CV.IA.VEL;IDE_Codice WBS
+CV.IA.VEL;IDE_Gruppo anagrafica
+CV.IA.VEL;IDE_ID Elemento
+CV.IA.VEL;IDE_LOR
+CV.IA.VEL;IDE_Uniclass
+CV.IA.VEL;INF_Campata di appartenenza
+CV.IA.VEL;INF_Numerazione struttura campata
+CV.IA.VEL;INF_Impalcato di appartenenza
+CV.IA.VEL;INF_Codice BMS
+CV.IA.VEL;LOC_Carreggiata
+CV.IA.VEL;LOC_Direzione
+CV.IA.VEL;TEC_Documentazione tecnica
+CV.IA.VEL;TEC_Materiale
+IM.IE.ALI;ANA_Esecutore
+IM.IE.ALI;ANA_Progettista
+IM.IE.ALI;GEO_Altezza
+IM.IE.ALI;GEO_Larghezza
+IM.IE.ALI;GEO_Lunghezza
+IM.IE.ALI;GEO_Peso
+IM.IE.ALI;GEO_Volume
+IM.IE.ALI;IDE_Codice opera
+IM.IE.ALI;IDE_Codice WBS
+IM.IE.ALI;IDE_Gruppo anagrafica
+IM.IE.ALI;IDE_ID Elemento
+IM.IE.ALI;IDE_LOR
+IM.IE.ALI;IDE_Uniclass
+IM.IE.ALI;LOC_Carreggiata
+IM.IE.ALI;LOC_Direzione
+IM.IE.ALI;LOC_Progressiva finale
+IM.IE.ALI;LOC_Progressiva iniziale
+IM.IE.ALI;TEC_Documentazione tecnica
+IM.IE.BLI;ANA_Esecutore
+IM.IE.BLI;ANA_Progettista
+IM.IE.BLI;GEO_Altezza
+IM.IE.BLI;GEO_Diametro
+IM.IE.BLI;GEO_Larghezza
+IM.IE.BLI;GEO_Lunghezza
+IM.IE.BLI;GEO_Peso
+IM.IE.BLI;GEO_Volume
+IM.IE.BLI;IDE_Codice opera
+IM.IE.BLI;IDE_Codice WBS
+IM.IE.BLI;IDE_Gruppo anagrafica
+IM.IE.BLI;IDE_ID Elemento
+IM.IE.BLI;IDE_LOR
+IM.IE.BLI;IDE_Uniclass
+IM.IE.BLI;LOC_Carreggiata
+IM.IE.BLI;LOC_Direzione
+IM.IE.BLI;LOC_Progressiva finale
+IM.IE.BLI;LOC_Progressiva iniziale
+IM.IE.BLI;TEC_Documentazione tecnica
+IM.IE.BLI;TEC_Materiale
+IM.IE.BLI;TEC_Utilizzo
+IM.IE.CAB;ANA_Esecutore
+IM.IE.CAB;ANA_Progettista
+IM.IE.CAB;GEO_Altezza
+IM.IE.CAB;GEO_Larghezza
+IM.IE.CAB;GEO_Lunghezza
+IM.IE.CAB;GEO_Peso
+IM.IE.CAB;GEO_Volume
+IM.IE.CAB;IDE_Codice opera
+IM.IE.CAB;IDE_Codice WBS
+IM.IE.CAB;IDE_Gruppo anagrafica
+IM.IE.CAB;IDE_ID Elemento
+IM.IE.CAB;IDE_LOR
+IM.IE.CAB;IDE_Uniclass
+IM.IE.CAB;LOC_Carreggiata
+IM.IE.CAB;LOC_Direzione
+IM.IE.CAB;LOC_Progressiva finale
+IM.IE.CAB;LOC_Progressiva iniziale
+IM.IE.CAB;TEC_Documentazione tecnica
+IM.IE.CAB;TEC_Utilizzo
+IM.IE.CNP;ANA_Esecutore
+IM.IE.CNP;ANA_Progettista
+IM.IE.CNP;GEO_Altezza
+IM.IE.CNP;GEO_Diametro
+IM.IE.CNP;GEO_Larghezza
+IM.IE.CNP;GEO_Lunghezza
+IM.IE.CNP;GEO_Peso
+IM.IE.CNP;GEO_Volume
+IM.IE.CNP;IDE_Codice opera
+IM.IE.CNP;IDE_Codice WBS
+IM.IE.CNP;IDE_Gruppo anagrafica
+IM.IE.CNP;IDE_ID Elemento
+IM.IE.CNP;IDE_LOR
+IM.IE.CNP;IDE_Uniclass
+IM.IE.CNP;LOC_Carreggiata
+IM.IE.CNP;LOC_Direzione
+IM.IE.CNP;LOC_Progressiva finale
+IM.IE.CNP;LOC_Progressiva iniziale
+IM.IE.CNP;TEC_Documentazione tecnica
+IM.IE.CNP;TEC_Materiale
+IM.IE.CNP;TEC_Utilizzo
+IM.IE.CAE;ANA_Esecutore
+IM.IE.CAE;ANA_Progettista
+IM.IE.CAE;GEO_Altezza
+IM.IE.CAE;GEO_Diametro
+IM.IE.CAE;GEO_Larghezza
+IM.IE.CAE;GEO_Lunghezza
+IM.IE.CAE;GEO_Peso
+IM.IE.CAE;GEO_Volume
+IM.IE.CAE;IDE_Codice opera
+IM.IE.CAE;IDE_Codice WBS
+IM.IE.CAE;IDE_Gruppo anagrafica
+IM.IE.CAE;IDE_ID Elemento
+IM.IE.CAE;IDE_LOR
+IM.IE.CAE;IDE_Uniclass
+IM.IE.CAE;LOC_Carreggiata
+IM.IE.CAE;LOC_Direzione
+IM.IE.CAE;LOC_Progressiva finale
+IM.IE.CAE;LOC_Progressiva iniziale
+IM.IE.CAE;TEC_Documentazione tecnica
+IM.IE.CAE;TEC_Materiale
+IM.IE.CAE;TEC_Utilizzo
+IM.IE.CAV;ANA_Esecutore
+IM.IE.CAV;ANA_Progettista
+IM.IE.CAV;GEO_Altezza
+IM.IE.CAV;GEO_Diametro
+IM.IE.CAV;GEO_Larghezza
+IM.IE.CAV;GEO_Lunghezza
+IM.IE.CAV;GEO_Peso
+IM.IE.CAV;GEO_Volume
+IM.IE.CAV;IDE_Codice opera
+IM.IE.CAV;IDE_Codice WBS
+IM.IE.CAV;IDE_Gruppo anagrafica
+IM.IE.CAV;IDE_ID Elemento
+IM.IE.CAV;IDE_LOR
+IM.IE.CAV;IDE_Uniclass
+IM.IE.CAV;LOC_Carreggiata
+IM.IE.CAV;LOC_Direzione
+IM.IE.CAV;LOC_Progressiva finale
+IM.IE.CAV;LOC_Progressiva iniziale
+IM.IE.CAV;TEC_Documentazione tecnica
+IM.IE.CAV;TEC_Materiale
+IM.IE.CAV;TEC_Utilizzo
+IM.IE.COL;ANA_Esecutore
+IM.IE.COL;ANA_Progettista
+IM.IE.COL;GEO_Altezza
+IM.IE.COL;GEO_Larghezza
+IM.IE.COL;GEO_Lunghezza
+IM.IE.COL;GEO_Peso
+IM.IE.COL;GEO_Volume
+IM.IE.COL;IDE_Codice opera
+IM.IE.COL;IDE_Codice WBS
+IM.IE.COL;IDE_Gruppo anagrafica
+IM.IE.COL;IDE_ID Elemento
+IM.IE.COL;IDE_LOR
+IM.IE.COL;IDE_Uniclass
+IM.IE.COL;LOC_Carreggiata
+IM.IE.COL;LOC_Direzione
+IM.IE.COL;LOC_Progressiva finale
+IM.IE.COL;LOC_Progressiva iniziale
+IM.IE.COL;TEC_Documentazione tecnica
+IM.IE.COM;ANA_Esecutore
+IM.IE.COM;ANA_Progettista
+IM.IE.COM;GEO_Altezza
+IM.IE.COM;GEO_Larghezza
+IM.IE.COM;GEO_Lunghezza
+IM.IE.COM;GEO_Peso
+IM.IE.COM;GEO_Volume
+IM.IE.COM;IDE_Codice opera
+IM.IE.COM;IDE_Codice WBS
+IM.IE.COM;IDE_Gruppo anagrafica
+IM.IE.COM;IDE_ID Elemento
+IM.IE.COM;IDE_LOR
+IM.IE.COM;IDE_Uniclass
+IM.IE.COM;LOC_Carreggiata
+IM.IE.COM;LOC_Direzione
+IM.IE.COM;LOC_Progressiva finale
+IM.IE.COM;LOC_Progressiva iniziale
+IM.IE.COM;TEC_Documentazione tecnica
+IM.IE.CEE;ANA_Esecutore
+IM.IE.CEE;ANA_Progettista
+IM.IE.CEE;GEO_Altezza
+IM.IE.CEE;GEO_Area
+IM.IE.CEE;GEO_Larghezza
+IM.IE.CEE;GEO_Spessore
+IM.IE.CEE;IDE_Codice opera
+IM.IE.CEE;IDE_Codice WBS
+IM.IE.CEE;IDE_Gruppo anagrafica
+IM.IE.CEE;IDE_ID Elemento
+IM.IE.CEE;IDE_LOR
+IM.IE.CEE;IDE_Uniclass
+IM.IE.CEE;LOC_Carreggiata
+IM.IE.CEE;LOC_Direzione
+IM.IE.CEE;LOC_Progressiva finale
+IM.IE.CEE;LOC_Progressiva iniziale
+IM.IE.CEE;TEC_Documentazione tecnica
+IM.IE.CEE;TEC_Utilizzo
+IM.IE.DIE;ANA_Esecutore
+IM.IE.DIE;ANA_Progettista
+IM.IE.DIE;GEO_Altezza
+IM.IE.DIE;GEO_Diametro
+IM.IE.DIE;GEO_Larghezza
+IM.IE.DIE;GEO_Lunghezza
+IM.IE.DIE;GEO_Peso
+IM.IE.DIE;GEO_Volume
+IM.IE.DIE;IDE_Codice opera
+IM.IE.DIE;IDE_Codice WBS
+IM.IE.DIE;IDE_Gruppo anagrafica
+IM.IE.DIE;IDE_ID Elemento
+IM.IE.DIE;IDE_LOR
+IM.IE.DIE;IDE_Uniclass
+IM.IE.DIE;LOC_Carreggiata
+IM.IE.DIE;LOC_Direzione
+IM.IE.DIE;LOC_Progressiva finale
+IM.IE.DIE;LOC_Progressiva iniziale
+IM.IE.DIE;TEC_Documentazione tecnica
+IM.IE.DIE;TEC_Materiale
+IM.IE.DIE;TEC_Utilizzo
+IM.IE.IMT;ANA_Esecutore
+IM.IE.IMT;ANA_Progettista
+IM.IE.IMT;GEO_Altezza
+IM.IE.IMT;GEO_Diametro
+IM.IE.IMT;GEO_Larghezza
+IM.IE.IMT;GEO_Lunghezza
+IM.IE.IMT;GEO_Peso
+IM.IE.IMT;GEO_Volume
+IM.IE.IMT;IDE_Codice opera
+IM.IE.IMT;IDE_Codice WBS
+IM.IE.IMT;IDE_Gruppo anagrafica
+IM.IE.IMT;IDE_ID Elemento
+IM.IE.IMT;IDE_LOR
+IM.IE.IMT;IDE_Uniclass
+IM.IE.IMT;LOC_Carreggiata
+IM.IE.IMT;LOC_Direzione
+IM.IE.IMT;LOC_Progressiva finale
+IM.IE.IMT;LOC_Progressiva iniziale
+IM.IE.IMT;TEC_Documentazione tecnica
+IM.IE.IMT;TEC_Materiale
+IM.IE.IMT;TEC_Utilizzo
+IM.IE.INS;ANA_Esecutore
+IM.IE.INS;ANA_Progettista
+IM.IE.INS;GEO_Altezza
+IM.IE.INS;GEO_Larghezza
+IM.IE.INS;GEO_Lunghezza
+IM.IE.INS;GEO_Peso
+IM.IE.INS;GEO_Volume
+IM.IE.INS;IDE_Codice opera
+IM.IE.INS;IDE_Codice WBS
+IM.IE.INS;IDE_Gruppo anagrafica
+IM.IE.INS;IDE_ID Elemento
+IM.IE.INS;IDE_LOR
+IM.IE.INS;IDE_Uniclass
+IM.IE.INS;LOC_Carreggiata
+IM.IE.INS;LOC_Direzione
+IM.IE.INS;LOC_Progressiva finale
+IM.IE.INS;LOC_Progressiva iniziale
+IM.IE.INS;TEC_Documentazione tecnica
+IM.IE.INM;ANA_Esecutore
+IM.IE.INM;ANA_Progettista
+IM.IE.INM;GEO_Altezza
+IM.IE.INM;GEO_Larghezza
+IM.IE.INM;GEO_Lunghezza
+IM.IE.INM;GEO_Peso
+IM.IE.INM;GEO_Volume
+IM.IE.INM;IDE_Codice opera
+IM.IE.INM;IDE_Codice WBS
+IM.IE.INM;IDE_Gruppo anagrafica
+IM.IE.INM;IDE_ID Elemento
+IM.IE.INM;IDE_LOR
+IM.IE.INM;IDE_Uniclass
+IM.IE.INM;LOC_Carreggiata
+IM.IE.INM;LOC_Direzione
+IM.IE.INM;LOC_Progressiva finale
+IM.IE.INM;LOC_Progressiva iniziale
+IM.IE.INM;TEC_Documentazione tecnica
+IM.IE.MUL;ANA_Esecutore
+IM.IE.MUL;ANA_Progettista
+IM.IE.MUL;GEO_Altezza
+IM.IE.MUL;GEO_Larghezza
+IM.IE.MUL;GEO_Peso
+IM.IE.MUL;IDE_Codice opera
+IM.IE.MUL;IDE_Codice WBS
+IM.IE.MUL;IDE_Gruppo anagrafica
+IM.IE.MUL;IDE_ID Elemento
+IM.IE.MUL;IDE_LOR
+IM.IE.MUL;IDE_Uniclass
+IM.IE.MUL;LOC_Carreggiata
+IM.IE.MUL;LOC_Direzione
+IM.IE.MUL;LOC_Progressiva finale
+IM.IE.MUL;LOC_Progressiva iniziale
+IM.IE.MUL;TEC_Documentazione tecnica
+IM.IE.MUL;TEC_Utilizzo
+IM.IE.PLI;ANA_Esecutore
+IM.IE.PLI;ANA_Progettista
+IM.IE.PLI;GEO_Altezza
+IM.IE.PLI;GEO_Area
+IM.IE.PLI;GEO_Larghezza
+IM.IE.PLI;GEO_Lunghezza
+IM.IE.PLI;GEO_Peso
+IM.IE.PLI;GEO_Quota altimetrica inferiore
+IM.IE.PLI;GEO_Volume
+IM.IE.PLI;IDE_Codice opera
+IM.IE.PLI;IDE_Codice WBS
+IM.IE.PLI;IDE_Gruppo anagrafica
+IM.IE.PLI;IDE_ID Elemento
+IM.IE.PLI;IDE_LOR
+IM.IE.PLI;IDE_Uniclass
+IM.IE.PLI;LOC_Carreggiata
+IM.IE.PLI;LOC_Direzione
+IM.IE.PLI;TEC_Documentazione tecnica
+IM.IE.PLI;TEC_Incidenza armatura
+IM.IE.PLI;TEC_Materiale
+IM.IE.PLI;TEC_Tipologia acciaio
+IM.IE.PZE;ANA_Esecutore
+IM.IE.PZE;ANA_Progettista
+IM.IE.PZE;GEO_Altezza interna
+IM.IE.PZE;GEO_Diametro
+IM.IE.PZE;GEO_Larghezza interna
+IM.IE.PZE;GEO_Lunghezza interna
+IM.IE.PZE;GEO_Peso
+IM.IE.PZE;GEO_Spessore parete
+IM.IE.PZE;IDE_Codice opera
+IM.IE.PZE;IDE_Codice WBS
+IM.IE.PZE;IDE_Gruppo anagrafica
+IM.IE.PZE;IDE_ID Elemento
+IM.IE.PZE;IDE_LOR
+IM.IE.PZE;IDE_Uniclass
+IM.IE.PZE;LOC_Carreggiata
+IM.IE.PZE;LOC_Direzione
+IM.IE.PZE;LOC_Progressiva finale
+IM.IE.PZE;LOC_Progressiva iniziale
+IM.IE.PZE;TEC_Documentazione tecnica
+IM.IE.PZE;TEC_Materiale
+IM.IE.PZE;TEC_Utilizzo
+IM.IE.QEB;ANA_Esecutore
+IM.IE.QEB;ANA_Progettista
+IM.IE.QEB;GEO_Altezza
+IM.IE.QEB;GEO_Area
+IM.IE.QEB;GEO_Larghezza
+IM.IE.QEB;GEO_Spessore
+IM.IE.QEB;IDE_Codice opera
+IM.IE.QEB;IDE_Codice WBS
+IM.IE.QEB;IDE_Gruppo anagrafica
+IM.IE.QEB;IDE_ID Elemento
+IM.IE.QEB;IDE_LOR
+IM.IE.QEB;IDE_Uniclass
+IM.IE.QEB;LOC_Carreggiata
+IM.IE.QEB;LOC_Direzione
+IM.IE.QEB;LOC_Progressiva finale
+IM.IE.QEB;LOC_Progressiva iniziale
+IM.IE.QEB;TEC_Documentazione tecnica
+IM.IE.QEB;TEC_Utilizzo
+IM.IE.QEM;ANA_Esecutore
+IM.IE.QEM;ANA_Progettista
+IM.IE.QEM;GEO_Altezza
+IM.IE.QEM;GEO_Area
+IM.IE.QEM;GEO_Larghezza
+IM.IE.QEM;GEO_Spessore
+IM.IE.QEM;IDE_Codice opera
+IM.IE.QEM;IDE_Codice WBS
+IM.IE.QEM;IDE_Gruppo anagrafica
+IM.IE.QEM;IDE_ID Elemento
+IM.IE.QEM;IDE_LOR
+IM.IE.QEM;IDE_Uniclass
+IM.IE.QEM;LOC_Carreggiata
+IM.IE.QEM;LOC_Direzione
+IM.IE.QEM;LOC_Progressiva finale
+IM.IE.QEM;LOC_Progressiva iniziale
+IM.IE.QEM;TEC_Documentazione tecnica
+IM.IE.QEM;TEC_Utilizzo
+IM.IE.REL;ANA_Esecutore
+IM.IE.REL;ANA_Progettista
+IM.IE.REL;GEO_Altezza
+IM.IE.REL;GEO_Larghezza
+IM.IE.REL;GEO_Lunghezza
+IM.IE.REL;GEO_Peso
+IM.IE.REL;GEO_Volume
+IM.IE.REL;IDE_Codice opera
+IM.IE.REL;IDE_Codice WBS
+IM.IE.REL;IDE_Gruppo anagrafica
+IM.IE.REL;IDE_ID Elemento
+IM.IE.REL;IDE_LOR
+IM.IE.REL;IDE_Uniclass
+IM.IE.REL;LOC_Carreggiata
+IM.IE.REL;LOC_Direzione
+IM.IE.REL;LOC_Progressiva finale
+IM.IE.REL;LOC_Progressiva iniziale
+IM.IE.REL;TEC_Documentazione tecnica
+IM.IE.REP;ANA_Esecutore
+IM.IE.REP;ANA_Progettista
+IM.IE.REP;GEO_Altezza
+IM.IE.REP;GEO_Larghezza
+IM.IE.REP;GEO_Lunghezza
+IM.IE.REP;GEO_Peso
+IM.IE.REP;GEO_Volume
+IM.IE.REP;IDE_Codice opera
+IM.IE.REP;IDE_Codice WBS
+IM.IE.REP;IDE_Gruppo anagrafica
+IM.IE.REP;IDE_ID Elemento
+IM.IE.REP;IDE_LOR
+IM.IE.REP;IDE_Uniclass
+IM.IE.REP;LOC_Carreggiata
+IM.IE.REP;LOC_Direzione
+IM.IE.REP;LOC_Progressiva finale
+IM.IE.REP;LOC_Progressiva iniziale
+IM.IE.REP;TEC_Documentazione tecnica
+IM.IE.RIF;ANA_Esecutore
+IM.IE.RIF;ANA_Progettista
+IM.IE.RIF;GEO_Altezza
+IM.IE.RIF;GEO_Larghezza
+IM.IE.RIF;GEO_Lunghezza
+IM.IE.RIF;GEO_Peso
+IM.IE.RIF;GEO_Volume
+IM.IE.RIF;IDE_Codice opera
+IM.IE.RIF;IDE_Codice WBS
+IM.IE.RIF;IDE_Gruppo anagrafica
+IM.IE.RIF;IDE_ID Elemento
+IM.IE.RIF;IDE_LOR
+IM.IE.RIF;IDE_Uniclass
+IM.IE.RIF;LOC_Carreggiata
+IM.IE.RIF;LOC_Direzione
+IM.IE.RIF;LOC_Progressiva finale
+IM.IE.RIF;LOC_Progressiva iniziale
+IM.IE.RIF;TEC_Documentazione tecnica
+IM.IE.SCS;ANA_Esecutore
+IM.IE.SCS;ANA_Progettista
+IM.IE.SCS;GEO_Altezza
+IM.IE.SCS;GEO_Larghezza
+IM.IE.SCS;GEO_Lunghezza
+IM.IE.SCS;GEO_Peso
+IM.IE.SCS;GEO_Volume
+IM.IE.SCS;IDE_Codice opera
+IM.IE.SCS;IDE_Codice WBS
+IM.IE.SCS;IDE_Gruppo anagrafica
+IM.IE.SCS;IDE_ID Elemento
+IM.IE.SCS;IDE_LOR
+IM.IE.SCS;IDE_Uniclass
+IM.IE.SCS;LOC_Carreggiata
+IM.IE.SCS;LOC_Direzione
+IM.IE.SCS;LOC_Progressiva finale
+IM.IE.SCS;LOC_Progressiva iniziale
+IM.IE.SCS;TEC_Documentazione tecnica
+IM.IE.SDE;ANA_Esecutore
+IM.IE.SDE;ANA_Progettista
+IM.IE.SDE;GEO_Altezza
+IM.IE.SDE;GEO_Larghezza
+IM.IE.SDE;GEO_Lunghezza
+IM.IE.SDE;GEO_Peso
+IM.IE.SDE;GEO_Volume
+IM.IE.SDE;IDE_Codice opera
+IM.IE.SDE;IDE_Codice WBS
+IM.IE.SDE;IDE_Gruppo anagrafica
+IM.IE.SDE;IDE_ID Elemento
+IM.IE.SDE;IDE_LOR
+IM.IE.SDE;IDE_Uniclass
+IM.IE.SDE;LOC_Carreggiata
+IM.IE.SDE;LOC_Direzione
+IM.IE.SDE;LOC_Progressiva finale
+IM.IE.SDE;LOC_Progressiva iniziale
+IM.IE.SDE;TEC_Documentazione tecnica
+IM.IE.TRS;ANA_Esecutore
+IM.IE.TRS;ANA_Progettista
+IM.IE.TRS;GEO_Altezza
+IM.IE.TRS;GEO_Larghezza
+IM.IE.TRS;GEO_Lunghezza
+IM.IE.TRS;GEO_Peso
+IM.IE.TRS;GEO_Volume
+IM.IE.TRS;IDE_Codice opera
+IM.IE.TRS;IDE_Codice WBS
+IM.IE.TRS;IDE_Gruppo anagrafica
+IM.IE.TRS;IDE_ID Elemento
+IM.IE.TRS;IDE_LOR
+IM.IE.TRS;IDE_Uniclass
+IM.IE.TRS;LOC_Carreggiata
+IM.IE.TRS;LOC_Direzione
+IM.IE.TRS;LOC_Progressiva finale
+IM.IE.TRS;LOC_Progressiva iniziale
+IM.IE.TRS;TEC_Documentazione tecnica
+MA.BA.BAN;ANA_Esecutore
+MA.BA.BAN;ANA_Progettista
+MA.BA.BAN;GEO_Altezza
+MA.BA.BAN;GEO_Lunghezza
+MA.BA.BAN;GEO_Peso
+MA.BA.BAN;GEO_Spessore
+MA.BA.BAN;GEO_Larghezza
+MA.BA.BAN;IDE_Codice opera
+MA.BA.BAN;IDE_Codice WBS
+MA.BA.BAN;IDE_Gruppo anagrafica
+MA.BA.BAN;IDE_ID Elemento
+MA.BA.BAN;IDE_LOR
+MA.BA.BAN;IDE_Uniclass
+MA.BA.BAN;LOC_Carreggiata
+MA.BA.BAN;LOC_Direzione
+MA.BA.BAN;LOC_Progressiva finale
+MA.BA.BAN;LOC_Progressiva iniziale
+MA.BA.BAN;TEC_Documentazione tecnica
+MA.BA.BAN;TEC_Materiale
+MA.BA.BAN;TEC_Tipologia acciaio
+MA.BA.BAN;TEC_Tipologia
+MA.BA.BPT;ANA_Esecutore
+MA.BA.BPT;ANA_Progettista
+MA.BA.BPT;GEO_Altezza
+MA.BA.BPT;GEO_Larghezza
+MA.BA.BPT;GEO_Lunghezza
+MA.BA.BPT;GEO_Pendenza
+MA.BA.BPT;GEO_Pendenza sponde
+MA.BA.BPT;GEO_Peso
+MA.BA.BPT;GEO_Quota fine tratto
+MA.BA.BPT;GEO_Quota inizio tratto
+MA.BA.BPT;GEO_Raggio
+MA.BA.BPT;IDE_Codice opera
+MA.BA.BPT;IDE_Codice WBS
+MA.BA.BPT;IDE_Gruppo anagrafica
+MA.BA.BPT;IDE_ID Elemento
+MA.BA.BPT;IDE_LOR
+MA.BA.BPT;IDE_Uniclass
+MA.BA.BPT;LOC_Carreggiata
+MA.BA.BPT;LOC_Direzione
+MA.BA.BPT;TEC_Documentazione tecnica
+MA.BA.BPT;TEC_Materiale
+MA.BA.COR;ANA_Esecutore
+MA.BA.COR;ANA_Progettista
+MA.BA.COR;GEO_Altezza
+MA.BA.COR;GEO_Larghezza
+MA.BA.COR;GEO_Lunghezza
+MA.BA.COR;GEO_Quota altimetrica inferiore
+MA.BA.COR;GEO_Volume
+MA.BA.COR;GEO_Pendenza
+MA.BA.COR;GEO_Pendenza sponde
+MA.BA.COR;GEO_Peso
+MA.BA.COR;GEO_Quota fine tratto
+MA.BA.COR;GEO_Quota inizio tratto
+MA.BA.COR;GEO_Raggio
+MA.BA.COR;GEO_Identificativo concio
+MA.BA.COR;IDE_Codice opera
+MA.BA.COR;IDE_Codice WBS
+MA.BA.COR;IDE_Gruppo anagrafica
+MA.BA.COR;IDE_ID Elemento
+MA.BA.COR;IDE_LOR
+MA.BA.COR;IDE_Uniclass
+MA.BA.COR;LOC_Carreggiata
+MA.BA.COR;LOC_Direzione
+MA.BA.COR;TEC_Documentazione tecnica
+MA.BA.COR;TEC_Incidenza armatura
+MA.BA.COR;TEC_Materiale
+MA.BA.COR;TEC_Tipologia acciaio
+MA.BA.COR;TEC_Classificazione d uso stradale
+MA.BA.MON;ANA_Esecutore
+MA.BA.MON;ANA_Progettista
+MA.BA.MON;GEO_Altezza profilo
+MA.BA.MON;GEO_Larghezza profilo
+MA.BA.MON;GEO_Lunghezza profilo
+MA.BA.MON;GEO_Peso
+MA.BA.MON;GEO_Diametro tubo
+MA.BA.MON;IDE_Codice opera
+MA.BA.MON;IDE_Codice WBS
+MA.BA.MON;IDE_Gruppo anagrafica
+MA.BA.MON;IDE_ID Elemento
+MA.BA.MON;IDE_LOR
+MA.BA.MON;IDE_Uniclass
+MA.BA.MON;LOC_Carreggiata
+MA.BA.MON;LOC_Direzione
+MA.BA.MON;TEC_Documentazione tecnica
+MA.BA.MON;TEC_Materiale
+MA.BA.MON;TEC_Tipologia acciaio
+MA.BA.MON;TEC_Tipologia profilo
+MA.BA.MON;TEC_Tipologia finitura
+MO.MN.ACC;GEO_Altezza
+MO.MN.ACC;GEO_Larghezza
+MO.MN.ACC;GEO_Lunghezza
+MO.MN.ACC;GEO_Quota sensore
+MO.MN.ACC;IDE_Codice opera
+MO.MN.ACC;IDE_Codice WBS
+MO.MN.ACC;IDE_Elemento di appartenenza
+MO.MN.ACC;IDE_Gruppo anagrafica
+MO.MN.ACC;IDE_ID Elemento
+MO.MN.ACC;IDE_LOR
+MO.MN.ACC;IDE_Uniclass
+MO.MN.ACC;TEC_Documentazione tecnica
+MO.MN.ACC;TEC_Posizione
+MO.ES.IFS;GEO_Diametro
+MO.ES.IFS;GEO_Lunghezza totale della catena
+MO.ES.IFS;GEO_Quota sensore
+MO.ES.IFS;IDE_Codice opera
+MO.ES.IFS;IDE_Codice WBS
+MO.ES.IFS;IDE_Elemento di appartenenza
+MO.ES.IFS;IDE_Gruppo anagrafica
+MO.ES.IFS;IDE_ID Elemento
+MO.ES.IFS;IDE_LOR
+MO.ES.IFS;IDE_Uniclass
+MO.ES.IFS;TEC_Documentazione tecnica
+MO.ES.IFS;TEC_Posizione
+MO.MN.SCA;GEO_Altezza
+MO.MN.SCA;GEO_Larghezza
+MO.MN.SCA;GEO_Lunghezza
+MO.MN.SCA;GEO_Quota sensore
+MO.MN.SCA;IDE_Codice opera
+MO.MN.SCA;IDE_Codice WBS
+MO.MN.SCA;IDE_Elemento di appartenenza
+MO.MN.SCA;IDE_Gruppo anagrafica
+MO.MN.SCA;IDE_ID Elemento
+MO.MN.SCA;IDE_LOR
+MO.MN.SCA;IDE_Uniclass
+MO.MN.SCA;TEC_Documentazione tecnica
+MO.MN.SCA;TEC_Posizione
+MO.TR.SEM;GEO_Diametro
+MO.TR.SEM;GEO_Lunghezza
+MO.TR.SEM;GEO_Quota sensore
+MO.TR.SEM;IDE_Codice opera
+MO.TR.SEM;IDE_Codice WBS
+MO.TR.SEM;IDE_Elemento di appartenenza
+MO.TR.SEM;IDE_Gruppo anagrafica
+MO.TR.SEM;IDE_ID Elemento
+MO.TR.SEM;IDE_LOR
+MO.TR.SEM;IDE_Uniclass
+MO.TR.SEM;TEC_Documentazione tecnica
+MO.TR.SEM;TEC_Posizione
+MO.ES.TEC;GEO_Diametro
+MO.ES.TEC;GEO_Lunghezza
+MO.ES.TEC;GEO_Quota sensore
+MO.ES.TEC;IDE_Codice opera
+MO.ES.TEC;IDE_Codice WBS
+MO.ES.TEC;IDE_Elemento di appartenenza
+MO.ES.TEC;IDE_Gruppo anagrafica
+MO.ES.TEC;IDE_ID Elemento
+MO.ES.TEC;IDE_LOR
+MO.ES.TEC;IDE_Uniclass
+MO.ES.TEC;TEC_Documentazione tecnica
+MO.ES.TEC;TEC_Materiale
+MO.ES.TEC;TEC_Posizione
+MO.ES.TCM;ANA_Esecutore
+MO.ES.TCM;GEO_Quota sensore
+MO.ES.TCM;IDE_Codice opera
+MO.ES.TCM;IDE_Codice WBS
+MO.ES.TCM;IDE_Elemento di appartenenza
+MO.ES.TCM;IDE_Gruppo anagrafica
+MO.ES.TCM;IDE_ID Elemento
+MO.ES.TCM;IDE_LOR
+MO.ES.TCM;IDE_Uniclass
+MO.ES.TCM;IDE_Prova eseguita su:
+MO.ES.TCM;TEC_Materiale
+MO.ES.TCM;TEC_Documentazione tecnica
+MO.ES.TCM;TEC_Posizione
+MO.MN.VCM;GEO_Altezza
+MO.MN.VCM;GEO_Larghezza
+MO.MN.VCM;GEO_Lunghezza
+MO.MN.VCM;GEO_Quota sensore
+MO.MN.VCM;IDE_Codice opera
+MO.MN.VCM;IDE_Codice WBS
+MO.MN.VCM;IDE_Elemento di appartenenza
+MO.MN.VCM;IDE_Gruppo anagrafica
+MO.MN.VCM;IDE_ID Elemento
+MO.MN.VCM;IDE_LOR
+MO.MN.VCM;IDE_Uniclass
+MO.MN.VCM;TEC_Documentazione tecnica
+MO.MN.VCM;TEC_Posizione
+PV.PD.AMS;ANA_Esecutore
+PV.PD.AMS;ANA_Progettista
+PV.PD.AMS;GEO_Altezza
+PV.PD.AMS;GEO_Diametro
+PV.PD.AMS;GEO_Larghezza
+PV.PD.AMS;GEO_Lunghezza
+PV.PD.AMS;GEO_Peso
+PV.PD.AMS;GEO_Quota altimetrica inferiore
+PV.PD.AMS;GEO_Quota altimetrica superiore
+PV.PD.AMS;IDE_Codice opera
+PV.PD.AMS;IDE_Codice WBS
+PV.PD.AMS;IDE_Gruppo anagrafica
+PV.PD.AMS;IDE_ID Elemento
+PV.PD.AMS;IDE_LOR
+PV.PD.AMS;IDE_Uniclass
+PV.PD.AMS;INF_Campata di appartenenza
+PV.PD.AMS;INF_Numerazione struttura campata
+PV.PD.AMS;INF_Impalcato di appartenenza
+PV.PD.AMS;INF_Codice BMS
+PV.PD.AMS;LOC_Carreggiata
+PV.PD.AMS;LOC_Direzione
+PV.PD.AMS;LOC_Progressiva finale
+PV.PD.AMS;LOC_Progressiva iniziale
+PV.PD.AMS;TEC_Documentazione tecnica
+PV.PI.AMS;ANA_Esecutore
+PV.PI.AMS;ANA_Progettista
+PV.PI.AMS;GEO_Altezza
+PV.PI.AMS;GEO_Diametro
+PV.PI.AMS;GEO_Larghezza
+PV.PI.AMS;GEO_Lunghezza
+PV.PI.AMS;GEO_Peso
+PV.PI.AMS;GEO_Quota altimetrica inferiore
+PV.PI.AMS;GEO_Quota altimetrica superiore
+PV.PI.AMS;IDE_Codice opera
+PV.PI.AMS;IDE_Codice WBS
+PV.PI.AMS;IDE_Gruppo anagrafica
+PV.PI.AMS;IDE_ID Elemento
+PV.PI.AMS;IDE_LOR
+PV.PI.AMS;IDE_Uniclass
+PV.PI.AMS;LOC_Carreggiata
+PV.PI.AMS;LOC_Direzione
+PV.PI.AMS;LOC_Progressiva finale
+PV.PI.AMS;LOC_Progressiva iniziale
+PV.PI.AMS;TEC_Documentazione tecnica
+PV.SP.AMS;ANA_Esecutore
+PV.SP.AMS;ANA_Progettista
+PV.SP.AMS;GEO_Altezza
+PV.SP.AMS;GEO_Diametro
+PV.SP.AMS;GEO_Larghezza
+PV.SP.AMS;GEO_Lunghezza
+PV.SP.AMS;GEO_Peso
+PV.SP.AMS;GEO_Quota altimetrica inferiore
+PV.SP.AMS;GEO_Quota altimetrica superiore
+PV.SP.AMS;IDE_Codice opera
+PV.SP.AMS;IDE_Codice WBS
+PV.SP.AMS;IDE_Gruppo anagrafica
+PV.SP.AMS;IDE_ID Elemento
+PV.SP.AMS;IDE_LOR
+PV.SP.AMS;IDE_Uniclass
+PV.SP.AMS;LOC_Carreggiata
+PV.SP.AMS;LOC_Direzione
+PV.SP.AMS;LOC_Progressiva finale
+PV.SP.AMS;LOC_Progressiva iniziale
+PV.SP.AMS;TEC_Documentazione tecnica
+PV.IC.AAP;ANA_Esecutore
+PV.IC.AAP;ANA_Progettista
+PV.IC.AAP;GEO_Altezza
+PV.IC.AAP;GEO_Diametro
+PV.IC.AAP;GEO_Larghezza
+PV.IC.AAP;GEO_Lunghezza
+PV.IC.AAP;GEO_Peso
+PV.IC.AAP;GEO_Quota altimetrica inferiore
+PV.IC.AAP;GEO_Quota altimetrica superiore
+PV.IC.AAP;IDE_Codice opera
+PV.IC.AAP;IDE_Codice WBS
+PV.IC.AAP;IDE_Gruppo anagrafica
+PV.IC.AAP;IDE_ID Elemento
+PV.IC.AAP;IDE_LOR
+PV.IC.AAP;IDE_Uniclass
+PV.IC.AAP;INF_Campata di appartenenza
+PV.IC.AAP;INF_Numerazione struttura campata
+PV.IC.AAP;INF_Impalcato di appartenenza
+PV.IC.AAP;INF_Codice BMS
+PV.IC.AAP;LOC_Carreggiata
+PV.IC.AAP;LOC_Direzione
+PV.IC.AAP;LOC_Progressiva finale
+PV.IC.AAP;LOC_Progressiva iniziale
+PV.IC.AAP;TEC_Documentazione tecnica
+PV.PD.BAG;ANA_Esecutore
+PV.PD.BAG;ANA_Progettista
+PV.PD.BAG;GEO_Altezza
+PV.PD.BAG;GEO_Larghezza
+PV.PD.BAG;GEO_Lunghezza
+PV.PD.BAG;GEO_Peso
+PV.PD.BAG;GEO_Quota altimetrica inferiore
+PV.PD.BAG;GEO_Quota altimetrica superiore
+PV.PD.BAG;GEO_Volume
+PV.PD.BAG;IDE_Codice opera
+PV.PD.BAG;IDE_Codice WBS
+PV.PD.BAG;IDE_Gruppo anagrafica
+PV.PD.BAG;IDE_ID Elemento
+PV.PD.BAG;IDE_LOR
+PV.PD.BAG;IDE_Uniclass
+PV.PD.BAG;INF_Campata di appartenenza
+PV.PD.BAG;INF_Numerazione struttura campata
+PV.PD.BAG;INF_Impalcato di appartenenza
+PV.PD.BAG;INF_Codice BMS
+PV.PD.BAG;LOC_Carreggiata
+PV.PD.BAG;LOC_Direzione
+PV.PD.BAG;TEC_Documentazione tecnica
+PV.PD.BAG;TEC_Incidenza armatura
+PV.PD.BAG;TEC_Materiale
+PV.PD.BAG;TEC_Tipologia acciaio
+PV.PI.BAG;ANA_Esecutore
+PV.PI.BAG;ANA_Progettista
+PV.PI.BAG;GEO_Altezza
+PV.PI.BAG;GEO_Larghezza
+PV.PI.BAG;GEO_Lunghezza
+PV.PI.BAG;GEO_Peso
+PV.PI.BAG;GEO_Quota altimetrica inferiore
+PV.PI.BAG;GEO_Quota altimetrica superiore
+PV.PI.BAG;GEO_Volume
+PV.PI.BAG;IDE_Codice opera
+PV.PI.BAG;IDE_Codice WBS
+PV.PI.BAG;IDE_Gruppo anagrafica
+PV.PI.BAG;IDE_ID Elemento
+PV.PI.BAG;IDE_LOR
+PV.PI.BAG;IDE_Uniclass
+PV.PI.BAG;LOC_Carreggiata
+PV.PI.BAG;LOC_Direzione
+PV.PI.BAG;TEC_Documentazione tecnica
+PV.PI.BAG;TEC_Incidenza armatura
+PV.PI.BAG;TEC_Materiale
+PV.PI.BAG;TEC_Tipologia acciaio
+PV.SP.BAG;ANA_Esecutore
+PV.SP.BAG;ANA_Progettista
+PV.SP.BAG;GEO_Altezza
+PV.SP.BAG;GEO_Larghezza
+PV.SP.BAG;GEO_Lunghezza
+PV.SP.BAG;GEO_Peso
+PV.SP.BAG;GEO_Quota altimetrica inferiore
+PV.SP.BAG;GEO_Quota altimetrica superiore
+PV.SP.BAG;GEO_Volume
+PV.SP.BAG;IDE_Codice opera
+PV.SP.BAG;IDE_Codice WBS
+PV.SP.BAG;IDE_Gruppo anagrafica
+PV.SP.BAG;IDE_ID Elemento
+PV.SP.BAG;IDE_LOR
+PV.SP.BAG;IDE_Uniclass
+PV.SP.BAG;LOC_Carreggiata
+PV.SP.BAG;LOC_Direzione
+PV.SP.BAG;TEC_Documentazione tecnica
+PV.SP.BAG;TEC_Incidenza armatura
+PV.SP.BAG;TEC_Materiale
+PV.SP.BAG;TEC_Tipologia acciaio
+PV.IC.BIN;ANA_Esecutore
+PV.IC.BIN;ANA_Progettista
+PV.IC.BIN;GEO_Spessore strato pavimentazione
+PV.IC.BIN;IDE_Codice opera
+PV.IC.BIN;IDE_Codice WBS
+PV.IC.BIN;IDE_Gruppo anagrafica
+PV.IC.BIN;IDE_ID Elemento
+PV.IC.BIN;IDE_LOR
+PV.IC.BIN;IDE_Uniclass
+PV.IC.BIN;INF_Campata di appartenenza
+PV.IC.BIN;INF_Numerazione struttura campata
+PV.IC.BIN;INF_Impalcato di appartenenza
+PV.IC.BIN;INF_Codice BMS
+PV.IC.BIN;LOC_Carreggiata
+PV.IC.BIN;LOC_Direzione
+PV.IC.BIN;TEC_Documentazione tecnica
+PV.IC.BIN;TEC_Materiale
+PV.IC.BIN;TEC_Classificazione d uso stradale
+PV.IA.BIN;ANA_Esecutore
+PV.IA.BIN;ANA_Progettista
+PV.IA.BIN;GEO_Spessore strato pavimentazione
+PV.IA.BIN;IDE_Codice opera
+PV.IA.BIN;IDE_Codice WBS
+PV.IA.BIN;IDE_Gruppo anagrafica
+PV.IA.BIN;IDE_ID Elemento
+PV.IA.BIN;IDE_LOR
+PV.IA.BIN;IDE_Uniclass
+PV.IA.BIN;INF_Campata di appartenenza
+PV.IA.BIN;INF_Numerazione struttura campata
+PV.IA.BIN;INF_Impalcato di appartenenza
+PV.IA.BIN;INF_Codice BMS
+PV.IA.BIN;LOC_Carreggiata
+PV.IA.BIN;LOC_Direzione
+PV.IA.BIN;TEC_Documentazione tecnica
+PV.IA.BIN;TEC_Materiale
+PV.IA.BIN;TEC_Classificazione d uso stradale
+PV.AC.CAP;ANA_Esecutore
+PV.AC.CAP;ANA_Progettista
+PV.AC.CAP;GEO_Altezza
+PV.AC.CAP;GEO_Spessore
+PV.AC.CAP;GEO_Lunghezza
+PV.AC.CAP;GEO_Larghezza
+PV.AC.CAP;IDE_Codice opera
+PV.AC.CAP;IDE_Codice WBS
+PV.AC.CAP;IDE_Gruppo anagrafica
+PV.AC.CAP;IDE_ID Elemento
+PV.AC.CAP;IDE_LOR
+PV.AC.CAP;IDE_Uniclass
+PV.AC.CAP;LOC_Carreggiata
+PV.AC.CAP;LOC_Direzione
+PV.AC.CAP;LOC_Progressiva finale
+PV.AC.CAP;LOC_Progressiva iniziale
+PV.AC.CAP;TEC_Materiale
+PV.AC.CAP;TEC_Documentazione tecnica
+PV.IC.CAS;ANA_Esecutore
+PV.IC.CAS;ANA_Progettista
+PV.IC.CAS;GEO_Altezza
+PV.IC.CAS;GEO_Altezza interna
+PV.IC.CAS;GEO_Larghezza
+PV.IC.CAS;GEO_Larghezza interna
+PV.IC.CAS;GEO_Lunghezza
+PV.IC.CAS;GEO_Peso
+PV.IC.CAS;GEO_Volume
+PV.IC.CAS;IDE_Codice opera
+PV.IC.CAS;IDE_Codice WBS
+PV.IC.CAS;IDE_Gruppo anagrafica
+PV.IC.CAS;IDE_ID Elemento
+PV.IC.CAS;IDE_LOR
+PV.IC.CAS;IDE_Uniclass
+PV.IC.CAS;INF_Campata di appartenenza
+PV.IC.CAS;INF_Numerazione struttura campata
+PV.IC.CAS;INF_Impalcato di appartenenza
+PV.IC.CAS;INF_Codice BMS
+PV.IC.CAS;LOC_Carreggiata
+PV.IC.CAS;LOC_Direzione
+PV.IC.CAS;TEC_Chiave di taglio
+PV.IC.CAS;TEC_Documentazione tecnica
+PV.IC.CAS;TEC_Incidenza armatura
+PV.IC.CAS;TEC_Materiale
+PV.IC.CAS;TEC_Sella Gerber
+PV.IC.CAS;TEC_Tipologia C.A./C.A.P.
+PV.IC.CAS;TEC_Tipologia acciaio
+PV.IA.CAS;ANA_Esecutore
+PV.IA.CAS;ANA_Progettista
+PV.IA.CAS;GEO_Altezza
+PV.IA.CAS;GEO_Altezza interna
+PV.IA.CAS;GEO_Larghezza
+PV.IA.CAS;GEO_Larghezza interna
+PV.IA.CAS;GEO_Lunghezza
+PV.IA.CAS;GEO_Peso
+PV.IA.CAS;GEO_Volume
+PV.IA.CAS;IDE_Codice opera
+PV.IA.CAS;IDE_Codice WBS
+PV.IA.CAS;IDE_Gruppo anagrafica
+PV.IA.CAS;IDE_ID Elemento
+PV.IA.CAS;IDE_LOR
+PV.IA.CAS;IDE_Uniclass
+PV.IA.CAS;INF_Campata di appartenenza
+PV.IA.CAS;INF_Numerazione struttura campata
+PV.IA.CAS;INF_Impalcato di appartenenza
+PV.IA.CAS;INF_Codice BMS
+PV.IA.CAS;LOC_Carreggiata
+PV.IA.CAS;LOC_Direzione
+PV.IA.CAS;TEC_Chiave di taglio
+PV.IA.CAS;TEC_Documentazione tecnica
+PV.IA.CAS;TEC_Incidenza armatura
+PV.IA.CAS;TEC_Materiale
+PV.IA.CAS;TEC_Sella Gerber
+PV.IA.CAS;TEC_Tipologia C.A./C.A.P.
+PV.IA.CAS;TEC_Tipologia acciaio
+PV.FO.CEN;ANA_Esecutore
+PV.FO.CEN;ANA_Progettista
+PV.FO.CEN;GEO_Altezza profilo
+PV.FO.CEN;GEO_Diametro
+PV.FO.CEN;GEO_Larghezza profilo
+PV.FO.CEN;GEO_Lunghezza
+PV.FO.CEN;GEO_Peso
+PV.FO.CEN;GEO_Luce
+PV.FO.CEN;GEO_Area
+PV.FO.CEN;GEO_Identificativo concio
+PV.FO.CEN;IDE_Codice opera
+PV.FO.CEN;IDE_Codice WBS
+PV.FO.CEN;IDE_Gruppo anagrafica
+PV.FO.CEN;IDE_ID Elemento
+PV.FO.CEN;IDE_LOR
+PV.FO.CEN;IDE_Uniclass
+PV.FO.CEN;LOC_Carreggiata
+PV.FO.CEN;LOC_Direzione
+PV.FO.CEN;TEC_Documentazione tecnica
+PV.FO.CEN;TEC_Materiale
+PV.IA.CNT;ANA_Esecutore
+PV.IA.CNT;ANA_Progettista
+PV.IA.CNT;GEO_Altezza profilo
+PV.IA.CNT;GEO_Larghezza profilo
+PV.IA.CNT;GEO_Lunghezza profilo
+PV.IA.CNT;GEO_Peso
+PV.IA.CNT;IDE_Codice opera
+PV.IA.CNT;IDE_Codice WBS
+PV.IA.CNT;IDE_Gruppo anagrafica
+PV.IA.CNT;IDE_ID Elemento
+PV.IA.CNT;IDE_LOR
+PV.IA.CNT;IDE_Uniclass
+PV.IA.CNT;INF_Campata di appartenenza
+PV.IA.CNT;INF_Codice BMS
+PV.IA.CNT;INF_Impalcato di appartenenza
+PV.IA.CNT;INF_Numerazione struttura campata
+PV.IA.CNT;LOC_Carreggiata
+PV.IA.CNT;LOC_Direzione
+PV.IA.CNT;TEC_Documentazione tecnica
+PV.IA.CNT;TEC_Materiale
+PV.IA.CNT;TEC_Tipologia acciaio
+PV.IA.CNT;TEC_Tipologia profilo
+PV.IC.COR;ANA_Esecutore
+PV.IC.COR;ANA_Progettista
+PV.IC.COR;GEO_Altezza
+PV.IC.COR;GEO_Larghezza
+PV.IC.COR;GEO_Lunghezza
+PV.IC.COR;GEO_Pendenza
+PV.IC.COR;GEO_Pendenza sponde
+PV.IC.COR;GEO_Peso
+PV.IC.COR;GEO_Quota fine tratto
+PV.IC.COR;GEO_Quota inizio tratto
+PV.IC.COR;GEO_Raggio
+PV.IC.COR;GEO_Quota altimetrica inferiore
+PV.IC.COR;GEO_Volume
+PV.IC.COR;GEO_Identificativo concio
+PV.IC.COR;IDE_Codice opera
+PV.IC.COR;IDE_Codice WBS
+PV.IC.COR;IDE_Gruppo anagrafica
+PV.IC.COR;IDE_ID Elemento
+PV.IC.COR;IDE_LOR
+PV.IC.COR;IDE_Uniclass
+PV.IC.COR;INF_Campata di appartenenza
+PV.IC.COR;INF_Numerazione struttura campata
+PV.IC.COR;INF_Impalcato di appartenenza
+PV.IC.COR;INF_Codice BMS
+PV.IC.COR;LOC_Carreggiata
+PV.IC.COR;LOC_Direzione
+PV.IC.COR;TEC_Documentazione tecnica
+PV.IC.COR;TEC_Materiale
+PV.IC.COR;TEC_Incidenza armatura
+PV.IC.COR;TEC_Tipologia acciaio
+PV.IC.COR;TEC_Classificazione d uso stradale
+PV.IA.COR;ANA_Esecutore
+PV.IA.COR;ANA_Progettista
+PV.IA.COR;GEO_Altezza
+PV.IA.COR;GEO_Larghezza
+PV.IA.COR;GEO_Lunghezza
+PV.IA.COR;GEO_Pendenza
+PV.IA.COR;GEO_Pendenza sponde
+PV.IA.COR;GEO_Peso
+PV.IA.COR;GEO_Quota fine tratto
+PV.IA.COR;GEO_Quota inizio tratto
+PV.IA.COR;GEO_Raggio
+PV.IA.COR;GEO_Quota altimetrica inferiore
+PV.IA.COR;GEO_Volume
+PV.IA.COR;GEO_Identificativo concio
+PV.IA.COR;IDE_Codice opera
+PV.IA.COR;IDE_Codice WBS
+PV.IA.COR;IDE_Gruppo anagrafica
+PV.IA.COR;IDE_ID Elemento
+PV.IA.COR;IDE_LOR
+PV.IA.COR;IDE_Uniclass
+PV.IA.COR;INF_Campata di appartenenza
+PV.IA.COR;INF_Numerazione struttura campata
+PV.IA.COR;INF_Impalcato di appartenenza
+PV.IA.COR;INF_Codice BMS
+PV.IA.COR;LOC_Carreggiata
+PV.IA.COR;LOC_Direzione
+PV.IA.COR;TEC_Documentazione tecnica
+PV.IA.COR;TEC_Materiale
+PV.IA.COR;TEC_Incidenza armatura
+PV.IA.COR;TEC_Tipologia acciaio
+PV.IA.COR;TEC_Classificazione d uso stradale
+PV.IC.CUN;ANA_Esecutore
+PV.IC.CUN;ANA_Progettista
+PV.IC.CUN;GEO_Altezza
+PV.IC.CUN;GEO_Larghezza
+PV.IC.CUN;GEO_Lunghezza
+PV.IC.CUN;GEO_Pendenza
+PV.IC.CUN;GEO_Pendenza sponde
+PV.IC.CUN;GEO_Peso
+PV.IC.CUN;GEO_Quota fine tratto
+PV.IC.CUN;GEO_Quota inizio tratto
+PV.IC.CUN;GEO_Raggio
+PV.IC.CUN;IDE_Codice opera
+PV.IC.CUN;IDE_Codice WBS
+PV.IC.CUN;IDE_Gruppo anagrafica
+PV.IC.CUN;IDE_ID Elemento
+PV.IC.CUN;IDE_LOR
+PV.IC.CUN;IDE_Uniclass
+PV.IC.CUN;INF_Campata di appartenenza
+PV.IC.CUN;INF_Numerazione struttura campata
+PV.IC.CUN;INF_Impalcato di appartenenza
+PV.IC.CUN;INF_Codice BMS
+PV.IC.CUN;LOC_Carreggiata
+PV.IC.CUN;LOC_Direzione
+PV.IC.CUN;TEC_Documentazione tecnica
+PV.IC.CUN;TEC_Materiale
+PV.IC.CUN;TEC_Classificazione d uso stradale
+PV.IA.CUN;ANA_Esecutore
+PV.IA.CUN;ANA_Progettista
+PV.IA.CUN;GEO_Altezza
+PV.IA.CUN;GEO_Larghezza
+PV.IA.CUN;GEO_Lunghezza
+PV.IA.CUN;GEO_Pendenza
+PV.IA.CUN;GEO_Pendenza sponde
+PV.IA.CUN;GEO_Peso
+PV.IA.CUN;GEO_Quota fine tratto
+PV.IA.CUN;GEO_Quota inizio tratto
+PV.IA.CUN;GEO_Raggio
+PV.IA.CUN;IDE_Codice opera
+PV.IA.CUN;IDE_Codice WBS
+PV.IA.CUN;IDE_Gruppo anagrafica
+PV.IA.CUN;IDE_ID Elemento
+PV.IA.CUN;IDE_LOR
+PV.IA.CUN;IDE_Uniclass
+PV.IA.CUN;INF_Campata di appartenenza
+PV.IA.CUN;INF_Numerazione struttura campata
+PV.IA.CUN;INF_Impalcato di appartenenza
+PV.IA.CUN;INF_Codice BMS
+PV.IA.CUN;LOC_Carreggiata
+PV.IA.CUN;LOC_Direzione
+PV.IA.CUN;TEC_Documentazione tecnica
+PV.IA.CUN;TEC_Materiale
+PV.IA.CUN;TEC_Classificazione d uso stradale
+PV.FP.DIA;ANA_Esecutore
+PV.FP.DIA;ANA_Progettista
+PV.FP.DIA;GEO_Diametro
+PV.FP.DIA;GEO_Larghezza
+PV.FP.DIA;GEO_Lunghezza
+PV.FP.DIA;GEO_Quota altimetrica inferiore
+PV.FP.DIA;GEO_Quota altimetrica superiore
+PV.FP.DIA;GEO_Volume
+PV.FP.DIA;GEO_Spessore parete
+PV.FP.DIA;IDE_Codice opera
+PV.FP.DIA;IDE_Codice WBS
+PV.FP.DIA;IDE_Gruppo anagrafica
+PV.FP.DIA;IDE_ID Elemento
+PV.FP.DIA;IDE_LOR
+PV.FP.DIA;IDE_Uniclass
+PV.FP.DIA;LOC_Carreggiata
+PV.FP.DIA;LOC_Direzione
+PV.FP.DIA;TEC_Documentazione tecnica
+PV.FP.DIA;TEC_Incidenza armatura
+PV.FP.DIA;TEC_Materiale
+PV.FP.DIA;TEC_Tipologia acciaio
+PV.FO.DIA;ANA_Esecutore
+PV.FO.DIA;ANA_Progettista
+PV.FO.DIA;GEO_Diametro
+PV.FO.DIA;GEO_Larghezza
+PV.FO.DIA;GEO_Lunghezza
+PV.FO.DIA;GEO_Quota altimetrica inferiore
+PV.FO.DIA;GEO_Quota altimetrica superiore
+PV.FO.DIA;GEO_Volume
+PV.FO.DIA;GEO_Spessore parete
+PV.FO.DIA;IDE_Codice opera
+PV.FO.DIA;IDE_Codice WBS
+PV.FO.DIA;IDE_Gruppo anagrafica
+PV.FO.DIA;IDE_ID Elemento
+PV.FO.DIA;IDE_LOR
+PV.FO.DIA;IDE_Uniclass
+PV.FO.DIA;LOC_Carreggiata
+PV.FO.DIA;LOC_Direzione
+PV.FO.DIA;TEC_Documentazione tecnica
+PV.FO.DIA;TEC_Incidenza armatura
+PV.FO.DIA;TEC_Materiale
+PV.FO.DIA;TEC_Tipologia acciaio
+PV.GI.GIU;ANA_Esecutore
+PV.GI.GIU;ANA_Progettista
+PV.GI.GIU;GEO_Altezza
+PV.GI.GIU;GEO_Larghezza
+PV.GI.GIU;GEO_Lunghezza
+PV.GI.GIU;GEO_Peso
+PV.GI.GIU;IDE_Codice opera
+PV.GI.GIU;IDE_Codice WBS
+PV.GI.GIU;IDE_Gruppo anagrafica
+PV.GI.GIU;IDE_ID Elemento
+PV.GI.GIU;IDE_LOR
+PV.GI.GIU;IDE_Uniclass
+PV.GI.GIU;LOC_Carreggiata
+PV.GI.GIU;LOC_Direzione
+PV.GI.GIU;TEC_Documentazione tecnica
+PV.GI.GIU;TEC_Tipologia
+PV.GI.GIU;TEC_Tipologia giunti di superficie
+PV.PD.ISA;ANA_Esecutore
+PV.PD.ISA;ANA_Progettista
+PV.PD.ISA;GEO_Diametro
+PV.PD.ISA;GEO_Larghezza
+PV.PD.ISA;GEO_Lunghezza
+PV.PD.ISA;GEO_Peso
+PV.PD.ISA;GEO_Quota altimetrica inferiore
+PV.PD.ISA;GEO_Quota altimetrica superiore
+PV.PD.ISA;GEO_Altezza
+PV.PD.ISA;IDE_Codice opera
+PV.PD.ISA;IDE_Codice WBS
+PV.PD.ISA;IDE_Gruppo anagrafica
+PV.PD.ISA;IDE_ID Elemento
+PV.PD.ISA;IDE_LOR
+PV.PD.ISA;IDE_Uniclass
+PV.PD.ISA;INF_Campata di appartenenza
+PV.PD.ISA;INF_Numerazione struttura campata
+PV.PD.ISA;INF_Impalcato di appartenenza
+PV.PD.ISA;INF_Codice BMS
+PV.PD.ISA;LOC_Carreggiata
+PV.PD.ISA;LOC_Direzione
+PV.PD.ISA;LOC_Progressiva finale
+PV.PD.ISA;LOC_Progressiva iniziale
+PV.PD.ISA;TEC_Documentazione tecnica
+PV.PD.ISA;TEC_Tipologia apparecchi di appoggio
+PV.PD.ISA;TEC_Tipologia dispositivo antisismico
+PV.PI.ISA;ANA_Esecutore
+PV.PI.ISA;ANA_Progettista
+PV.PI.ISA;GEO_Altezza
+PV.PI.ISA;GEO_Diametro
+PV.PI.ISA;GEO_Larghezza
+PV.PI.ISA;GEO_Lunghezza
+PV.PI.ISA;GEO_Peso
+PV.PI.ISA;GEO_Quota altimetrica inferiore
+PV.PI.ISA;GEO_Quota altimetrica superiore
+PV.PI.ISA;IDE_Codice opera
+PV.PI.ISA;IDE_Codice WBS
+PV.PI.ISA;IDE_Gruppo anagrafica
+PV.PI.ISA;IDE_ID Elemento
+PV.PI.ISA;IDE_LOR
+PV.PI.ISA;IDE_Uniclass
+PV.PI.ISA;LOC_Carreggiata
+PV.PI.ISA;LOC_Direzione
+PV.PI.ISA;LOC_Progressiva finale
+PV.PI.ISA;LOC_Progressiva iniziale
+PV.PI.ISA;TEC_Documentazione tecnica
+PV.PI.ISA;TEC_Tipologia apparecchi di appoggio
+PV.PI.ISA;TEC_Tipologia dispositivo antisismico
+PV.SP.ISA;ANA_Esecutore
+PV.SP.ISA;ANA_Progettista
+PV.SP.ISA;GEO_Altezza
+PV.SP.ISA;GEO_Diametro
+PV.SP.ISA;GEO_Larghezza
+PV.SP.ISA;GEO_Lunghezza
+PV.SP.ISA;GEO_Peso
+PV.SP.ISA;GEO_Quota altimetrica inferiore
+PV.SP.ISA;GEO_Quota altimetrica superiore
+PV.SP.ISA;IDE_Codice opera
+PV.SP.ISA;IDE_Codice WBS
+PV.SP.ISA;IDE_Gruppo anagrafica
+PV.SP.ISA;IDE_ID Elemento
+PV.SP.ISA;IDE_LOR
+PV.SP.ISA;IDE_Uniclass
+PV.SP.ISA;LOC_Carreggiata
+PV.SP.ISA;LOC_Direzione
+PV.SP.ISA;LOC_Progressiva finale
+PV.SP.ISA;LOC_Progressiva iniziale
+PV.SP.ISA;TEC_Documentazione tecnica
+PV.SP.ISA;TEC_Tipologia apparecchi di appoggio
+PV.SP.ISA;TEC_Tipologia dispositivo antisismico
+PV.IA.LOR;ANA_Esecutore
+PV.IA.LOR;ANA_Progettista
+PV.IA.LOR;GEO_Altezza profilo
+PV.IA.LOR;GEO_Larghezza profilo
+PV.IA.LOR;GEO_Lunghezza profilo
+PV.IA.LOR;GEO_Peso
+PV.IA.LOR;IDE_Codice opera
+PV.IA.LOR;IDE_Codice WBS
+PV.IA.LOR;IDE_Gruppo anagrafica
+PV.IA.LOR;IDE_ID Elemento
+PV.IA.LOR;IDE_LOR
+PV.IA.LOR;IDE_Uniclass
+PV.IA.LOR;INF_Campata di appartenenza
+PV.IA.LOR;INF_Numerazione struttura campata
+PV.IA.LOR;INF_Impalcato di appartenenza
+PV.IA.LOR;INF_Codice BMS
+PV.IA.LOR;LOC_Carreggiata
+PV.IA.LOR;LOC_Direzione
+PV.IA.LOR;TEC_Documentazione tecnica
+PV.IA.LOR;TEC_Materiale
+PV.IA.LOR;TEC_Tipologia acciaio
+PV.IA.LOR;TEC_Tipologia profilo
+PV.IC.MUS;ANA_Esecutore
+PV.IC.MUS;ANA_Progettista
+PV.IC.MUS;GEO_Spessore strato pavimentazione
+PV.IC.MUS;IDE_Codice opera
+PV.IC.MUS;IDE_Codice WBS
+PV.IC.MUS;IDE_Gruppo anagrafica
+PV.IC.MUS;IDE_ID Elemento
+PV.IC.MUS;IDE_LOR
+PV.IC.MUS;IDE_Uniclass
+PV.IC.MUS;INF_Campata di appartenenza
+PV.IC.MUS;INF_Numerazione struttura campata
+PV.IC.MUS;INF_Impalcato di appartenenza
+PV.IC.MUS;INF_Codice BMS
+PV.IC.MUS;LOC_Carreggiata
+PV.IC.MUS;LOC_Direzione
+PV.IC.MUS;LOC_Progressiva finale
+PV.IC.MUS;LOC_Progressiva iniziale
+PV.IC.MUS;TEC_Documentazione tecnica
+PV.IC.MUS;TEC_Materiale
+PV.IC.MUS;TEC_Classificazione d uso stradale
+PV.IA.MUS;ANA_Esecutore
+PV.IA.MUS;ANA_Progettista
+PV.IA.MUS;GEO_Spessore strato pavimentazione
+PV.IA.MUS;IDE_Codice opera
+PV.IA.MUS;IDE_Codice WBS
+PV.IA.MUS;IDE_Gruppo anagrafica
+PV.IA.MUS;IDE_ID Elemento
+PV.IA.MUS;IDE_LOR
+PV.IA.MUS;IDE_Uniclass
+PV.IA.MUS;INF_Campata di appartenenza
+PV.IA.MUS;INF_Numerazione struttura campata
+PV.IA.MUS;INF_Impalcato di appartenenza
+PV.IA.MUS;INF_Codice BMS
+PV.IA.MUS;LOC_Carreggiata
+PV.IA.MUS;LOC_Direzione
+PV.IA.MUS;LOC_Progressiva finale
+PV.IA.MUS;LOC_Progressiva iniziale
+PV.IA.MUS;TEC_Documentazione tecnica
+PV.IA.MUS;TEC_Materiale
+PV.IA.MUS;TEC_Classificazione d uso stradale
+PV.FP.MPL;ANA_Esecutore
+PV.FP.MPL;ANA_Progettista
+PV.FP.MPL;GEO_Diametro
+PV.FP.MPL;GEO_Larghezza
+PV.FP.MPL;GEO_Lunghezza
+PV.FP.MPL;GEO_Quota altimetrica inferiore
+PV.FP.MPL;GEO_Quota altimetrica superiore
+PV.FP.MPL;GEO_Volume
+PV.FP.MPL;GEO_Spessore parete
+PV.FP.MPL;GEO_Identificativo concio
+PV.FP.MPL;IDE_Codice opera
+PV.FP.MPL;IDE_Codice WBS
+PV.FP.MPL;IDE_Gruppo anagrafica
+PV.FP.MPL;IDE_ID Elemento
+PV.FP.MPL;IDE_LOR
+PV.FP.MPL;IDE_Uniclass
+PV.FP.MPL;LOC_Carreggiata
+PV.FP.MPL;LOC_Direzione
+PV.FP.MPL;TEC_Documentazione tecnica
+PV.FP.MPL;TEC_Incidenza armatura
+PV.FP.MPL;TEC_Materiale
+PV.FP.MPL;TEC_Tipologia acciaio
+PV.FO.MPL;ANA_Esecutore
+PV.FO.MPL;ANA_Progettista
+PV.FO.MPL;GEO_Diametro
+PV.FO.MPL;GEO_Larghezza
+PV.FO.MPL;GEO_Lunghezza
+PV.FO.MPL;GEO_Quota altimetrica inferiore
+PV.FO.MPL;GEO_Quota altimetrica superiore
+PV.FO.MPL;GEO_Volume
+PV.FO.MPL;GEO_Spessore parete
+PV.FO.MPL;GEO_Identificativo concio
+PV.FO.MPL;IDE_Codice opera
+PV.FO.MPL;IDE_Codice WBS
+PV.FO.MPL;IDE_Gruppo anagrafica
+PV.FO.MPL;IDE_ID Elemento
+PV.FO.MPL;IDE_LOR
+PV.FO.MPL;IDE_Uniclass
+PV.FO.MPL;LOC_Carreggiata
+PV.FO.MPL;LOC_Direzione
+PV.FO.MPL;TEC_Documentazione tecnica
+PV.FO.MPL;TEC_Incidenza armatura
+PV.FO.MPL;TEC_Materiale
+PV.FO.MPL;TEC_Tipologia acciaio
+PV.SP.MAN;ANA_Esecutore
+PV.SP.MAN;ANA_Progettista
+PV.SP.MAN;GEO_Altezza
+PV.SP.MAN;GEO_Lunghezza
+PV.SP.MAN;GEO_Peso
+PV.SP.MAN;GEO_Quota altimetrica inferiore
+PV.SP.MAN;GEO_Quota altimetrica superiore
+PV.SP.MAN;GEO_Spessore
+PV.SP.MAN;GEO_Volume
+PV.SP.MAN;IDE_Codice opera
+PV.SP.MAN;IDE_Codice WBS
+PV.SP.MAN;IDE_Gruppo anagrafica
+PV.SP.MAN;IDE_ID Elemento
+PV.SP.MAN;IDE_LOR
+PV.SP.MAN;IDE_Uniclass
+PV.SP.MAN;LOC_Carreggiata
+PV.SP.MAN;LOC_Direzione
+PV.SP.MAN;TEC_Documentazione tecnica
+PV.SP.MAN;TEC_Incidenza armatura
+PV.SP.MAN;TEC_Materiale
+PV.SP.MAN;TEC_Tipologia acciaio
+PV.SP.MDA;ANA_Esecutore
+PV.SP.MDA;ANA_Progettista
+PV.SP.MDA;GEO_Lunghezza
+PV.SP.MDA;GEO_Peso
+PV.SP.MDA;GEO_Quota altimetrica inferiore
+PV.SP.MDA;GEO_Quota altimetrica superiore
+PV.SP.MDA;GEO_Spessore
+PV.SP.MDA;GEO_Volume
+PV.SP.MDA;GEO_Altezza
+PV.SP.MDA;IDE_Codice opera
+PV.SP.MDA;IDE_Codice WBS
+PV.SP.MDA;IDE_Gruppo anagrafica
+PV.SP.MDA;IDE_ID Elemento
+PV.SP.MDA;IDE_LOR
+PV.SP.MDA;IDE_Uniclass
+PV.SP.MDA;LOC_Carreggiata
+PV.SP.MDA;LOC_Direzione
+PV.SP.MDA;TEC_Documentazione tecnica
+PV.SP.MDA;TEC_Incidenza armatura
+PV.SP.MDA;TEC_Materiale
+PV.SP.MDA;TEC_Tipologia acciaio
+PV.SP.MFR;ANA_Esecutore
+PV.SP.MFR;ANA_Progettista
+PV.SP.MFR;GEO_Altezza
+PV.SP.MFR;GEO_Lunghezza
+PV.SP.MFR;GEO_Peso
+PV.SP.MFR;GEO_Quota altimetrica inferiore
+PV.SP.MFR;GEO_Quota altimetrica superiore
+PV.SP.MFR;GEO_Spessore
+PV.SP.MFR;GEO_Volume
+PV.SP.MFR;IDE_Codice opera
+PV.SP.MFR;IDE_Codice WBS
+PV.SP.MFR;IDE_Gruppo anagrafica
+PV.SP.MFR;IDE_ID Elemento
+PV.SP.MFR;IDE_LOR
+PV.SP.MFR;IDE_Uniclass
+PV.SP.MFR;LOC_Carreggiata
+PV.SP.MFR;LOC_Direzione
+PV.SP.MFR;TEC_Documentazione tecnica
+PV.SP.MFR;TEC_Incidenza armatura
+PV.SP.MFR;TEC_Materiale
+PV.SP.MFR;TEC_Tipologia acciaio
+PV.SP.MFR;TEC_Livello idrico
+PV.AC.OPO;ANA_Esecutore
+PV.AC.OPO;ANA_Progettista
+PV.AC.OPO;GEO_Altezza
+PV.AC.OPO;GEO_Spessore
+PV.AC.OPO;GEO_Lunghezza
+PV.AC.OPO;GEO_Larghezza
+PV.AC.OPO;IDE_Codice opera
+PV.AC.OPO;IDE_Codice WBS
+PV.AC.OPO;IDE_Gruppo anagrafica
+PV.AC.OPO;IDE_ID Elemento
+PV.AC.OPO;IDE_LOR
+PV.AC.OPO;IDE_Uniclass
+PV.AC.OPO;LOC_Carreggiata
+PV.AC.OPO;LOC_Direzione
+PV.AC.OPO;LOC_Progressiva finale
+PV.AC.OPO;LOC_Progressiva iniziale
+PV.AC.OPO;TEC_Materiale
+PV.AC.OPO;TEC_Documentazione tecnica
+PV.IC.PPZ;ANA_Esecutore
+PV.IC.PPZ;ANA_Progettista
+PV.IC.PPZ;GEO_Spessore strati bituminosi
+PV.IC.PPZ;GEO_Spessore
+PV.IC.PPZ;GEO_Volume
+PV.IC.PPZ;IDE_Codice opera
+PV.IC.PPZ;IDE_Codice WBS
+PV.IC.PPZ;IDE_Gruppo anagrafica
+PV.IC.PPZ;IDE_ID Elemento
+PV.IC.PPZ;IDE_LOR
+PV.IC.PPZ;IDE_Uniclass
+PV.IC.PPZ;INF_Campata di appartenenza
+PV.IC.PPZ;INF_Numerazione struttura campata
+PV.IC.PPZ;INF_Impalcato di appartenenza
+PV.IC.PPZ;INF_Codice BMS
+PV.IC.PPZ;LOC_Carreggiata
+PV.IC.PPZ;LOC_Direzione
+PV.IC.PPZ;TEC_Documentazione tecnica
+PV.IC.PPZ;TEC_Classificazione d uso stradale
+PV.IA.PPZ;ANA_Esecutore
+PV.IA.PPZ;ANA_Progettista
+PV.IA.PPZ;GEO_Spessore strati bituminosi
+PV.IA.PPZ;GEO_Spessore
+PV.IA.PPZ;GEO_Volume
+PV.IA.PPZ;IDE_Codice opera
+PV.IA.PPZ;IDE_Codice WBS
+PV.IA.PPZ;IDE_Gruppo anagrafica
+PV.IA.PPZ;IDE_ID Elemento
+PV.IA.PPZ;IDE_LOR
+PV.IA.PPZ;IDE_Uniclass
+PV.IA.PPZ;INF_Campata di appartenenza
+PV.IA.PPZ;INF_Numerazione struttura campata
+PV.IA.PPZ;INF_Impalcato di appartenenza
+PV.IA.PPZ;INF_Codice BMS
+PV.IA.PPZ;LOC_Carreggiata
+PV.IA.PPZ;LOC_Direzione
+PV.IA.PPZ;TEC_Documentazione tecnica
+PV.IA.PPZ;TEC_Classificazione d uso stradale
+PV.FP.PAL;ANA_Esecutore
+PV.FP.PAL;ANA_Progettista
+PV.FP.PAL;GEO_Diametro
+PV.FP.PAL;GEO_Larghezza
+PV.FP.PAL;GEO_Lunghezza
+PV.FP.PAL;GEO_Quota altimetrica inferiore
+PV.FP.PAL;GEO_Quota altimetrica superiore
+PV.FP.PAL;GEO_Volume
+PV.FP.PAL;GEO_Spessore parete
+PV.FP.PAL;GEO_Identificativo concio
+PV.FP.PAL;IDE_Codice opera
+PV.FP.PAL;IDE_Codice WBS
+PV.FP.PAL;IDE_Gruppo anagrafica
+PV.FP.PAL;IDE_ID Elemento
+PV.FP.PAL;IDE_LOR
+PV.FP.PAL;IDE_Uniclass
+PV.FP.PAL;LOC_Carreggiata
+PV.FP.PAL;LOC_Direzione
+PV.FP.PAL;TEC_Documentazione tecnica
+PV.FP.PAL;TEC_Incidenza armatura
+PV.FP.PAL;TEC_Materiale
+PV.FP.PAL;TEC_Tipologia acciaio
+PV.FO.PAL;ANA_Esecutore
+PV.FO.PAL;ANA_Progettista
+PV.FO.PAL;GEO_Diametro
+PV.FO.PAL;GEO_Larghezza
+PV.FO.PAL;GEO_Lunghezza
+PV.FO.PAL;GEO_Quota altimetrica inferiore
+PV.FO.PAL;GEO_Quota altimetrica superiore
+PV.FO.PAL;GEO_Volume
+PV.FO.PAL;GEO_Spessore parete
+PV.FO.PAL;GEO_Identificativo concio
+PV.FO.PAL;IDE_Codice opera
+PV.FO.PAL;IDE_Codice WBS
+PV.FO.PAL;IDE_Gruppo anagrafica
+PV.FO.PAL;IDE_ID Elemento
+PV.FO.PAL;IDE_LOR
+PV.FO.PAL;IDE_Uniclass
+PV.FO.PAL;LOC_Carreggiata
+PV.FO.PAL;LOC_Direzione
+PV.FO.PAL;TEC_Documentazione tecnica
+PV.FO.PAL;TEC_Incidenza armatura
+PV.FO.PAL;TEC_Materiale
+PV.FO.PAL;TEC_Tipologia acciaio
+PV.SP.PAR;ANA_Esecutore
+PV.SP.PAR;ANA_Progettista
+PV.SP.PAR;GEO_Altezza
+PV.SP.PAR;GEO_Lunghezza
+PV.SP.PAR;GEO_Peso
+PV.SP.PAR;GEO_Quota altimetrica inferiore
+PV.SP.PAR;GEO_Quota altimetrica superiore
+PV.SP.PAR;GEO_Spessore
+PV.SP.PAR;GEO_Volume
+PV.SP.PAR;IDE_Codice opera
+PV.SP.PAR;IDE_Codice WBS
+PV.SP.PAR;IDE_Gruppo anagrafica
+PV.SP.PAR;IDE_ID Elemento
+PV.SP.PAR;IDE_LOR
+PV.SP.PAR;IDE_Uniclass
+PV.SP.PAR;LOC_Carreggiata
+PV.SP.PAR;LOC_Direzione
+PV.SP.PAR;TEC_Documentazione tecnica
+PV.SP.PAR;TEC_Incidenza armatura
+PV.SP.PAR;TEC_Materiale
+PV.SP.PAR;TEC_Tipologia acciaio
+PV.SP.PAR;TEC_Livello idrico
+PV.AC.PEN;ANA_Esecutore
+PV.AC.PEN;ANA_Progettista
+PV.AC.PEN;GEO_Diametro
+PV.AC.PEN;GEO_Larghezza
+PV.AC.PEN;GEO_Lunghezza
+PV.AC.PEN;GEO_Altezza
+PV.AC.PEN;GEO_Peso
+PV.AC.PEN;IDE_Codice opera
+PV.AC.PEN;IDE_Codice WBS
+PV.AC.PEN;IDE_Gruppo anagrafica
+PV.AC.PEN;IDE_ID Elemento
+PV.AC.PEN;IDE_LOR
+PV.AC.PEN;IDE_Uniclass
+PV.AC.PEN;INF_Campata di appartenenza
+PV.AC.PEN;INF_Codice BMS
+PV.AC.PEN;INF_Impalcato di appartenenza
+PV.AC.PEN;INF_Numerazione struttura campata
+PV.AC.PEN;LOC_Carreggiata
+PV.AC.PEN;LOC_Direzione
+PV.AC.PEN;TEC_Documentazione tecnica
+PV.AC.PEN;TEC_Materiale
+PV.AC.PEN;TEC_Tipologia installazione
+PV.AC.PEN;TEC_Tipologia pendini
+PV.IC.PEN;ANA_Esecutore
+PV.IC.PEN;ANA_Progettista
+PV.IC.PEN;GEO_Diametro
+PV.IC.PEN;GEO_Larghezza
+PV.IC.PEN;GEO_Lunghezza
+PV.IC.PEN;GEO_Peso
+PV.IC.PEN;GEO_Altezza
+PV.IC.PEN;IDE_Codice opera
+PV.IC.PEN;IDE_Codice WBS
+PV.IC.PEN;IDE_Gruppo anagrafica
+PV.IC.PEN;IDE_ID Elemento
+PV.IC.PEN;IDE_LOR
+PV.IC.PEN;IDE_Uniclass
+PV.IC.PEN;INF_Campata di appartenenza
+PV.IC.PEN;INF_Codice BMS
+PV.IC.PEN;INF_Impalcato di appartenenza
+PV.IC.PEN;INF_Numerazione struttura campata
+PV.IC.PEN;LOC_Carreggiata
+PV.IC.PEN;LOC_Direzione
+PV.IC.PEN;TEC_Documentazione tecnica
+PV.IC.PEN;TEC_Materiale
+PV.IC.PEN;TEC_Tipologia installazione
+PV.IC.PEN;TEC_Tipologia pendini
+PV.IA.PEN;ANA_Esecutore
+PV.IA.PEN;ANA_Progettista
+PV.IA.PEN;GEO_Diametro
+PV.IA.PEN;GEO_Larghezza
+PV.IA.PEN;GEO_Lunghezza
+PV.IA.PEN;GEO_Altezza
+PV.IA.PEN;GEO_Peso
+PV.IA.PEN;IDE_Codice opera
+PV.IA.PEN;IDE_Codice WBS
+PV.IA.PEN;IDE_Gruppo anagrafica
+PV.IA.PEN;IDE_ID Elemento
+PV.IA.PEN;IDE_LOR
+PV.IA.PEN;IDE_Uniclass
+PV.IA.PEN;INF_Campata di appartenenza
+PV.IA.PEN;INF_Codice BMS
+PV.IA.PEN;INF_Impalcato di appartenenza
+PV.IA.PEN;INF_Numerazione struttura campata
+PV.IA.PEN;LOC_Carreggiata
+PV.IA.PEN;LOC_Direzione
+PV.IA.PEN;TEC_Documentazione tecnica
+PV.IA.PEN;TEC_Materiale
+PV.IA.PEN;TEC_Tipologia installazione
+PV.IA.PEN;TEC_Tipologia pendini
+PV.FP.PZF;ANA_Esecutore
+PV.FP.PZF;ANA_Progettista
+PV.FP.PZF;GEO_Altezza
+PV.FP.PZF;GEO_Area
+PV.FP.PZF;GEO_Larghezza
+PV.FP.PZF;GEO_Lunghezza
+PV.FP.PZF;GEO_Peso
+PV.FP.PZF;GEO_Quota altimetrica inferiore
+PV.FP.PZF;GEO_Volume
+PV.FP.PZF;GEO_Altezza sezione
+PV.FP.PZF;GEO_Larghezza sezione
+PV.FP.PZF;GEO_Identificativo concio
+PV.FP.PZF;IDE_Codice opera
+PV.FP.PZF;IDE_Codice WBS
+PV.FP.PZF;IDE_Gruppo anagrafica
+PV.FP.PZF;IDE_ID Elemento
+PV.FP.PZF;IDE_LOR
+PV.FP.PZF;IDE_Uniclass
+PV.FP.PZF;LOC_Carreggiata
+PV.FP.PZF;LOC_Direzione
+PV.FP.PZF;TEC_Documentazione tecnica
+PV.FP.PZF;TEC_Incidenza armatura
+PV.FP.PZF;TEC_Materiale
+PV.FP.PZF;TEC_Tipologia acciaio
+PV.FO.PZF;ANA_Esecutore
+PV.FO.PZF;ANA_Progettista
+PV.FO.PZF;GEO_Altezza
+PV.FO.PZF;GEO_Area
+PV.FO.PZF;GEO_Larghezza
+PV.FO.PZF;GEO_Lunghezza
+PV.FO.PZF;GEO_Peso
+PV.FO.PZF;GEO_Quota altimetrica inferiore
+PV.FO.PZF;GEO_Volume
+PV.FO.PZF;GEO_Altezza sezione
+PV.FO.PZF;GEO_Larghezza sezione
+PV.FO.PZF;GEO_Identificativo concio
+PV.FO.PZF;IDE_Codice opera
+PV.FO.PZF;IDE_Codice WBS
+PV.FO.PZF;IDE_Gruppo anagrafica
+PV.FO.PZF;IDE_ID Elemento
+PV.FO.PZF;IDE_LOR
+PV.FO.PZF;IDE_Uniclass
+PV.FO.PZF;LOC_Carreggiata
+PV.FO.PZF;LOC_Direzione
+PV.FO.PZF;TEC_Documentazione tecnica
+PV.FO.PZF;TEC_Incidenza armatura
+PV.FO.PZF;TEC_Materiale
+PV.FO.PZF;TEC_Tipologia acciaio
+PV.FS.PZF;ANA_Esecutore
+PV.FS.PZF;ANA_Progettista
+PV.FS.PZF;GEO_Altezza
+PV.FS.PZF;GEO_Area
+PV.FS.PZF;GEO_Larghezza
+PV.FS.PZF;GEO_Lunghezza
+PV.FS.PZF;GEO_Peso
+PV.FS.PZF;GEO_Quota altimetrica inferiore
+PV.FS.PZF;GEO_Volume
+PV.FS.PZF;GEO_Altezza sezione
+PV.FS.PZF;GEO_Larghezza sezione
+PV.FS.PZF;GEO_Identificativo concio
+PV.FS.PZF;IDE_Codice opera
+PV.FS.PZF;IDE_Codice WBS
+PV.FS.PZF;IDE_Gruppo anagrafica
+PV.FS.PZF;IDE_ID Elemento
+PV.FS.PZF;IDE_LOR
+PV.FS.PZF;IDE_Uniclass
+PV.FS.PZF;LOC_Carreggiata
+PV.FS.PZF;LOC_Direzione
+PV.FS.PZF;TEC_Documentazione tecnica
+PV.FS.PZF;TEC_Incidenza armatura
+PV.FS.PZF;TEC_Materiale
+PV.FS.PZF;TEC_Tipologia acciaio
+PV.FO.POZ;ANA_Esecutore
+PV.FO.POZ;ANA_Progettista
+PV.FO.POZ;GEO_Area
+PV.FO.POZ;GEO_Diametro
+PV.FO.POZ;GEO_Lunghezza
+PV.FO.POZ;GEO_Peso
+PV.FO.POZ;GEO_Quota altimetrica inferiore
+PV.FO.POZ;GEO_Quota altimetrica superiore
+PV.FO.POZ;GEO_Volume
+PV.FO.POZ;GEO_Spessore parete
+PV.FO.POZ;IDE_Codice opera
+PV.FO.POZ;IDE_Codice WBS
+PV.FO.POZ;IDE_Gruppo anagrafica
+PV.FO.POZ;IDE_ID Elemento
+PV.FO.POZ;IDE_LOR
+PV.FO.POZ;IDE_Uniclass
+PV.FO.POZ;LOC_Carreggiata
+PV.FO.POZ;LOC_Direzione
+PV.FO.POZ;TEC_Documentazione tecnica
+PV.FO.POZ;TEC_Materiale
+PV.FO.POZ;TEC_Tipologia acciaio
+PV.PD.PUL;ANA_Esecutore
+PV.PD.PUL;ANA_Progettista
+PV.PD.PUL;GEO_Larghezza
+PV.PD.PUL;GEO_Lunghezza
+PV.PD.PUL;GEO_Peso
+PV.PD.PUL;GEO_Quota altimetrica inferiore
+PV.PD.PUL;GEO_Quota altimetrica superiore
+PV.PD.PUL;GEO_Volume
+PV.PD.PUL;GEO_Altezza
+PV.PD.PUL;IDE_Codice opera
+PV.PD.PUL;IDE_Codice WBS
+PV.PD.PUL;IDE_Gruppo anagrafica
+PV.PD.PUL;IDE_ID Elemento
+PV.PD.PUL;IDE_LOR
+PV.PD.PUL;IDE_Uniclass
+PV.PD.PUL;INF_Campata di appartenenza
+PV.PD.PUL;INF_Numerazione struttura campata
+PV.PD.PUL;INF_Impalcato di appartenenza
+PV.PD.PUL;INF_Codice BMS
+PV.PD.PUL;LOC_Carreggiata
+PV.PD.PUL;LOC_Direzione
+PV.PD.PUL;TEC_Documentazione tecnica
+PV.PD.PUL;TEC_Incidenza armatura
+PV.PD.PUL;TEC_Materiale
+PV.PD.PUL;TEC_Tipologia acciaio
+PV.PI.PUL;ANA_Esecutore
+PV.PI.PUL;TEC_Sella Gerber
+PV.PI.PUL;ANA_Progettista
+PV.PI.PUL;GEO_Altezza
+PV.PI.PUL;GEO_Larghezza
+PV.PI.PUL;GEO_Lunghezza
+PV.PI.PUL;GEO_Peso
+PV.PI.PUL;GEO_Quota altimetrica inferiore
+PV.PI.PUL;GEO_Quota altimetrica superiore
+PV.PI.PUL;GEO_Volume
+PV.PI.PUL;IDE_Codice opera
+PV.PI.PUL;IDE_Codice WBS
+PV.PI.PUL;IDE_Gruppo anagrafica
+PV.PI.PUL;IDE_ID Elemento
+PV.PI.PUL;IDE_LOR
+PV.PI.PUL;IDE_Uniclass
+PV.PI.PUL;LOC_Carreggiata
+PV.PI.PUL;LOC_Direzione
+PV.PI.PUL;TEC_Documentazione tecnica
+PV.PI.PUL;TEC_Incidenza armatura
+PV.PI.PUL;TEC_Materiale
+PV.PI.PUL;TEC_Tipologia acciaio
+PV.IA.PUN;ANA_Esecutore
+PV.IA.PUN;ANA_Progettista
+PV.IA.PUN;GEO_Altezza profilo
+PV.IA.PUN;GEO_Larghezza profilo
+PV.IA.PUN;GEO_Lunghezza profilo
+PV.IA.PUN;GEO_Peso
+PV.IA.PUN;IDE_Codice opera
+PV.IA.PUN;IDE_Codice WBS
+PV.IA.PUN;IDE_Gruppo anagrafica
+PV.IA.PUN;IDE_ID Elemento
+PV.IA.PUN;IDE_LOR
+PV.IA.PUN;IDE_Uniclass
+PV.IA.PUN;INF_Campata di appartenenza
+PV.IA.PUN;INF_Numerazione struttura campata
+PV.IA.PUN;INF_Impalcato di appartenenza
+PV.IA.PUN;INF_Codice BMS
+PV.IA.PUN;LOC_Carreggiata
+PV.IA.PUN;LOC_Direzione
+PV.IA.PUN;TEC_Documentazione tecnica
+PV.IA.PUN;TEC_Materiale
+PV.IA.PUN;TEC_Tipologia acciaio
+PV.IA.PUN;TEC_Tipologia profilo
+PV.PD.RIS;ANA_Esecutore
+PV.PD.RIS;ANA_Progettista
+PV.PD.RIS;GEO_Altezza profilo
+PV.PD.RIS;GEO_Larghezza profilo
+PV.PD.RIS;GEO_Lunghezza profilo
+PV.PD.RIS;GEO_Peso
+PV.PD.RIS;IDE_Codice opera
+PV.PD.RIS;IDE_Codice WBS
+PV.PD.RIS;IDE_Gruppo anagrafica
+PV.PD.RIS;IDE_ID Elemento
+PV.PD.RIS;IDE_LOR
+PV.PD.RIS;IDE_Uniclass
+PV.PD.RIS;INF_Campata di appartenenza
+PV.PD.RIS;INF_Codice BMS
+PV.PD.RIS;INF_Impalcato di appartenenza
+PV.PD.RIS;INF_Numerazione struttura campata
+PV.PD.RIS;LOC_Carreggiata
+PV.PD.RIS;LOC_Direzione
+PV.PD.RIS;TEC_Documentazione tecnica
+PV.PD.RIS;TEC_Materiale
+PV.PD.RIS;TEC_Tipologia acciaio
+PV.PD.RIS;TEC_Tipologia profilo
+PV.PI.RIS;ANA_Esecutore
+PV.PI.RIS;ANA_Progettista
+PV.PI.RIS;GEO_Altezza profilo
+PV.PI.RIS;GEO_Larghezza profilo
+PV.PI.RIS;GEO_Lunghezza profilo
+PV.PI.RIS;GEO_Peso
+PV.PI.RIS;IDE_Codice opera
+PV.PI.RIS;IDE_Codice WBS
+PV.PI.RIS;IDE_Gruppo anagrafica
+PV.PI.RIS;IDE_ID Elemento
+PV.PI.RIS;IDE_LOR
+PV.PI.RIS;IDE_Uniclass
+PV.PI.RIS;LOC_Carreggiata
+PV.PI.RIS;LOC_Direzione
+PV.PI.RIS;TEC_Documentazione tecnica
+PV.PI.RIS;TEC_Materiale
+PV.PI.RIS;TEC_Tipologia acciaio
+PV.PI.RIS;TEC_Tipologia profilo
+PV.SP.RIS;ANA_Esecutore
+PV.SP.RIS;ANA_Progettista
+PV.SP.RIS;GEO_Altezza profilo
+PV.SP.RIS;GEO_Larghezza profilo
+PV.SP.RIS;GEO_Lunghezza profilo
+PV.SP.RIS;GEO_Peso
+PV.SP.RIS;IDE_Codice opera
+PV.SP.RIS;IDE_Codice WBS
+PV.SP.RIS;IDE_Gruppo anagrafica
+PV.SP.RIS;IDE_ID Elemento
+PV.SP.RIS;IDE_LOR
+PV.SP.RIS;IDE_Uniclass
+PV.SP.RIS;LOC_Carreggiata
+PV.SP.RIS;LOC_Direzione
+PV.SP.RIS;TEC_Documentazione tecnica
+PV.SP.RIS;TEC_Materiale
+PV.SP.RIS;TEC_Tipologia acciaio
+PV.SP.RIS;TEC_Tipologia profilo
+PV.IA.SBL;ANA_Esecutore
+PV.IA.SBL;ANA_Progettista
+PV.IA.SBL;GEO_Altezza profilo
+PV.IA.SBL;GEO_Larghezza profilo
+PV.IA.SBL;GEO_Lunghezza profilo
+PV.IA.SBL;GEO_Peso
+PV.IA.SBL;IDE_Codice opera
+PV.IA.SBL;IDE_Codice WBS
+PV.IA.SBL;IDE_Gruppo anagrafica
+PV.IA.SBL;IDE_ID Elemento
+PV.IA.SBL;IDE_LOR
+PV.IA.SBL;IDE_Uniclass
+PV.IA.SBL;INF_Campata di appartenenza
+PV.IA.SBL;INF_Numerazione struttura campata
+PV.IA.SBL;INF_Impalcato di appartenenza
+PV.IA.SBL;INF_Codice BMS
+PV.IA.SBL;LOC_Carreggiata
+PV.IA.SBL;LOC_Direzione
+PV.IA.SBL;TEC_Documentazione tecnica
+PV.IA.SBL;TEC_Materiale
+PV.IA.SBL;TEC_Tipologia acciaio
+PV.IA.SBL;TEC_Tipologia profilo
+PV.IC.SGE;ANA_Esecutore
+PV.IC.SGE;ANA_Progettista
+PV.IC.SGE;GEO_Altezza interna
+PV.IC.SGE;GEO_Larghezza
+PV.IC.SGE;GEO_Larghezza interna
+PV.IC.SGE;GEO_Lunghezza
+PV.IC.SGE;GEO_Peso
+PV.IC.SGE;GEO_Volume
+PV.IC.SGE;GEO_Altezza
+PV.IC.SGE;IDE_Codice opera
+PV.IC.SGE;IDE_Codice WBS
+PV.IC.SGE;IDE_Gruppo anagrafica
+PV.IC.SGE;IDE_ID Elemento
+PV.IC.SGE;IDE_LOR
+PV.IC.SGE;IDE_Uniclass
+PV.IC.SGE;INF_Campata di appartenenza
+PV.IC.SGE;INF_Numerazione struttura campata
+PV.IC.SGE;INF_Impalcato di appartenenza
+PV.IC.SGE;INF_Codice BMS
+PV.IC.SGE;LOC_Carreggiata
+PV.IC.SGE;LOC_Direzione
+PV.IC.SGE;TEC_Chiave di taglio
+PV.IC.SGE;TEC_Documentazione tecnica
+PV.IC.SGE;TEC_Incidenza armatura
+PV.IC.SGE;TEC_Materiale
+PV.IC.SGE;IDE_Elemento di appartenenza
+PV.IC.SGE;TEC_Tipologia C.A./C.A.P.
+PV.IC.SGE;TEC_Tipologia acciaio
+PV.IA.SGE;ANA_Esecutore
+PV.IA.SGE;ANA_Progettista
+PV.IA.SGE;GEO_Altezza interna
+PV.IA.SGE;GEO_Larghezza
+PV.IA.SGE;GEO_Larghezza interna
+PV.IA.SGE;GEO_Lunghezza
+PV.IA.SGE;GEO_Peso
+PV.IA.SGE;GEO_Volume
+PV.IA.SGE;GEO_Altezza
+PV.IA.SGE;IDE_Codice opera
+PV.IA.SGE;IDE_Codice WBS
+PV.IA.SGE;IDE_Gruppo anagrafica
+PV.IA.SGE;IDE_ID Elemento
+PV.IA.SGE;IDE_LOR
+PV.IA.SGE;IDE_Uniclass
+PV.IA.SGE;INF_Campata di appartenenza
+PV.IA.SGE;INF_Numerazione struttura campata
+PV.IA.SGE;INF_Impalcato di appartenenza
+PV.IA.SGE;INF_Codice BMS
+PV.IA.SGE;LOC_Carreggiata
+PV.IA.SGE;LOC_Direzione
+PV.IA.SGE;TEC_Chiave di taglio
+PV.IA.SGE;TEC_Documentazione tecnica
+PV.IA.SGE;TEC_Incidenza armatura
+PV.IA.SGE;TEC_Materiale
+PV.IA.SGE;IDE_Elemento di appartenenza
+PV.IA.SGE;TEC_Tipologia C.A./C.A.P.
+PV.IA.SGE;TEC_Tipologia acciaio
+PV.IC.SOL;ANA_Esecutore
+PV.IC.SOL;ANA_Progettista
+PV.IC.SOL;GEO_Area
+PV.IC.SOL;GEO_Larghezza
+PV.IC.SOL;GEO_Lunghezza
+PV.IC.SOL;GEO_Pendenza
+PV.IC.SOL;GEO_Spessore
+PV.IC.SOL;GEO_Volume
+PV.IC.SOL;GEO_Peso
+PV.IC.SOL;GEO_Quota altimetrica superiore
+PV.IC.SOL;GEO_Quota altimetrica inferiore
+PV.IC.SOL;GEO_Identificativo concio
+PV.IC.SOL;IDE_Codice opera
+PV.IC.SOL;IDE_Codice WBS
+PV.IC.SOL;IDE_Gruppo anagrafica
+PV.IC.SOL;IDE_ID Elemento
+PV.IC.SOL;IDE_LOR
+PV.IC.SOL;IDE_Uniclass
+PV.IC.SOL;INF_Campata di appartenenza
+PV.IC.SOL;INF_Numerazione struttura campata
+PV.IC.SOL;INF_Impalcato di appartenenza
+PV.IC.SOL;INF_Codice BMS
+PV.IC.SOL;LOC_Carreggiata
+PV.IC.SOL;LOC_Direzione
+PV.IC.SOL;TEC_Documentazione tecnica
+PV.IC.SOL;TEC_Incidenza armatura
+PV.IC.SOL;TEC_Materiale
+PV.IC.SOL;TEC_Tipologia acciaio
+PV.IC.SOL;TEC_Tipologia
+PV.IA.SOL;ANA_Esecutore
+PV.IA.SOL;ANA_Progettista
+PV.IA.SOL;GEO_Area
+PV.IA.SOL;GEO_Larghezza
+PV.IA.SOL;GEO_Lunghezza
+PV.IA.SOL;GEO_Pendenza
+PV.IA.SOL;GEO_Spessore
+PV.IA.SOL;GEO_Volume
+PV.IA.SOL;GEO_Peso
+PV.IA.SOL;GEO_Quota altimetrica superiore
+PV.IA.SOL;GEO_Quota altimetrica inferiore
+PV.IA.SOL;GEO_Identificativo concio
+PV.IA.SOL;IDE_Codice opera
+PV.IA.SOL;IDE_Codice WBS
+PV.IA.SOL;IDE_Gruppo anagrafica
+PV.IA.SOL;IDE_ID Elemento
+PV.IA.SOL;IDE_LOR
+PV.IA.SOL;IDE_Uniclass
+PV.IA.SOL;INF_Campata di appartenenza
+PV.IA.SOL;INF_Numerazione struttura campata
+PV.IA.SOL;INF_Impalcato di appartenenza
+PV.IA.SOL;INF_Codice BMS
+PV.IA.SOL;LOC_Carreggiata
+PV.IA.SOL;LOC_Direzione
+PV.IA.SOL;TEC_Documentazione tecnica
+PV.IA.SOL;TEC_Incidenza armatura
+PV.IA.SOL;TEC_Materiale
+PV.IA.SOL;TEC_Tipologia acciaio
+PV.IA.SOL;TEC_Tipologia
+PV.SP.SOL;ANA_Esecutore
+PV.SP.SOL;ANA_Progettista
+PV.SP.SOL;GEO_Larghezza
+PV.SP.SOL;GEO_Lunghezza
+PV.SP.SOL;GEO_Peso
+PV.SP.SOL;GEO_Quota altimetrica inferiore
+PV.SP.SOL;GEO_Quota altimetrica superiore
+PV.SP.SOL;GEO_Spessore
+PV.SP.SOL;GEO_Volume
+PV.SP.SOL;GEO_Pendenza
+PV.SP.SOL;GEO_Area
+PV.SP.SOL;GEO_Identificativo concio
+PV.SP.SOL;IDE_Codice opera
+PV.SP.SOL;IDE_Codice WBS
+PV.SP.SOL;IDE_Gruppo anagrafica
+PV.SP.SOL;IDE_ID Elemento
+PV.SP.SOL;IDE_LOR
+PV.SP.SOL;IDE_Uniclass
+PV.SP.SOL;LOC_Carreggiata
+PV.SP.SOL;LOC_Direzione
+PV.SP.SOL;TEC_Documentazione tecnica
+PV.SP.SOL;TEC_Incidenza armatura
+PV.SP.SOL;TEC_Materiale
+PV.SP.SOL;TEC_Tipologia acciaio
+PV.SP.SOL;TEC_Tipologia
+PV.IC.SSB;ANA_Esecutore
+PV.IC.SSB;ANA_Progettista
+PV.IC.SSB;GEO_Area
+PV.IC.SSB;GEO_Larghezza
+PV.IC.SSB;GEO_Lunghezza
+PV.IC.SSB;GEO_Pendenza
+PV.IC.SSB;GEO_Spessore
+PV.IC.SSB;GEO_Volume
+PV.IC.SSB;IDE_Codice opera
+PV.IC.SSB;IDE_Codice WBS
+PV.IC.SSB;IDE_Gruppo anagrafica
+PV.IC.SSB;IDE_ID Elemento
+PV.IC.SSB;IDE_LOR
+PV.IC.SSB;IDE_Uniclass
+PV.IC.SSB;INF_Campata di appartenenza
+PV.IC.SSB;INF_Numerazione struttura campata
+PV.IC.SSB;INF_Impalcato di appartenenza
+PV.IC.SSB;INF_Codice BMS
+PV.IC.SSB;LOC_Carreggiata
+PV.IC.SSB;LOC_Direzione
+PV.IC.SSB;TEC_Documentazione tecnica
+PV.IC.SSB;TEC_Incidenza armatura
+PV.IC.SSB;TEC_Materiale
+PV.IC.SSB;TEC_Tipologia acciaio
+PV.AN.STL;ANA_Esecutore
+PV.AN.STL;ANA_Progettista
+PV.AN.STL;GEO_Diametro
+PV.AN.STL;GEO_Lunghezza
+PV.AN.STL;GEO_Peso
+PV.AN.STL;IDE_Codice opera
+PV.AN.STL;IDE_Codice WBS
+PV.AN.STL;IDE_Gruppo anagrafica
+PV.AN.STL;IDE_ID Elemento
+PV.AN.STL;IDE_LOR
+PV.AN.STL;IDE_Uniclass
+PV.AN.STL;LOC_Carreggiata
+PV.AN.STL;LOC_Direzione
+PV.AN.STL;TEC_Documentazione tecnica
+PV.AN.STL;TEC_Materiale
+PV.AN.STL;TEC_Tipologia installazione
+PV.AN.STL;TEC_Tipologia
+PV.AC.SAR;ANA_Esecutore
+PV.AC.SAR;ANA_Progettista
+PV.AC.SAR;GEO_Altezza sezione
+PV.AC.SAR;GEO_Larghezza sezione
+PV.AC.SAR;GEO_Lunghezza
+PV.AC.SAR;GEO_Peso
+PV.AC.SAR;GEO_Quota altimetrica inferiore
+PV.AC.SAR;GEO_Quota altimetrica superiore
+PV.AC.SAR;GEO_Raggio
+PV.AC.SAR;GEO_Volume
+PV.AC.SAR;IDE_Codice opera
+PV.AC.SAR;IDE_Codice WBS
+PV.AC.SAR;IDE_Gruppo anagrafica
+PV.AC.SAR;IDE_ID Elemento
+PV.AC.SAR;IDE_LOR
+PV.AC.SAR;IDE_Uniclass
+PV.AC.SAR;INF_Campata di appartenenza
+PV.AC.SAR;INF_Numerazione struttura campata
+PV.AC.SAR;INF_Impalcato di appartenenza
+PV.AC.SAR;INF_Codice BMS
+PV.AC.SAR;LOC_Carreggiata
+PV.AC.SAR;LOC_Direzione
+PV.AC.SAR;TEC_Documentazione tecnica
+PV.AC.SAR;TEC_Incidenza armatura
+PV.AC.SAR;TEC_Materiale
+PV.AC.SAR;TEC_Tipologia acciaio
+PV.AN.SEL;ANA_Esecutore
+PV.AN.SEL;ANA_Progettista
+PV.AN.SEL;GEO_Diametro esterno
+PV.AN.SEL;GEO_Diametro interno
+PV.AN.SEL;GEO_Larghezza
+PV.AN.SEL;GEO_Lunghezza
+PV.AN.SEL;GEO_Peso
+PV.AN.SEL;GEO_Quota altimetrica inferiore
+PV.AN.SEL;GEO_Quota altimetrica superiore
+PV.AN.SEL;GEO_Volume
+PV.AN.SEL;GEO_Altezza
+PV.AN.SEL;IDE_Codice opera
+PV.AN.SEL;IDE_Codice WBS
+PV.AN.SEL;IDE_Gruppo anagrafica
+PV.AN.SEL;IDE_ID Elemento
+PV.AN.SEL;IDE_LOR
+PV.AN.SEL;IDE_Uniclass
+PV.AN.SEL;LOC_Carreggiata
+PV.AN.SEL;LOC_Direzione
+PV.AN.SEL;LOC_Progressiva finale
+PV.AN.SEL;LOC_Progressiva iniziale
+PV.AN.SEL;TEC_Documentazione tecnica
+PV.AN.SEL;TEC_Incidenza armatura
+PV.AN.SEL;TEC_Materiale
+PV.AN.SEL;TEC_Tipologia acciaio
+PV.PD.SEL;ANA_Esecutore
+PV.PD.SEL;ANA_Progettista
+PV.PD.SEL;GEO_Larghezza
+PV.PD.SEL;GEO_Lunghezza
+PV.PD.SEL;GEO_Peso
+PV.PD.SEL;GEO_Quota altimetrica inferiore
+PV.PD.SEL;GEO_Quota altimetrica superiore
+PV.PD.SEL;GEO_Volume
+PV.PD.SEL;GEO_Altezza
+PV.PD.SEL;GEO_Diametro esterno
+PV.PD.SEL;GEO_Diametro interno
+PV.PD.SEL;IDE_Codice opera
+PV.PD.SEL;IDE_Codice WBS
+PV.PD.SEL;IDE_Gruppo anagrafica
+PV.PD.SEL;IDE_ID Elemento
+PV.PD.SEL;IDE_LOR
+PV.PD.SEL;IDE_Uniclass
+PV.PD.SEL;INF_Campata di appartenenza
+PV.PD.SEL;INF_Numerazione struttura campata
+PV.PD.SEL;INF_Impalcato di appartenenza
+PV.PD.SEL;INF_Codice BMS
+PV.PD.SEL;LOC_Carreggiata
+PV.PD.SEL;LOC_Direzione
+PV.PD.SEL;LOC_Progressiva finale
+PV.PD.SEL;LOC_Progressiva iniziale
+PV.PD.SEL;TEC_Documentazione tecnica
+PV.PD.SEL;TEC_Incidenza armatura
+PV.PD.SEL;TEC_Materiale
+PV.PD.SEL;TEC_Tipologia acciaio
+PV.PI.SEL;ANA_Esecutore
+PV.PI.SEL;ANA_Progettista
+PV.PI.SEL;GEO_Diametro esterno
+PV.PI.SEL;GEO_Larghezza
+PV.PI.SEL;GEO_Lunghezza
+PV.PI.SEL;GEO_Peso
+PV.PI.SEL;GEO_Quota altimetrica inferiore
+PV.PI.SEL;GEO_Quota altimetrica superiore
+PV.PI.SEL;GEO_Volume
+PV.PI.SEL;GEO_Altezza
+PV.PI.SEL;GEO_Diametro interno
+PV.PI.SEL;IDE_Codice opera
+PV.PI.SEL;IDE_Codice WBS
+PV.PI.SEL;IDE_Gruppo anagrafica
+PV.PI.SEL;IDE_ID Elemento
+PV.PI.SEL;IDE_LOR
+PV.PI.SEL;IDE_Uniclass
+PV.PI.SEL;LOC_Carreggiata
+PV.PI.SEL;LOC_Direzione
+PV.PI.SEL;LOC_Progressiva finale
+PV.PI.SEL;LOC_Progressiva iniziale
+PV.PI.SEL;TEC_Documentazione tecnica
+PV.PI.SEL;TEC_Incidenza armatura
+PV.PI.SEL;TEC_Materiale
+PV.PI.SEL;TEC_Tipologia acciaio
+PV.AC.TIM;ANA_Esecutore
+PV.AC.TIM;ANA_Progettista
+PV.AC.TIM;GEO_Altezza
+PV.AC.TIM;GEO_Spessore
+PV.AC.TIM;GEO_Lunghezza
+PV.AC.TIM;GEO_Larghezza
+PV.AC.TIM;IDE_Codice opera
+PV.AC.TIM;IDE_Codice WBS
+PV.AC.TIM;IDE_Gruppo anagrafica
+PV.AC.TIM;IDE_ID Elemento
+PV.AC.TIM;IDE_LOR
+PV.AC.TIM;IDE_Uniclass
+PV.AC.TIM;LOC_Carreggiata
+PV.AC.TIM;LOC_Direzione
+PV.AC.TIM;LOC_Progressiva finale
+PV.AC.TIM;LOC_Progressiva iniziale
+PV.AC.TIM;TEC_Materiale
+PV.AC.TIM;TEC_Documentazione tecnica
+PV.IA.TAN;ANA_Esecutore
+PV.IA.TAN;ANA_Progettista
+PV.IA.TAN;GEO_Altezza profilo
+PV.IA.TAN;GEO_Larghezza profilo
+PV.IA.TAN;GEO_Lunghezza profilo
+PV.IA.TAN;GEO_Peso
+PV.IA.TAN;IDE_Codice opera
+PV.IA.TAN;IDE_Codice WBS
+PV.IA.TAN;IDE_Gruppo anagrafica
+PV.IA.TAN;IDE_ID Elemento
+PV.IA.TAN;IDE_LOR
+PV.IA.TAN;IDE_Uniclass
+PV.IA.TAN;INF_Campata di appartenenza
+PV.IA.TAN;INF_Numerazione struttura campata
+PV.IA.TAN;INF_Impalcato di appartenenza
+PV.IA.TAN;INF_Codice BMS
+PV.IA.TAN;LOC_Carreggiata
+PV.IA.TAN;LOC_Direzione
+PV.IA.TAN;TEC_Documentazione tecnica
+PV.IA.TAN;TEC_Materiale
+PV.IA.TAN;TEC_Tipologia acciaio
+PV.IA.TAN;TEC_Tipologia profilo
+PV.AN.TRV;ANA_Esecutore
+PV.AN.TRV;ANA_Progettista
+PV.AN.TRV;GEO_Larghezza profilo
+PV.AN.TRV;GEO_Lunghezza profilo
+PV.AN.TRV;GEO_Peso
+PV.AN.TRV;GEO_Volume
+PV.AN.TRV;GEO_Altezza profilo
+PV.AN.TRV;GEO_Identificativo concio
+PV.AN.TRV;IDE_Codice opera
+PV.AN.TRV;IDE_Codice WBS
+PV.AN.TRV;IDE_Gruppo anagrafica
+PV.AN.TRV;IDE_ID Elemento
+PV.AN.TRV;IDE_LOR
+PV.AN.TRV;IDE_Uniclass
+PV.AN.TRV;LOC_Carreggiata
+PV.AN.TRV;LOC_Direzione
+PV.AN.TRV;TEC_Documentazione tecnica
+PV.AN.TRV;TEC_Incidenza armatura
+PV.AN.TRV;TEC_Materiale
+PV.AN.TRV;TEC_Tipologia C.A./C.A.P.
+PV.AN.TRV;TEC_Tipologia acciaio
+PV.AN.TRV;TEC_Tipologia profilo
+PV.AC.TRV;ANA_Esecutore
+PV.AC.TRV;ANA_Progettista
+PV.AC.TRV;GEO_Larghezza profilo
+PV.AC.TRV;GEO_Lunghezza profilo
+PV.AC.TRV;GEO_Peso
+PV.AC.TRV;GEO_Volume
+PV.AC.TRV;GEO_Altezza profilo
+PV.AC.TRV;GEO_Identificativo concio
+PV.AC.TRV;IDE_Codice opera
+PV.AC.TRV;IDE_Codice WBS
+PV.AC.TRV;IDE_Gruppo anagrafica
+PV.AC.TRV;IDE_ID Elemento
+PV.AC.TRV;IDE_LOR
+PV.AC.TRV;IDE_Uniclass
+PV.AC.TRV;INF_Campata di appartenenza
+PV.AC.TRV;INF_Numerazione struttura campata
+PV.AC.TRV;INF_Impalcato di appartenenza
+PV.AC.TRV;INF_Codice BMS
+PV.AC.TRV;LOC_Carreggiata
+PV.AC.TRV;LOC_Direzione
+PV.AC.TRV;TEC_Documentazione tecnica
+PV.AC.TRV;TEC_Incidenza armatura
+PV.AC.TRV;TEC_Materiale
+PV.AC.TRV;TEC_Tipologia C.A./C.A.P.
+PV.AC.TRV;TEC_Tipologia acciaio
+PV.AC.TRV;TEC_Tipologia profilo
+PV.IC.TRV;ANA_Esecutore
+PV.IC.TRV;ANA_Progettista
+PV.IC.TRV;GEO_Larghezza profilo
+PV.IC.TRV;GEO_Lunghezza profilo
+PV.IC.TRV;GEO_Peso
+PV.IC.TRV;GEO_Volume
+PV.IC.TRV;GEO_Altezza profilo
+PV.IC.TRV;GEO_Identificativo concio
+PV.IC.TRV;IDE_Codice opera
+PV.IC.TRV;IDE_Codice WBS
+PV.IC.TRV;IDE_Gruppo anagrafica
+PV.IC.TRV;IDE_ID Elemento
+PV.IC.TRV;IDE_LOR
+PV.IC.TRV;IDE_Uniclass
+PV.IC.TRV;INF_Campata di appartenenza
+PV.IC.TRV;INF_Numerazione struttura campata
+PV.IC.TRV;INF_Impalcato di appartenenza
+PV.IC.TRV;INF_Codice BMS
+PV.IC.TRV;LOC_Carreggiata
+PV.IC.TRV;LOC_Direzione
+PV.IC.TRV;TEC_Documentazione tecnica
+PV.IC.TRV;TEC_Incidenza armatura
+PV.IC.TRV;TEC_Materiale
+PV.IC.TRV;TEC_Tipologia C.A./C.A.P.
+PV.IC.TRV;TEC_Tipologia acciaio
+PV.IC.TRV;TEC_Tipologia profilo
+PV.IA.TRV;ANA_Esecutore
+PV.IA.TRV;ANA_Progettista
+PV.IA.TRV;GEO_Larghezza profilo
+PV.IA.TRV;GEO_Lunghezza profilo
+PV.IA.TRV;GEO_Peso
+PV.IA.TRV;GEO_Volume
+PV.IA.TRV;GEO_Altezza profilo
+PV.IA.TRV;GEO_Identificativo concio
+PV.IA.TRV;IDE_Codice opera
+PV.IA.TRV;IDE_Codice WBS
+PV.IA.TRV;IDE_Gruppo anagrafica
+PV.IA.TRV;IDE_ID Elemento
+PV.IA.TRV;IDE_LOR
+PV.IA.TRV;IDE_Uniclass
+PV.IA.TRV;INF_Campata di appartenenza
+PV.IA.TRV;INF_Numerazione struttura campata
+PV.IA.TRV;INF_Impalcato di appartenenza
+PV.IA.TRV;INF_Codice BMS
+PV.IA.TRV;LOC_Carreggiata
+PV.IA.TRV;LOC_Direzione
+PV.IA.TRV;TEC_Documentazione tecnica
+PV.IA.TRV;TEC_Incidenza armatura
+PV.IA.TRV;TEC_Materiale
+PV.IA.TRV;TEC_Tipologia C.A./C.A.P.
+PV.IA.TRV;TEC_Tipologia acciaio
+PV.IA.TRV;TEC_Tipologia profilo
+PV.PD.TRV;ANA_Esecutore
+PV.PD.TRV;ANA_Progettista
+PV.PD.TRV;GEO_Larghezza profilo
+PV.PD.TRV;GEO_Lunghezza profilo
+PV.PD.TRV;GEO_Peso
+PV.PD.TRV;GEO_Volume
+PV.PD.TRV;GEO_Altezza profilo
+PV.PD.TRV;GEO_Identificativo concio
+PV.PD.TRV;IDE_Codice opera
+PV.PD.TRV;IDE_Codice WBS
+PV.PD.TRV;IDE_Gruppo anagrafica
+PV.PD.TRV;IDE_ID Elemento
+PV.PD.TRV;IDE_LOR
+PV.PD.TRV;IDE_Uniclass
+PV.PD.TRV;INF_Campata di appartenenza
+PV.PD.TRV;INF_Numerazione struttura campata
+PV.PD.TRV;INF_Impalcato di appartenenza
+PV.PD.TRV;INF_Codice BMS
+PV.PD.TRV;LOC_Carreggiata
+PV.PD.TRV;LOC_Direzione
+PV.PD.TRV;TEC_Documentazione tecnica
+PV.PD.TRV;TEC_Incidenza armatura
+PV.PD.TRV;TEC_Materiale
+PV.PD.TRV;TEC_Tipologia C.A./C.A.P.
+PV.PD.TRV;TEC_Tipologia acciaio
+PV.PD.TRV;TEC_Tipologia profilo
+PV.PI.TRV;ANA_Esecutore
+PV.PI.TRV;ANA_Progettista
+PV.PI.TRV;GEO_Larghezza profilo
+PV.PI.TRV;GEO_Lunghezza profilo
+PV.PI.TRV;GEO_Peso
+PV.PI.TRV;GEO_Volume
+PV.PI.TRV;GEO_Altezza profilo
+PV.PI.TRV;GEO_Identificativo concio
+PV.PI.TRV;IDE_Codice opera
+PV.PI.TRV;IDE_Codice WBS
+PV.PI.TRV;IDE_Gruppo anagrafica
+PV.PI.TRV;IDE_ID Elemento
+PV.PI.TRV;IDE_LOR
+PV.PI.TRV;IDE_Uniclass
+PV.PI.TRV;LOC_Carreggiata
+PV.PI.TRV;LOC_Direzione
+PV.PI.TRV;TEC_Documentazione tecnica
+PV.PI.TRV;TEC_Incidenza armatura
+PV.PI.TRV;TEC_Materiale
+PV.PI.TRV;TEC_Tipologia C.A./C.A.P.
+PV.PI.TRV;TEC_Tipologia acciaio
+PV.PI.TRV;TEC_Tipologia profilo
+PV.IC.TRA;ANA_Esecutore
+PV.IC.TRA;ANA_Progettista
+PV.IC.TRA;GEO_Altezza interna
+PV.IC.TRA;GEO_Larghezza
+PV.IC.TRA;GEO_Larghezza interna
+PV.IC.TRA;GEO_Lunghezza
+PV.IC.TRA;GEO_Peso
+PV.IC.TRA;GEO_Volume
+PV.IC.TRA;GEO_Altezza
+PV.IC.TRA;GEO_Identificativo concio
+PV.IC.TRA;IDE_Codice opera
+PV.IC.TRA;IDE_Codice WBS
+PV.IC.TRA;IDE_Gruppo anagrafica
+PV.IC.TRA;IDE_ID Elemento
+PV.IC.TRA;IDE_LOR
+PV.IC.TRA;IDE_Uniclass
+PV.IC.TRA;INF_Campata di appartenenza
+PV.IC.TRA;INF_Numerazione struttura campata
+PV.IC.TRA;INF_Impalcato di appartenenza
+PV.IC.TRA;INF_Codice BMS
+PV.IC.TRA;LOC_Carreggiata
+PV.IC.TRA;LOC_Direzione
+PV.IC.TRA;TEC_Chiave di taglio
+PV.IC.TRA;TEC_Documentazione tecnica
+PV.IC.TRA;TEC_Incidenza armatura
+PV.IC.TRA;TEC_Materiale
+PV.IC.TRA;TEC_Sella Gerber
+PV.IC.TRA;TEC_Tipologia C.A./C.A.P.
+PV.IC.TRA;TEC_Tipologia acciaio
+PV.IA.TRA;ANA_Esecutore
+PV.IA.TRA;ANA_Progettista
+PV.IA.TRA;GEO_Altezza interna
+PV.IA.TRA;GEO_Larghezza
+PV.IA.TRA;GEO_Larghezza interna
+PV.IA.TRA;GEO_Lunghezza
+PV.IA.TRA;GEO_Peso
+PV.IA.TRA;GEO_Volume
+PV.IA.TRA;GEO_Altezza
+PV.IA.TRA;GEO_Identificativo concio
+PV.IA.TRA;IDE_Codice opera
+PV.IA.TRA;IDE_Codice WBS
+PV.IA.TRA;IDE_Gruppo anagrafica
+PV.IA.TRA;IDE_ID Elemento
+PV.IA.TRA;IDE_LOR
+PV.IA.TRA;IDE_Uniclass
+PV.IA.TRA;INF_Campata di appartenenza
+PV.IA.TRA;INF_Numerazione struttura campata
+PV.IA.TRA;INF_Impalcato di appartenenza
+PV.IA.TRA;INF_Codice BMS
+PV.IA.TRA;LOC_Carreggiata
+PV.IA.TRA;LOC_Direzione
+PV.IA.TRA;TEC_Chiave di taglio
+PV.IA.TRA;TEC_Documentazione tecnica
+PV.IA.TRA;TEC_Incidenza armatura
+PV.IA.TRA;TEC_Materiale
+PV.IA.TRA;TEC_Sella Gerber
+PV.IA.TRA;TEC_Tipologia C.A./C.A.P.
+PV.IA.TRA;TEC_Tipologia acciaio
+PV.IC.VEL;ANA_Esecutore
+PV.IC.VEL;ANA_Progettista
+PV.IC.VEL;GEO_Larghezza
+PV.IC.VEL;GEO_Lunghezza
+PV.IC.VEL;GEO_Pendenza
+PV.IC.VEL;GEO_Pendenza sponde
+PV.IC.VEL;GEO_Peso
+PV.IC.VEL;GEO_Quota fine tratto
+PV.IC.VEL;GEO_Quota inizio tratto
+PV.IC.VEL;GEO_Raggio
+PV.IC.VEL;GEO_Altezza
+PV.IC.VEL;IDE_Codice opera
+PV.IC.VEL;IDE_Codice WBS
+PV.IC.VEL;IDE_Gruppo anagrafica
+PV.IC.VEL;IDE_ID Elemento
+PV.IC.VEL;IDE_LOR
+PV.IC.VEL;IDE_Uniclass
+PV.IC.VEL;INF_Campata di appartenenza
+PV.IC.VEL;INF_Numerazione struttura campata
+PV.IC.VEL;INF_Impalcato di appartenenza
+PV.IC.VEL;INF_Codice BMS
+PV.IC.VEL;LOC_Carreggiata
+PV.IC.VEL;LOC_Direzione
+PV.IC.VEL;TEC_Documentazione tecnica
+PV.IC.VEL;TEC_Materiale
+PV.IA.VEL;ANA_Esecutore
+PV.IA.VEL;ANA_Progettista
+PV.IA.VEL;GEO_Larghezza
+PV.IA.VEL;GEO_Lunghezza
+PV.IA.VEL;GEO_Pendenza
+PV.IA.VEL;GEO_Pendenza sponde
+PV.IA.VEL;GEO_Peso
+PV.IA.VEL;GEO_Quota fine tratto
+PV.IA.VEL;GEO_Quota inizio tratto
+PV.IA.VEL;GEO_Raggio
+PV.IA.VEL;GEO_Altezza
+PV.IA.VEL;IDE_Codice opera
+PV.IA.VEL;IDE_Codice WBS
+PV.IA.VEL;IDE_Gruppo anagrafica
+PV.IA.VEL;IDE_ID Elemento
+PV.IA.VEL;IDE_LOR
+PV.IA.VEL;IDE_Uniclass
+PV.IA.VEL;INF_Campata di appartenenza
+PV.IA.VEL;INF_Numerazione struttura campata
+PV.IA.VEL;INF_Impalcato di appartenenza
+PV.IA.VEL;INF_Codice BMS
+PV.IA.VEL;LOC_Carreggiata
+PV.IA.VEL;LOC_Direzione
+PV.IA.VEL;TEC_Documentazione tecnica
+PV.IA.VEL;TEC_Materiale
+SI.BS.LMC;ANA_Esecutore
+SI.BS.LMC;ANA_Progettista
+SI.BS.LMC;GEO_Altezza
+SI.BS.LMC;GEO_Ingombro trasversale
+SI.BS.LMC;GEO_Lunghezza
+SI.BS.LMC;GEO_Peso
+SI.BS.LMC;IDE_Codice opera
+SI.BS.LMC;IDE_Codice WBS
+SI.BS.LMC;IDE_Gruppo anagrafica
+SI.BS.LMC;IDE_ID Elemento
+SI.BS.LMC;IDE_LOR
+SI.BS.LMC;IDE_Uniclass
+SI.BS.LMC;LOC_Carreggiata
+SI.BS.LMC;LOC_Direzione
+SI.BS.LMC;LOC_Progressiva finale
+SI.BS.LMC;LOC_Progressiva iniziale
+SI.BS.LMC;TEC_Classe di prestazione
+SI.BS.LMC;TEC_Documentazione tecnica
+SI.BS.LMC;TEC_Materiale
+SI.BS.LMC;TEC_Tipologia barriera
+SI.BS.LMC;TEC_Tipologia installazione
+SI.BC.NJE;ANA_Esecutore
+SI.BC.NJE;ANA_Progettista
+SI.BC.NJE;GEO_Altezza
+SI.BC.NJE;GEO_Ingombro trasversale
+SI.BC.NJE;GEO_Lunghezza
+SI.BC.NJE;GEO_Peso
+SI.BC.NJE;IDE_Codice opera
+SI.BC.NJE;IDE_Codice WBS
+SI.BC.NJE;IDE_Gruppo anagrafica
+SI.BC.NJE;IDE_ID Elemento
+SI.BC.NJE;IDE_LOR
+SI.BC.NJE;IDE_Uniclass
+SI.BC.NJE;LOC_Carreggiata
+SI.BC.NJE;LOC_Direzione
+SI.BC.NJE;LOC_Progressiva finale
+SI.BC.NJE;LOC_Progressiva iniziale
+SI.BC.NJE;TEC_Classe di prestazione
+SI.BC.NJE;TEC_Documentazione tecnica
+SI.BC.NJE;TEC_Materiale
+SI.BC.NJE;TEC_Tipologia installazione
+SI.BS.PAN;ANA_Esecutore
+SI.BS.PAN;ANA_Progettista
+SI.BS.PAN;GEO_Altezza
+SI.BS.PAN;GEO_Lunghezza
+SI.BS.PAN;GEO_Peso
+SI.BS.PAN;GEO_Spessore
+SI.BS.PAN;IDE_Codice opera
+SI.BS.PAN;IDE_Codice WBS
+SI.BS.PAN;IDE_Gruppo anagrafica
+SI.BS.PAN;IDE_ID Elemento
+SI.BS.PAN;IDE_LOR
+SI.BS.PAN;IDE_Uniclass
+SI.BS.PAN;LOC_Carreggiata
+SI.BS.PAN;LOC_Direzione
+SI.BS.PAN;LOC_Progressiva finale
+SI.BS.PAN;LOC_Progressiva iniziale
+SI.BS.PAN;TEC_Documentazione tecnica
+SI.BS.PAN;TEC_Materiale
+SI.BS.PAN;TEC_Tipologia acciaio
+SI.BS.RAN;ANA_Esecutore
+SI.BS.RAN;ANA_Progettista
+SI.BS.RAN;GEO_Altezza
+SI.BS.RAN;GEO_Area
+SI.BS.RAN;GEO_Lunghezza
+SI.BS.RAN;GEO_Peso
+SI.BS.RAN;IDE_Codice opera
+SI.BS.RAN;IDE_Codice WBS
+SI.BS.RAN;IDE_Gruppo anagrafica
+SI.BS.RAN;IDE_ID Elemento
+SI.BS.RAN;IDE_LOR
+SI.BS.RAN;IDE_Uniclass
+SI.BS.RAN;LOC_Carreggiata
+SI.BS.RAN;LOC_Direzione
+SI.BS.RAN;LOC_Progressiva finale
+SI.BS.RAN;LOC_Progressiva iniziale
+SI.BS.RAN;TEC_Dimensione maglia
+SI.BS.RAN;TEC_Documentazione tecnica
+SI.BS.RAN;TEC_Materiale
+SI.BS.RAN;TEC_Tipologia acciaio
+SI.BS.TTA;ANA_Esecutore
+SI.BS.TTA;ANA_Progettista
+SI.BS.TTA;GEO_Altezza
+SI.BS.TTA;GEO_Ingombro trasversale
+SI.BS.TTA;GEO_Lunghezza
+SI.BS.TTA;GEO_Peso
+SI.BS.TTA;IDE_Codice opera
+SI.BS.TTA;IDE_Codice WBS
+SI.BS.TTA;IDE_Gruppo anagrafica
+SI.BS.TTA;IDE_ID Elemento
+SI.BS.TTA;IDE_LOR
+SI.BS.TTA;IDE_Uniclass
+SI.BS.TTA;LOC_Carreggiata
+SI.BS.TTA;LOC_Direzione
+SI.BS.TTA;LOC_Progressiva finale
+SI.BS.TTA;LOC_Progressiva iniziale
+SI.BS.TTA;TEC_Classe di prestazione
+SI.BS.TTA;TEC_Documentazione tecnica
+SI.BS.TTA;TEC_Materiale
+SI.BS.TTA;TEC_Tipologia installazione
+SI.BC.TTA;ANA_Esecutore
+SI.BC.TTA;ANA_Progettista
+SI.BC.TTA;GEO_Altezza
+SI.BC.TTA;GEO_Ingombro trasversale
+SI.BC.TTA;GEO_Lunghezza
+SI.BC.TTA;GEO_Peso
+SI.BC.TTA;IDE_Codice opera
+SI.BC.TTA;IDE_Codice WBS
+SI.BC.TTA;IDE_Gruppo anagrafica
+SI.BC.TTA;IDE_ID Elemento
+SI.BC.TTA;IDE_LOR
+SI.BC.TTA;IDE_Uniclass
+SI.BC.TTA;LOC_Carreggiata
+SI.BC.TTA;LOC_Direzione
+SI.BC.TTA;LOC_Progressiva finale
+SI.BC.TTA;LOC_Progressiva iniziale
+SI.BC.TTA;TEC_Classe di prestazione
+SI.BC.TTA;TEC_Documentazione tecnica
+SI.BC.TTA;TEC_Materiale
+SI.BC.TTA;TEC_Tipologia installazione
+SI.BS.UNI;ANA_Esecutore
+SI.BS.UNI;ANA_Progettista
+SI.BS.UNI;GEO_Larghezza profilo
+SI.BS.UNI;GEO_Lunghezza profilo
+SI.BS.UNI;IDE_Codice opera
+SI.BS.UNI;IDE_Codice WBS
+SI.BS.UNI;IDE_Gruppo anagrafica
+SI.BS.UNI;IDE_ID Elemento
+SI.BS.UNI;IDE_LOR
+SI.BS.UNI;IDE_Uniclass
+SI.BS.UNI;LOC_Carreggiata
+SI.BS.UNI;LOC_Direzione
+SI.BS.UNI;TEC_Documentazione tecnica
+SI.BS.UNI;TEC_Tipologia acciaio
+SI.BC.UNI;ANA_Esecutore
+SI.BC.UNI;ANA_Progettista
+SI.BC.UNI;GEO_Larghezza profilo
+SI.BC.UNI;GEO_Lunghezza profilo
+SI.BC.UNI;IDE_Codice opera
+SI.BC.UNI;IDE_Codice WBS
+SI.BC.UNI;IDE_Gruppo anagrafica
+SI.BC.UNI;IDE_ID Elemento
+SI.BC.UNI;IDE_LOR
+SI.BC.UNI;IDE_Uniclass
+SI.BC.UNI;LOC_Carreggiata
+SI.BC.UNI;LOC_Direzione
+SI.BC.UNI;TEC_Documentazione tecnica
+SI.BC.UNI;TEC_Tipologia acciaio
+MO.ES.IFS;IDE_Codice sensore
+MO.ES.IFS;TEC_Numero seriale
+MO.ES.TEC;IDE_Codice sensore
+MO.ES.TEC;TEC_Numero seriale
+MO.ES.TCM;IDE_Codice sensore
+MO.ES.TCM;TEC_Numero seriale
+MO.MN.ACC;IDE_Codice sensore
+MO.MN.ACC;TEC_Numero seriale
+MO.MN.SCA;IDE_Codice sensore
+MO.MN.SCA;TEC_Numero seriale
+MO.MN.VCM;IDE_Codice sensore
+MO.MN.VCM;TEC_Numero seriale
+MO.EA.TSS;GEO_Diametro
+MO.EA.TSS;GEO_Lunghezza
+MO.EA.TSS;IDE_Codice opera
+MO.EA.TSS;IDE_Codice WBS
+MO.EA.TSS;IDE_Elemento di appartenenza
+MO.EA.TSS;IDE_Gruppo anagrafica
+MO.EA.TSS;IDE_ID Elemento
+MO.EA.TSS;IDE_LOR
+MO.EA.TSS;IDE_Uniclass
+MO.EA.TSS;IDE_Codice sensore
+MO.EA.TSS;GEO_Quota sensore
+MO.EA.TSS;TEC_Documentazione tecnica
+MO.EA.TSS;TEC_Numero seriale
+MO.TR.SEM;IDE_Codice sensore
+MO.TR.SEM;TEC_Numero seriale
+MO.TR.TIG;GEO_Diametro
+MO.TR.TIG;GEO_Lunghezza
+MO.TR.TIG;GEO_Quota sensore
+MO.TR.TIG;IDE_Codice opera
+MO.TR.TIG;IDE_Codice WBS
+MO.TR.TIG;IDE_Elemento di appartenenza
+MO.TR.TIG;IDE_Gruppo anagrafica
+MO.TR.TIG;IDE_ID Elemento
+MO.TR.TIG;IDE_LOR
+MO.TR.TIG;IDE_Uniclass
+MO.TR.TIG;IDE_Codice sensore
+MO.TR.TIG;TEC_Documentazione tecnica
+MO.TR.TIG;TEC_Posizione
+MO.TR.TIG;TEC_Numero seriale
+MO.TR.SUM;GEO_Diametro
+MO.TR.SUM;GEO_Lunghezza
+MO.TR.SUM;GEO_Quota sensore
+MO.TR.SUM;IDE_Codice opera
+MO.TR.SUM;IDE_Codice WBS
+MO.TR.SUM;IDE_Elemento di appartenenza
+MO.TR.SUM;IDE_Gruppo anagrafica
+MO.TR.SUM;IDE_ID Elemento
+MO.TR.SUM;IDE_LOR
+MO.TR.SUM;IDE_Uniclass
+MO.TR.SUM;IDE_Codice sensore
+MO.TR.SUM;TEC_Documentazione tecnica
+MO.TR.SUM;TEC_Posizione
+MO.TR.SUM;TEC_Numero seriale
+MO.CP.CLI;GEO_Altezza
+MO.CP.CLI;GEO_Larghezza
+MO.CP.CLI;GEO_Lunghezza
+MO.CP.CLI;IDE_Codice opera
+MO.CP.CLI;IDE_Codice WBS
+MO.CP.CLI;IDE_Elemento di appartenenza
+MO.CP.CLI;IDE_Gruppo anagrafica
+MO.CP.CLI;IDE_ID Elemento
+MO.CP.CLI;IDE_LOR
+MO.CP.CLI;IDE_Uniclass
+MO.CP.CLI;IDE_Codice sensore
+MO.CP.CLI;GEO_Quota sensore
+MO.CP.CLI;TEC_Documentazione tecnica
+MO.CP.CLI;TEC_Numero seriale
+MO.BE.BRE;GEO_Altezza
+MO.BE.BRE;GEO_Larghezza
+MO.BE.BRE;GEO_Lunghezza
+MO.BE.BRE;IDE_Codice opera
+MO.BE.BRE;IDE_Codice WBS
+MO.BE.BRE;IDE_Elemento di appartenenza
+MO.BE.BRE;IDE_Gruppo anagrafica
+MO.BE.BRE;IDE_ID Elemento
+MO.BE.BRE;IDE_LOR
+MO.BE.BRE;IDE_Uniclass
+MO.BE.BRE;IDE_Codice sensore
+MO.BE.BRE;GEO_Quota sensore
+MO.BE.BRE;TEC_Documentazione tecnica
+MO.BE.BRE;TEC_Numero seriale
+MO.TR.IDO;GEO_Larghezza
+MO.TR.IDO;GEO_Lunghezza
+MO.TR.IDO;IDE_Codice opera
+MO.TR.IDO;IDE_Codice WBS
+MO.TR.IDO;IDE_Elemento di appartenenza
+MO.TR.IDO;IDE_Gruppo anagrafica
+MO.TR.IDO;IDE_ID Elemento
+MO.TR.IDO;IDE_LOR
+MO.TR.IDO;IDE_Uniclass
+MO.TR.IDO;IDE_Codice sensore
+MO.TR.IDO;GEO_Quota sensore
+MO.TR.IDO;TEC_Documentazione tecnica
