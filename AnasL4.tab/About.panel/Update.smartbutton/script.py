@@ -6,7 +6,6 @@ from pyrevit.versionmgr import updater
 from pyrevit.userconfig import user_config
 from pyrevit import script
 
-
 logger = script.get_logger()
 
 
