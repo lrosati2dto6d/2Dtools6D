@@ -120,6 +120,7 @@ for i,x in zip(vtemp_targ_ele,viewTemplates2):
 
 result =[]
 noresult =[]
+result_add = []
 
 t = Transaction(doc,"change fil")
 
@@ -157,7 +158,6 @@ for fm,fg,fv in zip(filt_targ_ele,fil_over,fil_vis):
 				override.SetSurfaceTransparency(fg.Transparency)
 				vt.SetFilterOverrides(fl,override)
 				vt.SetFilterVisibility(fl,visibility)
-				result.append(fm.Name)
 			else:
 				try:
 					vt.AddFilter(fm.Id)
@@ -167,6 +167,7 @@ for fm,fg,fv in zip(filt_targ_ele,fil_over,fil_vis):
 		if len(flist) == 0:
 			try:
 				vt.AddFilter(fm.Id)
+				result_add.append(fm.Name)
 			except:
 				pass
 
@@ -251,12 +252,5 @@ output.print_md('-----------------------------')
 
 output.print_md('# Filters Target Override:')
 
-for fil in set(result):
-	output.print_md('## {}'.format(fil))
-
-output.print_md('-----------------------------')
-
-output.print_md('# Filters Target Add:')
-
-for fil in set(noresult):
-	output.print_md('## {}'.format(fil))
+for fil_ovv in set(result):
+	output.print_md('## {}'.format(fil_ovv))
