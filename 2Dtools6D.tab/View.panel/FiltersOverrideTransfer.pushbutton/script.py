@@ -213,7 +213,6 @@ for fm,fg,fv in zip(filt_targ_ele,fil_over,fil_vis):
 
 t.Commit()
 
-
 output = script.get_output()
 '''
 # Function to display result to user
