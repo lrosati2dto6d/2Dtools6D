@@ -164,6 +164,11 @@ for fm,fg,fv in zip(filt_targ_ele,fil_over,fil_vis):
 					noresult.append(fm.Name)
 				except:
 					pass
+		if len(flist) == 0:
+			try:
+				vt.AddFilter(fm.Id)
+			except:
+				pass
 
 t.Commit()
 
