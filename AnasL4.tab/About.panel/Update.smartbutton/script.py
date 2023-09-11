@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-"""Download updates for all repos."""
+"""Download updates for all repositories"""
 
 from pyrevit.coreutils import ribbon
 from pyrevit.versionmgr import updater
 from pyrevit.userconfig import user_config
 from pyrevit import script
+
 
 logger = script.get_logger()
 
