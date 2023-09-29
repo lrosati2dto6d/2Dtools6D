@@ -23,7 +23,6 @@ from RevitServices.Persistence import DocumentManager
 
 from System.Collections.Generic import *
 
-
 from collections import defaultdict
 from pyrevit import HOST_APP
 from pyrevit.framework import List
