@@ -129,7 +129,9 @@ t.Start()
 for v in exp_views_ele:
 	if "CV" in v.Name:
 		v.Name = v.Name.replace("CV","PV")
-
+	elif "VI" in v.Name:
+		v.Name = v.Name.replace("VI","PV")
+		
 t.Commit()
 
 
