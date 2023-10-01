@@ -190,13 +190,14 @@ for tp in UniqueType:
 		print (e)
 		pass 
 
-
 	opera_el = tp.get_Parameter(BuiltInParameter.ALL_MODEL_MODEL).AsValueString()
 
-
-	if "CV" in opera_el:
-		tp.get_Parameter(BuiltInParameter.ALL_MODEL_MODEL).Set("PV")
-
+	try:
+		if "CV" in opera_el:
+			tp.get_Parameter(BuiltInParameter.ALL_MODEL_MODEL).Set("PV")
+	except:
+		pass
+		
 t1.Commit()
 
 
@@ -208,9 +209,11 @@ t = Transaction(doc,'SETPARA2')
 t.Start()
 
 for el in clean_el:
-
-	if "CV" in ParaInst(el,"IDE_Codice WBS"):
-		Para(el,"IDE_Codice WBS").Set(ParaInst(el,"IDE_Codice WBS").replace("CV","PV"))
+	try:
+		if "CV" in ParaInst(el,"IDE_Codice WBS"):
+			Para(el,"IDE_Codice WBS").Set(ParaInst(el,"IDE_Codice WBS").replace("CV","PV"))
+	except:
+		pass
 
 t.Commit()
 
@@ -220,9 +223,11 @@ t = Transaction(doc,'SETPARA3')
 t.Start()
 
 for el in clean_el:
-
-	if "CV" in ParaInst(el,"IDE_Gruppo anagrafica"):
-		Para(el,"IDE_Gruppo anagrafica").Set(ParaInst(el,"IDE_Gruppo anagrafica").replace("CV","PV"))
+	try:
+		if "CV" in ParaInst(el,"IDE_Gruppo anagrafica"):
+			Para(el,"IDE_Gruppo anagrafica").Set(ParaInst(el,"IDE_Gruppo anagrafica").replace("CV","PV"))
+	except:
+		pass
 
 t.Commit()
 
