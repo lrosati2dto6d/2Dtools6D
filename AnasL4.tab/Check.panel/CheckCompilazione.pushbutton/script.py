@@ -508,8 +508,32 @@ if find("Database.csv",current_dir):
 				elementiDiTroppo.append(elemento)
 				valorizzatiDiTroppo.append(temp)
 		t_Rimozione = Transaction(doc,"Rimozione parametri in eccesso")
-		t_Rimozione.Start()
 		
+		NAMEParameterMap = (estraiParametri(elemento)[0] for elemento in PickElements)
+		GUIDParameterMap = (estraiParametri(elemento)[1] for elemento in PickElements)
+		t_Rimozione.Start()
+		nomiParametri = []
+		for elemento in PickElements:
+			try:
+				nomiParametri.append(estraiParametri(elemento)[0])
+			except:
+				pass
+
+		output=zip(*checkCompilare(nomiParametri,PickElements))
+		cleanCompilare = []
+		for list in output:
+			if len(list[0]) == 0:
+				pass
+			else:
+				cleanCompilare.append(list)
+
+		for list in cleanCompilare:
+			for p in list[0]:
+				list[1].LookupParameter(p).Set("")
+		
+		
+
+
 		for sublist,elemento in zip(valorizzatiDiTroppo,elementiDiTroppo):
 			for parametro in sublist:
 				elemento.LookupParameter(parametro).Set("")
