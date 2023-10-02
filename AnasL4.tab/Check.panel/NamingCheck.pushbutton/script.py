@@ -25,8 +25,6 @@ from Autodesk.Revit.DB import *
 
 from difflib import SequenceMatcher, Differ
 
-
-
 import pyrevit
 from pyrevit import script
 from pyrevit import forms
@@ -45,8 +43,14 @@ uidoc = __revit__.ActiveUIDocument
 activeView = doc.ActiveView
 Output = script.get_output()
 
+
 CategorieNaming = ["Telaio strutturale","Appoggi","Fondazioni strutturali","Muri","Pavimenti","Ringhiere","Pilastri strutturali","Tetti","Piloni","Modelli generici","Collegamenti strutturali","Armatura strutturale","Apparecchi elettrici","Cavi","Attrezzatura elettrica","Attrezzature speciali"]
 CategorieNamingId = [-2001320,-2006138,-2001300,-2000011,-2000032,-2000126,-2001330,-2000035,-2006131,-2000151,-2009030,-2009000,-2001060,-2008039,-2001040,-2001350]
+DizionarioBase = {}
+for n, i in zip(CategorieNaming,CategorieNamingId):
+	if n not in DizionarioBase:
+		DizionarioBase[n] = i
+	
 
 ## ANALISI DEL MODELLO
 CollectorProgetto = FilteredElementCollector(doc).WhereElementIsNotElementType().ToElements()
@@ -61,7 +65,7 @@ error = []
 for e in CollectorProgetto:
 	temp = []
 	Skipped = []
-	if e and e.Category != None and e.Category.Name in CategorieNaming :
+	if e != None and e.Category != None and e.Category.Name in CategorieNaming :
 		if e.LookupParameter("Workset").AsValueString() != "03_Nascosto" and e.LookupParameter("Workset").AsValueString() != "02_Temporaneo":
 			try:
 				if e.Symbol:
@@ -83,7 +87,6 @@ for e in CollectorProgetto:
 for c in CategorieNaming:
 	if c not in CategorieInVista:
 		Skipped.append(c)
-
 
 
 ## ANALISI FOGLIO EXCEL
@@ -109,7 +112,7 @@ try:
 				pass
 			else:
 				temp_colonna.append(cell_value[r,c])
-		if len(temp_colonna) <= 1:
+		if len(temp_colonna) <= 0:
 			pass
 		else:
 			if str(temp_colonna[-1])[-1].isnumeric() or temp_colonna[-1].isupper():
@@ -119,7 +122,9 @@ try:
 	WorkBook.Close()
 except:
 	WorkBook.Close()
-	pass	
+	pass
+
+
 
 Categoria = []
 Naming = []
@@ -137,23 +142,71 @@ components = [CheckBox('NamingSuModello', 'Verifica nomenclatura elementi su mod
 form = FlexForm("Seleziona un'opzione",components)
 form.show()
 
-## COMPARAZIONE NOMENCLATURA & CERCA SIMILE
-
-ErrorElement = []
-ErrorCategory = []
-DataTable = []
-
-for lista in DatiInVista:	
-	try:
-		if lista[0] not in DizionarioRiferimento[doc.GetElement(lista[1]).Category.Name]:
-			if lista[0] not in ErrorElement:
-				ErrorElement.append(lista[0])
-				ErrorCategory.append(doc.GetElement(lista[1]).Category.Name)
-	except:
-		pass
-
 if form.values["NamingSuModello"]:
 	
+	# CONTROLLO EVENTUALI CATEGORIE NON PRESENTI SU EXCEL
+	TotalmenteAssenti = []
+
+	for c in CategorieInVista:
+		if c not in DizionarioRiferimento:
+			TotalmenteAssenti.append(c)
+
+	TotalmenteAssenti = list(set(TotalmenteAssenti))
+	DataAssenti = []
+
+	for t in TotalmenteAssenti:
+		ElementiMancanti = FilteredElementCollector(doc).OfCategoryId(ElementId(DizionarioBase[t])).WhereElementIsNotElementType().ToElements()
+		for e in ElementiMancanti:
+			try:
+				e.Symbol
+				Datatemp =[]
+				Datatemp.append(e.Category.Name)
+				Datatemp.append(e.LookupParameter("Famiglia").AsValueString())
+				Datatemp.append("CATEGORIA ASSENTE SU EXCEL")
+
+				DataAssenti.append(Datatemp)
+			except:
+				Datatemp =[]
+				Datatemp.append(e.Category.Name)
+				Datatemp.append(e.LookupParameter("Tipo").AsValueString())
+				Datatemp.append("CATEGORIA ASSENTE SU EXCEL")
+
+				DataAssenti.append(Datatemp)
+
+
+
+
+	## COMPARAZIONE NOMENCLATURA & CERCA SIMILE
+
+	ErrorElement = []
+	ErrorCategory = []
+	DataTable = []
+
+	for lista in DatiInVista:	
+		try:
+			if lista[0] not in DizionarioRiferimento[doc.GetElement(lista[1]).Category.Name]:
+				if lista[0] not in ErrorElement:
+					ErrorElement.append(lista[0])
+					ErrorCategory.append(doc.GetElement(lista[1]).Category.Name)
+		except:
+			pass
+
+	error = 0
+	for ctm in TotalmenteAssenti:
+		if ctm not in ErrorCategory:
+			error += 1
+	if error != 0:
+		Output.print_md("#:prohibited: ERRORE RILEVATO NELLA NOMENCLATURA")
+		Output.print_md("###Elementi la cui categoria risulta essere assente su Excel")
+		Output.print_table(
+			table_data = DataAssenti,
+			columns = ["CATEGORIA","NOME NEL MODELLO","PRESENTE SU EXCEL ?"],
+			formats = ["","",""]
+			)
+		Output.insert_divider()
+	
+	### 
+
 	for e,c in zip(ErrorElement,ErrorCategory):
 		SaveSimilar = []
 		DataTemp = []
@@ -176,7 +229,8 @@ if form.values["NamingSuModello"]:
 ## GENERAZIONE TABELLA
 
 	if DataTable:
-		Output.print_md("#:prohibited: ERRORE RILEVATO NELLA NOMENCLATURA")
+		if error == 0:
+			Output.print_md("#:prohibited: ERRORE RILEVATO NELLA NOMENCLATURA")
 		Output.print_md("###Elementi nel modello, non presenti su Excel")
 		Output.print_table(
 				table_data = DataTable,
