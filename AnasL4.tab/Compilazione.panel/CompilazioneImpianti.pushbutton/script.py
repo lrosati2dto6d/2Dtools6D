@@ -41,13 +41,7 @@ def EstraiCodici(elemento):
 
 	return Opera,Parteopera,Elemento,Struttura
 
-def EstraiNome(elemento):
-	try:
-		elemento.Symbol
-		return elemento.LookupParameter("Famiglia").AsValueString()
-	except:
-		return elemento.LookupParameter("Tipo").AsValueString()
-	
+
 doc = __revit__.ActiveUIDocument.Document
 uidoc = __revit__.ActiveUIDocument
 activeView = doc.ActiveView
@@ -75,7 +69,7 @@ GEO_Quota_sensore = "ACC,IFS,SCA,SEM,TEC,TCM,VCM,TSS,TIG,SUM,CLI,BRE,IDO"
 ANA_Progettista = "ALI,BLI,CAB,CNP,CAE,CAV,COL,COM,CEE,DIE,IMT,INS,INM,MUL,PLI,PZE,QEB,QEM,REL,REP,RIF,SCS,SDE,TRS"
 TEC_Numero_seriale = "IFS,TEC,TCM,ACC,SCA,VCM,TSS,SEM,TIG,SUM,CLI,BRE,IDO"
 TEC_Posizione = "ACC,IFS,SCA,SEM,TEC,TCM,VCM,TIG,SUM"
-ElementiBMS = "AMS,AAP,BAG,BIN,CAS,CNT,COR,CUN,ISA,LOR,MUS,PPZ,PEN,PUL,PUN,RIS,SBL,SGE,SOL,SSB,SAR,SEL,TAN,TRV,TRA,VEL"
+IDE_ElementoDiAppartenenza = "ACC,IFS,SCA,SEM,TEC,TCM,VCM,TSS,TIG,SUM,CLI,BRE,IDO"
 
 ## ASSEGNAZIONE PARAMETRI DI ISTANZA
 
@@ -98,24 +92,20 @@ for elemento,codice in zip(ImpiantiInView,CodiceElemento):
 	if codice in TEC_Numero_seriale:
 		elemento.LookupParameter("TEC_Numero seriale").Set("-")
 
+	if codice in IDE_ElementoDiAppartenenza:
+		host = elemento.Host
+		Valore = EstraiCodici(host)[2]
+		Progressivo = host.LookupParameter("IDE_Gruppo anagrafica").AsValueString().split(".")[-1]
+		elemento.LookupParameter("IDE_Elemento di appartenenza").Set(Valore+"."+Progressivo)
+
 	if codice in TEC_Posizione:
 		host = elemento.Host
-		
-		if EstraiNome(host).split(".")[1] != "XXX":
+		if host.LookupParameter("INF_Campata di appartenenza") and host.LookupParameter("INF_Campata di appartenenza").AsString() != None and host.LookupParameter("INF_Campata di appartenenza").AsString() != "":
 			elemento.LookupParameter("TEC_Posizione").Set("CAM." + host.LookupParameter("INF_Campata di appartenenza").AsString())
 		else:
 			elemento.LookupParameter("TEC_Posizione").Set(host.LookupParameter("IDE_Gruppo anagrafica").AsString()[6:12])
-
 		
-"""		
-		try:
-			if host.LookupParameter("INF_Campata di appartenenza").AsString() == "":
-				elemento.LookupParameter("TEC_Posizione").Set(host.LookupParameter("IDE_Gruppo anagrafica").AsString()[6:12])
-			else:
-				elemento.LookupParameter("TEC_Posizione").Set("CAM." + host.LookupParameter("INF_Campata di appartenenza").AsString())
-		except:
-			elemento.LookupParameter("TEC_Posizione").Set(host.LookupParameter("IDE_Gruppo anagrafica").AsString()[6:12])
-"""
+			
 
 t_AssegnazioneParametriIstanza.Commit()
 
