@@ -474,7 +474,7 @@ for el in clean_el:
 		numfe += 1
 		assfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(num,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
-	elif opera_el in ['CV','PV','MA','SI'] and el.get_Parameter(BuiltInParameter.PHASE_CREATED).AsValueString() != "Esistente":
+	elif opera_el in ['PV','MA','SI'] and el.get_Parameter(BuiltInParameter.PHASE_CREATED).AsValueString() != "Esistente":
 		numfe += 1
 		assfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
@@ -570,7 +570,7 @@ for el in clean_el:
 	except:
 		type_el_name = el.Name
 
-	if opera_el in ['CV','PV'] and category_el in ['Telaio strutturale', 'Modelli generici', 'Pilastri strutturali', 'Tetti', 'Appoggi', 'Fondazioni strutturali', 'Collegamenti strutturali', 'Piloni', 'Armatura strutturale', 'Pavimenti', 'Muri'] and parteopera_el in ['AC', 'AN', 'FO', 'FP', 'FS', 'GI', 'IC','IA', 'PD', 'PI', 'SP'] and elemento_el in ['AAP', 'AMS', 'BAG', 'BIN', 'CAP', 'CAS', 'CEN', 'CNT', 'COR', 'CUN', 'DIA', 'GIU', 'ISA', 'LOR', 'MAN', 'MDA', 'MFR', 'MPL', 'MUS', 'OPO', 'PAL', 'PAR', 'PEN', 'POZ', 'PPZ', 'PUL', 'PUN', 'PZF', 'RIS', 'SAR', 'SBL', 'SEL', 'SGE', 'SOL', 'SSG', 'STL', 'TAN', 'TIM', 'TRA', 'TRV', 'VEL']:
+	if opera_el == 'PV' and category_el in ['Telaio strutturale', 'Modelli generici', 'Pilastri strutturali', 'Tetti', 'Appoggi', 'Fondazioni strutturali', 'Collegamenti strutturali', 'Piloni', 'Armatura strutturale', 'Pavimenti', 'Muri'] and parteopera_el in ['AC', 'AN', 'FO', 'FP', 'FS', 'GI', 'IC','IA', 'PD', 'PI', 'SP'] and elemento_el in ['AAP', 'AMS', 'BAG', 'BIN', 'CAP', 'CAS', 'CEN', 'CNT', 'COR', 'CUN', 'DIA', 'GIU', 'ISA', 'LOR', 'MAN', 'MDA', 'MFR', 'MPL', 'MUS', 'OPO', 'PAL', 'PAR', 'PEN', 'POZ', 'PPZ', 'PUL', 'PUN', 'PZF', 'RIS', 'SAR', 'SBL', 'SEL', 'SGE', 'SOL', 'SSG', 'STL', 'TAN', 'TIM', 'TRA', 'TRV', 'VEL']:
 		class_CVPV = True
 
 	elif opera_el == 'IM' and category_el in ['Apparecchi elettrici', 'Attrezzatura elettrica', 'Attrezzature speciali', 'Cavi', 'Collegamenti strutturali', 'Fondazioni strutturali']and parteopera_el =='IE'and elemento_el in ['ALI', 'BLI', 'CAE', 'CAV', 'CEE', 'CNP', 'COL', 'COM', 'DIE', 'IMT', 'INM', 'INS', 'MUL', 'PLI', 'PZE', 'QEB', 'QEM', 'REL', 'REP', 'RIF', 'SCS', 'SDE', 'TRS']:
@@ -726,7 +726,6 @@ for el in clean_el:
 
 	if Para(el,"IDE_Gruppo anagrafica").HasValue == False or ParaInst(el,"IDE_Gruppo anagrafica") == "" or len(ParaInst(el,"IDE_Gruppo anagrafica"))!= 20 or opera_el not in ParaInst(el,"IDE_Gruppo anagrafica") or parteopera_el not in ParaInst(el,"IDE_Gruppo anagrafica") or elemento_el not in ParaInst(el,"IDE_Gruppo anagrafica"):
 		gruppoanagrafica_errato.append("{} - {} - {} - {}_ IDE_Gruppo anagrafica --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
-
 
 	if Para(el,"IDE_LOR").HasValue == False or ParaInst(el,"IDE_LOR") == "" or ParaInst(el,"IDE_LOR") not in ["MOLTO BASSO","BASSO","MEDIO","ALTO"]:
 		lor_errato.append("{} - {} - {} - {}_ IDE_LOR --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
