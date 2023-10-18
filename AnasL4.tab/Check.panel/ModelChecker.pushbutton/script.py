@@ -689,6 +689,8 @@ qsensore_errato = []
 tposizione_errato = []
 codicesensore_errato = []
 numeroseriale_errato = []
+carreggiata_errato = []
+direzione_errato = []
 
 
 list_clusterID_OG = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,codicesensore_errato]
@@ -699,9 +701,11 @@ list_clusterGEO = [area_errato,volume_errato,qsensore_errato]
 
 list_clusterANA = [progettista_errato]
 
+list_clusterLOC = [carreggiata_errato,direzione_errato]
+
 list_clusterTEC = [tposizione_errato,numeroseriale_errato]
 
-listone = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,codicesensore_errato,campatadiappartenenza_errato,impalcatodiappartenenza_errato,numstrutturacampata_errato,codicebms_errato,area_errato,volume_errato,qsensore_errato,progettista_errato,tposizione_errato,numeroseriale_errato]
+listone = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,codicesensore_errato,campatadiappartenenza_errato,impalcatodiappartenenza_errato,numstrutturacampata_errato,codicebms_errato,carreggiata_errato,direzione_errato,area_errato,volume_errato,qsensore_errato,progettista_errato,tposizione_errato,numeroseriale_errato]
 
 for el in clean_el:
 	type_el = doc.GetElement(el.GetTypeId())
@@ -763,6 +767,18 @@ for el in clean_el:
 	if elemento_el in ['ACC','IFS','SCA','SEM','TEC','TCM','VCM'] and opera_el == "IM" and parteopera_el == "IE":
 			if Para(el,"ANA_Progettista").HasValue == False or ParaInst(el,"ANA_Progettista") == "" or ParaInst(el,"ANA_Progettista")!= "RINA Consulting SpA":
 				progettista_errato.append("{} - {} - {} - {}_ ANA_Progettista --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
+
+
+#-------------------------------------LOCALIZZAZIONE
+
+	if elemento_el in ['AAP','ALI','AMS','BAG','BAN','BIN','BLI','BPT','CAB','CAE','CAP','CAV','CEE','CEN','CNP','CNT','COL','COM','COR','CUN','DIA','DIE','GIU','IMT','INM','ISA','LMC','LOR','MAN','MDA','MRF','MON','MPL','MUL','MUS','NJE','OPO','PAL','PAN','PAR','PEN','PLI','POZ','PPZ','PUL','PUN','PZE','PZF','QEB','QEM','RAN','REL','REP','RIF','RIS','SAR','SBL','SCS','SDE','SEL','SGE','SOL','SSB','STL','TAN','TIM','TRA','TRS','TRV','TTA','UNI','VEL']:
+			if Para(el,"LOC_Carreggiata").HasValue == False or ParaInst(el,"LOC_Carreggiata") == "":
+				carreggiata_errato.append("{} - {} - {} - {}_ LOC_Carreggiata --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
+
+	if elemento_el in ['AAP','ALI','AMS','BAG','BAN','BIN','BLI','BPT','CAB','CAE','CAP','CAV','CEE','CEN','CNP','CNT','COL','COM','COR','CUN','DIA','DIE','GIU','IMT','INM','ISA','LMC','LOR','MAN','MDA','MRF','MON','MPL','MUL','MUS','NJE','OPO','PAL','PAN','PAR','PEN','PLI','POZ','PPZ','PUL','PUN','PZE','PZF','QEB','QEM','RAN','REL','REP','RIF','RIS','SAR','SBL','SCS','SDE','SEL','SGE','SOL','SSB','STL','TAN','TIM','TRA','TRS','TRV','TTA','UNI','VEL']:
+			if Para(el,"LOC_Direzione").HasValue == False or ParaInst(el,"LOC_Direzione") == "":
+				direzione_errato.append("{} - {} - {} - {}_ LOC_Direzione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
+
 
 #-------------------------------------GEOMETRICO
 
@@ -833,11 +849,26 @@ for l in list_clusterANA:
 
 
 
-#CHECK_04-----------------GEOMETRICO
+#CHECK_04-----------------LOCALIZZAZIONE
+
+for l in list_clusterLOC:
+	if len(l) != 0:
+		output.print_md(	'# :keycap_3: CHECK 04_CLUSTER LOCALIZZAZIONE - Errore nella Valorizzazione dei parametri:')
+		break
+
+
+for l in list_clusterLOC:
+	if len(l) != 0:
+		for i in l:
+			output.print_md(	'###{}'.format(i))
+
+
+
+#CHECK_05-----------------GEOMETRICO
 
 for l in list_clusterGEO:
 	if len(l) != 0:
-		output.print_md(	'# :keycap_4: CHECK 04_CLUSTER GEOMETRICO - Errore nella Valorizzazione dei parametri:')
+		output.print_md(	'# :keycap_4: CHECK 05_CLUSTER GEOMETRICO - Errore nella Valorizzazione dei parametri:')
 		break
 
 for l in list_clusterGEO:
@@ -846,11 +877,11 @@ for l in list_clusterGEO:
 			output.print_md(	'###{}'.format(i))
 
 
-#CHECK_05-----------------TECNICO
+#CHECK_06-----------------TECNICO
 
 for l in list_clusterTEC:
 	if len(l) != 0:
-		output.print_md(	'# :keycap_5: CHECK 05_CLUSTER TECNICO - Errore nella Valorizzazione dei parametri:')
+		output.print_md(	'# :keycap_5: CHECK 06_CLUSTER TECNICO - Errore nella Valorizzazione dei parametri:')
 		break
 
 for l in list_clusterTEC:
@@ -884,7 +915,7 @@ for el in clean_el:
 	except:
 		forms.alert("Effettuare un'esportazione IFC in modo da creare per tutti gli elementi il parametro IfcGUID rieseguire poi il Check",exitscript=True)
 
-#CHECK_06-----------------ID Elemento
+#CHECK_07-----------------ID Elemento
 
 if len(id_elemento_errato) != 0:
 	for i in id_elemento_errato:
@@ -901,7 +932,7 @@ warn_result = [proj_info_result,codint_result,sitename_result,result_ph,result_w
 
 veri_result = [result_level,result_afase,result_workset,result_class,result_nomen,result_host]
 
-check_result = ["CHECK 01_CLUSTER IDENTIFICATIVO OGGETTO --> :white_heavy_check_mark:","CHECK 02_CLUSTER INFORMAZIONI 6D --> :white_heavy_check_mark:","CHECK 03_CLUSTER ANAGRAFICA DI BASE --> :white_heavy_check_mark:","CHECK 04_CLUSTER GEOMETRICO --> :white_heavy_check_mark:","CHECK 05_CLUSTER TECNICO --> :white_heavy_check_mark:","CHECK 06_ID ELEMENTO --> :white_heavy_check_mark:"]
+check_result = ["CHECK 01_CLUSTER IDENTIFICATIVO OGGETTO --> :white_heavy_check_mark:","CHECK 02_CLUSTER INFORMAZIONI 6D --> :white_heavy_check_mark:","CHECK 03_CLUSTER ANAGRAFICA DI BASE --> :white_heavy_check_mark:","CHECK 04_CLUSTER LOCALIZZAZIONE --> :white_heavy_check_mark:","CHECK 05_CLUSTER GEOMETRICO --> :white_heavy_check_mark:","CHECK 06_CLUSTER TECNICO --> :white_heavy_check_mark:","CHECK 07_ID ELEMENTO --> :white_heavy_check_mark:"]
 
 output.print_md(	'# - INFORMAZIONI MODELLO :black_square_button:')
 
