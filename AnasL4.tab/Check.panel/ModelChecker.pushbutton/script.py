@@ -123,7 +123,6 @@ info = doc.ProjectInformation
 file_info = [file_name,path_name,rapp_version,rapp_language,rapp_ifcclassfile,rapp_SharedParametersFilename]
 
 
-
 #-------------------------------------INFORMAZIONI DI PROGETTO
 
 infoparameters = ["IDP_Codice Intervento","SIT_Sistema di Coordinate","IDP_Nome opera","IDP_Struttura territoriale","SIT_Codice Strada","SIT_Comune","SIT_Regione"]
@@ -210,6 +209,7 @@ bpoint_NS = "Base Point N/S = {}".format(bpoint.LookupParameter("N/S").AsValueSt
 bpoint_EO = "Base Point E/O = {}".format(bpoint.LookupParameter("E/O").AsValueString())
 bpoint_ele = "Base Point Elevation = {}".format(bpoint.LookupParameter("Quota altim.").AsValueString())
 bpoint_angle = "Angolo con il True North = {} gradi".format(round(bpoint.get_Parameter(BuiltInParameter.BASEPOINT_ANGLETON_PARAM).AsDouble()*(180/3.141592653589793),3))
+
 
 #WARNING_03-----------------NOME POSIZIONE E PARAMETRO SISTEMA COORDINATE
 
@@ -377,46 +377,6 @@ if len(cat_false) != 0:
 	forms.alert('WARNING 08_CATEGORIE\n\nLe seguenti categorie non sono presenti nel modello dati,\n\n{}\n\nEliminare gli elementi prima di procedere'.format(cat_false), exitscript=True)
 
 
-#-------------------------------------ELEMENTI PER CATEGORIA + Chart Elementi
-
-"""
-categories = []
-counts = []
-
-# Conta gli elementi per categoria
-for el in doc_el:
-	try:
-		if el.Category.CategoryType == CategoryType.Model and "dwg"  not in el.Category.Name and el.Category.SubCategories.Size > 0 or el.Category.CanAddSubcategory:
-			category = el.Category
-			category_name = category.Name
-			if category_name not in categories:
-				categories.append(category_name)
-				counts.append(1)
-			else:
-				index = categories.index(category_name)
-				counts[index] += 1
-	except:
-		pass
-
-output = script.get_output()
-
-# Crea una chart di tipo donut
-chart = output.make_doughnut_chart()
-
-chart.set_style('height:150px')
-chart.options.title = {'display': True, 'text':'Distribuzione elementi per categoria', 'fontSize': 24, 'fontColor': '#000', 'fontStyle': 'bold'}
-
-chart.data.labels = categories
-
-conteggi = chart.data.new_dataset('numero elementi')
-
-conteggi.data = counts
-
-chart.randomize_colors()
-
-chart.draw()
-"""
-
 #-------------------------------------LIVELLI
 
 
@@ -451,7 +411,6 @@ else:
 	forms.alert('VERIFICA 00_NOME LIVELLI\n\nI seguenti livelli risultano non correttamente rinominati\n\n {}'.format(level_check_false), exitscript=True)
 
 
-
 #-------------------------------------ASSOCIAZIONE FASE
 
 numfe = 0
@@ -478,11 +437,12 @@ for el in clean_el:
 		numfe += 1
 		assfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
+
 #VERIFICA_01-----------------ASSOCIAZIONE FASE
 
 if len(assfase_errata) != 0:
 	output.print_md(	'# :red_circle: VERIFICA 01_ASSOCIAZIONE ELEMENTI-FASE')
-	output.print_md(	'##I seguenti Elementi hanno una Associazione della Fase di Creazione errata')
+	output.print_md(	'##I seguenti Elementi hanno una Associazione della Fase di Creazione Errata')
 	for i in assfase_errata:
 		output.print_md(	'###{}'.format(i))
 else:
@@ -535,7 +495,7 @@ for el in clean_el:
 
 if len(worksetfase_errata) != 0:
 	output.print_md(	'# :red_circle: VERIFICA 02_ASSOCIAZIONE ELEMENTI-WORKSET')
-	output.print_md(	'##I seguenti Elementi hanno una Associazione del Workset errata')
+	output.print_md(	'##I seguenti Elementi hanno una Associazione del Workset Errata')
 	for i in worksetfase_errata:
 		output.print_md(	'###{}'.format(i))
 else:
@@ -543,7 +503,6 @@ else:
 
 if len(worksetfase_errata) != 0:
 	script.exit()
-
 
 
 #-------------------------------------CLASSIFICAZIONE
@@ -631,6 +590,7 @@ for el in clean_el:
 		num_n += 1
 		nomen_errata.append("{} - {} - {} - {} - {} - {} - {}".format(num_n,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
+
 #-------------------------------------HOST
 
 	try:
@@ -641,6 +601,7 @@ for el in clean_el:
 			host_errato.append("{} - {} - {} - {} - {} - {} - {}".format(num_h,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 	except:
 		pass
+
 
 #VERIFICA_04-----------------NOMENCLATURA
 
@@ -656,6 +617,7 @@ else:
 if len(nomen_errata) != 0:
 	script.exit()
 
+
 #VERIFICA_05-----------------ASSOCIAZIONE HOST
 
 if len(host_errato) != 0:
@@ -669,6 +631,7 @@ else:
 
 if len(host_errato) != 0:
 	script.exit()
+
 
 #-------------------------------------CLUSTER INFORMATIVI
 
@@ -771,11 +734,11 @@ for el in clean_el:
 
 #-------------------------------------LOCALIZZAZIONE
 
-	if elemento_el in ['AAP','ALI','AMS','BAG','BAN','BIN','BLI','BPT','CAB','CAE','CAP','CAV','CEE','CEN','CNP','CNT','COL','COM','COR','CUN','DIA','DIE','GIU','IMT','INM','ISA','LMC','LOR','MAN','MDA','MRF','MON','MPL','MUL','MUS','NJE','OPO','PAL','PAN','PAR','PEN','PLI','POZ','PPZ','PUL','PUN','PZE','PZF','QEB','QEM','RAN','REL','REP','RIF','RIS','SAR','SBL','SCS','SDE','SEL','SGE','SOL','SSB','STL','TAN','TIM','TRA','TRS','TRV','TTA','UNI','VEL']:
+	if elemento_el in ['AAP','ALI','AMS','BAG','BAN','BIN','BLI','BPT','CAB','CAE','CAP','CAV','CEE','CEN','CNP','CNT','COL','COM','COR','CUN','DIA','DIE','GIU','IMT','INM','ISA','LMC','LOR','MAN','MDA','MFR','MON','MPL','MUL','MUS','NJE','OPO','PAL','PAN','PAR','PEN','PLI','POZ','PPZ','PUL','PUN','PZE','PZF','QEB','QEM','RAN','REL','REP','RIF','RIS','SAR','SBL','SCS','SDE','SEL','SGE','SOL','SSB','STL','TAN','TIM','TRA','TRS','TRV','TTA','UNI','VEL']:
 			if Para(el,"LOC_Carreggiata").HasValue == False or ParaInst(el,"LOC_Carreggiata") == "":
 				carreggiata_errato.append("{} - {} - {} - {}_ LOC_Carreggiata --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
-	if elemento_el in ['AAP','ALI','AMS','BAG','BAN','BIN','BLI','BPT','CAB','CAE','CAP','CAV','CEE','CEN','CNP','CNT','COL','COM','COR','CUN','DIA','DIE','GIU','IMT','INM','ISA','LMC','LOR','MAN','MDA','MRF','MON','MPL','MUL','MUS','NJE','OPO','PAL','PAN','PAR','PEN','PLI','POZ','PPZ','PUL','PUN','PZE','PZF','QEB','QEM','RAN','REL','REP','RIF','RIS','SAR','SBL','SCS','SDE','SEL','SGE','SOL','SSB','STL','TAN','TIM','TRA','TRS','TRV','TTA','UNI','VEL']:
+	if elemento_el in ['AAP','ALI','AMS','BAG','BAN','BIN','BLI','BPT','CAB','CAE','CAP','CAV','CEE','CEN','CNP','CNT','COL','COM','COR','CUN','DIA','DIE','GIU','IMT','INM','ISA','LMC','LOR','MAN','MDA','MFR','MON','MPL','MUL','MUS','NJE','OPO','PAL','PAN','PAR','PEN','PLI','POZ','PPZ','PUL','PUN','PZE','PZF','QEB','QEM','RAN','REL','REP','RIF','RIS','SAR','SBL','SCS','SDE','SEL','SGE','SOL','SSB','STL','TAN','TIM','TRA','TRS','TRV','TTA','UNI','VEL']:
 			if Para(el,"LOC_Direzione").HasValue == False or ParaInst(el,"LOC_Direzione") == "":
 				direzione_errato.append("{} - {} - {} - {}_ LOC_Direzione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
@@ -815,7 +778,6 @@ for l in list_clusterID_OG:
 	if len(l) != 0:
 		for i in l:
 			output.print_md(	'###{}'.format(i))
-
 
 
 #CHECK_02-----------------INFORMAZIONI 6D
