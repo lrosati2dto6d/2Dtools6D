@@ -44,7 +44,7 @@ uiapp = __revit__
 
 output = script.get_output()
 
-output.resize(600,400)
+output.resize(600,200)
 
 
 d_wset = FilteredWorksetCollector(doc)
