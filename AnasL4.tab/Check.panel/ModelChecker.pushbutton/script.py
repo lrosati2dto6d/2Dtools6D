@@ -886,6 +886,35 @@ if len(id_elemento_errato) != 0:
 if len(id_elemento_errato) != 0:
 	script.exit()
 
+#COMPILAZIONE-----------------Parametro Nascosti a Commenti
+
+pvpV = ParameterValueProvider(ElementId(-1005112))
+fngV = FilterStringEquals()
+ruleValueV = 'NASCOSTO'
+fRuleV = FilterStringRule(pvpV,fngV,ruleValueV,True)
+
+filterV = ElementParameterFilter(fRuleV)
+
+exp_views_collV = FilteredElementCollector(doc).OfClass(View3D).WherePasses(filterV).WhereElementIsNotElementType().ToElements()
+
+if len(exp_views_collV)!=0:
+	IDV = exp_views_collV[0]
+	elemsnasc = FilteredElementCollector(doc,IDV.Id).OfClass(Floor).WhereElementIsNotElementType().ToElements()
+	if len(elemsnasc) != 0:
+		t = Transaction(doc,"compila commento")
+		t.Start()
+		try:
+			for ev in elemsnasc:
+				ev.LookupParameter("Commenti").Set("Nascosti")
+		except:
+			t.RollBack()
+		else:
+			t.Commit()
+	else:
+		pass
+else:
+	pass
+
 #print(file_info,proj_info,site_info,codint_result,result_ph,result_ws,exp_view_check,exp_view_result,exp_viewed_result,n_el,cat_result,result_afase,result_class,result_nomen)
 
 output.resize(1200,800)
