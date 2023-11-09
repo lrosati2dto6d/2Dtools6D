@@ -107,10 +107,10 @@ for vd in del_filt_coll:
 	else:
 		filtapply = vd
 
-'''
-for v in view_del:
-	print(v.Name)
-'''
+
+if len(filtapply) != 1:
+	forms.alert('Inserire il Filtro 2Dto6D_Anas_Elementi Nascosti prima di proseguire', exitscript=True)
+
 del_sched_coll = FilteredElementCollector(doc).OfClass(ViewSchedule).WhereElementIsNotElementType().ToElements()
 
 del_riq_coll = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_VolumeOfInterest).WhereElementIsNotElementType().ToElements()
@@ -195,14 +195,15 @@ isoView.LookupParameter("Filtro delle fasi").Set(fasef.Id)
 
 doc.Regenerate()
 
+'''
 CmndID = RevitCommandId.LookupCommandId('ID_PURGE_UNUSED')
 CmId = CmndID.Id
 uiapp.PostCommand(CmndID)
-
+'''
 
 t.Commit()
 
 
 output.print_md(	'# - MODELLO PULITO CORRETTAMENTE ---> :white_heavy_check_mark:')
 output.print_md(	'-----------------------')
-output.print_md(	'## - Cambiare il Browser Organization prima di Salvare :red_circle:')
+output.print_md(	'## - Prima di Salvare eseguire il Purge e Cambiare il Browser Organization :red_circle:')
