@@ -108,7 +108,7 @@ for vd in del_filt_coll:
 		filtapply = vd
 
 
-if len(filtapply) != 1:
+if filtapply == None:
 	forms.alert('Inserire il Filtro 2Dto6D_Anas_Elementi Nascosti prima di proseguire', exitscript=True)
 
 del_sched_coll = FilteredElementCollector(doc).OfClass(ViewSchedule).WhereElementIsNotElementType().ToElements()
