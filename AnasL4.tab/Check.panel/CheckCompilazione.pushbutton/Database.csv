@@ -170,7 +170,7 @@ CV.IC.BIN;LOC_Carreggiata
 CV.IC.BIN;LOC_Direzione
 CV.IC.BIN;TEC_Documentazione tecnica
 CV.IC.BIN;TEC_Materiale
-CV.IC.BIN;TEC_Classificazione d uso stradale
+CV.IC.BIN;TEC_Classificazione d置so stradale
 CV.IA.BIN;ANA_Esecutore
 CV.IA.BIN;ANA_Progettista
 CV.IA.BIN;GEO_Spessore strato pavimentazione
@@ -188,7 +188,7 @@ CV.IA.BIN;LOC_Carreggiata
 CV.IA.BIN;LOC_Direzione
 CV.IA.BIN;TEC_Documentazione tecnica
 CV.IA.BIN;TEC_Materiale
-CV.IA.BIN;TEC_Classificazione d uso stradale
+CV.IA.BIN;TEC_Classificazione d置so stradale
 CV.AC.CAP;ANA_Esecutore
 CV.AC.CAP;ANA_Progettista
 CV.AC.CAP;GEO_Spessore
@@ -335,7 +335,7 @@ CV.IC.COR;TEC_Documentazione tecnica
 CV.IC.COR;TEC_Materiale
 CV.IC.COR;TEC_Incidenza armatura
 CV.IC.COR;TEC_Tipologia acciaio
-CV.IC.COR;TEC_Classificazione d uso stradale
+CV.IC.COR;TEC_Classificazione d置so stradale
 CV.IA.COR;ANA_Esecutore
 CV.IA.COR;ANA_Progettista
 CV.IA.COR;GEO_Altezza
@@ -366,7 +366,7 @@ CV.IA.COR;TEC_Documentazione tecnica
 CV.IA.COR;TEC_Materiale
 CV.IA.COR;TEC_Incidenza armatura
 CV.IA.COR;TEC_Tipologia acciaio
-CV.IA.COR;TEC_Classificazione d uso stradale
+CV.IA.COR;TEC_Classificazione d置so stradale
 CV.IC.CUN;ANA_Esecutore
 CV.IC.CUN;ANA_Progettista
 CV.IC.CUN;GEO_Altezza
@@ -392,7 +392,7 @@ CV.IC.CUN;LOC_Carreggiata
 CV.IC.CUN;LOC_Direzione
 CV.IC.CUN;TEC_Documentazione tecnica
 CV.IC.CUN;TEC_Materiale
-CV.IC.CUN;TEC_Classificazione d uso stradale
+CV.IC.CUN;TEC_Classificazione d置so stradale
 CV.IA.CUN;ANA_Esecutore
 CV.IA.CUN;ANA_Progettista
 CV.IA.CUN;GEO_Altezza
@@ -418,7 +418,7 @@ CV.IA.CUN;LOC_Carreggiata
 CV.IA.CUN;LOC_Direzione
 CV.IA.CUN;TEC_Documentazione tecnica
 CV.IA.CUN;TEC_Materiale
-CV.IA.CUN;TEC_Classificazione d uso stradale
+CV.IA.CUN;TEC_Classificazione d置so stradale
 CV.FP.DIA;ANA_Esecutore
 CV.FP.DIA;ANA_Progettista
 CV.FP.DIA;GEO_Diametro
@@ -589,7 +589,7 @@ CV.IC.MUS;LOC_Progressiva finale
 CV.IC.MUS;LOC_Progressiva iniziale
 CV.IC.MUS;TEC_Documentazione tecnica
 CV.IC.MUS;TEC_Materiale
-CV.IC.MUS;TEC_Classificazione d uso stradale
+CV.IC.MUS;TEC_Classificazione d置so stradale
 CV.IA.MUS;ANA_Esecutore
 CV.IA.MUS;ANA_Progettista
 CV.IA.MUS;GEO_Spessore strato pavimentazione
@@ -609,7 +609,7 @@ CV.IA.MUS;LOC_Progressiva finale
 CV.IA.MUS;LOC_Progressiva iniziale
 CV.IA.MUS;TEC_Documentazione tecnica
 CV.IA.MUS;TEC_Materiale
-CV.IA.MUS;TEC_Classificazione d uso stradale
+CV.IA.MUS;TEC_Classificazione d置so stradale
 CV.FP.MPL;ANA_Esecutore
 CV.FP.MPL;ANA_Progettista
 CV.FP.MPL;GEO_Diametro
@@ -754,7 +754,7 @@ CV.IC.PPZ;INF_Codice BMS
 CV.IC.PPZ;LOC_Carreggiata
 CV.IC.PPZ;LOC_Direzione
 CV.IC.PPZ;TEC_Documentazione tecnica
-CV.IC.PPZ;TEC_Classificazione d uso stradale
+CV.IC.PPZ;TEC_Classificazione d置so stradale
 CV.IA.PPZ;ANA_Esecutore
 CV.IA.PPZ;ANA_Progettista
 CV.IA.PPZ;GEO_Spessore strati bituminosi
@@ -773,7 +773,7 @@ CV.IA.PPZ;INF_Codice BMS
 CV.IA.PPZ;LOC_Carreggiata
 CV.IA.PPZ;LOC_Direzione
 CV.IA.PPZ;TEC_Documentazione tecnica
-CV.IA.PPZ;TEC_Classificazione d uso stradale
+CV.IA.PPZ;TEC_Classificazione d置so stradale
 CV.FP.PAL;ANA_Esecutore
 CV.FP.PAL;ANA_Progettista
 CV.FP.PAL;GEO_Diametro
@@ -2256,7 +2256,7 @@ MA.BA.COR;TEC_Documentazione tecnica
 MA.BA.COR;TEC_Incidenza armatura
 MA.BA.COR;TEC_Materiale
 MA.BA.COR;TEC_Tipologia acciaio
-MA.BA.COR;TEC_Classificazione d uso stradale
+MA.BA.COR;TEC_Classificazione d置so stradale
 MA.BA.MON;ANA_Esecutore
 MA.BA.MON;ANA_Progettista
 MA.BA.MON;GEO_Altezza profilo
@@ -2538,7 +2538,7 @@ PV.IC.BIN;LOC_Carreggiata
 PV.IC.BIN;LOC_Direzione
 PV.IC.BIN;TEC_Documentazione tecnica
 PV.IC.BIN;TEC_Materiale
-PV.IC.BIN;TEC_Classificazione d uso stradale
+PV.IC.BIN;TEC_Classificazione d置so stradale
 PV.IA.BIN;ANA_Esecutore
 PV.IA.BIN;ANA_Progettista
 PV.IA.BIN;GEO_Spessore strato pavimentazione
@@ -2556,7 +2556,7 @@ PV.IA.BIN;LOC_Carreggiata
 PV.IA.BIN;LOC_Direzione
 PV.IA.BIN;TEC_Documentazione tecnica
 PV.IA.BIN;TEC_Materiale
-PV.IA.BIN;TEC_Classificazione d uso stradale
+PV.IA.BIN;TEC_Classificazione d置so stradale
 PV.AC.CAP;ANA_Esecutore
 PV.AC.CAP;ANA_Progettista
 PV.AC.CAP;GEO_Altezza
@@ -2703,7 +2703,7 @@ PV.IC.COR;TEC_Documentazione tecnica
 PV.IC.COR;TEC_Materiale
 PV.IC.COR;TEC_Incidenza armatura
 PV.IC.COR;TEC_Tipologia acciaio
-PV.IC.COR;TEC_Classificazione d uso stradale
+PV.IC.COR;TEC_Classificazione d置so stradale
 PV.IA.COR;ANA_Esecutore
 PV.IA.COR;ANA_Progettista
 PV.IA.COR;GEO_Altezza
@@ -2734,7 +2734,7 @@ PV.IA.COR;TEC_Documentazione tecnica
 PV.IA.COR;TEC_Materiale
 PV.IA.COR;TEC_Incidenza armatura
 PV.IA.COR;TEC_Tipologia acciaio
-PV.IA.COR;TEC_Classificazione d uso stradale
+PV.IA.COR;TEC_Classificazione d置so stradale
 PV.IC.CUN;ANA_Esecutore
 PV.IC.CUN;ANA_Progettista
 PV.IC.CUN;GEO_Altezza
@@ -2760,7 +2760,7 @@ PV.IC.CUN;LOC_Carreggiata
 PV.IC.CUN;LOC_Direzione
 PV.IC.CUN;TEC_Documentazione tecnica
 PV.IC.CUN;TEC_Materiale
-PV.IC.CUN;TEC_Classificazione d uso stradale
+PV.IC.CUN;TEC_Classificazione d置so stradale
 PV.IA.CUN;ANA_Esecutore
 PV.IA.CUN;ANA_Progettista
 PV.IA.CUN;GEO_Altezza
@@ -2786,7 +2786,7 @@ PV.IA.CUN;LOC_Carreggiata
 PV.IA.CUN;LOC_Direzione
 PV.IA.CUN;TEC_Documentazione tecnica
 PV.IA.CUN;TEC_Materiale
-PV.IA.CUN;TEC_Classificazione d uso stradale
+PV.IA.CUN;TEC_Classificazione d置so stradale
 PV.FP.DIA;ANA_Esecutore
 PV.FP.DIA;ANA_Progettista
 PV.FP.DIA;GEO_Diametro
@@ -2957,7 +2957,7 @@ PV.IC.MUS;LOC_Progressiva finale
 PV.IC.MUS;LOC_Progressiva iniziale
 PV.IC.MUS;TEC_Documentazione tecnica
 PV.IC.MUS;TEC_Materiale
-PV.IC.MUS;TEC_Classificazione d uso stradale
+PV.IC.MUS;TEC_Classificazione d置so stradale
 PV.IA.MUS;ANA_Esecutore
 PV.IA.MUS;ANA_Progettista
 PV.IA.MUS;GEO_Spessore strato pavimentazione
@@ -2977,7 +2977,7 @@ PV.IA.MUS;LOC_Progressiva finale
 PV.IA.MUS;LOC_Progressiva iniziale
 PV.IA.MUS;TEC_Documentazione tecnica
 PV.IA.MUS;TEC_Materiale
-PV.IA.MUS;TEC_Classificazione d uso stradale
+PV.IA.MUS;TEC_Classificazione d置so stradale
 PV.FP.MPL;ANA_Esecutore
 PV.FP.MPL;ANA_Progettista
 PV.FP.MPL;GEO_Diametro
@@ -3122,7 +3122,7 @@ PV.IC.PPZ;INF_Codice BMS
 PV.IC.PPZ;LOC_Carreggiata
 PV.IC.PPZ;LOC_Direzione
 PV.IC.PPZ;TEC_Documentazione tecnica
-PV.IC.PPZ;TEC_Classificazione d uso stradale
+PV.IC.PPZ;TEC_Classificazione d置so stradale
 PV.IA.PPZ;ANA_Esecutore
 PV.IA.PPZ;ANA_Progettista
 PV.IA.PPZ;GEO_Spessore strati bituminosi
@@ -3141,7 +3141,7 @@ PV.IA.PPZ;INF_Codice BMS
 PV.IA.PPZ;LOC_Carreggiata
 PV.IA.PPZ;LOC_Direzione
 PV.IA.PPZ;TEC_Documentazione tecnica
-PV.IA.PPZ;TEC_Classificazione d uso stradale
+PV.IA.PPZ;TEC_Classificazione d置so stradale
 PV.FP.PAL;ANA_Esecutore
 PV.FP.PAL;ANA_Progettista
 PV.FP.PAL;GEO_Diametro
@@ -4343,3 +4343,4 @@ MO.TR.IDO;IDE_Uniclass
 MO.TR.IDO;IDE_Codice sensore
 MO.TR.IDO;GEO_Quota sensore
 MO.TR.IDO;TEC_Documentazione tecnica
+MO.TR.IDO;TEC_Numero seriale

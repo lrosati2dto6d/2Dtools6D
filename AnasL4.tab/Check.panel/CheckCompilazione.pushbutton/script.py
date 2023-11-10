@@ -463,9 +463,11 @@ if find("Database.csv",current_dir):
 			pyoutput.add_style(style)
 			pyoutput.print_md("#:prohibited: ZERI IN ECCESSO :")
 			pyoutput.insert_divider()
+
 			for lista in cleanZeri:
 				listaparametri = [remove_non_ascii(x) for x in lista[0]]
 				pyoutput.print_md("**{} - {} : {}**".format(doc.GetElement(lista[1].Id).LookupParameter("Famiglia").AsValueString(),doc.GetElement(lista[1].Id).LookupParameter("Tipo").AsValueString(),pyoutput.linkify(lista[1].Id)))
+			
 				for x in listaparametri:
 					pyoutput.print_md("**• {}**".format(x))
 				pyoutput.insert_divider()
@@ -482,13 +484,16 @@ if find("Database.csv",current_dir):
 		NAMEParameterMap = (estraiParametri(elemento)[0] for elemento in PickElements)
 		#GUIDParameterMap = (estraiParametri(elemento)[1] for elemento in PickElements)
 		
+
 		parametroDiTroppo = []
 		saveElement = []
+		
 		for codice,elemento,listaparametri in zip(Codice,PickElements,NAMEParameterMap):
 			temp = []
 			for parametro in listaparametri:
 				if parametro not in dizionarioCodici[codice]:
 					temp.append(parametro)
+
 			if len(temp) > 0:
 				parametroDiTroppo.append(temp)
 				saveElement.append(elemento)
@@ -498,6 +503,7 @@ if find("Database.csv",current_dir):
 
 		for sublist,elemento in zip(parametroDiTroppo,saveElement):
 			temp = []
+			
 			for parametro in sublist:
 				if  not elemento.LookupParameter(parametro).HasValue or elemento.LookupParameter(parametro).AsValueString() == None or elemento.LookupParameter(parametro).AsValueString() == "":
 					pass
@@ -507,11 +513,14 @@ if find("Database.csv",current_dir):
 			if len(temp) > 0:
 				elementiDiTroppo.append(elemento)
 				valorizzatiDiTroppo.append(temp)
+
 		t_Rimozione = Transaction(doc,"Rimozione parametri in eccesso")
 		
 		NAMEParameterMap = (estraiParametri(elemento)[0] for elemento in PickElements)
-		GUIDParameterMap = (estraiParametri(elemento)[1] for elemento in PickElements)
+		#GUIDParameterMap = (estraiParametri(elemento)[1] for elemento in PickElements)
+
 		t_Rimozione.Start()
+
 		nomiParametri = []
 		for elemento in PickElements:
 			try:
@@ -521,6 +530,7 @@ if find("Database.csv",current_dir):
 
 		output=zip(*checkCompilare(nomiParametri,PickElements))
 		cleanCompilare = []
+		
 		for list in output:
 			if len(list[0]) == 0:
 				pass
@@ -530,19 +540,59 @@ if find("Database.csv",current_dir):
 		for list in cleanCompilare:
 			for p in list[0]:
 				list[1].LookupParameter(p).Set("")
-		
-		
+		try:
+			for elemento in PickElements: #VERIFICA PRESENZA IN PARAMETRI DI TIPO
+				ListaParametriTipo = estraiParametri(doc.GetElement(elemento.GetTypeId()))[0]
+				for parametro in ListaParametriTipo:
+					print(elemento.LookupParameter(parametro).AsValueString())
 
+
+		except Exception as e:
+			pass
 
 		for sublist,elemento in zip(valorizzatiDiTroppo,elementiDiTroppo):
 			for parametro in sublist:
 				elemento.LookupParameter(parametro).Set("")
-		
-
-		#pyoutput.print_md("#:white_heavy_check_mark: PARAMETRI IN ECCESSO RIMOSSI")
+				#pyoutput.print_md("#:white_heavy_check_mark: PARAMETRI IN ECCESSO RIMOSSI")
+				
+				pyoutput = script.get_output()
+				pyrevit.forms.toaster.send_toast("Parametri in eccesso rimossi.", title = "Pulizia parametri", icon = sys.path[0] + "/iconanera.png")
 		t_Rimozione.Commit()
+		###		
+		t = Transaction(doc,"Togli Compilare da Tipo")
+		
+		t.Start()
+		for elemento in PickElements:
+			#parametro.Definition.Name for parametro in elemento.ParametersMap if parametro.IsShared
+
+					
+			TypeParams = doc.GetElement(elemento.GetTypeId()).ParametersMap
+
+			for tp in TypeParams:
+				if tp.IsShared :
+					try:
+						if "COMPILARE" in tp.AsValueString():
+							tp.Set("")
+					except Exception as i:
+						pass
+						#print(i)
+						try:
+							if "COMPILARE" in tp.AsValueString():
+								tp.Set("")
+						except Exception as e:
+							pass
+							#print(e)
+			
+		t.Commit()
+
+		###
+
+
+
+		
 		pyoutput = script.get_output()
 		pyrevit.forms.toaster.send_toast("Parametri in eccesso rimossi.", title = "Pulizia parametri", icon = sys.path[0] + "/iconanera.png")
+		
 else:
 	#Alert('Generare CSV codici da Modello Dati', title="Database mancante", header="Database.csv mancante")
 	avviso = pyrevit.forms.alert(msg = "Generare un nuovo database da Excel ?\n L'operazione può richiedere fino a 5 minuti.", title = "Database mancante", warn_icon = True, exitscript = True, ok=True, cancel = True)
