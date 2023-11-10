@@ -108,7 +108,7 @@ if "Italian" in rapp_language:
 else:
 	forms.alert('WARNING 00_INFORMAZIONI MODELLO\n\nImpostare la versione di Revit in lingua Italiana', exitscript=True)
 
-if "Anas_Categorie-IFC Class.txt" in rapp.ExportIFCCategoryTable:
+if "Anas_Categorie-IFC Class.txt" in rapp.ExportIFCCategoryTable  and "ACCDocs" in rapp.ExportIFCCategoryTable:
 	rapp_ifcclassfile = "File Mappaggio IFC Class = Anas_Categorie-IFC Class.txt"
 else:
 	forms.alert('WARNING 00_INFORMAZIONI MODELLO\n\nIl file txt del mappaggio delle classi IFC non risulta inserito o non coincide con il percorso condiviso in BIM360', exitscript=True)
