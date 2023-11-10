@@ -727,7 +727,7 @@ for el in clean_el:
 
 #-------------------------------------ANAGRAFICA DI BASE
 
-	if elemento_el in ['ACC','IFS','SCA','SEM','TEC','TCM','VCM'] and opera_el == "IM" and parteopera_el == "IE":
+	if elemento_el in ['ALI','BLI','CAB','CNP','CAE','CAV','COL','COM','CEE','DIE','IMT','INS','INM','MUL','PLI','PZE','QEB','QEM','REL','REP','RIF','SCS','SEM','SDE','TRS'] and opera_el == "IM" and parteopera_el == "IE":
 			if Para(el,"ANA_Progettista").HasValue == False or ParaInst(el,"ANA_Progettista") == "" or ParaInst(el,"ANA_Progettista")!= "RINA Consulting SpA":
 				progettista_errato.append("{} - {} - {} - {}_ ANA_Progettista --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
