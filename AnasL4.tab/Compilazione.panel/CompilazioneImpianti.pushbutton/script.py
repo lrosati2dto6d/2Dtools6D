@@ -76,6 +76,7 @@ ANA_Progettista = "ALI,BLI,CAB,CNP,CAE,CAV,COL,COM,CEE,DIE,IMT,INS,INM,MUL,PLI,P
 TEC_Numero_seriale = "IFS,TEC,TCM,ACC,SCA,VCM,TSS,SEM,TIG,SUM,CLI,BRE,IDO"
 TEC_Posizione = "ACC,IFS,SCA,SEM,TEC,TCM,VCM,TIG,SUM"
 ElementiBMS = "AMS,AAP,BAG,BIN,CAS,CNT,COR,CUN,ISA,LOR,MUS,PPZ,PEN,PUL,PUN,RIS,SBL,SGE,SOL,SSB,SAR,SEL,TAN,TRV,TRA,VEL"
+IDE_ElementoDiAppartenenza = "SGE,ACC,IFS,SCA,SEM,TEC,TCM,VCM,TSS,TIG,SUM,CLI,BRE,IDO"
 
 ## ASSEGNAZIONE PARAMETRI DI ISTANZA
 
@@ -105,7 +106,10 @@ for elemento,codice in zip(ImpiantiInView,CodiceElemento):
 			elemento.LookupParameter("TEC_Posizione").Set("CAM." + host.LookupParameter("INF_Campata di appartenenza").AsString())
 		else:
 			elemento.LookupParameter("TEC_Posizione").Set(host.LookupParameter("IDE_Gruppo anagrafica").AsString()[6:12])
-
+	
+	if codice in IDE_ElementoDiAppartenenza:
+		host = elemento.Host
+		elemento.LookupParameter("IDE_Elemento di appartenenza").Set(doc.GetElement(host.GetTypeId()).LookupParameter("Descrizione").AsValueString()+"."+host.LookupParameter("IDE_Codice WBS").AsValueString().split(".")[-1])
 		
 """		
 		try:
