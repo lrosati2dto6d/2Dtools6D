@@ -143,6 +143,7 @@ if "Anas_ParametriCondivisi_CLUSTER.txt" in rapp.SharedParametersFilename and "A
 else:
 	forms.alert('WARNING 00_INFORMAZIONI MODELLO\n\nIl file txt dei parametri condivisi non risulta inserito o non coincide con il percorso condiviso in BIM360', exitscript=True)
 
+
 info = doc.ProjectInformation
 
 file_info = [file_name,path_name,rapp_version,rapp_language,rapp_ifcclassfile,rapp_SharedParametersFilename]
@@ -632,7 +633,7 @@ for el in clean_el:
 
 #-----GEO_Diametro (len__inst)
 	if opera_el in ["CV","IM","MO","PV"] and parteopera_el in ["AN","AC","FP","FO","IC","IA","PD","PI","SP","IE","EA","ES","TR"] and elemento_el in ["STL","PEN","DIA","MPL","PAL","CEN","POZ","AAP","AMS","ISA","BLI","CNP","CAE","CAV","DIE","IMT","PZE","TSS","IFS","TEC","SEM","SUM","TIG"]:
-		if Para(el,"GEO_Diametro").HasValue == False or ParaInst(el,"GEO_Diametro") == 0 or ParaInst(el,"GEO_Diametro") == None:
+		if Para(el,"GEO_Diametro").HasValue == False or ParaInst(el,"GEO_Diametro") == None:
 			param_inst_999.append(Para(el,"GEO_Diametro"))
 			inst_999.append(el)
 		elif ParaInst(el,"GEO_Diametro") == ConvUnitsFM(999):
