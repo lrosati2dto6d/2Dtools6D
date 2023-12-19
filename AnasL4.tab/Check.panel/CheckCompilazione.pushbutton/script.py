@@ -1,11 +1,16 @@
 # -*- coding: utf-8 -*-
 
+""" Esegui diversi passaggi per agevolare la compilazione dei parametri mancanti"""
+
 __title__= 'Compilazione\nAnas L-4'
 __author__= 'Luca Rosati'
+
+
 
 import sys
 import os
 import clr
+import re
 import System
 
 clr.AddReference('RevitAPI')
@@ -31,6 +36,8 @@ from pyrevit.framework import List
 from pyrevit import coreutils
 from pyrevit import forms
 from pyrevit import script
+from pyrevit.compat import IRONPY279
+from pyrevit.compat import safe_strtype
 from pyrevit.framework import Emojis
 
 doc =__revit__.ActiveUIDocument.Document
@@ -38,13 +45,14 @@ uidoc =__revit__.ActiveUIDocument
 
 rapp = doc.Application
 
+
 options = ["P1 - Compilazione Di Default","P2 - Verifica Compilare - 999", "P3 - Trasforma ND e 111"]
 
 value_form = forms.ask_for_one_item(
-    options,
-    default = options[0],
-    prompt='Seleziona un passaggio',
-    title=',Compilazione L-4')
+	options,
+	default = options[0],
+	prompt='Seleziona un passaggio',
+	title=',Compilazione L-4')
 
 if value_form == None:
 	script.exit()
@@ -167,15 +175,15 @@ exp_view_check = []
 exp_view_false = []
 
 for v in exp_views:
-    presente = False
-    for i in disc_spec:
-        if i in v:
-            presente = True
-            break
-    if presente:
-        exp_view_check.append("{} --> V".format(v))
-    else:
-        exp_view_false.append(v)
+	presente = False
+	for i in disc_spec:
+		if i in v:
+			presente = True
+			break
+	if presente:
+		exp_view_check.append("{} --> V".format(v))
+	else:
+		exp_view_false.append(v)
 
 
 #WARNING_01-----------------NOME E PRESENZA VISTE ESPORTAZIONE
@@ -491,7 +499,7 @@ for el in clean_el:
 		if Para(el,"ANA_Esecutore").HasValue == False or ParaInst(el,"ANA_Esecutore") == "" or ParaInst(el,"ANA_Esecutore") == None:
 			param_inst_compilare.append(Para(el,"ANA_Esecutore"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"ANA_Esecutore") == "���COMPILARE���":
+		elif ParaInst(el,"ANA_Esecutore") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"ANA_Esecutore").Definition.Name))
 		elif ParaInst(el,"ANA_Esecutore") == "ND":
 			para_ND_trasforma.append(Para(el,"ANA_Esecutore"))
@@ -508,7 +516,7 @@ for el in clean_el:
 		if Para(el,"ANA_Progettista").HasValue == False or ParaInst(el,"ANA_Progettista") == "" or ParaInst(el,"ANA_Progettista") == None:
 			param_inst_compilare.append(Para(el,"ANA_Progettista"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"ANA_Progettista") == "---COMPILARE---":
+		elif ParaInst(el,"ANA_Progettista") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"ANA_Progettista").Definition.Name))
 		elif ParaInst(el,"ANA_Progettista") == "ND":
 			para_ND_trasforma.append(Para(el,"ANA_Progettista"))
@@ -527,13 +535,13 @@ for el in clean_el:
 		if Para(el,"GEO_Identificativo concio").HasValue == False or ParaInst(el,"GEO_Identificativo concio") == "" or ParaInst(el,"GEO_Identificativo concio") == None:
 			param_inst_compilare.append(Para(el,"GEO_Identificativo concio"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"GEO_Identificativo concio") == "---COMPILARE---":
+		elif ParaInst(el,"GEO_Identificativo concio") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"GEO_Identificativo concio").Definition.Name))
 		elif ParaInst(el,"GEO_Identificativo concio") == "ND":
 			para_ND_trasforma.append(Para(el,"GEO_Identificativo concio"))
 	else:
 		try:
-			para_neccesso.append(Para(el,"GEO_Identificativo concio"))
+			para_eccesso.append(Para(el,"GEO_Identificativo concio"))
 		except:
 			pass
 
@@ -614,7 +622,7 @@ for el in clean_el:
 			inst_999.append(el)
 		elif ParaInst(el,"GEO_Area") == ConvUnitsFqMq(999):
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"GEO_Area").Definition.Name))
-		elif Para(el,"GEO_Area").AsValueString() == "111 m�":
+		elif Para(el,"GEO_Area").AsValueString() == "111 mÂ²":
 			para_111_trasforma.append(Para(el,"GEO_Area"))
 	else:
 		try:
@@ -810,7 +818,7 @@ for el in clean_el:
 			inst_999.append(el)
 		elif ParaInst(el,"GEO_Pendenza") == 57.289961630754:
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"GEO_Pendenza").Definition.Name))
-		elif Para(el,"GEO_Pendenza").AsValueString() == "11.000�":
+		elif Para(el,"GEO_Pendenza").AsValueString() == "11.000Â°":
 			para_111_trasforma.append(Para(el,"GEO_Pendenza"))
 
 	else:
@@ -826,7 +834,7 @@ for el in clean_el:
 			inst_999.append(el)
 		elif ParaInst(el,"GEO_Pendenza sponde") == 57.289961630754:
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"GEO_Pendenza sponde").Definition.Name))
-		elif Para(el,"GEO_Pendenza sponde").AsValueString() == "11.000�":
+		elif Para(el,"GEO_Pendenza sponde").AsValueString() == "11.000Â°":
 			para_111_trasforma.append(Para(el,"GEO_Pendenza sponde"))
 
 	else:
@@ -1007,7 +1015,7 @@ for el in clean_el:
 			inst_999.append(el)
 		elif ParaInst(el,"GEO_Volume") == 35279.3520547671:
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"GEO_Volume").Definition.Name))
-		elif Para(el,"GEO_Volume").AsValueString() == "111 m�":
+		elif Para(el,"GEO_Volume").AsValueString() == "111 mÂ³":
 			para_111_trasforma.append(Para(el,"GEO_Volume"))
 
 	else:
@@ -1024,7 +1032,7 @@ for el in clean_el:
 		if Para(el,"IDE_Codice opera").HasValue == False or ParaInst(el,"IDE_Codice opera") == "" or ParaInst(el,"IDE_Codice opera") == None:
 			param_inst_compilare.append(Para(el,"IDE_Codice opera"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"IDE_Codice opera") == "---COMPILARE---":
+		elif ParaInst(el,"IDE_Codice opera") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"IDE_Codice opera").Definition.Name))
 		elif ParaInst(el,"IDE_Codice opera") == "ND":
 			para_ND_trasforma.append(Para(el,"IDE_Codice opera"))
@@ -1041,7 +1049,7 @@ for el in clean_el:
 		if Para(el,"IDE_Codice sensore").HasValue == False or ParaInst(el,"IDE_Codice sensore") == "" or ParaInst(el,"IDE_Codice sensore") == None:
 			param_inst_compilare.append(Para(el,"IDE_Codice sensore"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"IDE_Codice sensore") == "---COMPILARE---":
+		elif ParaInst(el,"IDE_Codice sensore") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"IDE_Codice sensore").Definition.Name))
 		elif ParaInst(el,"IDE_Codice sensore") == "ND":
 			para_ND_trasforma.append(Para(el,"IDE_Codice sensore"))
@@ -1058,7 +1066,7 @@ for el in clean_el:
 		if Para(el,"IDE_Codice WBS").HasValue == False or ParaInst(el,"IDE_Codice WBS") == "" or ParaInst(el,"IDE_Codice WBS") == None:
 			param_inst_compilare.append(Para(el,"IDE_Codice WBS"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"IDE_Codice WBS") == "---COMPILARE---":
+		elif ParaInst(el,"IDE_Codice WBS") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"IDE_Codice WBS").Definition.Name))
 		elif ParaInst(el,"IDE_Codice WBS") == "ND":
 			para_ND_trasforma.append(Para(el,"IDE_Codice WBS"))
@@ -1075,7 +1083,7 @@ for el in clean_el:
 		if Para(el,"IDE_Elemento di appartenenza").HasValue == False or ParaInst(el,"IDE_Elemento di appartenenza") == "" or ParaInst(el,"IDE_Elemento di appartenenza") == None:
 			param_inst_compilare.append(Para(el,"IDE_Elemento di appartenenza"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"IDE_Elemento di appartenenza") == "---COMPILARE---":
+		elif ParaInst(el,"IDE_Elemento di appartenenza") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"IDE_Elemento di appartenenza").Definition.Name))
 		elif ParaInst(el,"IDE_Elemento di appartenenza") == "ND":
 			para_ND_trasforma.append(Para(el,"IDE_Elemento di appartenenza"))
@@ -1092,7 +1100,7 @@ for el in clean_el:
 		if Para(el,"IDE_Gruppo anagrafica").HasValue == False or ParaInst(el,"IDE_Gruppo anagrafica") == "" or ParaInst(el,"IDE_Gruppo anagrafica") == None:
 			param_inst_compilare.append(Para(el,"IDE_Gruppo anagrafica"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"IDE_Gruppo anagrafica") == "---COMPILARE---":
+		elif ParaInst(el,"IDE_Gruppo anagrafica") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"IDE_Gruppo anagrafica").Definition.Name))
 		elif ParaInst(el,"IDE_Gruppo anagrafica") == "ND":
 			para_ND_trasforma.append(Para(el,"IDE_Gruppo anagrafica"))
@@ -1109,7 +1117,7 @@ for el in clean_el:
 		if Para(el,"IDE_LOR").HasValue == False or ParaInst(el,"IDE_LOR") == "" or ParaInst(el,"IDE_LOR") == None:
 			param_inst_compilare.append(Para(el,"IDE_LOR"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"IDE_LOR") == "---COMPILARE---":
+		elif ParaInst(el,"IDE_LOR") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"IDE_LOR").Definition.Name))
 		elif ParaInst(el,"IDE_LOR") == "ND":
 			para_ND_trasforma.append(Para(el,"IDE_LOR"))
@@ -1126,7 +1134,7 @@ for el in clean_el:
 		if Para(el,"IDE_Prova eseguita su:").HasValue == False or ParaInst(el,"IDE_Prova eseguita su:") == "" or ParaInst(el,"IDE_Prova eseguita su:") == None:
 			param_inst_compilare.append(Para(el,"IDE_Prova eseguita su:"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"IDE_Prova eseguita su:") == "---COMPILARE---":
+		elif ParaInst(el,"IDE_Prova eseguita su:") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"IDE_Prova eseguita su:").Definition.Name))
 		elif ParaInst(el,"IDE_Prova eseguita su:") == "ND":
 			para_ND_trasforma.append(Para(el,"IDE_Prova eseguita su:"))
@@ -1143,7 +1151,7 @@ for el in clean_el:
 		if Para(el,"IDE_Uniclass").HasValue == False or ParaInst(el,"IDE_Uniclass") == "" or ParaInst(el,"IDE_Uniclass") == None:
 			param_inst_compilare.append(Para(el,"IDE_Uniclass"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"IDE_Uniclass") == "---COMPILARE---":
+		elif ParaInst(el,"IDE_Uniclass") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"IDE_Uniclass").Definition.Name))
 		elif ParaInst(el,"IDE_Uniclass") == "ND":
 			para_ND_trasforma.append(Para(el,"IDE_Uniclass"))
@@ -1165,7 +1173,7 @@ for el in clean_el:
 		if Para(el,"INF_Campata di appartenenza").HasValue == False or ParaInst(el,"INF_Campata di appartenenza") == "" or ParaInst(el,"INF_Campata di appartenenza") == None:
 			param_inst_compilare.append(Para(el,"INF_Campata di appartenenza"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"INF_Campata di appartenenza") == "---COMPILARE---":
+		elif ParaInst(el,"INF_Campata di appartenenza") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"INF_Campata di appartenenza").Definition.Name))
 		elif ParaInst(el,"INF_Campata di appartenenza") == "ND":
 			para_ND_trasforma.append(Para(el,"INF_Campata di appartenenza"))
@@ -1174,7 +1182,7 @@ for el in clean_el:
 		if Para(el,"INF_Codice BMS").HasValue == False or ParaInst(el,"INF_Codice BMS") == "" or ParaInst(el,"INF_Codice BMS") == None:
 			param_inst_compilare.append(Para(el,"INF_Codice BMS"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"INF_Codice BMS") == "---COMPILARE---":
+		elif ParaInst(el,"INF_Codice BMS") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"INF_Codice BMS").Definition.Name))
 		elif ParaInst(el,"INF_Codice BMS") == "ND":
 			para_ND_trasforma.append(Para(el,"INF_Codice BMS"))
@@ -1183,7 +1191,7 @@ for el in clean_el:
 		if Para(el,"INF_Impalcato di appartenenza").HasValue == False or ParaInst(el,"INF_Impalcato di appartenenza") == "" or ParaInst(el,"INF_Impalcato di appartenenza") == None:
 			param_inst_compilare.append(Para(el,"INF_Impalcato di appartenenza"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"INF_Impalcato di appartenenza") == "---COMPILARE---":
+		elif ParaInst(el,"INF_Impalcato di appartenenza") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"INF_Impalcato di appartenenza").Definition.Name))
 		elif ParaInst(el,"INF_Impalcato di appartenenza") == "ND":
 			para_ND_trasforma.append(Para(el,"INF_Impalcato di appartenenza"))
@@ -1192,7 +1200,7 @@ for el in clean_el:
 		if Para(el,"INF_Numerazione struttura campata").HasValue == False or ParaInst(el,"INF_Numerazione struttura campata") == "" or ParaInst(el,"INF_Numerazione struttura campata") == None:
 			param_inst_compilare.append(Para(el,"INF_Numerazione struttura campata"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"INF_Numerazione struttura campata") == "---COMPILARE---":
+		elif ParaInst(el,"INF_Numerazione struttura campata") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"INF_Numerazione struttura campata").Definition.Name))
 		elif ParaInst(el,"INF_Numerazione struttura campata") == "ND":
 			para_ND_trasforma.append(Para(el,"INF_Numerazione struttura campata"))
@@ -1216,7 +1224,7 @@ for el in clean_el:
 		if Para(el,"LOC_Carreggiata").HasValue == False or ParaInst(el,"LOC_Carreggiata") == "" or ParaInst(el,"LOC_Carreggiata") == None:
 			param_inst_compilare.append(Para(el,"LOC_Carreggiata"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"LOC_Carreggiata") == "---COMPILARE---":
+		elif ParaInst(el,"LOC_Carreggiata") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"LOC_Carreggiata").Definition.Name))
 		elif ParaInst(el,"LOC_Carreggiata") == "ND":
 			para_ND_trasforma.append(Para(el,"LOC_Carreggiata"))
@@ -1225,7 +1233,7 @@ for el in clean_el:
 		if Para(el,"LOC_Direzione").HasValue == False or ParaInst(el,"LOC_Direzione") == "" or ParaInst(el,"LOC_Direzione") == None:
 			param_inst_compilare.append(Para(el,"LOC_Direzione"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"LOC_Direzione") == "---COMPILARE---":
+		elif ParaInst(el,"LOC_Direzione") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"LOC_Direzione").Definition.Name))
 		elif ParaInst(el,"LOC_Direzione") == "ND":
 			para_ND_trasforma.append(Para(el,"LOC_Direzione"))
@@ -1246,7 +1254,7 @@ for el in clean_el:
 		if Para(el,"LOC_Progressiva finale").HasValue == False or ParaInst(el,"LOC_Progressiva finale") == "" or ParaInst(el,"LOC_Progressiva finale") == None:
 			param_inst_compilare.append(Para(el,"LOC_Progressiva finale"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"LOC_Progressiva finale") == "---COMPILARE---":
+		elif ParaInst(el,"LOC_Progressiva finale") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"LOC_Progressiva finale").Definition.Name))
 		elif ParaInst(el,"LOC_Progressiva finale") == "ND":
 			para_ND_trasforma.append(Para(el,"LOC_Progressiva finale"))
@@ -1255,7 +1263,7 @@ for el in clean_el:
 		if Para(el,"LOC_Progressiva iniziale").HasValue == False or ParaInst(el,"LOC_Progressiva iniziale") == "" or ParaInst(el,"LOC_Progressiva iniziale") == None:
 			param_inst_compilare.append(Para(el,"LOC_Progressiva iniziale"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"LOC_Progressiva iniziale") == "---COMPILARE---":
+		elif ParaInst(el,"LOC_Progressiva iniziale") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"LOC_Progressiva iniziale").Definition.Name))
 		elif ParaInst(el,"LOC_Progressiva iniziale") == "ND":
 			para_ND_trasforma.append(Para(el,"LOC_Progressiva iniziale"))
@@ -1277,7 +1285,7 @@ for el in clean_el:
 		if Para(el,"TEC_Chiave di taglio").HasValue == False or ParaInst(el,"TEC_Chiave di taglio") == "" or ParaInst(el,"TEC_Chiave di taglio") == None:
 			param_inst_compilare.append(Para(el,"TEC_Chiave di taglio"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"TEC_Chiave di taglio") == "---COMPILARE---":
+		elif ParaInst(el,"TEC_Chiave di taglio") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"TEC_Chiave di taglio").Definition.Name))
 		elif ParaInst(el,"TEC_Chiave di taglio") == "ND":
 			para_ND_trasforma.append(Para(el,"TEC_Chiave di taglio"))
@@ -1295,7 +1303,7 @@ for el in clean_el:
 		if Para(el,"TEC_Classe di prestazione").HasValue == False or ParaInst(el,"TEC_Classe di prestazione") == "" or ParaInst(el,"TEC_Classe di prestazione") == None:
 			param_inst_compilare.append(Para(el,"TEC_Classe di prestazione"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"TEC_Classe di prestazione") == "---COMPILARE---":
+		elif ParaInst(el,"TEC_Classe di prestazione") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"TEC_Classe di prestazione").Definition.Name))
 		elif ParaInst(el,"TEC_Classe di prestazione") == "ND":
 			para_ND_trasforma.append(Para(el,"TEC_Classe di prestazione"))
@@ -1313,7 +1321,7 @@ for el in clean_el:
 			inst_999.append(el)
 		elif ParaInst(el,"TEC_Dimensione maglia") == ConvUnitsFqMq(999):
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"TEC_Dimensione maglia").Definition.Name))
-		elif Para(el,"TEC_Dimensione maglia").AsValueString() == "111 m�":
+		elif Para(el,"TEC_Dimensione maglia").AsValueString() == "111 mÂ²":
 			para_111_trasforma.append(Para(el,"TEC_Dimensione maglia"))
 	else:
 		try:
@@ -1328,7 +1336,7 @@ for el in clean_el:
 			inst_999.append(el)
 		elif ParaInst(el,"TEC_Incidenza armatura") == 28.288529745408:
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"TEC_Incidenza armatura").Definition.Name))
-		elif Para(el,"TEC_Incidenza armatura").AsValueString() == "111.00 kg/m�":
+		elif Para(el,"TEC_Incidenza armatura").AsValueString() == "111.00 kg/mÂ³":
 			para_111_trasforma.append(Para(el,"TEC_Incidenza armatura"))
 	else:
 		try:
@@ -1360,7 +1368,7 @@ for el in clean_el:
 		if Para(el,"TEC_Documentazione tecnica").HasValue == False or ParaInst(el,"TEC_Documentazione tecnica") == "" or ParaInst(el,"TEC_Documentazione tecnica") == None:
 			param_inst_compilare.append(Para(el,"TEC_Documentazione tecnica"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"TEC_Documentazione tecnica") == "---COMPILARE---":
+		elif ParaInst(el,"TEC_Documentazione tecnica") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"TEC_Documentazione tecnica").Definition.Name))
 		elif ParaInst(el,"TEC_Documentazione tecnica") == "ND":
 			para_ND_trasforma.append(Para(el,"TEC_Documentazione tecnica"))
@@ -1377,7 +1385,7 @@ for el in clean_el:
 		if Para(el,"TEC_Numero seriale").HasValue == False or ParaInst(el,"TEC_Numero seriale") == "" or ParaInst(el,"TEC_Numero seriale") == None:
 			param_inst_compilare.append(Para(el,"TEC_Numero seriale"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"TEC_Numero seriale") == "---COMPILARE---":
+		elif ParaInst(el,"TEC_Numero seriale") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"TEC_Numero seriale").Definition.Name))
 		elif ParaInst(el,"TEC_Numero seriale") == "ND":
 			para_ND_trasforma.append(Para(el,"TEC_Numero seriale"))
@@ -1394,7 +1402,7 @@ for el in clean_el:
 		if Para(el,"TEC_Posizione").HasValue == False or ParaInst(el,"TEC_Posizione") == "" or ParaInst(el,"TEC_Posizione") == None:
 			param_inst_compilare.append(Para(el,"TEC_Posizione"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"TEC_Posizione") == "---COMPILARE---":
+		elif ParaInst(el,"TEC_Posizione") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"TEC_Posizione").Definition.Name))
 		elif ParaInst(el,"TEC_Posizione") == "ND":
 			para_ND_trasforma.append(Para(el,"TEC_Posizione"))
@@ -1413,7 +1421,7 @@ for el in clean_el:
 		if Para(el,"TEC_Sella Gerber").HasValue == False or ParaInst(el,"TEC_Sella Gerber") == "" or ParaInst(el,"TEC_Sella Gerber") == None:
 			param_inst_compilare.append(Para(el,"TEC_Sella Gerber"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"TEC_Sella Gerber") == "---COMPILARE---":
+		elif ParaInst(el,"TEC_Sella Gerber") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"TEC_Sella Gerber").Definition.Name))
 		elif ParaInst(el,"TEC_Sella Gerber") == "ND":
 			para_ND_trasforma.append(Para(el,"TEC_Sella Gerber"))
@@ -1432,7 +1440,7 @@ for el in clean_el:
 		if Para(type_el,"TEC_Tipologia").HasValue == False or ParaType(el,"TEC_Tipologia",doc) == "" or ParaType(el,"TEC_Tipologia",doc) == None:
 			param_inst_compilare.append(Para(type_el,"TEC_Tipologia"))
 			inst_compilare.append(type_el)
-		elif ParaType(el,"TEC_Tipologia",doc) == "---COMPILARE---":
+		elif ParaType(el,"TEC_Tipologia",doc) == "•••COMPILARE•••":
 			para_typ_check.add("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id),Para(type_el,"TEC_Tipologia").Definition.Name))
 		elif ParaType(el,"TEC_Tipologia",doc) == "ND":
 			para_ND_trasforma.append(Para(type_el,"TEC_Tipologia"))
@@ -1450,7 +1458,7 @@ for el in clean_el:
 		if Para(type_el,"TEC_Tipologia acciaio").HasValue == False or ParaType(el,"TEC_Tipologia acciaio",doc) == "" or ParaType(el,"TEC_Tipologia acciaio",doc) == None:
 			param_inst_compilare.append(Para(type_el,"TEC_Tipologia acciaio"))
 			inst_compilare.append(type_el)
-		elif ParaType(el,"TEC_Tipologia acciaio",doc) == "---COMPILARE---":
+		elif ParaType(el,"TEC_Tipologia acciaio",doc) == "•••COMPILARE•••":
 			para_typ_check.add("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id),Para(type_el,"TEC_Tipologia acciaio").Definition.Name))
 		elif ParaType(el,"TEC_Tipologia acciaio",doc) == "ND":
 			para_ND_trasforma.append(Para(type_el,"TEC_Tipologia acciaio"))
@@ -1469,7 +1477,7 @@ for el in clean_el:
 		if Para(type_el,"TEC_Tipologia apparecchi di appoggio").HasValue == False or ParaType(el,"TEC_Tipologia apparecchi di appoggio",doc) == "" or ParaType(el,"TEC_Tipologia apparecchi di appoggio",doc) == None:
 			param_inst_compilare.append(Para(type_el,"TEC_Tipologia apparecchi di appoggio"))
 			inst_compilare.append(type_el)
-		elif ParaType(el,"TEC_Tipologia apparecchi di appoggio",doc) == "---COMPILARE---":
+		elif ParaType(el,"TEC_Tipologia apparecchi di appoggio",doc) == "•••COMPILARE•••":
 			para_typ_check.add("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id),Para(type_el,"TEC_Tipologia apparecchi di appoggio").Definition.Name))
 		elif ParaType(el,"TEC_Tipologia apparecchi di appoggio",doc) == "ND":
 			para_ND_trasforma.append(Para(type_el,"TEC_Tipologia apparecchi di appoggio"))
@@ -1477,7 +1485,7 @@ for el in clean_el:
 		if Para(type_el,"TEC_Tipologia dispositivo antisismico").HasValue == False or ParaType(el,"TEC_Tipologia dispositivo antisismico",doc) == "" or ParaType(el,"TEC_Tipologia dispositivo antisismico",doc) == None:
 			param_inst_compilare.append(Para(type_el,"TEC_Tipologia dispositivo antisismico"))
 			inst_compilare.append(type_el)
-		elif ParaType(el,"TEC_Tipologia dispositivo antisismico",doc) == "---COMPILARE---":
+		elif ParaType(el,"TEC_Tipologia dispositivo antisismico",doc) == "•••COMPILARE•••":
 			para_typ_check.add("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id),Para(type_el,"TEC_Tipologia dispositivo antisismico").Definition.Name))
 		elif ParaType(el,"TEC_Tipologia dispositivo antisismico",doc) == "ND":
 			para_ND_trasforma.append(Para(type_el,"TEC_Tipologia dispositivo antisismico"))
@@ -1495,7 +1503,7 @@ for el in clean_el:
 		if Para(type_el,"TEC_Tipologia barriera").HasValue == False or ParaType(el,"TEC_Tipologia barriera",doc) == "" or ParaType(el,"TEC_Tipologia barriera",doc) == None:
 			param_inst_compilare.append(Para(type_el,"TEC_Tipologia barriera"))
 			inst_compilare.append(type_el)
-		elif ParaType(el,"TEC_Tipologia barriera",doc) == "---COMPILARE---":
+		elif ParaType(el,"TEC_Tipologia barriera",doc) == "•••COMPILARE•••":
 			para_typ_check.add("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id),Para(type_el,"TEC_Tipologia barriera").Definition.Name))
 		elif ParaType(el,"TEC_Tipologia barriera",doc) == "ND":
 			para_ND_trasforma.append(Para(type_el,"TEC_Tipologia barriera"))
@@ -1511,7 +1519,7 @@ for el in clean_el:
 		if Para(type_el,"TEC_Tipologia C.A./C.A.P.").HasValue == False or ParaType(el,"TEC_Tipologia C.A./C.A.P.",doc) == "" or ParaType(el,"TEC_Tipologia C.A./C.A.P.",doc) == None:
 			param_inst_compilare.append(Para(type_el,"TEC_Tipologia C.A./C.A.P."))
 			inst_compilare.append(type_el)
-		elif ParaType(el,"TEC_Tipologia C.A./C.A.P.",doc) == "---COMPILARE---":
+		elif ParaType(el,"TEC_Tipologia C.A./C.A.P.",doc) == "•••COMPILARE•••":
 			para_typ_check.add("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id),Para(type_el,"TEC_Tipologia C.A./C.A.P.").Definition.Name))
 		elif ParaType(el,"TEC_Tipologia C.A./C.A.P.",doc) == "ND":
 			para_ND_trasforma.append(Para(type_el,"TEC_Tipologia C.A./C.A.P."))
@@ -1528,7 +1536,7 @@ for el in clean_el:
 		if Para(type_el,"TEC_Tipologia finitura").HasValue == False or ParaType(el,"TEC_Tipologia finitura",doc) == "" or ParaType(el,"TEC_Tipologia finitura",doc) == None:
 			param_inst_compilare.append(Para(type_el,"TEC_Tipologia finitura"))
 			inst_compilare.append(type_el)
-		elif ParaType(el,"TEC_Tipologia finitura",doc) == "---COMPILARE---":
+		elif ParaType(el,"TEC_Tipologia finitura",doc) == "•••COMPILARE•••":
 			para_typ_check.add("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id),Para(type_el,"TEC_Tipologia finitura").Definition.Name))
 		elif ParaType(el,"TEC_Tipologia finitura",doc) == "ND":
 			para_ND_trasforma.append(Para(type_el,"TEC_Tipologia finitura"))
@@ -1545,7 +1553,7 @@ for el in clean_el:
 		if Para(type_el,"TEC_Tipologia giunti di superficie").HasValue == False or ParaType(el,"TEC_Tipologia giunti di superficie",doc) == "" or ParaType(el,"TEC_Tipologia giunti di superficie",doc) == None:
 			param_inst_compilare.append(Para(type_el,"TEC_Tipologia giunti di superficie"))
 			inst_compilare.append(type_el)
-		elif ParaType(el,"TEC_Tipologia giunti di superficie",doc) == "---COMPILARE---":
+		elif ParaType(el,"TEC_Tipologia giunti di superficie",doc) == "•••COMPILARE•••":
 			para_typ_check.add("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id),Para(type_el,"TEC_Tipologia giunti di superficie").Definition.Name))
 		elif ParaType(el,"TEC_Tipologia giunti di superficie",doc) == "ND":
 			para_ND_trasforma.append(Para(type_el,"TEC_Tipologia giunti di superficie"))
@@ -1562,7 +1570,7 @@ for el in clean_el:
 		if Para(type_el,"TEC_Tipologia installazione").HasValue == False or ParaType(el,"TEC_Tipologia installazione",doc) == "" or ParaType(el,"TEC_Tipologia installazione",doc) == None:
 			param_inst_compilare.append(Para(type_el,"TEC_Tipologia installazione"))
 			inst_compilare.append(type_el)
-		elif ParaType(el,"TEC_Tipologia installazione",doc) == "---COMPILARE---":
+		elif ParaType(el,"TEC_Tipologia installazione",doc) == "•••COMPILARE•••":
 			para_typ_check.add("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id),Para(type_el,"TEC_Tipologia installazione").Definition.Name))
 		elif ParaType(el,"TEC_Tipologia installazione",doc) == "ND":
 			para_ND_trasforma.append(Para(type_el,"TEC_Tipologia installazione"))
@@ -1579,7 +1587,7 @@ for el in clean_el:
 		if Para(type_el,"TEC_Tipologia pendini").HasValue == False or ParaType(el,"TEC_Tipologia pendini",doc) == "" or ParaType(el,"TEC_Tipologia pendini",doc) == None:
 			param_inst_compilare.append(Para(type_el,"TEC_Tipologia pendini"))
 			inst_compilare.append(type_el)
-		elif ParaType(el,"TEC_Tipologia pendini",doc) == "---COMPILARE---":
+		elif ParaType(el,"TEC_Tipologia pendini",doc) == "•••COMPILARE•••":
 			para_typ_check.add("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id),Para(type_el,"TEC_Tipologia pendini").Definition.Name))
 		elif ParaType(el,"TEC_Tipologia pendini",doc) == "ND":
 			para_ND_trasforma.append(Para(type_el,"TEC_Tipologia pendini"))
@@ -1596,7 +1604,7 @@ for el in clean_el:
 		if Para(type_el,"TEC_Tipologia profilo").HasValue == False or ParaType(el,"TEC_Tipologia profilo",doc) == "" or ParaType(el,"TEC_Tipologia profilo",doc) == None:
 			param_inst_compilare.append(Para(type_el,"TEC_Tipologia profilo"))
 			inst_compilare.append(type_el)
-		elif ParaType(el,"TEC_Tipologia profilo",doc) == "---COMPILARE---":
+		elif ParaType(el,"TEC_Tipologia profilo",doc) == "•••COMPILARE•••":
 			para_typ_check.add("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id),Para(type_el,"TEC_Tipologia profilo").Definition.Name))
 		elif ParaType(el,"TEC_Tipologia profilo",doc) == "ND":
 			para_ND_trasforma.append(Para(type_el,"TEC_Tipologia profilo"))
@@ -1613,7 +1621,7 @@ for el in clean_el:
 		if Para(type_el,"TEC_Materiale").HasValue == False or ParaType(el,"TEC_Materiale",doc) == "" or ParaType(el,"TEC_Materiale",doc) == None:
 			param_inst_compilare.append(Para(type_el,"TEC_Materiale"))
 			inst_compilare.append(type_el)
-		elif ParaType(el,"TEC_Materiale",doc) == "---COMPILARE---":
+		elif ParaType(el,"TEC_Materiale",doc) == "•••COMPILARE•••":
 			para_typ_check.add("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id),Para(type_el,"TEC_Materiale").Definition.Name))
 		elif ParaType(el,"TEC_Materiale",doc) == "ND":
 			para_ND_trasforma.append(Para(type_el,"TEC_Materiale"))
@@ -1632,7 +1640,7 @@ for el in clean_el:
 		if Para(el,"TEC_Utilizzo").HasValue == False or ParaInst(el,"TEC_Utilizzo") == "" or ParaInst(el,"TEC_Utilizzo") == None:
 			param_inst_compilare.append(Para(el,"TEC_Utilizzo"))
 			inst_compilare.append(el)
-		elif ParaInst(el,"TEC_Utilizzo") == "---COMPILARE---":
+		elif ParaInst(el,"TEC_Utilizzo") == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"TEC_Utilizzo").Definition.Name))
 		elif ParaInst(el,"TEC_Utilizzo") == "ND":
 			para_ND_trasforma.append(Para(el,"TEC_Utilizzo"))
@@ -1649,7 +1657,7 @@ for el in clean_el:
 		if el.LookupParameter(parastrano.Name).HasValue == False or el.LookupParameter(parastrano.Name).AsString() == "" or el.LookupParameter(parastrano.Name).AsString() == None:
 			param_inst_compilare.append(el.LookupParameter(parastrano.Name))
 			inst_compilare.append(el)
-		elif el.LookupParameter(parastrano.Name).AsString() == "---COMPILARE---":
+		elif el.LookupParameter(parastrano.Name).AsString() == "•••COMPILARE•••":
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),el.LookupParameter(parastrano.Name).Definition.Name))
 		elif el.LookupParameter(parastrano.Name).AsString() == "ND":
 			para_ND_trasforma.append(el.LookupParameter(parastrano.Name))
@@ -1664,11 +1672,12 @@ num_geo_mq = ConvUnitsFqMq(999)
 
 
 if value_form == "P1 - Compilazione Di Default":
-	t_Compilare = Transaction(doc,"Inserimento ---COMPILARE---")
+	t_Compilare = Transaction(doc,"Inserimento •••COMPILARE•••")
 	t_Compilare.Start()
-
+	testox = "•••COMPILARE•••"
 	for e,p in zip(inst_compilare,param_inst_compilare):
-		p.Set("---COMPILARE---")
+		p.Set(testox)
+
 
 	for np in param_inst_999:
 		if "Area" in np.Definition.Name or "Dimensione Maglia" in np.Definition.Name:
@@ -1748,50 +1757,3 @@ if value_form == "P3 - Trasforma ND e 111":
 		for paranu in para_111_trasforma:
 			paranu.Set(0)
 	t_Transforma.Commit()
-
-
-"""
-names = []
-groups = []
-pgroup = []
-ptype = []
-isvis = []
-elements = []
-guids = []
-isinst = []
-bics = []
-categories = []
-iterator = doc.ParameterBindings.ForwardIterator()
-
-while iterator.MoveNext():
-	groups.append(iterator.Key.VariesAcrossGroups)
-	names.append(iterator.Key.Name)
-	pgroup.append(iterator.Key.ParameterGroup)
-	try:
-		ptype.append(iterator.Key.ParameterType)
-	except:
-		pass
-	isvis.append(iterator.Key.Visible)
-	elem = doc.GetElement(iterator.Key.Id)
-	elements.append(elem)
-	if elem.GetType().ToString() == 'Autodesk.Revit.DB.SharedParameterElement':
-		guids.append(elem.GuidValue)
-	else:
-		guids.append(None)
-	if iterator.Current.GetType().ToString() == 'Autodesk.Revit.DB.InstanceBinding':
-		isinst.append("Instance")
-	else:
-		isinst.append("Type")
-		
-	thesecats = []
-	builtincats = []
-	for cat in iterator.Current.Categories:
-		try:
-			thesecats.append(cat.Name)
-		except:
-			thesecats.append(None)
-		builtincats.append(System.Enum.ToObject(BuiltInCategory, cat.Id.IntegerValue))
-	categories.append(thesecats)
-
-numbers = range(0,len(names),1)
-"""
