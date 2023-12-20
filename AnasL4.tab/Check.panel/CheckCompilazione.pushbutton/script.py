@@ -5,13 +5,7 @@
 __title__= 'Compilazione\nAnas L-4'
 __author__= 'Luca Rosati'
 
-
-
-import sys
-import os
 import clr
-import re
-import System
 
 clr.AddReference('RevitAPI')
 from Autodesk.Revit.DB import *
@@ -25,19 +19,10 @@ clr.ImportExtensions(Revit.GeometryConversion)
 clr.ImportExtensions(Revit.Elements)
 
 clr.AddReference('RevitServices')
-import RevitServices
-from RevitServices.Persistence import DocumentManager
-from RevitServices.Transactions import TransactionManager
 from System.Collections.Generic import *
 
-from collections import defaultdict
-from pyrevit import HOST_APP
-from pyrevit.framework import List
-from pyrevit import coreutils
 from pyrevit import forms
 from pyrevit import script
-from pyrevit.compat import IRONPY279
-from pyrevit.compat import safe_strtype
 from pyrevit.framework import Emojis
 
 doc =__revit__.ActiveUIDocument.Document
@@ -1738,7 +1723,7 @@ if value_form == "P2 - Verifica Compilare - 999":
 		for n in para_num_eccesso_clean:
 			output.print_md(	"{} - {} --> :heavy_multiplication_x:".format(output.linkify(n.Element.Id),n.Definition.Name))
 	else:
-		output.print_md(	'# - NESSUN PARAMETRI NUMERO IN ECCESSO :white_heavy_check_mark:')
+		output.print_md(	'# - NESSUN PARAMETRO NUMERO IN ECCESSO :white_heavy_check_mark:')
 
 
 
