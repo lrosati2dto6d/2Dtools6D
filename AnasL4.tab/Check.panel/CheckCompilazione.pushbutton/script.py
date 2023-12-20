@@ -623,7 +623,7 @@ for el in clean_el:
 			inst_999.append(el)
 		elif ParaInst(el,"GEO_Area") == ConvUnitsFqMq(999):
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"GEO_Area").Definition.Name))
-		elif Para(el,"GEO_Area").AsValueString() == "111 mÂ²":
+		elif Para(el,"GEO_Area").AsValueString() == "111 m²":
 			para_111_trasforma.append(Para(el,"GEO_Area"))
 	else:
 		try:
@@ -819,7 +819,7 @@ for el in clean_el:
 			inst_999.append(el)
 		elif ParaInst(el,"GEO_Pendenza") == 57.289961630754:
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"GEO_Pendenza").Definition.Name))
-		elif Para(el,"GEO_Pendenza").AsValueString() == "11.000Â°":
+		elif Para(el,"GEO_Pendenza").AsValueString() == "11.000°":
 			para_111_trasforma.append(Para(el,"GEO_Pendenza"))
 
 	else:
@@ -835,7 +835,7 @@ for el in clean_el:
 			inst_999.append(el)
 		elif ParaInst(el,"GEO_Pendenza sponde") == 57.289961630754:
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"GEO_Pendenza sponde").Definition.Name))
-		elif Para(el,"GEO_Pendenza sponde").AsValueString() == "11.000Â°":
+		elif Para(el,"GEO_Pendenza sponde").AsValueString() == "11.000°":
 			para_111_trasforma.append(Para(el,"GEO_Pendenza sponde"))
 
 	else:
@@ -1016,7 +1016,7 @@ for el in clean_el:
 			inst_999.append(el)
 		elif ParaInst(el,"GEO_Volume") == 35279.3520547671:
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"GEO_Volume").Definition.Name))
-		elif Para(el,"GEO_Volume").AsValueString() == "111 mÂ³":
+		elif Para(el,"GEO_Volume").AsValueString() == "111 m³":
 			para_111_trasforma.append(Para(el,"GEO_Volume"))
 
 	else:
@@ -1322,7 +1322,7 @@ for el in clean_el:
 			inst_999.append(el)
 		elif ParaInst(el,"TEC_Dimensione maglia") == ConvUnitsFqMq(999):
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"TEC_Dimensione maglia").Definition.Name))
-		elif Para(el,"TEC_Dimensione maglia").AsValueString() == "111 mÂ²":
+		elif Para(el,"TEC_Dimensione maglia").AsValueString() == "111 m²":
 			para_111_trasforma.append(Para(el,"TEC_Dimensione maglia"))
 	else:
 		try:
@@ -1337,7 +1337,7 @@ for el in clean_el:
 			inst_999.append(el)
 		elif ParaInst(el,"TEC_Incidenza armatura") == 28.288529745408:
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"TEC_Incidenza armatura").Definition.Name))
-		elif Para(el,"TEC_Incidenza armatura").AsValueString() == "111.00 kg/mÂ³":
+		elif Para(el,"TEC_Incidenza armatura").AsValueString() == "111.00 kg/m³":
 			para_111_trasforma.append(Para(el,"TEC_Incidenza armatura"))
 	else:
 		try:
