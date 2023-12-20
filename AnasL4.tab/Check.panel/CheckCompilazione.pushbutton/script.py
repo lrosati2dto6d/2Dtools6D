@@ -1407,8 +1407,6 @@ for el in clean_el:
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"TEC_Posizione").Definition.Name))
 		elif ParaInst(el,"TEC_Posizione") == "ND":
 			para_ND_trasforma.append(Para(el,"TEC_Posizione"))
-			param_inst_compilare.append(Para(el,"TEC_Posizione"))
-			inst_compilare.append(el)
 	else:
 		try:
 			para_eccesso.append(Para(el,"TEC_Posizione"))
@@ -1426,8 +1424,6 @@ for el in clean_el:
 			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"TEC_Sella Gerber").Definition.Name))
 		elif ParaInst(el,"TEC_Sella Gerber") == "ND":
 			para_ND_trasforma.append(Para(el,"TEC_Sella Gerber"))
-			param_inst_compilare.append(Para(el,"TEC_Sella Gerber"))
-			inst_compilare.append(el)
 	else:
 		try:
 			para_eccesso.append(Para(type_el,"TEC_Sella Gerber"))
