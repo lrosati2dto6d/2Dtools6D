@@ -377,7 +377,7 @@ work_ele = []
 
 for elt in doc_el_tot:
 	try:
-		if elt.Category.CategoryType == CategoryType.Model and "dwg"  not in elt.Category.Name and elt.Category.SubCategories.Size > 0 or elt.Category.CanAddSubcategory:
+		if elt.Category.CategoryType == CategoryType.Model and "dwg" not in elt.Category.Name and elt.Category.SubCategories.Size > 0 or elt.Category.CanAddSubcategory:
 			work_ele.append(elt)
 	except:
 		pass
@@ -397,17 +397,21 @@ for we in work_ele:
 	except:
 		type_we_name = we.Name
 	
-	if we.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() == "00_RIL" and we.Category.Name != "Nuvole di punti":
+	if we.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() == "00_RIL"and we.Category.Name != "Nuvole di punti" and "iferiment" not in we.Category.Name:
 		numfe += 1
 		worksetril_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_we,type_we_name,opera_we,parteopera_we,elemento_we,output.linkify(we_id)))
 
+	if we.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() == "01_Griglie e livelli" and we.Category.Name != "Nuvole di punti" and "iferiment" not in we.Category.Name:
+			numfe += 1
+			worksetril_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_we,type_we_name,opera_we,parteopera_we,elemento_we,output.linkify(we_id)))
+
 if len(worksetril_errata) != 0:
-	output.print_md(	'# :red_circle: WARNING 09_ASSOCIAZIONE WORKSET RILIEVO')
-	output.print_md(	'##I seguenti Elementi hanno Associato erronemanete il workset Rilievo')
+	output.print_md(	'# :red_circle: WARNING 09_ASSOCIAZIONE WORKSET RILIEVO/GRIGLIE E LIVELLI')
+	output.print_md(	'##I seguenti Elementi hanno Associato erronemanete il workset Rilievo/Griglie e Livelli')
 	for i in worksetril_errata:
 		output.print_md(	'###{}'.format(i))
 else:
-	result_awril = "WARNING 09_ASSOCIAZIONE WORKSET RILIEVO --> :white_heavy_check_mark:"
+	result_awril = "WARNING 09_ASSOCIAZIONE WORKSET RILIEVO/GRIGLIE E LIVELLI --> :white_heavy_check_mark:"
 
 if len(worksetril_errata) != 0:
 	script.exit()
