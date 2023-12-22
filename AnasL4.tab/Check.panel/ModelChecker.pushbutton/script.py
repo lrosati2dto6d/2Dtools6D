@@ -4,7 +4,6 @@ __title__= 'Model Checker\nAnas L-4'
 __author__= 'Luca Rosati'
 
 import clr
-import System
 
 clr.AddReference('RevitAPI')
 from Autodesk.Revit.DB import *
@@ -18,18 +17,10 @@ clr.ImportExtensions(Revit.GeometryConversion)
 clr.ImportExtensions(Revit.Elements)
 
 clr.AddReference('RevitServices')
-import RevitServices
-from RevitServices.Persistence import DocumentManager
-from RevitServices.Transactions import TransactionManager
 from System.Collections.Generic import *
 
-from collections import defaultdict
-from pyrevit import HOST_APP
-from pyrevit.framework import List
-from pyrevit import coreutils
 from pyrevit import forms
 from pyrevit import script
-from pyrevit.framework import Emojis
 
 doc =__revit__.ActiveUIDocument.Document
 uidoc =__revit__.ActiveUIDocument
@@ -376,6 +367,50 @@ for c in c_uni:
 if len(cat_false) != 0:
 	forms.alert('WARNING 08_CATEGORIE\n\nLe seguenti categorie non sono presenti nel modello dati,\n\n{}\n\nEliminare gli elementi prima di procedere'.format(cat_false), exitscript=True)
 
+#WARNING_09-----------------ELEMENTI RILIEVO
+
+worksetril_errata = []
+
+doc_el_tot = FilteredElementCollector(doc).WhereElementIsNotElementType().ToElements()
+
+work_ele = []
+
+for elt in doc_el_tot:
+	try:
+		if elt.Category.CategoryType == CategoryType.Model and "dwg"  not in elt.Category.Name and elt.Category.SubCategories.Size > 0 or elt.Category.CanAddSubcategory:
+			work_ele.append(elt)
+	except:
+		pass
+
+numfe = 0
+
+for we in work_ele:
+	type_we = doc.GetElement(el.GetTypeId())
+	category_we = we.Category.Name
+	opera_we = type_we.get_Parameter(BuiltInParameter.ALL_MODEL_MODEL).AsValueString()
+	parteopera_we = type_we.get_Parameter(BuiltInParameter.ALL_MODEL_TYPE_COMMENTS).AsValueString()
+	elemento_we = type_we.get_Parameter(BuiltInParameter.ALL_MODEL_DESCRIPTION).AsValueString()
+	we_id = we.Id
+	try:
+		symbol = we.Symbol
+		type_we_name = type_we.FamilyName
+	except:
+		type_we_name = we.Name
+	
+	if we.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() == "00_RIL" and we.Category.Name != "Nuvole di punti":
+		numfe += 1
+		worksetril_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_we,type_we_name,opera_we,parteopera_we,elemento_we,output.linkify(we_id)))
+
+if len(worksetril_errata) != 0:
+	output.print_md(	'# :red_circle: WARNING 09_ASSOCIAZIONE WORKSET RILIEVO')
+	output.print_md(	'##I seguenti Elementi hanno Associato erronemanete il workset Rilievo')
+	for i in worksetril_errata:
+		output.print_md(	'###{}'.format(i))
+else:
+	result_awril = "WARNING 09_ASSOCIAZIONE WORKSET RILIEVO --> :white_heavy_check_mark:"
+
+if len(worksetril_errata) != 0:
+	script.exit()
 
 #-------------------------------------LIVELLI
 
@@ -403,6 +438,8 @@ for l in level_ns:
     else:
         level_check_false.append(l)
 
+
+
 #VERIFICA_00-----------------NOME LIVELLI
 
 if len(level_check_false) == 0:
@@ -415,6 +452,7 @@ else:
 
 numfe = 0
 assfase_errata = []
+assLivello_errata = []
 
 for el in clean_el:
 	type_el = doc.GetElement(el.GetTypeId())
@@ -431,11 +469,15 @@ for el in clean_el:
 
 	if opera_el in ['IM','MO'] and el.get_Parameter(BuiltInParameter.PHASE_CREATED).AsValueString() != "Nuova costruzione":
 		numfe += 1
-		assfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(num,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
+		assfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
-	elif opera_el in ['PV','MA','SI'] and el.get_Parameter(BuiltInParameter.PHASE_CREATED).AsValueString() != "Esistente":
+	if opera_el in ['PV','MA','SI'] and el.get_Parameter(BuiltInParameter.PHASE_CREATED).AsValueString() != "Esistente":
 		numfe += 1
 		assfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
+	
+	if opera_el in ["MO"] and parteopera_el in ["BE","CP","EA","ES","MN","TR"] and elemento_el in ["BRE","CLI","TSS","IFS","TEC","TCM","ACC","SCA","VCM","IDO","SEM","SUM","TIG"] and el.get_Parameter(BuiltInParameter.SCHEDULE_LEVEL_PARAM).AsValueString() != "LIV_SLM_000":
+		numfe += 1
+		assLivello_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
 
 #VERIFICA_01-----------------ASSOCIAZIONE FASE
@@ -488,7 +530,6 @@ for el in clean_el:
 	elif elemento_el in ['AAP','AMS','BAG','BPT','CAP','CAS','CNT','COR','CUN','DIA','GIU','ISA','LOR','MAN','MDA','MFR','OPO','PAR','PEN','PUL','PUN','RIS','SAR','SBL','SEL','SGE','SOL','SSB','STL','TAN','TIM','TRA','TRV','VEL'] and el.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() != "04_STR":
 		numfe += 1
 		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
-
 
 
 #VERIFICA_02-----------------ASSOCIAZIONE WORKSET
@@ -632,6 +673,20 @@ else:
 if len(host_errato) != 0:
 	script.exit()
 
+
+#VERIFICA_06-----------------ASSOCIAZIONE LIVELLO
+
+if len(assLivello_errata) != 0:
+	output.print_md(	'# :red_circle: VERIFICA 06_ASSOCIAZIONE LIVELLO SENSORI')
+	output.print_md(	'## I seguenti Elementi hanno il livello errato')
+	for h in assLivello_errata:
+		output.print_md(	'###{}'.format(h))
+
+else:
+	result_aliv = "VERIFICA 06_ASSOCIAZIONE LIVELLO SENSORI --> :white_heavy_check_mark:"
+
+if len(assLivello_errata) != 0:
+	script.exit()
 
 #-------------------------------------CLUSTER INFORMATIVI
 
@@ -919,9 +974,9 @@ else:
 
 output.resize(1200,800)
 
-warn_result = [proj_info_result,codint_result,sitename_result,result_ph,result_ws,exp_view_result,exp_viewed_result,cat_result]
+warn_result = [proj_info_result,codint_result,sitename_result,result_ph,result_ws,exp_view_result,exp_viewed_result,cat_result,result_awril]
 
-veri_result = [result_level,result_afase,result_workset,result_class,result_nomen,result_host]
+veri_result = [result_level,result_afase,result_workset,result_class,result_nomen,result_host,result_aliv]
 
 check_result = ["CHECK 01_CLUSTER IDENTIFICATIVO OGGETTO --> :white_heavy_check_mark:","CHECK 02_CLUSTER INFORMAZIONI 6D --> :white_heavy_check_mark:","CHECK 03_CLUSTER ANAGRAFICA DI BASE --> :white_heavy_check_mark:","CHECK 04_CLUSTER LOCALIZZAZIONE --> :white_heavy_check_mark:","CHECK 05_CLUSTER GEOMETRICO --> :white_heavy_check_mark:","CHECK 06_CLUSTER TECNICO --> :white_heavy_check_mark:","CHECK 07_ID ELEMENTO --> :white_heavy_check_mark:"]
 
