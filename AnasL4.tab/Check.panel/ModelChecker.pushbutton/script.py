@@ -385,7 +385,7 @@ for elt in doc_el_tot:
 numfe = 0
 
 for we in work_ele:
-	type_we = doc.GetElement(el.GetTypeId())
+	type_we = doc.GetElement(we.GetTypeId())
 	category_we = we.Category.Name
 	opera_we = type_we.get_Parameter(BuiltInParameter.ALL_MODEL_MODEL).AsValueString()
 	parteopera_we = type_we.get_Parameter(BuiltInParameter.ALL_MODEL_TYPE_COMMENTS).AsValueString()
