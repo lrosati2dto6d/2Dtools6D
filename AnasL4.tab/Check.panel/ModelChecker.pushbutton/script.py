@@ -377,7 +377,7 @@ work_ele = []
 
 for elt in doc_el_tot:
 	try:
-		if elt.Category.CategoryType == CategoryType.Model and "dwg" not in elt.Category.Name and elt.Category.SubCategories.Size > 0 or elt.Category.CanAddSubcategory:
+		if elt.Category.CategoryType == CategoryType.Model and "dwg" not in elt.Category.Name and elt.Category.SubCategories.Size > 0 and elt.Category.CanAddSubcategory:
 			work_ele.append(elt)
 	except:
 		pass
