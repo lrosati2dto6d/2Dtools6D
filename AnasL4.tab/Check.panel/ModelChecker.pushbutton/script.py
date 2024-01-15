@@ -377,7 +377,7 @@ work_ele = []
 
 for elt in doc_el_tot:
 	try:
-		if elt.Category.CategoryType == CategoryType.Model and "dwg" not in elt.Category.Name and elt.Category.SubCategories.Size > 0 and elt.Category.CanAddSubcategory:
+		if elt.Category.CategoryType == CategoryType.Model and "dwg" not in elt.Category.Name and elt.Category.SubCategories.Size > 0 and elt.Category.CanAddSubcategory and "Detail" not in el.Category.Name and "Line" not in el.Category.Name:
 			work_ele.append(elt)
 	except:
 		pass
@@ -385,25 +385,28 @@ for elt in doc_el_tot:
 numfe = 0
 
 for we in work_ele:
-	type_we = doc.GetElement(we.GetTypeId())
-	category_we = we.Category.Name
-	opera_we = type_we.get_Parameter(BuiltInParameter.ALL_MODEL_MODEL).AsValueString()
-	parteopera_we = type_we.get_Parameter(BuiltInParameter.ALL_MODEL_TYPE_COMMENTS).AsValueString()
-	elemento_we = type_we.get_Parameter(BuiltInParameter.ALL_MODEL_DESCRIPTION).AsValueString()
-	we_id = we.Id
 	try:
-		symbol = we.Symbol
-		type_we_name = type_we.FamilyName
-	except:
-		type_we_name = we.Name
-	
-	if we.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() == "00_RIL"and we.Category.Name != "Nuvole di punti" and "iferiment" not in we.Category.Name:
-		numfe += 1
-		worksetril_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_we,type_we_name,opera_we,parteopera_we,elemento_we,output.linkify(we_id)))
-
-	if we.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() == "01_Griglie e livelli" and we.Category.Name != "Nuvole di punti" and "iferiment" not in we.Category.Name:
+		type_we = doc.GetElement(we.GetTypeId())
+		category_we = we.Category.Name
+		opera_we = type_we.get_Parameter(BuiltInParameter.ALL_MODEL_MODEL).AsValueString()
+		parteopera_we = type_we.get_Parameter(BuiltInParameter.ALL_MODEL_TYPE_COMMENTS).AsValueString()
+		elemento_we = type_we.get_Parameter(BuiltInParameter.ALL_MODEL_DESCRIPTION).AsValueString()
+		we_id = we.Id
+		try:
+			symbol = we.Symbol
+			type_we_name = type_we.FamilyName
+		except:
+			type_we_name = we.Name
+		
+		if we.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() == "00_RIL"and we.Category.Name != "Nuvole di punti" and "iferiment" not in we.Category.Name:
 			numfe += 1
 			worksetril_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_we,type_we_name,opera_we,parteopera_we,elemento_we,output.linkify(we_id)))
+
+		if we.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() == "01_Griglie e livelli" and we.Category.Name != "Nuvole di punti" and "iferiment" not in we.Category.Name:
+				numfe += 1
+				worksetril_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_we,type_we_name,opera_we,parteopera_we,elemento_we,output.linkify(we_id)))
+	except:
+		pass
 
 if len(worksetril_errata) != 0:
 	output.print_md(	'# :red_circle: WARNING 09_ASSOCIAZIONE WORKSET RILIEVO/GRIGLIE E LIVELLI')
