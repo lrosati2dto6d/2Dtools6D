@@ -110,15 +110,20 @@ lnks = FilteredElementCollector(doc).OfClass(RevitLinkInstance)
 doclnk=[]
 doclnkn=[]
 
+doclnka=[]
+
 for i in lnks:
 	doclnk.append(i.GetLinkDocument())
 	try:
 		doclnkn.append(i.GetLinkDocument().Title)
+		doclnka.append(i.GetLinkDocument())
 	except:
 		pass
 
-if len(doclnk) == 0:
+
+if len(doclnka) == 0:
 	forms.alert('There are no links in the current document, please upload at least one', exitscript=True)
+
 
 str_linkname = forms.ask_for_one_item(
     doclnkn,
@@ -126,12 +131,20 @@ str_linkname = forms.ask_for_one_item(
     prompt='Select the Link where are the Rooms From List',
     title='ROOM LINK SELECTOR')
 
-ldoc = None
+
+
+a = []
 linkinst = []
-for i,j,ins in zip(doclnk,doclnkn,lnks):
-	if str_linkname == j:
-			ldoc=i
+
+ldoc=None
+
+if len(doclnkn) == 1:
+	for i,j,ins in zip(doclnka,doclnkn,lnks):
+		if str_linkname == j:
+			ldoc = i
 			linkinst=ins
+
+
 
 if ldoc == None:
 	script.exit()
@@ -206,22 +219,25 @@ for e in work_ele_point:
 #----------------------CHECK POINT IN ROOM
 
 roomsl = []
-pointsl=[]
-elem =[]
+pointsl = []
+elem = []
 
 for roomi in roomsinst:
 	pointslist =[]
 	elepoint = []
 	roomsl.append(roomi)
+
 	for pointi,ele in zip(work_point,work_ele_point):
 		if roomi.IsPointInRoom(pointi):
 			pointslist.append(pointi)
 			elepoint.append(ele)
+
 	pointsl.append(pointslist)
 	elem.append(elepoint)
 
 t_Compilare = Transaction(doc,"Inserimento Roominfo")
 t_Compilare.Start()
+
 
 final_value = []
 for r in roomsl:
@@ -231,8 +247,13 @@ for r in roomsl:
 			f_list.append(r.LookupParameter(re).AsValueString())
 	final_value.append('-'.join(f_list))
 
+
 for r,e,f in zip(roomsl,elem,final_value):
 	for el in e:
-		el.LookupParameter(para_text).Set(f)
+		try:
+			el.LookupParameter(para_text).Set(f)
+		except:
+			pass
+
 
 t_Compilare.Commit()
