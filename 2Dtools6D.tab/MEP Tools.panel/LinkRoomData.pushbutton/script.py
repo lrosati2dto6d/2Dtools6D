@@ -235,7 +235,7 @@ for roomi in roomsinst:
 	pointsl.append(pointslist)
 	elem.append(elepoint)
 
-t_Compilare = Transaction(doc,"Inserimento Roominfo")
+t_Compilare = Transaction(doc,"Inserimento Room info")
 t_Compilare.Start()
 
 
