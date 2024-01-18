@@ -235,7 +235,7 @@ for roomi in roomsinst:
 	pointsl.append(pointslist)
 	elem.append(elepoint)
 
-t_Compilare = Transaction(doc,"Inserimento Room info")
+t_Compilare = Transaction(doc,"Inserimento Room Link info")
 t_Compilare.Start()
 
 
@@ -247,13 +247,11 @@ for r in roomsl:
 			f_list.append(r.LookupParameter(re).AsValueString())
 	final_value.append('-'.join(f_list))
 
-
 for r,e,f in zip(roomsl,elem,final_value):
 	for el in e:
 		try:
 			el.LookupParameter(para_text).Set(f)
 		except:
 			pass
-
 
 t_Compilare.Commit()
