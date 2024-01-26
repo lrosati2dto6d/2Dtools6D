@@ -4,6 +4,7 @@ layout:
   - ImportSelectedFilters
   - ImportSelectedViewsTemplates
   - ImportSelectedMaterials
+  - Alignextensions
   - -----
   - SectionBox
   - Section
