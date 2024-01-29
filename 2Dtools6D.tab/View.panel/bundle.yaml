@@ -1,9 +1,7 @@
 layout:
   - FindLostCAD
   - FiltersOverrideTransfer
-  - ImportSelectedFilters
-  - ImportSelectedViewsTemplates
-  - ImportSelectedMaterials
+  - Import
   - Alignextensions
   - -----
   - SectionBox
