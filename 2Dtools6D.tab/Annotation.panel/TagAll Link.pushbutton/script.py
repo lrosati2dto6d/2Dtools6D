@@ -10,7 +10,6 @@ from Autodesk.Revit.DB import *
 import Autodesk
 
 clr.AddReference('RevitAPIUI')
-from Autodesk.Revit.UI.Selection import ObjectType
 
 
 clr.AddReference("RevitNodes")
@@ -18,8 +17,6 @@ import Revit
 clr.ImportExtensions(Revit.Elements)
 
 clr.AddReference("RevitServices")
-import RevitServices
-from RevitServices.Persistence import DocumentManager
 
 from System.Collections.Generic import *
 
@@ -31,10 +28,6 @@ def ConvUnitsFMM(number): #Feet to mm
 	output = number/304.8
 	return output
 
-from collections import defaultdict
-from pyrevit import HOST_APP
-from pyrevit.framework import List
-from pyrevit import coreutils
 from pyrevit import forms
 from pyrevit import script
 
@@ -62,6 +55,9 @@ str_linkname = forms.ask_for_one_item(
     default = doclnkn[0],
     prompt='Select a Link From List',
     title='Link Selector')
+
+if str_linkname == None:
+	forms.alert('Please select one Link', exitscript=True)
 
 ldoc =[] 
 linkinst = []
@@ -100,8 +96,6 @@ level_n = forms.ask_for_one_item(
 for lev in levels:
 	if lev.Name == level_n:
 		level = lev
-
-
 
 leid = level.Id
 
