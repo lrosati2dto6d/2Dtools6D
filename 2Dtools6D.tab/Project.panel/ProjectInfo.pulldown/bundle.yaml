@@ -3,3 +3,4 @@ layout:
   - FilterInfo
   - LinkWorksetInfo
   - LinkWorksetChange
+  - LinkPhaseInfo

@@ -126,6 +126,7 @@ t_work.Start()
 
 for l in linkinst:
 	l.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM ).Set(work_set.Id.IntegerValue)
+	doc.GetElement(l.GetTypeId()).get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM ).Set(work_set.Id.IntegerValue)
 
 t_work.Commit()
 
