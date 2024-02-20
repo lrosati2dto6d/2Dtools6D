@@ -689,6 +689,22 @@ for el in clean_el:
 		except:
 			pass
 
+#-----GEO_Larghezza interna (len__inst)
+	if opera_el in ["CV","IM","PV"] and parteopera_el in ["IC","IA","IE"] and elemento_el in ["CAS","SGE","TRA","PZE"]:
+		if Para(el,"GEO_Larghezza interna").HasValue == False or ParaInst(el,"GEO_Larghezza interna") == None:
+			param_inst_999.append(Para(el,"GEO_Larghezza interna"))
+			inst_999.append(el)
+		elif ParaInst(el,"GEO_Larghezza interna") == ConvUnitsFM(999):
+			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"GEO_Larghezza interna").Definition.Name))
+		elif ParaInst(el,"GEO_Larghezza interna") == ConvUnitsFM(111):
+			para_111_trasforma.append(Para(el,"GEO_Larghezza interna"))
+
+	else:
+		try:
+			para_num_eccesso.append(Para(el,"GEO_Larghezza interna"))
+		except:
+			pass
+
 #-----GEO_Larghezza profilo (len__inst)
 #-----GEO_Lunghezza profilo (len__inst)
 	if opera_el in ["CV","MA","PV","SI"] and parteopera_el in ["AN","AC","FO","IC","IA","PD","PI","SP","BA","BS","BC"] and elemento_el in ["TRV","CEN","CNT","LOR","PUN","SBL","TAN","RIS","MON","UNI"]:

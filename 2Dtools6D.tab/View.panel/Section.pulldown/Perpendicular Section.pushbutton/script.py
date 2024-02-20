@@ -77,7 +77,7 @@ sect_views = []
 
 for v in views:
 	if v.ViewFamily.ToString() =="Section":
-		v_names.append(v.LookupParameter("Type Name").AsString())
+		v_names.append(v.get_Parameter(BuiltInParameter.ALL_MODEL_TYPE_NAME).AsString())
 		sect_views.append(v)
 
 value = forms.ask_for_one_item(
@@ -105,48 +105,50 @@ if unwr.Location.GetType()!= LocationCurve and unwr.Location.GetType()!= Locatio
 
 bb = unwr.get_BoundingBox(None)
 
-if unwr.Category.Name == "Walls": 
-	h = unwr.LookupParameter("Unconnected Height").AsDouble()
-elif unwr.Category.Name == "Railings":
-	t = doc.GetElement(unwr.LookupParameter("Type").AsElementId())
-	h = t.LookupParameter("Railing Height").AsDouble()
+if unwr.Category.Id.IntegerValue == -2000011: 
+	h = unwr.get_Parameter(BuiltInParameter.WALL_USER_HEIGHT_PARAM).AsDouble()
+elif unwr.Category.Id.IntegerValue == -2000126:
+	t = doc.GetElement(unwr.get_Parameter(BuiltInParameter.ELEM_TYPE_PARAM).AsElementId())
+	h = t.get_Parameter(BuiltInParameter.STAIRS_RAILING_HEIGHT).AsDouble()
+
+
+if unwr.Location == None:
+	point_l = unwr.GetTransform().Origin
+	dirh_el = unwr.HandOrientation
+	ndirh_el = dirh_el.Negate()
+	ro = point_l.Add(dirh_el)
+	so = point_l.Add(ndirh_el)
+	
+	line = Line.CreateBound(ro, so)
+	
+elif unwr.Category.Id.IntegerValue == -2000126:
+	path = unwr.GetPath()
+	if len(path)== 1:
+		line = path[0]
+	else:
+		npaths = range(0,len(path))
+		
+		valuep = forms.ask_for_one_item(
+		npaths,
+		default= npaths[0],
+		prompt='Select Railing Segment Number',
+		title='Number of Path Segments {}'.format(len(path)))
+		
+		line = path[valuep]
+
+elif unwr.Location.GetType()== LocationPoint:
+	point_l = unwr.Location.Point
+	dirh_el = unwr.HandOrientation
+	ndirh_el = dirh_el.Negate()
+	ro = point_l.Add(dirh_el)
+	so = point_l.Add(ndirh_el)
+	
+	line = Line.CreateBound(ro, so)
+else:
+	line = unwr.Location.Curve
 
 
 try:
-	if unwr.Location == None:
-		point_l = unwr.GetTransform().Origin
-		dirh_el = unwr.HandOrientation
-		ndirh_el = dirh_el.Negate()
-		ro = point_l.Add(dirh_el)
-		so = point_l.Add(ndirh_el)
-		
-		line = Line.CreateBound(ro, so)
-		
-	elif unwr.Category.Name == "Railings":
-		path = unwr.GetPath()
-		if len(path)== 1:
-			line = path[0]
-		else:
-			npaths = range(0,len(path))
-			
-			valuep = forms.ask_for_one_item(
-			npaths,
-			default= npaths[0],
-			prompt='Select Railing Segment Number',
-			title='Number of Path Segments {}'.format(len(path)))
-			
-			line = path[valuep]
-	elif unwr.Location.GetType()== LocationPoint:
-		point_l = unwr.Location.Point
-		dirh_el = unwr.HandOrientation
-		ndirh_el = dirh_el.Negate()
-		ro = point_l.Add(dirh_el)
-		so = point_l.Add(ndirh_el)
-		
-		line = Line.CreateBound(ro, so)
-	else:
-		line = unwr.Location.Curve
-
 	c_tra = line.ComputeDerivatives( 0.5, True )
 	origin = c_tra.Origin
 	viewdir = c_tra.BasisX.Normalize()
@@ -184,7 +186,7 @@ try:
 
 	if unwr.Location == None or unwr.Location.GetType()== LocationPoint:
 		max = XYZ(xs/2,he + xs/4,xs/2)
-	elif unwr.Category.Name in ["Walls","Railings"]:
+	elif unwr.Category.Id.IntegerValue in [-2000011,-2000126]:
 		max = XYZ(xs,xs+he,xs)
 	else:
 		max = XYZ(xs,xs,xs)
