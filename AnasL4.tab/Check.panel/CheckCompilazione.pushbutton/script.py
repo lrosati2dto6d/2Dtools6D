@@ -477,7 +477,22 @@ for el in clean_el:
 	except:
 		type_el_name = el.Name
 
-#-------------------------------------ANAGRAFICA DI BASE
+info = doc.ProjectInformation
+
+#-----IDP_Identificativo Progetto(txt_inst)
+
+infoparameters = ["IDP_AGR","IDP_CIG","IDP_Codice Intervento","IDP_Codice PPM","IDP_CUP","IDP_Denominazione","IDP_Fase progettuale","IDP_Nome opera","IDP_Struttura territoriale","RES_BIM Manager Anas","RES_Esecutore modellazione","RES_Impresa Esecutrice","RES_Progettista","RES_Responsabile Unico del Procedimento (RUP)","SIT_Codice Strada","SIT_Comune","SIT_Regione","SIT_Sistema di Coordinate"]
+
+for ip in infoparameters:
+	if Para(info,ip).HasValue == False or ParaInst(info,ip) == "" or ParaInst(info,ip) == None:
+		param_inst_compilare.append(Para(info,ip))
+		inst_compilare.append(info)
+	elif ParaInst(info,ip) == "•••COMPILARE•••":
+		para_inst_check.append("{} --> :heavy_multiplication_x:".format(Para(info,ip).Definition.Name))
+	elif ParaInst(info,ip) == "ND":
+		para_ND_trasforma.append(Para(info,ip))
+	else:
+		pass
 
 #-----ANA_Esecutore (txt_inst)
 
