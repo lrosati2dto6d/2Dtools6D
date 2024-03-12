@@ -464,19 +464,6 @@ para_ND_trasforma = []
 
 para_111_trasforma = []
 
-for el in clean_el:
-	type_el = doc.GetElement(el.GetTypeId())
-	category_el = el.Category.Name
-	opera_el = type_el.get_Parameter(BuiltInParameter.ALL_MODEL_MODEL).AsValueString()
-	parteopera_el = type_el.get_Parameter(BuiltInParameter.ALL_MODEL_TYPE_COMMENTS).AsValueString()
-	elemento_el = type_el.get_Parameter(BuiltInParameter.ALL_MODEL_DESCRIPTION).AsValueString()
-	el_id = el.Id
-	try:
-		symbol = el.Symbol
-		type_el_name = type_el.FamilyName
-	except:
-		type_el_name = el.Name
-
 info = doc.ProjectInformation
 
 #-----IDP_Identificativo Progetto(txt_inst)
@@ -493,6 +480,22 @@ for ip in infoparameters:
 		para_ND_trasforma.append(Para(info,ip))
 	else:
 		pass
+
+
+for el in clean_el:
+	type_el = doc.GetElement(el.GetTypeId())
+	category_el = el.Category.Name
+	opera_el = type_el.get_Parameter(BuiltInParameter.ALL_MODEL_MODEL).AsValueString()
+	parteopera_el = type_el.get_Parameter(BuiltInParameter.ALL_MODEL_TYPE_COMMENTS).AsValueString()
+	elemento_el = type_el.get_Parameter(BuiltInParameter.ALL_MODEL_DESCRIPTION).AsValueString()
+	el_id = el.Id
+	try:
+		symbol = el.Symbol
+		type_el_name = type_el.FamilyName
+	except:
+		type_el_name = el.Name
+
+
 
 #-----ANA_Esecutore (txt_inst)
 
