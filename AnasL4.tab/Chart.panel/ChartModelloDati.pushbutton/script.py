@@ -310,7 +310,7 @@ clean_el = []
 
 for el in doc_el:
 	try:
-		if el.Category.CategoryType == CategoryType.Model and "dwg"  not in el.Category.Name and el.Category.SubCategories.Size > 0 or el.Category.CanAddSubcategory:
+		if el.Category.CategoryType == CategoryType.Model and "dwg"  not in el.Category.Name and el.Category.SubCategories.Size > 0 and el.Category.CanAddSubcategory:
 			clean_el.append(el)
 	except:
 		pass

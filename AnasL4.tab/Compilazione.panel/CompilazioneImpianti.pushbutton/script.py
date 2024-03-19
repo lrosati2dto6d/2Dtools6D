@@ -31,6 +31,7 @@ from pyrevit import forms
 #from rpw.ui.forms import (FlexForm, Label, Separator, Button, CheckBox)
 
 
+
 def EstraiCodici(elemento):
 	name = elemento.LookupParameter("Famiglia").AsValueString()
 
@@ -58,6 +59,7 @@ t_AssegnazioneParametriTipo = Transaction(doc,"Assegnazione parametri impianti d
 
 ## ESTRAZIONE ELEMENTI SU WORKSET IMPIANTI
 
+
 CollectorWorkset = FilteredWorksetCollector(doc).ToWorksets()
 
 for w in CollectorWorkset:
@@ -66,7 +68,13 @@ for w in CollectorWorkset:
 
 filter = ElementWorksetFilter(wksetId)
 
-ImpiantiInView = FilteredElementCollector(doc,activeView.Id).WhereElementIsNotElementType().WherePasses(filter).ToElements()
+ImpiantiInViewo = FilteredElementCollector(doc,activeView.Id).WhereElementIsNotElementType().WherePasses(filter).ToElements()
+
+ImpiantiInView = []
+
+for imp in ImpiantiInViewo:
+	if imp.Category.Name != "Sistema di tubazioni":
+		ImpiantiInView.append(imp)
 
 
 ## LISTE DI RIFERIMENTO
@@ -77,6 +85,8 @@ TEC_Numero_seriale = "IFS,TEC,TCM,ACC,SCA,VCM,TSS,SEM,TIG,SUM,CLI,BRE,IDO"
 TEC_Posizione = "ACC,IFS,SCA,SEM,TEC,TCM,VCM,TIG,SUM"
 ElementiBMS = "AMS,AAP,BAG,BIN,CAS,CNT,COR,CUN,ISA,LOR,MUS,PPZ,PEN,PUL,PUN,RIS,SBL,SGE,SOL,SSB,SAR,SEL,TAN,TRV,TRA,VEL"
 IDE_ElementoDiAppartenenza = "SGE,ACC,IFS,SCA,SEM,TEC,TCM,VCM,TSS,TIG,SUM,CLI,BRE,IDO"
+TEC_Utilizzo = "CAE"
+
 
 ## ASSEGNAZIONE PARAMETRI DI ISTANZA
 
@@ -84,7 +94,7 @@ t_AssegnazioneParametriIstanza.Start()
 
 CodiceElemento = []
 for elemento in ImpiantiInView:
-	CodiceElemento.append(elemento.LookupParameter("Famiglia").AsValueString().split(".")[3][:3])
+	CodiceElemento.append(doc.GetElement(elemento.GetTypeId()).LookupParameter("Descrizione").AsValueString())
 
 for elemento,codice in zip(ImpiantiInView,CodiceElemento):
 
@@ -111,18 +121,11 @@ for elemento,codice in zip(ImpiantiInView,CodiceElemento):
 		host = elemento.Host
 		elemento.LookupParameter("IDE_Elemento di appartenenza").Set(doc.GetElement(host.GetTypeId()).LookupParameter("Descrizione").AsValueString()+"."+host.LookupParameter("IDE_Codice WBS").AsValueString().split(".")[-1])
 		
-"""		
-		try:
-			if host.LookupParameter("INF_Campata di appartenenza").AsString() == "":
-				elemento.LookupParameter("TEC_Posizione").Set(host.LookupParameter("IDE_Gruppo anagrafica").AsString()[6:12])
-			else:
-				elemento.LookupParameter("TEC_Posizione").Set("CAM." + host.LookupParameter("INF_Campata di appartenenza").AsString())
-		except:
-			elemento.LookupParameter("TEC_Posizione").Set(host.LookupParameter("IDE_Gruppo anagrafica").AsString()[6:12])
-"""
+	if codice == "CAE":
+		elemento.LookupParameter("TEC_Utilizzo").Set(elemento.LookupParameter("Tipo di sistema").AsValueString())
 
 t_AssegnazioneParametriIstanza.Commit()
-
+"""
 ## ASSEGNAZIONE PARAMETRI DI TIPO
 
 t_AssegnazioneParametriTipo.Start()
@@ -141,5 +144,5 @@ for elemento in ImpiantiInView:
 		doc.GetElement(elemento.GetTypeId()).LookupParameter("Contrassegno tipo").Set("")
 
 t_AssegnazioneParametriTipo.Commit()
-
+"""
 pyrevit.forms.toaster.send_toast("Compilazione effettuata", title = "Compilazione Default Impianti", icon = sys.path[0] + "/iconanera.png")
