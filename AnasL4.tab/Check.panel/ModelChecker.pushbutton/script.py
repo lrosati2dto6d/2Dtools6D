@@ -332,7 +332,7 @@ clean_el = []
 
 for el in doc_el:
 	try:
-		if el.Category.CategoryType == CategoryType.Model and "dwg"  not in el.Category.Name and el.Category.SubCategories.Size > 0 or el.Category.CanAddSubcategory:
+		if el.Category.CategoryType == CategoryType.Model and "dwg"  not in el.Category.Name and el.Category.SubCategories.Size > 0 and el.Category.CanAddSubcategory:
 			clean_el.append(el)
 	except:
 		pass
@@ -353,7 +353,7 @@ for ci in catname:
 
 n_el= "Numero Totale Elementi = {}".format(len(cnamelist))
 
-cat_true_name = ("Apparecchi elettrici", "Appoggi", "Armatura strutturale", "Attrezzatura elettrica", "Attrezzature speciali", "Cavi", "Collegamenti strutturali", "Fondazioni strutturali", "Modelli generici", "Muri", "Pavimenti", "Pilastri strutturali", "Piloni", "Ringhiere", "Telaio strutturale", "Tetti")
+cat_true_name = ("Apparecchi elettrici", "Appoggi", "Armatura strutturale", "Attrezzatura elettrica", "Attrezzature speciali", "Tubazioni flessibili", "Sistema di tubazioni", "Collegamenti strutturali", "Fondazioni strutturali", "Modelli generici", "Muri", "Pavimenti", "Pilastri strutturali", "Piloni", "Ringhiere", "Telaio strutturale", "Tetti")
 cat_false = []
 
 for c in c_uni:
@@ -377,7 +377,7 @@ work_ele = []
 
 for elt in doc_el_tot:
 	try:
-		if elt.Category.CategoryType == CategoryType.Model and "dwg" not in elt.Category.Name and elt.Category.SubCategories.Size > 0 and elt.Category.CanAddSubcategory and "Detail" not in el.Category.Name and "Line" not in el.Category.Name:
+		if elt.Category.CategoryType == CategoryType.Model and "dwg" not in elt.Category.Name and elt.Category.SubCategories.Size > 0 and elt.Category.CanAddSubcategory == True and "Detail" not in elt.Category.Name and "Line" not in elt.Category.Name:
 			work_ele.append(elt)
 	except:
 		pass
@@ -580,7 +580,7 @@ for el in clean_el:
 	if opera_el == 'PV' and category_el in ['Telaio strutturale', 'Modelli generici', 'Pilastri strutturali', 'Tetti', 'Appoggi', 'Fondazioni strutturali', 'Collegamenti strutturali', 'Piloni', 'Armatura strutturale', 'Pavimenti', 'Muri'] and parteopera_el in ['AC', 'AN', 'FO', 'FP', 'FS', 'GI', 'IC','IA', 'PD', 'PI', 'SP'] and elemento_el in ['AAP', 'AMS', 'BAG', 'BIN', 'CAP', 'CAS', 'CEN', 'CNT', 'COR', 'CUN', 'DIA', 'GIU', 'ISA', 'LOR', 'MAN', 'MDA', 'MFR', 'MPL', 'MUS', 'OPO', 'PAL', 'PAR', 'PEN', 'POZ', 'PPZ', 'PUL', 'PUN', 'PZF', 'RIS', 'SAR', 'SBL', 'SEL', 'SGE', 'SOL', 'SSG', 'STL', 'TAN', 'TIM', 'TRA', 'TRV', 'VEL']:
 		class_CVPV = True
 
-	elif opera_el == 'IM' and category_el in ['Apparecchi elettrici', 'Attrezzatura elettrica', 'Attrezzature speciali', 'Cavi', 'Collegamenti strutturali', 'Fondazioni strutturali']and parteopera_el =='IE'and elemento_el in ['ALI', 'BLI', 'CAE', 'CAV', 'CEE', 'CNP', 'COL', 'COM', 'DIE', 'IMT', 'INM', 'INS', 'MUL', 'PLI', 'PZE', 'QEB', 'QEM', 'REL', 'REP', 'RIF', 'SCS', 'SDE', 'TRS']:
+	elif opera_el == 'IM' and category_el in ['Apparecchi elettrici', 'Attrezzatura elettrica', 'Attrezzature speciali', 'Tubazioni flessibili', 'Collegamenti strutturali', 'Fondazioni strutturali']and parteopera_el =='IE'and elemento_el in ['ALI', 'BLI', 'CAE', 'CAV', 'CEE', 'CNP', 'COL', 'COM', 'DIE', 'IMT', 'INM', 'INS', 'MUL', 'PLI', 'PZE', 'QEB', 'QEM', 'REL', 'REP', 'RIF', 'SCS', 'SDE', 'TRS']:
 		class_IM = True
 
 	elif opera_el == 'MA' and category_el in ['Fondazioni strutturali', 'Modelli generici', 'Ringhiere', 'Telaio strutturale'] and parteopera_el =='BA' and elemento_el in ['BAN', 'BPT', 'COR', 'MON']:
@@ -811,7 +811,7 @@ for el in clean_el:
 		if Para(el,"GEO_Area").HasValue == False or ParaInst(el,"GEO_Area") == 0:
 			area_errato.append("{} - {} - {} - {}_ GEO_Area --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
-	if elemento_el in ['ALI','BAG','BLI','CAB','CNP','CAS','CAE','CAV','COL','COM','COR','DIA','DIE','IMT','INS','INM','MPL','MAN','MDA','MFR','PPZ','PAL','PAR','PZF','PLI','POZ','PUL','REL','REP','RIF','SCS','SDE','SGE','SOL','SSB','SAR','SEL','TRS','TRV','TRA']:
+	if elemento_el in ['ALI','BAG','BLI','CAB','CNP','CAS','CAV','COL','COM','COR','DIA','DIE','IMT','INS','INM','MPL','MAN','MDA','MFR','PPZ','PAL','PAR','PZF','PLI','POZ','PUL','REL','REP','RIF','SCS','SDE','SGE','SOL','SSB','SAR','SEL','TRS','TRV','TRA']:
 		if Para(el,"GEO_Volume").HasValue == False or ParaInst(el,"GEO_Volume") == 0:
 			volume_errato.append("{} - {} - {} - {}_ GEO_Volume --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
