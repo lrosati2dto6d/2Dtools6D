@@ -5,3 +5,4 @@ layout:
   - LinkWorksetInfo
   - LinkWorksetChange
   - LinkPhaseInfo
+  - BasePointLink
