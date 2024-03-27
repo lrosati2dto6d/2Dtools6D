@@ -56,9 +56,6 @@ def tolist(input):
     result = input if isinstance(input, list) else [input]
     return result
 
-def uwlist(input):
-    result = input if isinstance(input, list) else [input]
-    return UnwrapElement(input)
 
 all_pipeinsulation = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_PipeInsulations).WhereElementIsNotElementType().ToElements() 
 
@@ -72,15 +69,22 @@ for item in faminsts:
 par_list = [tolist(res)]
 
 par_values=[]
-for host in host_list:
+ins_no = []
+ins_si = []
+host_no = []
+host_si = []
+
+for host,ins in zip(host_list,faminsts):
 	for i in par_list:
 		try:
 			par_values.append([host.LookupParameter(z).AsString() for y in par_list for z in y])
+			ins_si.append(ins)
+			host_si.append(host)
 		except:
-			forms.alert('Check if the categories: Pipes, Pipes Accessories, Pipes Fittings, Pipes Insulation have the same Parameters', exitscript=True)
+			ins_no.append(ins)
 
 host_par=[]
-for item in faminsts:
+for item in host_si:
 	for i in par_list:
 		host_par.append([item.GetParameters(x) for x in i])
 
@@ -117,11 +121,13 @@ else:
 
 
 output = script.get_output()
-output.set_height(150)
+output.set_height(600)
 
-output.print_md('#\tSuccess Transfer for {} Insulation Pipe Elements'.format(len(faminsts)))
+output.print_md('#\tSuccess Transfer for {} Insulation Pipe Elements'.format(len(host_si)))
 output.print_md("##\tTransfer Completed for Parameters: {}" .format(res))
 
-
+output.print_md("##\tTransfer Not Completed for These Elements:")
+for i in ins_no:
+	print(i.Id)
 
 
