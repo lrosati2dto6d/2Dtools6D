@@ -32,7 +32,7 @@ from Autodesk.Revit.UI import *
 doc = __revit__.ActiveUIDocument.Document
 uidoc = __revit__.ActiveUIDocument
 
-elems_pipes = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_PipeCurves).WhereElementIsNotElementType().ToElements()
+elems_pipes = FilteredElementCollector(doc, doc.ActiveView.Id).OfCategory(BuiltInCategory.OST_PipeCurves).WhereElementIsNotElementType().ToElements()
 
 if len(elems_pipes)!= 0:
 	param_pipes = elems_pipes[0].GetOrderedParameters()
@@ -57,7 +57,7 @@ def tolist(input):
     return result
 
 
-all_pipeinsulation = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_PipeInsulations).WhereElementIsNotElementType().ToElements() 
+all_pipeinsulation = FilteredElementCollector(doc, doc.ActiveView.Id).OfCategory(BuiltInCategory.OST_PipeInsulations).WhereElementIsNotElementType().ToElements() 
 
 faminsts = all_pipeinsulation
 
@@ -66,68 +66,45 @@ host_list = []
 for item in faminsts:
 	host_list.append(doc.GetElement(item.HostElementId))
 
-par_list = [tolist(res)]
+par_list = res
 
-par_values=[]
-ins_no = []
-ins_si = []
-host_no = []
-host_si = []
+p_val_Pipe = []
+p_par_ins = []
+pipe_no = []
 
-for host,ins in zip(host_list,faminsts):
-	for i in par_list:
+for h,f in zip(host_list,faminsts):
+	for p in par_list:
 		try:
-			par_values.append([host.LookupParameter(z).AsString() for y in par_list for z in y])
-			ins_si.append(ins)
-			host_si.append(host)
+			p_val_Pipe.append(h.LookupParameter(p).AsValueString())
+			p_par_ins.append(f.LookupParameter(p))
 		except:
-			ins_no.append(ins)
-
-host_par=[]
-for item in host_si:
-	for i in par_list:
-		host_par.append([item.GetParameters(x) for x in i])
-
-def Flatten(list):
-	listout= []
-	for x in list:
-		for i in x:
-			listout.append(i)
-	return listout
-
-def Flattentot(list):
-	listout=[]
-	for x in list:
-		for i in x:
-			listout.append(i)
-	return listout
-	
-flat_host_par= Flatten(host_par)
-flat_values=Flattentot(par_values)
-
-para_set = []
+			try:
+				if h.Id not in pipe_no:
+					pipe_no.append(h.Id)
+			except:
+				pass
 
 t = Transaction(doc,"Set Parameters")
 
 t.Start()
-try:
-	for i,j in zip(flat_host_par,flat_values):
-		if j != None:
-			[y.Set(j) for y in i]
-except:
-	t.RollBack()
-else:
-	t.Commit()
 
+for i,j in zip(p_par_ins,p_val_Pipe):
+	try:
+		i.Set(j)
+	except:
+		pass
+
+t.Commit()
 
 output = script.get_output()
 output.set_height(600)
 
-output.print_md('#\tSuccess Transfer for {} Insulation Pipe Elements'.format(len(host_si)))
+output.print_md('#\tSuccess Transfer for Insulation Pipe Elements')
 output.print_md("##\tTransfer Completed for Parameters: {}" .format(res))
 
-output.print_md("##\tTransfer Not Completed for These Elements:")
-for i in ins_no:
-	print(i.Id)
 
+if len(pipe_no) != 0:
+	output.print_md("##\tTransfer Not Completed for These Elements:")
 
+	for i in pipe_no:
+		print(i)
