@@ -68,7 +68,7 @@ for w in CollectorWorkset:
 
 filter = ElementWorksetFilter(wksetId)
 
-ImpiantiInViewo = FilteredElementCollector(doc,activeView.Id).WhereElementIsNotElementType().WherePasses(filter).ToElements()
+ImpiantiInViewo = FilteredElementCollector(doc,activeView.Id).WhereElementIsNotElementType().WherePasses(filter).ToElements() # type: ignore
 
 ImpiantiInView = []
 
@@ -89,7 +89,7 @@ TEC_Utilizzo = "CAE"
 
 
 ## ASSEGNAZIONE PARAMETRI DI ISTANZA
-
+result = []
 t_AssegnazioneParametriIstanza.Start()
 
 CodiceElemento = []
@@ -112,15 +112,21 @@ for elemento,codice in zip(ImpiantiInView,CodiceElemento):
 	if codice in TEC_Posizione:
 		host = elemento.Host
 		
-		if EstraiNome(host).split(".")[1] != "XXX":
-			elemento.LookupParameter("TEC_Posizione").Set("CAM." + host.LookupParameter("INF_Campata di appartenenza").AsString())
-		else:
-			elemento.LookupParameter("TEC_Posizione").Set(host.LookupParameter("IDE_Gruppo anagrafica").AsString()[6:12])
+		try:
+			if EstraiNome(host).split(".")[1] != "XXX":
+				elemento.LookupParameter("TEC_Posizione").Set("CAM." + host.LookupParameter("INF_Campata di appartenenza").AsString())
+			else:
+				elemento.LookupParameter("TEC_Posizione").Set(host.LookupParameter("IDE_Gruppo anagrafica").AsString()[6:12])
+		except:
+			pass
 	
 	if codice in IDE_ElementoDiAppartenenza:
-		host = elemento.Host
-		elemento.LookupParameter("IDE_Elemento di appartenenza").Set(doc.GetElement(host.GetTypeId()).LookupParameter("Descrizione").AsValueString()+"."+host.LookupParameter("IDE_Codice WBS").AsValueString().split(".")[-1])
-		
+		try:
+			host = elemento.Host
+			elemento.LookupParameter("IDE_Elemento di appartenenza").Set(doc.GetElement(host.GetTypeId()).LookupParameter("Descrizione").AsValueString()+"."+host.LookupParameter("IDE_Codice WBS").AsValueString().split(".")[-1])
+		except:
+			result.append(elemento.Id)
+
 	if codice == "CAE":
 		elemento.LookupParameter("TEC_Utilizzo").Set(elemento.LookupParameter("Tipo di sistema").AsValueString())
 
@@ -146,3 +152,11 @@ for elemento in ImpiantiInView:
 t_AssegnazioneParametriTipo.Commit()
 """
 pyrevit.forms.toaster.send_toast("Compilazione effettuata", title = "Compilazione Default Impianti", icon = sys.path[0] + "/iconanera.png")
+
+output = script.get_output()
+output.set_height(600)
+
+if len(result) != 0:
+	output.print_md("##\tTransfer Not Completed for These Elements:")
+	for r in result:
+		print(r)
