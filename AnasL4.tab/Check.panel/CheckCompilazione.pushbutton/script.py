@@ -192,7 +192,7 @@ if ex_view_fg.get_Parameter(BuiltInParameter.VIEW_PHASE).AsValueString()=="Nuova
 else:
 	forms.alert('WARNING 02_VISTA EXP FEDERATO\n\nLa vista di esportazione FED non ha le fasi impostate correttamente\n\n Correggere la vista con le seguenti impostazioni\n\nFiltro delle fasi = Mostra completo\nFase = Nuova costruzione', exitscript=True)
 
-doc_el = FilteredElementCollector(doc,ex_view_fg.Id).WhereElementIsNotElementType().ToElements()
+doc_el = FilteredElementCollector(doc,ex_view_fg.Id).WhereElementIsNotElementType().ToElements() # type: ignore
 
 
 cat = []
@@ -203,7 +203,7 @@ clean_el = []
 
 for el in doc_el:
 	try:
-		if el.Category.CategoryType == CategoryType.Model and "dwg"  not in el.Category.Name and el.Category.SubCategories.Size > 0 and el.Category.CanAddSubcategory:
+		if el.Category.CategoryType == CategoryType.Model and "dwg"  not in el.Category.Name and el.Category.SubCategories.Size > 0 and el.Category.CanAddSubcategory: # type: ignore
 			clean_el.append(el)
 	except:
 		pass
@@ -940,7 +940,7 @@ for el in clean_el:
 			param_inst_999.append(Para(el,"GEO_Quota sensore"))
 			inst_999.append(el)
 		elif ParaInst(el,"GEO_Quota sensore") == ConvUnitsFM(999):
-			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"GEO_Quota inizio tratto").Definition.Name))
+			para_inst_check.append("{} - {} - {} - {}_ {} --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id),Para(el,"GEO_Quota sensore").Definition.Name))
 	else:
 		try:
 			para_num_eccesso.append(Para(el,"GEO_Quota sensore"))
