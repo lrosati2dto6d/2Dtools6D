@@ -71,10 +71,13 @@ filter = ElementWorksetFilter(wksetId)
 ImpiantiInViewo = FilteredElementCollector(doc,activeView.Id).WhereElementIsNotElementType().WherePasses(filter).ToElements() # type: ignore
 
 ImpiantiInView = []
-
+impno = []
 for imp in ImpiantiInViewo:
-	if imp.Category.Name != "Sistema di tubazioni":
-		ImpiantiInView.append(imp)
+	try:
+		if imp.Category.Name != "Sistema di tubazioni":
+			ImpiantiInView.append(imp)
+	except:
+		impno.append(imp)
 
 
 ## LISTE DI RIFERIMENTO
@@ -131,26 +134,7 @@ for elemento,codice in zip(ImpiantiInView,CodiceElemento):
 		elemento.LookupParameter("TEC_Utilizzo").Set(elemento.LookupParameter("Tipo di sistema").AsValueString())
 
 t_AssegnazioneParametriIstanza.Commit()
-"""
-## ASSEGNAZIONE PARAMETRI DI TIPO
 
-t_AssegnazioneParametriTipo.Start()
-
-for elemento in ImpiantiInView:
-
-	Codici = EstraiCodici(elemento)
-
-	doc.GetElement(elemento.GetTypeId()).LookupParameter("Modello").Set(Codici[0])
-	doc.GetElement(elemento.GetTypeId()).LookupParameter("Commenti sul tipo").Set(Codici[1])
-	doc.GetElement(elemento.GetTypeId()).LookupParameter("Descrizione").Set(Codici[2])
-
-	if "XXX" not in elemento.LookupParameter("Famiglia").AsValueString():
-		doc.GetElement(elemento.GetTypeId()).LookupParameter("Contrassegno tipo").Set(Codici[3])
-	else:
-		doc.GetElement(elemento.GetTypeId()).LookupParameter("Contrassegno tipo").Set("")
-
-t_AssegnazioneParametriTipo.Commit()
-"""
 pyrevit.forms.toaster.send_toast("Compilazione effettuata", title = "Compilazione Default Impianti", icon = sys.path[0] + "/iconanera.png")
 
 output = script.get_output()
@@ -160,3 +144,8 @@ if len(result) != 0:
 	output.print_md("##\tTransfer Not Completed for These Elements:")
 	for r in result:
 		print(r)
+
+if len(impno) != 0:
+	output.print_md("##\tQuesti Elementi sono Errati:")
+	for i in impno:
+		print("{}".format(i.Id))

@@ -57,7 +57,7 @@ def ConvUnitsFqMq(number): #Feetq to mq
 	return output
 
 def ParaBuilt (element,builtinparameter):
-	parameter = element.get_Parameter(BuiltInParameter.builtinparameter)
+	parameter = element.get_Parameter(BuiltInParameter.builtinparameter) # type: ignore
 	return parameter
 
 def Para(element,paraname):
@@ -65,13 +65,13 @@ def Para(element,paraname):
 	return parameter
 
 def ParaInst(element,paraname):
-	if element.LookupParameter(paraname).StorageType == StorageType.Double:
+	if element.LookupParameter(paraname).StorageType == StorageType.Double: # type: ignore
 		value = element.LookupParameter(paraname).AsDouble()
-	elif element.LookupParameter(paraname).StorageType == StorageType.ElementId:
+	elif element.LookupParameter(paraname).StorageType == StorageType.ElementId: # type: ignore
 		value = element.LookupParameter(paraname).AsElementId()
-	elif element.LookupParameter(paraname).StorageType == StorageType.String:
+	elif element.LookupParameter(paraname).StorageType == StorageType.String: # type: ignore
 		value = element.LookupParameter(paraname).AsString()
-	elif element.LookupParameter(paraname).StorageType == StorageType.Integer:
+	elif element.LookupParameter(paraname).StorageType == StorageType.Integer: # type: ignore
 		value = element.LookupParameter(paraname).AsInteger()
 	elif element.LookupParameter(paraname).StorageType == None:
 		value = "Da Compilare"
@@ -79,13 +79,13 @@ def ParaInst(element,paraname):
 
 def ParaType(element,paraname,document):
 	element_type = document.GetElement(element.GetTypeId())
-	if element_type.LookupParameter(paraname).StorageType == StorageType.Double:
+	if element_type.LookupParameter(paraname).StorageType == StorageType.Double: # type: ignore
 		value = element_type.LookupParameter(paraname).AsDouble()
-	elif element_type.LookupParameter(paraname).StorageType == StorageType.ElementId:
+	elif element_type.LookupParameter(paraname).StorageType == StorageType.ElementId: # type: ignore
 		value = element_type.LookupParameter(paraname).AsElementId()
-	elif element_type.LookupParameter(paraname).StorageType == StorageType.String:
+	elif element_type.LookupParameter(paraname).StorageType == StorageType.String: # type: ignore
 		value = element_type.LookupParameter(paraname).AsString()
-	elif element_type.LookupParameter(paraname).StorageType == StorageType.Integer:
+	elif element_type.LookupParameter(paraname).StorageType == StorageType.Integer: # type: ignore
 		value = element_type.LookupParameter(paraname).AsInteger()
 	elif element_type.LookupParameter(paraname).StorageType == None:
 		value = "Da Compilare"
@@ -135,14 +135,14 @@ file_info = [file_name,path_name,rapp_version,rapp_language,rapp_ifcclassfile,ra
 
 #------------------------------------- CHECK_EXP.VIEWS
 
-pvp = ParameterValueProvider(ElementId(634609))
-fng = FilterStringEquals()
+pvp = ParameterValueProvider(ElementId(634609)) # type: ignore
+fng = FilterStringEquals() # type: ignore
 ruleValue = 'D_ESPORTAZIONI_IFC'
-fRule = FilterStringRule(pvp,fng,ruleValue,True)
+fRule = FilterStringRule(pvp,fng,ruleValue,True) # type: ignore
 
-filter = ElementParameterFilter(fRule)
+filter = ElementParameterFilter(fRule) # type: ignore
 
-exp_views_coll = FilteredElementCollector(doc).OfClass(View3D).WherePasses(filter).WhereElementIsNotElementType().ToElements()
+exp_views_coll = FilteredElementCollector(doc).OfClass(View3D).WherePasses(filter).WhereElementIsNotElementType().ToElements() # type: ignore
 
 exp_views_ele = []
 
@@ -1688,7 +1688,7 @@ num_geo_mq = ConvUnitsFqMq(999)
 
 
 if value_form == "P1 - Compilazione Di Default":
-	t_Compilare = Transaction(doc,"Inserimento •••COMPILARE•••")
+	t_Compilare = Transaction(doc,"Inserimento •••COMPILARE•••") # type: ignore
 	t_Compilare.Start()
 	testox = "•••COMPILARE•••"
 	for e,p in zip(inst_compilare,param_inst_compilare):
@@ -1729,7 +1729,7 @@ for para in para_num_eccesso:
 
 if value_form == "P2 - Verifica Compilare - 999":
 
-	t_Rimuovere = Transaction(doc,"Rimuovere Eccesso")
+	t_Rimuovere = Transaction(doc,"Rimuovere Eccesso") # type: ignore
 	t_Rimuovere.Start()
 
 	for para in para_eccesso_clean:
@@ -1763,7 +1763,7 @@ if value_form == "P2 - Verifica Compilare - 999":
 
 if value_form == "P3 - Trasforma ND e 111":
 
-	t_Transforma = Transaction(doc,"Transforma")
+	t_Transforma = Transaction(doc,"Transforma") # type: ignore
 	t_Transforma.Start()
 	
 	if len(para_ND_trasforma)!=0:
