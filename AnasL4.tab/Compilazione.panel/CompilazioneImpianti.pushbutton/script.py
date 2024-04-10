@@ -148,4 +148,4 @@ if len(result) != 0:
 if len(impno) != 0:
 	output.print_md("##\tQuesti Elementi sono Errati:")
 	for i in impno:
-		print("{}".format(i.Id))
+		print("{}".format(output.linkify(i.Id)))
