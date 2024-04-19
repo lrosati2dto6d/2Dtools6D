@@ -24,14 +24,9 @@ clr.ImportExtensions(Revit.GeometryConversion)
 clr.ImportExtensions(Revit.Elements)
 
 clr.AddReference('RevitServices')
-import RevitServices
-from RevitServices.Persistence import DocumentManager
 
-from collections import defaultdict
-from pyrevit import revit, DB
-from pyrevit import HOST_APP
+from pyrevit import DB
 from pyrevit.framework import List
-from pyrevit import coreutils
 from pyrevit import forms
 from pyrevit import script
 

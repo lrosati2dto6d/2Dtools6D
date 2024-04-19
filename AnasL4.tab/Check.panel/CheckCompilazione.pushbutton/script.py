@@ -14,7 +14,6 @@ clr.AddReference('RevitAPIUI')
 from Autodesk.Revit.UI.Selection import *
 
 clr.AddReference('RevitNodes')
-import Revit
 clr.ImportExtensions(Revit.GeometryConversion)
 clr.ImportExtensions(Revit.Elements)
 
@@ -23,7 +22,6 @@ from System.Collections.Generic import *
 
 from pyrevit import forms
 from pyrevit import script
-from pyrevit.framework import Emojis
 
 doc =__revit__.ActiveUIDocument.Document
 uidoc =__revit__.ActiveUIDocument

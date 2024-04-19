@@ -4,13 +4,9 @@ __title__= 'Valorizzazione Default\nImpianti'
 __author__= 'Roberto Dolfini'
 
 import sys
-import os
-import csv
 import clr
-import System
 
 clr.AddReference("RevitServices")
-import RevitServices
 from RevitServices.Persistence import DocumentManager
 doc =  DocumentManager.Instance.CurrentDBDocument
  
@@ -26,7 +22,6 @@ from Autodesk.Revit.DB import *
 
 import pyrevit
 from pyrevit import script
-from pyrevit import forms
 #import rpw.ui.forms
 #from rpw.ui.forms import (FlexForm, Label, Separator, Button, CheckBox)
 

@@ -3,7 +3,6 @@
 __title__= 'BasePoint\nFrom Link'
 __author__= 'Luca Rosati'
 
-import System
 import clr
 import sys
 sys.path.append('C:\Program Files (x86)\IronPython 2.7\Lib')
@@ -24,14 +23,8 @@ clr.ImportExtensions(Revit.GeometryConversion)
 clr.ImportExtensions(Revit.Elements)
 
 clr.AddReference('RevitServices')
-import RevitServices
-from RevitServices.Persistence import DocumentManager
 
-from collections import defaultdict
-from pyrevit import revit, DB
-from pyrevit import HOST_APP
-from pyrevit.framework import List
-from pyrevit import coreutils
+from pyrevit import DB
 from pyrevit import forms
 from pyrevit import script
 

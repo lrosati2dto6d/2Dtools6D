@@ -5,7 +5,6 @@
 __title__ = "Get ViewTemplates\n Info"
 __author__ = "Luca Rosati"
 
-import System
 import clr
 
 clr.AddReference("RevitAPI")
@@ -16,15 +15,7 @@ import Revit
 clr.ImportExtensions(Revit.Elements)
 
 clr.AddReference("RevitServices")
-import RevitServices
-from RevitServices.Persistence import DocumentManager
-from RevitServices.Transactions import TransactionManager
 
-from collections import defaultdict
-from pyrevit import HOST_APP
-from pyrevit.framework import List
-from pyrevit import coreutils
-from pyrevit import forms
 from pyrevit import script
 
 doc = __revit__.ActiveUIDocument.Document
