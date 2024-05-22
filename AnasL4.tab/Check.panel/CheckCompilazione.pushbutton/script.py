@@ -13,9 +13,6 @@ from Autodesk.Revit.DB import *
 clr.AddReference('RevitAPIUI')
 from Autodesk.Revit.UI.Selection import *
 
-clr.AddReference('RevitNodes')
-clr.ImportExtensions(Revit.GeometryConversion)
-clr.ImportExtensions(Revit.Elements)
 
 clr.AddReference('RevitServices')
 from System.Collections.Generic import *
@@ -23,8 +20,8 @@ from System.Collections.Generic import *
 from pyrevit import forms
 from pyrevit import script
 
-doc =__revit__.ActiveUIDocument.Document
-uidoc =__revit__.ActiveUIDocument
+doc =__revit__.ActiveUIDocument.Document # type: ignore
+uidoc =__revit__.ActiveUIDocument # type: ignore
 
 rapp = doc.Application
 
@@ -303,11 +300,11 @@ for el in clean_el:
 		numfe += 1
 		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
-	elif elemento_el in ['CEN','MON','MPL','PAL','PLI','POZ','PZF','RAN'] and el.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() != "06_GET":
+	elif elemento_el in ['CEN','MON','MPL','PAL','PLI','POZ','PZF'] and el.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() != "06_GET":
 		numfe += 1
 		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
-	elif elemento_el in ['BIN','LMC','MUS','NJE','PPZ','TTA','UNI'] and el.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() != "05_TRA":
+	elif elemento_el in ['BIN','LMC','MUS','NJE','PPZ','TTA','UNI','RAN'] and el.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() != "05_TRA":
 		numfe += 1
 		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 

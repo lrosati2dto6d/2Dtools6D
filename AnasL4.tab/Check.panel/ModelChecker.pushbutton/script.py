@@ -526,11 +526,11 @@ for el in clean_el:
 		numfe += 1
 		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
-	elif elemento_el in ['CEN','MON','MPL','PAL','PLI','POZ','PZF','RAN'] and el.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() != "06_GET":
+	elif elemento_el in ['CEN','MON','MPL','PAL','PLI','POZ','PZF'] and el.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() != "06_GET":
 		numfe += 1
 		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
-	elif elemento_el in ['BIN','LMC','MUS','NJE','PPZ','TTA','UNI'] and el.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() != "05_TRA":
+	elif elemento_el in ['BIN','LMC','MUS','NJE','PPZ','TTA','UNI','RAN'] and el.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM).AsValueString() != "05_TRA":
 		numfe += 1
 		worksetfase_errata.append(":heavy_multiplication_x: {} - {} - {} - {} - {} - {} - {}".format(numfe,category_el,type_el_name,opera_el,parteopera_el,elemento_el,output.linkify(el_id)))
 
