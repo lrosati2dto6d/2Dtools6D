@@ -716,7 +716,7 @@ codicesensore_errato = []
 numeroseriale_errato = []
 carreggiata_errato = []
 direzione_errato = []
-
+tinstallazione_errato = set()
 
 list_clusterID_OG = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,codicesensore_errato]
 
@@ -728,9 +728,11 @@ list_clusterANA = [progettista_errato]
 
 list_clusterLOC = [carreggiata_errato,direzione_errato]
 
-list_clusterTEC = [tposizione_errato,numeroseriale_errato]
+list_clusterTEC = [tposizione_errato,numeroseriale_errato,tinstallazione_errato]
 
-listone = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,codicesensore_errato,campatadiappartenenza_errato,impalcatodiappartenenza_errato,numstrutturacampata_errato,codicebms_errato,carreggiata_errato,direzione_errato,area_errato,volume_errato,qsensore_errato,progettista_errato,tposizione_errato,numeroseriale_errato]
+listone = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,codicesensore_errato,campatadiappartenenza_errato,impalcatodiappartenenza_errato,numstrutturacampata_errato,codicebms_errato,carreggiata_errato,direzione_errato,area_errato,volume_errato,qsensore_errato,progettista_errato,tposizione_errato,numeroseriale_errato,tinstallazione_errato]
+
+parts = doc.Title.split("FED")
 
 for el in clean_el:
 	type_el = doc.GetElement(el.GetTypeId())
@@ -828,6 +830,12 @@ for el in clean_el:
 	if elemento_el in ["IFS","TEC","TCM","ACC","SCA","VCM","TSS","SEM","TIG","SUM","CLI","BRE","IDO"]:
 		if Para(el,"TEC_Numero seriale").HasValue == False or ParaInst(el,"TEC_Numero seriale") != "-":
 			numeroseriale_errato.append("{} - {} - {} - {}_ TEC_Numero seriale --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
+	
+	if "01" in parts[0] or "02" in parts[0] or "03" in parts[0]:
+		if elemento_el in ["LMC","NJE"]:
+			if  "Montante su cordolo - N." not in ParaType(el,"TEC_Tipologia installazione",doc) and "Montante su terra - N." not in ParaType(el,"TEC_Tipologia installazione",doc):
+				tinstallazione_errato.add("{} - {} - {} - {}_ TEC_Tipologia installazione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id)))
+
 
 #CHECK_01-----------------IDENTIFICATIVO OGGETTO
 
@@ -976,6 +984,7 @@ if len(exp_views_collV)!=0:
 		pass
 else:
 	pass
+		
 
 #print(file_info,proj_info,site_info,codint_result,result_ph,result_ws,exp_view_check,exp_view_result,exp_viewed_result,n_el,cat_result,result_afase,result_class,result_nomen)
 
