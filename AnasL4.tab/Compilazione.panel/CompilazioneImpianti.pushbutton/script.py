@@ -1,7 +1,7 @@
 """ Compila parametri di default degli elementi appartenenti al workset Impianti """
 
 __title__= 'Valorizzazione Default\nImpianti'
-__author__= 'Roberto Dolfini'
+__author__= 'Roberto Dolfini-Luca Rosati'
 
 import sys
 import clr
@@ -24,7 +24,6 @@ import pyrevit
 from pyrevit import script
 #import rpw.ui.forms
 #from rpw.ui.forms import (FlexForm, Label, Separator, Button, CheckBox)
-
 
 
 def EstraiCodici(elemento):
@@ -65,11 +64,13 @@ filter = ElementWorksetFilter(wksetId)
 
 ImpiantiInViewo = FilteredElementCollector(doc,activeView.Id).WhereElementIsNotElementType().WherePasses(filter).ToElements() # type: ignore
 
+
+
 ImpiantiInView = []
 impno = []
 for imp in ImpiantiInViewo:
 	try:
-		if imp.Category.Name != "Sistema di tubazioni":
+		if imp.Category.Name != "Sistema di tubazioni" and imp.Category.Name != "Linea d'asse" :
 			ImpiantiInView.append(imp)
 	except:
 		impno.append(imp)
@@ -126,11 +127,11 @@ for elemento,codice in zip(ImpiantiInView,CodiceElemento):
 			result.append(elemento.Id)
 
 	if codice == "CAE":
-		elemento.LookupParameter("TEC_Utilizzo").Set(elemento.LookupParameter("Tipo di sistema").AsValueString())
+		type_el = doc.GetElement(elemento.GetTypeId())
+		valore = type_el.LookupParameter("Contrassegno tipo").AsValueString()
+		elemento.LookupParameter("TEC_Utilizzo").Set(valore)
 
 t_AssegnazioneParametriIstanza.Commit()
-
-pyrevit.forms.toaster.send_toast("Compilazione effettuata", title = "Compilazione Default Impianti", icon = sys.path[0] + "/iconanera.png")
 
 output = script.get_output()
 output.set_height(600)
