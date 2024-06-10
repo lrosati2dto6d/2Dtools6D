@@ -717,6 +717,7 @@ numeroseriale_errato = []
 carreggiata_errato = []
 direzione_errato = []
 tinstallazione_errato = set()
+tutizzo_errato = []
 
 list_clusterID_OG = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,codicesensore_errato]
 
@@ -728,7 +729,7 @@ list_clusterANA = [progettista_errato]
 
 list_clusterLOC = [carreggiata_errato,direzione_errato]
 
-list_clusterTEC = [tposizione_errato,numeroseriale_errato,tinstallazione_errato]
+list_clusterTEC = [tposizione_errato,numeroseriale_errato,tinstallazione_errato,tutizzo_errato]
 
 listone = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,codicesensore_errato,campatadiappartenenza_errato,impalcatodiappartenenza_errato,numstrutturacampata_errato,codicebms_errato,carreggiata_errato,direzione_errato,area_errato,volume_errato,qsensore_errato,progettista_errato,tposizione_errato,numeroseriale_errato,tinstallazione_errato]
 
@@ -836,6 +837,9 @@ for el in clean_el:
 			if  "Montante su cordolo - N." not in ParaType(el,"TEC_Tipologia installazione",doc) and "Montante su terra - N." not in ParaType(el,"TEC_Tipologia installazione",doc):
 				tinstallazione_errato.add("{} - {} - {} - {}_ TEC_Tipologia installazione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id)))
 
+	if elemento_el in ["CAE"]:
+		if Para(el,"TEC_Utilizzo").HasValue == False or ParaInst(el,"TEC_Utilizzo") != "-":
+			tutizzo_errato.append("{} - {} - {} - {}_ TEC_Utilizzo --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
 #CHECK_01-----------------IDENTIFICATIVO OGGETTO
 
