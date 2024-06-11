@@ -43,8 +43,8 @@ def EstraiNome(elemento):
 	except:
 		return elemento.LookupParameter("Tipo").AsValueString()
 	
-doc = __revit__.ActiveUIDocument.Document
-uidoc = __revit__.ActiveUIDocument
+doc = __revit__.ActiveUIDocument.Document # type: ignore
+uidoc = __revit__.ActiveUIDocument # type: ignore
 activeView = doc.ActiveView
 Output = script.get_output()
 

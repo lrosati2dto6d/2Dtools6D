@@ -22,8 +22,8 @@ from System.Collections.Generic import *
 from pyrevit import forms
 from pyrevit import script
 
-doc =__revit__.ActiveUIDocument.Document
-uidoc =__revit__.ActiveUIDocument
+doc =__revit__.ActiveUIDocument.Document # type: ignore
+uidoc =__revit__.ActiveUIDocument # type: ignore
 
 rapp = doc.Application
 
@@ -353,7 +353,7 @@ for ci in catname:
 
 n_el= "Numero Totale Elementi = {}".format(len(cnamelist))
 
-cat_true_name = ("Apparecchi elettrici", "Appoggi", "Armatura strutturale", "Attrezzatura elettrica", "Attrezzature speciali", "Tubazioni flessibili", "Sistema di tubazioni", "Collegamenti strutturali", "Fondazioni strutturali", "Modelli generici", "Muri", "Pavimenti", "Pilastri strutturali", "Piloni", "Ringhiere", "Telaio strutturale", "Tetti")
+cat_true_name = ("Apparecchi elettrici", "Appoggi", "Armatura strutturale", "Attrezzatura elettrica", "Attrezzature speciali", 'Tubi protettivi', 'Raccordi tubo protettivo', "Collegamenti strutturali", "Fondazioni strutturali", "Modelli generici", "Muri", "Pavimenti", "Pilastri strutturali", "Piloni", "Ringhiere", "Telaio strutturale", "Tetti")
 cat_false = []
 
 for c in c_uni:
@@ -580,7 +580,7 @@ for el in clean_el:
 	if opera_el == 'PV' and category_el in ['Telaio strutturale', 'Modelli generici', 'Pilastri strutturali', 'Tetti', 'Appoggi', 'Fondazioni strutturali', 'Collegamenti strutturali', 'Piloni', 'Armatura strutturale', 'Pavimenti', 'Muri'] and parteopera_el in ['AC', 'AN', 'FO', 'FP', 'FS', 'GI', 'IC','IA', 'PD', 'PI', 'SP'] and elemento_el in ['AAP', 'AMS', 'BAG', 'BIN', 'CAP', 'CAS', 'CEN', 'CNT', 'COR', 'CUN', 'DIA', 'GIU', 'ISA', 'LOR', 'MAN', 'MDA', 'MFR', 'MPL', 'MUS', 'OPO', 'PAL', 'PAR', 'PEN', 'POZ', 'PPZ', 'PUL', 'PUN', 'PZF', 'RIS', 'SAR', 'SBL', 'SEL', 'SGE', 'SOL', 'SSG', 'STL', 'TAN', 'TIM', 'TRA', 'TRV', 'VEL']:
 		class_CVPV = True
 
-	elif opera_el == 'IM' and category_el in ['Apparecchi elettrici', 'Attrezzatura elettrica', 'Attrezzature speciali', 'Tubazioni flessibili', 'Collegamenti strutturali', 'Fondazioni strutturali']and parteopera_el =='IE'and elemento_el in ['ALI', 'BLI', 'CAE', 'CAV', 'CEE', 'CNP', 'COL', 'COM', 'DIE', 'IMT', 'INM', 'INS', 'MUL', 'PLI', 'PZE', 'QEB', 'QEM', 'REL', 'REP', 'RIF', 'SCS', 'SDE', 'TRS']:
+	elif opera_el == 'IM' and category_el in ['Apparecchi elettrici', 'Attrezzatura elettrica', 'Attrezzature speciali', 'Tubi protettivi', 'Raccordi tubo protettivo', 'Collegamenti strutturali', 'Fondazioni strutturali']and parteopera_el =='IE'and elemento_el in ['ALI', 'BLI', 'CAE', 'CAV', 'CEE', 'CNP', 'COL', 'COM', 'DIE', 'IMT', 'INM', 'INS', 'MUL', 'PLI', 'PZE', 'QEB', 'QEM', 'REL', 'REP', 'RIF', 'SCS', 'SDE', 'TRS']:
 		class_IM = True
 
 	elif opera_el == 'MA' and category_el in ['Fondazioni strutturali', 'Modelli generici', 'Ringhiere', 'Telaio strutturale'] and parteopera_el =='BA' and elemento_el in ['BAN', 'BPT', 'COR', 'MON']:
