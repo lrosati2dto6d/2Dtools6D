@@ -219,7 +219,7 @@ for ci in catname:
 
 n_el= "Numero Totale Elementi = {}".format(len(cnamelist))
 
-cat_true_name = ("Apparecchi elettrici", "Appoggi", "Armatura strutturale", "Attrezzatura elettrica", "Attrezzature speciali", "Tubi protettivi", "Collegamenti strutturali", "Fondazioni strutturali", "Modelli generici", "Muri", "Pavimenti", "Pilastri strutturali","Raccordi tubo protettivo", "Piloni", "Ringhiere", "Telaio strutturale", "Tetti")
+cat_true_name = ("Apparecchi elettrici", "Appoggi", "Armatura strutturale", "Attrezzatura elettrica", "Attrezzature speciali",'Tubazioni flessibili', "Tubi protettivi", "Collegamenti strutturali", "Fondazioni strutturali", "Modelli generici", "Muri", "Pavimenti", "Pilastri strutturali","Raccordi tubo protettivo", "Piloni", "Ringhiere", "Telaio strutturale", "Tetti")
 cat_false = []
 
 for c in c_uni:
