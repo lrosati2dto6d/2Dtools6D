@@ -731,7 +731,7 @@ list_clusterLOC = [carreggiata_errato,direzione_errato]
 
 list_clusterTEC = [tposizione_errato,numeroseriale_errato,tinstallazione_errato,tutizzo_errato]
 
-listone = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,codicesensore_errato,campatadiappartenenza_errato,impalcatodiappartenenza_errato,numstrutturacampata_errato,codicebms_errato,carreggiata_errato,direzione_errato,area_errato,volume_errato,qsensore_errato,progettista_errato,tposizione_errato,numeroseriale_errato,tinstallazione_errato]
+listone = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,codicesensore_errato,campatadiappartenenza_errato,impalcatodiappartenenza_errato,numstrutturacampata_errato,codicebms_errato,carreggiata_errato,direzione_errato,area_errato,volume_errato,qsensore_errato,progettista_errato,tposizione_errato,numeroseriale_errato,tinstallazione_errato,tutizzo_errato]
 
 parts = doc.Title.split("FED")
 
@@ -832,13 +832,24 @@ for el in clean_el:
 		if Para(el,"TEC_Numero seriale").HasValue == False or ParaInst(el,"TEC_Numero seriale") != "-":
 			numeroseriale_errato.append("{} - {} - {} - {}_ TEC_Numero seriale --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 	
+	if elemento_el == "CAE":
+		if Para(el,"TEC_Utilizzo").HasValue == False or ParaInst(el,"TEC_Utilizzo") == "":
+			tutizzo_errato.append("{} - {} - {} - {}_ TEC_Utilizzo --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
+
 	if "01" in parts[0] or "02" in parts[0] or "03" in parts[0]:
-		if elemento_el in ["LMC","NJE"]:
+		if elemento_el == "LMC":
 			if  "Montante su cordolo - N." not in ParaType(el,"TEC_Tipologia installazione",doc) and "Montante su terra - N." not in ParaType(el,"TEC_Tipologia installazione",doc):
 				tinstallazione_errato.add("{} - {} - {} - {}_ TEC_Tipologia installazione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id)))
+		if elemento_el == "NJE":
+			if  "New Jersey su cordolo - N." not in ParaType(el,"TEC_Tipologia installazione",doc) and "New Jersey su terra - N." not in ParaType(el,"TEC_Tipologia installazione",doc):
+				tinstallazione_errato.add("{} - {} - {} - {}_ TEC_Tipologia installazione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id)))
+	else:
+		if elemento_el in ["LMC","NJE"]:
+			if Para(el,"TEC_Numero seriale").HasValue == False or ParaType(el,"TEC_Tipologia installazione",doc) != "-":
+				tinstallazione_errato.add("{} - {} - {} - {}_ TEC_Tipologia installazione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id)))
 
-	if elemento_el in ["CAE"]:
-		if Para(el,"TEC_Utilizzo").HasValue == False or ParaInst(el,"TEC_Utilizzo") != "-":
+	if elemento_el == "CAE":
+		if Para(el,"TEC_Utilizzo").HasValue == False or ParaInst(el,"TEC_Utilizzo") == "":
 			tutizzo_errato.append("{} - {} - {} - {}_ TEC_Utilizzo --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
 #CHECK_01-----------------IDENTIFICATIVO OGGETTO
