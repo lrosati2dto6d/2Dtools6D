@@ -853,7 +853,7 @@ for el in clean_el:
 	else:
 		if elemento_el in ["LMC","NJE"]:
 			if "Montante" in el.Name:
-				if  "Montante su cordolo" not in ParaType(el,"TEC_Tipologia installazione",doc):
+				if  "Montante su cordolo" not in ParaType(el,"TEC_Tipologia installazione",doc) and "Montante su terra" not in ParaType(el,"TEC_Tipologia installazione",doc):
 					tinstallazione_errato.add("{} - {} - {} - {}_ TEC_Tipologia installazione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id)))
 			else:
 				if Parat(el,"TEC_Tipologia installazione",doc).HasValue == False or ParaType(el,"TEC_Tipologia installazione",doc) != "-":
