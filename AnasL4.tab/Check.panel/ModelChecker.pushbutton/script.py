@@ -738,7 +738,7 @@ list_clusterTEC = [tposizione_errato,numeroseriale_errato,tinstallazione_errato,
 listone = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,codicesensore_errato,campatadiappartenenza_errato,impalcatodiappartenenza_errato,numstrutturacampata_errato,codicebms_errato,carreggiata_errato,direzione_errato,area_errato,volume_errato,qsensore_errato,progettista_errato,tposizione_errato,numeroseriale_errato,tinstallazione_errato,tutizzo_errato]
 
 parts = doc.Title.split("FED")
-print(parts)
+
 for el in clean_el:
 	type_el = doc.GetElement(el.GetTypeId())
 	category_el = el.Category.Name
@@ -852,8 +852,12 @@ for el in clean_el:
 				tinstallazione_errato.add("{} - {} - {} - {}_ TEC_Tipologia installazione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id)))
 	else:
 		if elemento_el in ["LMC","NJE"]:
-			if Parat(el,"TEC_Tipologia installazione",doc).HasValue == False or ParaType(el,"TEC_Tipologia installazione",doc) != "-":
-				tinstallazione_errato.add("{} - {} - {} - {}_ TEC_Tipologia installazione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id)))
+			if "Montante" in el.Name:
+				if  "Montante su cordolo" not in ParaType(el,"TEC_Tipologia installazione",doc):
+					tinstallazione_errato.add("{} - {} - {} - {}_ TEC_Tipologia installazione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id)))
+			else:
+				if Parat(el,"TEC_Tipologia installazione",doc).HasValue == False or ParaType(el,"TEC_Tipologia installazione",doc) != "-":
+					tinstallazione_errato.add("{} - {} - {} - {}_ TEC_Tipologia installazione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id)))
 
 
 #CHECK_01-----------------IDENTIFICATIVO OGGETTO
