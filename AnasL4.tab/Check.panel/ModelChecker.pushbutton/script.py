@@ -45,6 +45,10 @@ def Para(element,paraname):
 	parameter = element.LookupParameter(paraname)
 	return parameter
 
+def Parat(element,paraname,document):
+	parameter = document.GetElement(element.GetTypeId()).LookupParameter(paraname)
+	return parameter
+
 def ParaInst(element,paraname):
 	if element.LookupParameter(paraname).StorageType == StorageType.Double:
 		value = element.LookupParameter(paraname).AsDouble()
@@ -734,7 +738,7 @@ list_clusterTEC = [tposizione_errato,numeroseriale_errato,tinstallazione_errato,
 listone = [codiceopera_errato,codiceWBS_errato,gruppoanagrafica_errato,lor_errato,codiceassieme_errato,codicesensore_errato,campatadiappartenenza_errato,impalcatodiappartenenza_errato,numstrutturacampata_errato,codicebms_errato,carreggiata_errato,direzione_errato,area_errato,volume_errato,qsensore_errato,progettista_errato,tposizione_errato,numeroseriale_errato,tinstallazione_errato,tutizzo_errato]
 
 parts = doc.Title.split("FED")
-
+print(parts)
 for el in clean_el:
 	type_el = doc.GetElement(el.GetTypeId())
 	category_el = el.Category.Name
@@ -810,8 +814,11 @@ for el in clean_el:
 
 #-------------------------------------GEOMETRICO
 
-	if elemento_el in ["CEN","CEE","PZF","PLI","POZ","QEB","QEM","RAN","SOL","SSB"]:
+	if elemento_el in ["CEN","CEE","PZF","PLI","POZ","QEB","QEM","SOL","SSB"]:
 		if Para(el,"GEO_Area").HasValue == False or ParaInst(el,"GEO_Area") == 0:
+			area_errato.append("{} - {} - {} - {}_ GEO_Area --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
+	elif elemento_el == "RAN":
+		if Para(el,"GEO_Area").HasValue == False:
 			area_errato.append("{} - {} - {} - {}_ GEO_Area --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
 	if elemento_el in ['ALI','BAG','BLI','CAB','CNP','CAS','CAV','COL','COM','COR','DIA','DIE','IMT','INS','INM','MPL','MAN','MDA','MFR','PPZ','PAL','PAR','PZF','PLI','POZ','PUL','REL','REP','RIF','SCS','SDE','SGE','SOL','SSB','SAR','SEL','TRS','TRV','TRA']:
@@ -845,12 +852,9 @@ for el in clean_el:
 				tinstallazione_errato.add("{} - {} - {} - {}_ TEC_Tipologia installazione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id)))
 	else:
 		if elemento_el in ["LMC","NJE"]:
-			if Para(el,"TEC_Numero seriale").HasValue == False or ParaType(el,"TEC_Tipologia installazione",doc) != "-":
+			if Parat(el,"TEC_Tipologia installazione",doc).HasValue == False or ParaType(el,"TEC_Tipologia installazione",doc) != "-":
 				tinstallazione_errato.add("{} - {} - {} - {}_ TEC_Tipologia installazione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id)))
 
-	if elemento_el == "CAE":
-		if Para(el,"TEC_Utilizzo").HasValue == False or ParaInst(el,"TEC_Utilizzo") == "":
-			tutizzo_errato.append("{} - {} - {} - {}_ TEC_Utilizzo --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
 #CHECK_01-----------------IDENTIFICATIVO OGGETTO
 
@@ -864,9 +868,7 @@ for l in list_clusterID_OG:
 		for i in l:
 			output.print_md(	'###{}'.format(i))
 
-
 #CHECK_02-----------------INFORMAZIONI 6D
-
 
 for l in list_clusterIN_D:
 	if len(l) != 0:
@@ -878,7 +880,6 @@ for l in list_clusterIN_D:
 	if len(l) != 0:
 		for i in l:
 			output.print_md(	'###{}'.format(i))
-
 
 
 #CHECK_03-----------------ANAGRAFICA DI BASE
@@ -893,7 +894,6 @@ for l in list_clusterANA:
 	if len(l) != 0:
 		for i in l:
 			output.print_md(	'###{}'.format(i))
-
 
 
 #CHECK_04-----------------LOCALIZZAZIONE
@@ -1054,3 +1054,4 @@ for cr in check_result:
 output.print_md(	'-----------------------')
 
 output.print_md(	"# - PROCEDERE CON L'ESPORTAZIONE DEI FILE IFC :clinking_beer_mugs:")
+
