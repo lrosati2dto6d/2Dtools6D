@@ -843,7 +843,7 @@ for el in clean_el:
 		if Para(el,"TEC_Utilizzo").HasValue == False or ParaInst(el,"TEC_Utilizzo") == "":
 			tutizzo_errato.append("{} - {} - {} - {}_ TEC_Utilizzo --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
-	if "01" in parts[0] or "02" in parts[0] or "03" in parts[0]:
+	if "PV01" in parts[0] or "PV02" in parts[0] or "PV03" in parts[0]:
 		if elemento_el == "LMC":
 			if  "Montante su cordolo - N." not in ParaType(el,"TEC_Tipologia installazione",doc) and "Montante su terra - N." not in ParaType(el,"TEC_Tipologia installazione",doc):
 				tinstallazione_errato.add("{} - {} - {} - {}_ TEC_Tipologia installazione --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(type_el.Id)))
