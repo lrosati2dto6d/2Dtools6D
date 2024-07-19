@@ -752,10 +752,10 @@ for el in clean_el:
 	except:
 		type_el_name = el.Name
 
-# or len(ParaInst(el,"IDE_Codice opera"))!= 11
+
 #-------------------------------------IDENTIFICATIVO OGGETTO
 
-	if Para(el,"IDE_Codice opera").HasValue == False or ParaInst(el,"IDE_Codice opera") == "":
+	if Para(el,"IDE_Codice opera").HasValue == False or ParaInst(el,"IDE_Codice opera") == "" or len(ParaInst(el,"IDE_Codice opera"))!= 11:
 		codiceopera_errato.append("{} - {} - {} - {}_ IDE_Codice opera --> :heavy_multiplication_x:".format(category_el,type_el_name,opera_el,output.linkify(el_id)))
 
 	if Para(el,"IDE_Codice WBS").HasValue == False or ParaInst(el,"IDE_Codice WBS") == "" or len(ParaInst(el,"IDE_Codice WBS"))!= 21 and opera_el in ParaInst(el,"IDE_Codice WBS") and parteopera_el in ParaInst(el,"IDE_Codice WBS") and elemento_el in ParaInst(el,"IDE_Codice WBS"):
